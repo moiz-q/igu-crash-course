@@ -1,0 +1,141 @@
+# Turkish Language I — 20-question overview bank
+
+? [01] Which language family does Turkish belong to?
+- Indo-European ~~ English, German and Persian belong to Indo-European, not Turkish.
+- Afro-Asiatic ~~ Arabic and Hebrew belong to Afro-Asiatic.
+* Ural–Altaic (Altaic / Turkic) ~~ Turkish is classified in the Ural–Altaic / Turkic family.
+- Sino-Tibetan ~~ Chinese and Tibetan belong to Sino-Tibetan.
+! By origin, Turkish is part of the Ural–Altaic (Altaic / Turkic) language group.
+
+? [01] Structurally, what type of language is Turkish?
+- Isolating (words never take suffixes) ~~ Chinese is largely isolating; Turkish uses many suffixes.
+* Agglutinative (adding suffixes to an unchanging root) ~~ Turkish builds words and grammar by snapping suffixes onto roots.
+- Polysynthetic ~~ Polysynthetic languages pack whole sentences into one verb with complex fusion.
+- Fusional with internal vowel changes ~~ Arabic uses internal root-vowel patterns; Turkish keeps the root mostly intact.
+! Turkish is an agglutinative (eklemeli) language: *ev → evler → evlerimiz → evlerimizde*.
+
+? [01] Which set contains ONLY back (*kalın*) vowels in Turkish?
+* a, ı, o, u ~~ These four are the back vowels.
+- e, i, ö, ü ~~ These four are the front (*ince*) vowels.
+- a, e, ı, i ~~ That mixes back (a, ı) and front (e, i) vowels; those are the unrounded vowels.
+- o, ö, u, ü ~~ Those are the rounded (*yuvarlak*) vowels.
+! Back vowels: a, ı, o, u. Front vowels: e, i, ö, ü.
+
+? [01] Which word follows Great Vowel Harmony (*Büyük Ünlü Uyumu*)?
+- kalem ~~ `a` (back) is followed by `e` (front), so it breaks Great Vowel Harmony.
+- elma ~~ `e` (front) is followed by `a` (back), so it breaks Great Vowel Harmony.
+* arabalar ~~ Every vowel (`a, a, a, a`) is a back vowel.
+- otobüs ~~ `o, o` (back) followed by `ü` (front) breaks Great Vowel Harmony.
+! Great Vowel Harmony requires all vowels in a word to be either all back or all front.
+
+? [01] Which suffix form correctly attaches to the word *göz* (eye) to mean "eyes"?
+- gözlar ~~ `-lar` has a back vowel, which does not match front `ö`.
+* gözler ~~ `ö` is a front vowel, so the plural suffix takes front `e`: *gözler*.
+- gözleri ~~ That adds the 3rd-person possessive/accusative `-i` as well as plural.
+- gözlarım ~~ Wrong vowel harmony and extra possessive suffix.
+! After front vowels (`e, i, ö, ü`), the plural suffix is `-ler`.
+
+? [01] Which vowels are NEVER found in non-first syllables of native Turkish words (unless in borrowed words or `-yor`)?
+- a, e ~~ `a` and `e` appear in many suffixes (`-lar`, `-ler`, `-da`, `-de`).
+- ı, i ~~ `ı` and `i` appear in many suffixes (`-lı`, `-li`).
+* o, ö ~~ Small Vowel Harmony forbids wide rounded `o` and `ö` after the first syllable.
+- u, ü ~~ `u` and `ü` appear in suffixes like `-luk`, `-lük`, `-muş`.
+! Under Small Vowel Harmony, `o` and `ö` only occur in the first syllable of native Turkish words.
+
+? [01] What happens in *kitap + ı → kitabı*?
+* Consonant softening (*ünsüz yumuşaması*) ~~ Final `p` softens to `b` before a vowel suffix.
+- Consonant assimilation (*ünsüz benzeşmesi*) ~~ Assimilation hardens a voiced suffix consonant after a voiceless stem.
+- Vowel drop (*ünlü düşmesi*) ~~ No vowel is dropped here.
+- Vowel harmony break ~~ `a` and `ı` are both back vowels, so harmony holds.
+! Final `p, ç, t, k` soften to `b, c, d, ğ` when followed by a vowel-initial suffix.
+
+? [01] Why does *mutfak + da* become *mutfakta* ("in the kitchen")?
+- Vowel harmony ~~ Vowel harmony changes vowels, not `d` to `t`.
+* Consonant assimilation (*ünsüz benzeşmesi*) ~~ After voiceless `k` (one of *Fıstıkçı Şahap*), `d` hardens to `t`.
+- Consonant softening ~~ Softening changes `p/ç/t/k` to `b/c/d/ğ`, the opposite direction.
+- Consonant insertion ~~ No extra letter is inserted.
+! After voiceless consonants (`f, s, t, k, ç, ş, h, p`), suffix-initial `c, d, g` harden to `ç, t, k`.
+
+? [01] In *göz-lük-çü-ler*, which suffix is an inflectional suffix (*çekim eki*)?
+- `-lük` ~~ `-lük` creates a new word (*gözlük*, glasses), so it is derivational (*yapım eki*).
+- `-çü` ~~ `-çü` creates a new word (*gözlükçü*, optician), so it is derivational (*yapım eki*).
+* `-ler` ~~ `-ler` only marks plural without creating a new dictionary word.
+- `göz` ~~ `göz` is the root (*kök*), not a suffix.
+! Inflectional suffixes mark grammar (plural, case, tense) without changing the word's core dictionary meaning.
+
+? [01] In the phrase *hızlı koştu* ("ran fast"), what word type is *hızlı*?
+- Noun (*isim*) ~~ It does not name a thing here.
+- Adjective (*sıfat*) ~~ An adjective modifies a noun (e.g. *hızlı araba*), not a verb.
+* Adverb (*zarf*) ~~ Here *hızlı* modifies the verb *koştu* (how did they run?), so it is an adverb.
+- Conjunction (*bağlaç*) ~~ It does not join clauses or words.
+! A word that describes how an action happens (modifying a verb) functions as an adverb (*zarf*).
+
+? [01] Which word is a postposition (*edat*) in Turkish?
+- ve ~~ `ve` ("and") is a conjunction (*bağlaç*).
+- ama ~~ `ama` ("but") is a conjunction (*bağlaç*).
+* gibi ~~ `gibi` ("like") follows a noun to show comparison and is a postposition (*edat*).
+- ben ~~ `ben` ("I") is a personal pronoun (*zamir*).
+! Postpositions (*edatlar*) such as *gibi, için, kadar, ile* relate a noun to the rest of the sentence.
+
+? [01] Which tense suffix marks the reported / heard past (*duyulan geçmiş zaman*) in Turkish?
+- `-yor` ~~ `-yor` is the present continuous tense.
+- `-di` ~~ `-di` is the directly witnessed past (*görülen geçmiş zaman*).
+* `-miş` ~~ `-miş` (and `-mış/-muş/-müş`) expresses past events heard from others or inferred later.
+- `-ecek` ~~ `-ecek` is the future tense.
+! `-miş` is used when you learned about a past event indirectly or noticed its result later.
+
+? [01] Which mood suffix expresses necessity ("must / should")?
+- `-se` ~~ `-se` is the conditional mood ("if").
+* `-meli` ~~ `-meli / -malı` expresses obligation or necessity (e.g. *gitmeliyim* = I must go).
+- `-iyor` ~~ `-iyor` is an indicative tense, not a necessity mood.
+- `-ecek` ~~ `-ecek` is the future tense.
+! `-meli / -malı` is the necessity mood (*gereklilik kipi*).
+
+? [01] In *Okula gelen öğrenciyi gördüm* ("I saw the student who came to school"), what is *gelen*?
+- Noun-verbal (*isim-fiil*) ~~ Noun-verbals use `-me, -mek, -iş`.
+* Adjective-verbal / participle (*sıfat-fiil*) ~~ `-en` (*gel-en*) turns the verb into a modifier of the noun *öğrenci*.
+- Adverb-verbal (*zarf-fiil*) ~~ Adverb-verbals use `-ip, -erek, -ince`, etc.
+- Main predicate (*yüklem*) ~~ The main predicate is *gördüm*.
+! Participles (*sıfat-fiil*, suffixes `-an/-en, -ası, -mez, -ar, -dik, -ecek, -miş`) describe a noun.
+
+? [01] In *Öğrenciler bahçede top oynuyor*, which word is the predicate (*yüklem*)?
+- Öğrenciler ~~ *Öğrenciler* is the subject (*özne*).
+- bahçede ~~ *bahçede* ("in the yard") is the indirect/locative complement (*dolaylı tümleç*).
+- top ~~ *top* ("ball") is the indefinite object (*belirtisiz nesne*).
+* oynuyor ~~ *oynuyor* ("are playing") is the conjugated verb and main predicate (*yüklem*).
+! In standard Turkish word order, the predicate (*yüklem*) stands at the end of the sentence.
+
+? [01] Which historical monument from the 8th century contains the earliest major Old Turkish texts?
+* Orkhon Inscriptions (*Orhun Yazıtları*) ~~ Carved in the 8th century in present-day Mongolia, they are the oldest major Turkic written monuments.
+- Divânü Lûgati't-Türk ~~ Written in the 11th century (Middle/Karakhanid Turkish) by Mahmud al-Kashgari.
+- Kutadgu Bilig ~~ Written in 1069 (Karakhanid period) by Yusuf Balasaguni.
+- Tanzimat Edict ~~ Issued in 1839 in the Ottoman Empire.
+! The Orkhon Inscriptions (8th century) belong to the Old Turkish (*Eski Türkçe*) period.
+
+? [01] Which word has undergone vowel drop (*ünlü düşmesi*) when a vowel suffix is added?
+- ev + e → eve ~~ No vowel is dropped.
+* burun + u → burnu ~~ The second `u` drops when `-u` is added (*burun → burnu*).
+- masa + da → masada ~~ No vowel is dropped.
+- göz + lük → gözlük ~~ No vowel is dropped.
+! Two-syllable words with a narrow second vowel (like *burun, ağız, şehir*) often drop that vowel before a vowel suffix.
+
+? [01] In which year did Turkey adopt the Latin-based Turkish alphabet?
+- 1920 ~~ The Grand National Assembly opened in 1920.
+- 1923 ~~ The Republic of Turkey was proclaimed in 1923.
+* 1928 ~~ The Alphabet Reform (*Harf Devrimi*) took place on 1 November 1928.
+- 1938 ~~ Mustafa Kemal Atatürk passed away in 1938.
+! The Latin-based Turkish alphabet was adopted in 1928.
+
+? [01] Which suffix is a derivational suffix (*yapım eki*)?
+- `-lar` (plural) ~~ Marks plural; does not create a new word.
+- `-de` (locative "in/at") ~~ Marks location; inflectional.
+* `-ci` (profession, e.g. *süt-çü*) ~~ Creates a new noun ("milkman" from "milk"), so it is derivational.
+- `-im` ("my", e.g. *ev-im*) ~~ Marks possession; inflectional.
+! Derivational suffixes (*yapım ekleri*) form new words or change a word's part of speech.
+
+? [01] What is the subject (*özne*) of *Dün akşam kardeşim ödevini bitirdi*?
+- Dün akşam ~~ Answers "when?" — adverbial (*zarf tümleci*).
+* kardeşim ~~ Answers "who finished?" — the subject (*özne*).
+- ödevini ~~ Answers "what did they finish?" — definite object (*belirtili nesne*).
+- bitirdi ~~ The action — predicate (*yüklem*).
+! Find the predicate (*bitirdi*), then ask "who/what?" to locate the subject (*kardeşim*).

@@ -1,0 +1,14 @@
+en | Past modals of deduction | must have + V3 (almost sure it happened) · might/could have + V3 (possible) · can't have + V3 (almost sure it didn't)
+en | `a university` vs `an hour` | Choose `a` vs `an` by SOUND: `university` starts with `/j/` (a), `hour` has silent `h` (an)
+en | `mustn't` vs `don't have to` | `mustn't` = strictly forbidden; `don't have to` = optional / not necessary
+en | Past of `must` | `had to` (never `musted`)
+en | `for` vs `since` | `for` + duration (`for 2 hours`); `since` + starting point (`since 2023`)
+en | Future perfect vs future continuous | will have + V3 = finished BY a future time · will be + V-ing = in progress AT a future time
+en | Discourse markers | by the way (side topic) · anyway (back to main point) · actually (in fact) · as I was saying (after an interruption)
+en | Passive voice structure | `be + V3` (past participle): `was sent`, `are stored`, `must be encrypted`
+en | Defining vs Non-defining relative clause | Non-defining uses commas and NEVER allows `that` (use `which` or `who`)
+en | `Although` vs `Despite` | `Although + Subject + Verb` (never add `but`!); `Despite + noun / -ing`
+en | Skimming vs Scanning | Skimming = fast read for main idea; Scanning = hunting for a specific fact/number
+en | `will` vs `be going to` vs `Present Cont.` | `will` = instant decision/opinion; `going to` = prior plan/visible evidence; `Pres Cont` = fixed appointment
+en | Relative clause + preposition | the city in which she lives · the man with whom I work · most of whom (never "in that", "with who")
+en | Substitution | one/ones (nouns) · so/not after think, hope (I think so / I hope not) · do/did/do so (verb phrases)

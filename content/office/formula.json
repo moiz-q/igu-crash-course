@@ -1,0 +1,66 @@
+{
+ "cols": 6,
+ "rows": 10,
+ "cells": {
+  "A1": "Student",
+  "B1": "Midterm",
+  "C1": "Final",
+  "D1": "Average",
+  "E1": "Status",
+  "F1": "Rounded",
+  "A2": "Ali",
+  "B2": 70,
+  "C2": 80,
+  "A3": "Ece",
+  "B3": 45,
+  "C3": 55,
+  "A4": "Mert",
+  "B4": 85,
+  "C4": 95,
+  "A5": "Zeynep",
+  "B5": 60,
+  "C5": 70,
+  "A7": "Midterm Avg",
+  "A8": "Highest Final",
+  "A9": "Midterm >= 60",
+  "A10": "Total Final"
+ },
+ "tasks": [
+  {
+   "cell": "D2",
+   "prompt": "In D2, compute Ali's average of B2 and C2 using AVERAGE (or ORTALAMA).",
+   "model": "=AVERAGE(B2:C2)",
+   "must": "AVERAGE"
+  },
+  {
+   "cell": "E2",
+   "prompt": "In E2, return \"Pass\" if D2 >= 60, otherwise \"Fail\" using IF (or EĞER).",
+   "model": "=IF(D2>=60,\"Pass\",\"Fail\")",
+   "must": "IF"
+  },
+  {
+   "cell": "B7",
+   "prompt": "In B7, compute the average Midterm score across B2:B5.",
+   "model": "=AVERAGE(B2:B5)",
+   "must": "AVERAGE"
+  },
+  {
+   "cell": "B8",
+   "prompt": "In B8, find the highest Final score in C2:C5 using MAX.",
+   "model": "=MAX(C2:C5)",
+   "must": "MAX"
+  },
+  {
+   "cell": "B9",
+   "prompt": "In B9, count how many Midterm scores in B2:B5 are >= 60 using COUNTIF.",
+   "model": "=COUNTIF(B2:B5,\">=60\")",
+   "must": "COUNTIF"
+  },
+  {
+   "cell": "B10",
+   "prompt": "In B10, calculate the sum of all Final scores in C2:C5 using SUM (or TOPLA).",
+   "model": "=SUM(C2:C5)",
+   "must": "SUM"
+  }
+ ]
+}

@@ -1,0 +1,463 @@
+# English I MCQ Bank (Lessons 02–14, 5+ per lesson)
+
+? [02] While I ___ home yesterday, it started to rain heavily.
+- walked ~~ ongoing background action takes Past Continuous
+* was walking ~~ Past Continuous interrupted by `started`
+- had walked ~~ walking was still in progress, not finished earlier
+- am walking ~~ `yesterday` requires past tense
+! Use `was walking` for an ongoing past background action.
+
+? [02] By the time we arrived at the station, the train ___.
+- left ~~ use Past Perfect to show it happened before we arrived
+* had already left ~~ `had + V3` marks the earlier past event
+- was leaving ~~ `by the time` with completed departure uses Past Perfect
+- has left ~~ cannot mix Present Perfect with `arrived`
+! Past Perfect (`had left`) marks an action completed before another past event.
+
+? [02] What ___ at 10 p.m. last night when I called you?
+- did you do ~~ asks about a finished action, not what was in progress at 10 p.m.
+* were you doing ~~ action in progress at a specific past time
+- had you done ~~ asks before 10 p.m.
+- are you doing ~~ wrong tense for `last night`
+! Specific past moment in progress takes Past Continuous (`were you doing`).
+
+? [02] She couldn't enter the lab because she ___ her student ID card at home.
+- leaves ~~ present tense
+- was leaving ~~ leaving is not a continuous background here
+* had left ~~ happened earlier before arriving at the lab
+- has left ~~ `couldn't` is past, so use Past Perfect
+! Earlier past cause takes Past Perfect (`had left`).
+
+? [02] Yesterday, Emre ___ his C file, compiled it, and fixed two warnings.
+* opened ~~ sequence of completed main events in Past Simple
+- was opening ~~ sequential completed actions use Past Simple
+- had opened ~~ same timeline sequence
+- opens ~~ `yesterday` needs past
+! Sequential completed actions in a story use Past Simple.
+
+? [05] That lemon cake smells ___!
+- like delicious ~~ `delicious` is an adjective, so omit `like`
+* delicious ~~ `sense verb + adjective`
+- deliciously ~~ sense verbs take adjectives, not adverbs
+- as delicious ~~ `as` is wrong here
+! Use `smell + adjective` (`smells delicious`).
+
+? [05] Your laptop fan sounds ___ a tiny helicopter!
+- similar ~~ `sounds similar to` or `sounds like`
+* like ~~ `sound like + noun`
+- as ~~ use `like` before a noun here
+- happily ~~ adverb
+! Use `sense verb + like + noun` (`sounds like a helicopter`).
+
+? [05] Istanbul Gelisim is ___ university in Istanbul, and my brother waited ___ hour for the shuttle.
+- an / a ~~ `university` starts with `/j/` consonant; `hour` starts with vowel sound
+* a / an ~~ `a university` (`/juː/`), `an hour` (silent `h`)
+- a / a ~~ `hour` starts with vowel sound → `an`
+- an / an ~~ `university` starts with consonant sound → `a`
+! Choose `a` vs. `an` by **sound**, not spelling.
+
+? [05] ___ computers have changed how ___ students study.
+- The / the ~~ general plural nouns take zero article
+* Ø / Ø ~~ general plural nouns (`Computers... students`) take no article
+- A / a ~~ plural nouns cannot take `a`
+- The / a ~~ plural `students` cannot take `a`
+! General plural nouns take zero article (`Ø`).
+
+? [05] I bought a wireless mouse yesterday, and ___ mouse already needs a battery.
+- a ~~ second mention of a specific item takes `the`
+* the ~~ second mention (`the mouse`)
+- an ~~ consonant sound and specific
+- Ø ~~ singular countable noun needs an article
+! Second mention of a known noun takes `the`.
+
+? [06] You ___ bring your student ID to the final exam; security checks everyone at the door.
+- don't have to ~~ contradicts mandatory check
+* must ~~ strict obligation
+- mustn't ~~ means forbidden
+- shouldn't ~~ illogical
+! Mandatory rules use `must` or `have to`.
+
+? [06] You ___ pay for Cisco Packet Tracer—it is free for students.
+- mustn't ~~ `mustn't` means using it for free is forbidden
+* don't have to ~~ no obligation / unnecessary
+- must ~~ contradicts "free"
+- had to ~~ past obligation
+! Lack of necessity uses `don't have to`.
+
+? [06] Students ___ share their portal passwords with anyone.
+- don't have to ~~ implies it's optional
+* mustn't ~~ strictly prohibited
+- have to ~~ illogical
+- might ~~ weak possibility
+! Use `mustn't` for strict prohibition.
+
+? [06] Yesterday evening, we ___ restart the router three times.
+- must ~~ `must` has no past tense
+* had to ~~ past obligation uses `had to`
+- have to ~~ present tense
+- musted ~~ invalid word
+! Past obligation is always `had to`.
+
+? [06] Which sentence is the clearest **instruction** in a user manual?
+- Clicking Save before closing. ~~ `-ing` is not an imperative
+* First, click Save before closing the window. ~~ sequence linker + base imperative
+- You clicking Save now. ~~ missing verb
+- To click Save please. ~~ unnatural
+! Manuals use sequence linkers + base imperative verbs.
+
+? [02] By 1900, she ___ in the same hospital for thirty years.
+- worked ~~ past simple doesn't show duration up to a past moment
+- was working ~~ past continuous doesn't link to an earlier time
+* had been working ~~ past perfect continuous: duration up to 1900
+- has been working ~~ present perfect can't be used with *By 1900*
+! *had been + V-ing* shows a long action up to a past moment.
+
+? [03] Which phrase shows complete agreement?
+- I'm not so sure. ~~ doubt / disagreement
+* I couldn't agree more. ~~ means "I agree 100%"
+- I see what you mean, but… ~~ partial agreement
+- To some extent. ~~ partial agreement
+! *I couldn't agree more* = full agreement.
+
+? [03] "Homework is a waste of time." Which reply is the most polite disagreement?
+- That's nonsense. ~~ rude
+- You're wrong. ~~ too direct
+* I take your point, but I think it helps us practise. ~~ acknowledges, then disagrees with a reason
+- No way! ~~ informal and blunt
+! Acknowledge first, then disagree with a reason.
+
+? [03] Choose the correct sentence.
+- I am agree with your idea. ~~ never *am agree*
+* I agree with your idea. ~~ correct
+- I agreeing your idea. ~~ wrong form, missing *with*
+- I am agreed you. ~~ wrong
+! *agree* is a normal verb.
+
+? [03] "I agree **up to a point**" means:
+- I agree completely ~~ no
+* I agree with part of it ~~ partial agreement
+- I don't understand ~~ no
+- I want to change the topic ~~ no
+! *Up to a point* = partly.
+
+? [03] Which question asks for someone's opinion?
+* What's your view on this? ~~ asks for opinion
+- Where is the library? ~~ asks for information
+- Can I borrow your pen? ~~ a request
+- When does the class start? ~~ asks for a time
+! *What's your view / What do you think / How do you feel about…?*
+
+? [04] Reading quickly to understand the main idea of a text is called:
+* skimming ~~ reading for gist
+- scanning ~~ looking for one specific detail
+- translating ~~ no
+- dictating ~~ no
+! Skimming = gist; scanning = detail.
+
+? [04] A statement says "The museum opened in 1950." The text never mentions when the museum opened. The answer is:
+- True ~~ not supported
+- False ~~ the text doesn't contradict it
+* Not given ~~ the information is not in the text
+- Partly true ~~ not an option in this task type
+! Not given = the text says nothing about it.
+
+? [04] An animal that is in danger of disappearing completely is:
+- domestic ~~ lives with people
+* endangered ~~ correct
+- stray ~~ has no home
+- wild ~~ lives in nature, not necessarily in danger
+! *Endangered species* = nesli tükenmekte olan tür.
+
+? [04] Before you listen to a recording in an exam, you should first:
+* read the questions and underline key words ~~ you know what to listen for
+- write the answers ~~ you haven't heard it yet
+- close your eyes ~~ no
+- translate every question into Turkish ~~ wastes time
+! Know what you are listening for.
+
+? [04] The question uses the word "pets"; the text says "companion animals". This shows that exam questions often use:
+- the same words as the text ~~ often they don't
+* synonyms ~~ different words with the same meaning
+- grammar mistakes ~~ no
+- Turkish words ~~ no
+! Look for synonyms, not only identical words.
+
+? [07] "This time tomorrow I ___ on the plane to London."
+- will sit ~~ doesn't show "in progress" at that time
+* will be sitting ~~ future continuous
+- will have sat ~~ means finished
+- sit ~~ wrong
+! *This time tomorrow* + future continuous.
+
+? [07] "By 2030, I ___ university."
+- will finish ~~ *by* + future time needs future perfect
+* will have finished ~~ finished before 2030
+- am finishing ~~ an arrangement, not "finished by"
+- finish ~~ wrong
+! *by + time* → future perfect.
+
+? [07] "Look at that car! It ___ into the wall!" (you can see it happening)
+- will crash ~~ prediction without evidence
+* is going to crash ~~ prediction based on present evidence
+- will have crashed ~~ wrong
+- crashes ~~ wrong
+! Evidence now → *going to*.
+
+? [07] "I can't come on Friday. I ___ my cousin at the airport at 6." (it's arranged)
+- will meet ~~ less natural for an arrangement
+* am meeting ~~ present continuous for a fixed arrangement
+- will have met ~~ wrong meaning
+- meet ~~ wrong
+! Diary arrangements → present continuous.
+
+? [07] Which phrase introduces **your own** opinion?
+- I'm not convinced. ~~ a response to someone else
+* As far as I'm concerned, … ~~ gives your view
+- Do you really think so? ~~ a question
+- I'd go along with that. ~~ agreeing with someone else
+! *In my opinion / As far as I'm concerned / If you ask me…*
+
+? [08] Choose the correct formal sentence.
+- The man with who she works is Italian. ~~ after a preposition use *whom*
+* The man with whom she works is Italian. ~~ correct
+- The man with that she works is Italian. ~~ no *that* after a preposition
+- The man whom she works is Italian. ~~ preposition missing
+! Preposition + *whom* (people).
+
+? [08] "The village ___ the film was shot is near Antalya."
+- in that ~~ no *that* after a preposition
+* in which ~~ correct (= where)
+- which ~~ preposition missing (or put *in* at the end)
+- in whom ~~ *whom* is for people
+! *in which* = *where* for places.
+
+? [08] "The film has ten characters, most of ___ are teenagers."
+- who ~~ after *of* use *whom*
+* whom ~~ *most of whom*
+- them ~~ creates two sentences without a link
+- which ~~ for things
+! Quantity + *of whom / of which*.
+
+? [08] What usually comes at the **end** of a film review?
+- a list of all the actors' birthdays ~~ no
+* a recommendation (who should watch it) or a star rating ~~ typical ending
+- the full ending of the story ~~ that would be a spoiler
+- the price of the cinema ticket ~~ no
+! Reviews end with an overall opinion and recommendation.
+
+? [08] "The song ___ which the film ends is beautiful." Choose the preposition.
+* with ~~ the film ends **with** a song
+- on ~~ wrong collocation
+- at ~~ wrong
+- for ~~ wrong
+! *end with* → *the song with which the film ends*.
+
+? [09] Choose the passive: "Workers built the bridge in 1973."
+- The bridge built in 1973. ~~ *be* is missing
+* The bridge was built in 1973. ~~ past simple passive
+- The bridge has built in 1973. ~~ not passive
+- The bridge was build in 1973. ~~ wrong participle
+! Past passive: *was/were + V3*.
+
+? [09] "Plastic bags ___ in many countries since 2015."
+- were banned ~~ *since* needs present perfect
+* have been banned ~~ present perfect passive
+- are banned since ~~ wrong tense with *since*
+- banned ~~ not passive
+! *since* → present perfect (passive: *have been + V3*).
+
+? [09] "A new recycling system ___ at the moment."
+- is tested ~~ doesn't show "now"
+* is being tested ~~ present continuous passive
+- has tested ~~ not passive
+- tests ~~ not passive
+! *at the moment* → *is being + V3*.
+
+? [09] Which phrase starts the **conclusion** of a talk?
+- First of all ~~ beginning
+- Let's move on to ~~ middle
+* To sum up ~~ conclusion
+- Today I'd like to talk about ~~ introduction
+! *To sum up / In conclusion*.
+
+? [09] Which sentence **cannot** be made passive?
+- They recycle paper. ~~ can: *Paper is recycled*
+- Someone stole my bike. ~~ can: *My bike was stolen*
+* The accident happened at night. ~~ *happen* has no object
+- People speak English here. ~~ can: *English is spoken here*
+! Only verbs with an object have a passive.
+
+? [10] Choose the correct compound noun.
+- a ten-minutes walk ~~ the first part stays singular
+* a ten-minute walk ~~ correct
+- a ten-minute's walk ~~ no apostrophe
+- a walk ten minutes ~~ wrong order
+! Number + singular noun before another noun.
+
+? [10] "This is my ___ laptop." (it belongs to my brother)
+* brother's ~~ possessive 's
+- brothers ~~ plural, not possessive
+- brothers' ~~ means several brothers
+- brother ~~ needs 's for possession
+! Singular owner → *'s*.
+
+? [10] Which is correct for things?
+- the car's door ~~ we usually say *the car door*
+* the car door ~~ compound noun for parts of things
+- the door of car ~~ article missing
+- the door's car ~~ wrong meaning
+! For things, use a compound noun.
+
+? [10] Which phrase introduces a **disadvantage**?
+- One advantage is that… ~~ advantage
+* A major drawback is that… ~~ disadvantage
+- Another benefit is… ~~ advantage
+- Overall, … ~~ conclusion
+! *drawback / disadvantage / On the other hand*.
+
+? [10] "The ___ books are on the second floor." (books for children)
+- childrens ~~ apostrophe needed
+- childrens' ~~ *children* is already plural
+* children's ~~ irregular plural + 's
+- child's ~~ one child only
+! *children's, women's, people's*.
+
+? [11] "Did you take the bus?" "___, I walked. It's only ten minutes."
+* Actually ~~ corrects the guess
+- By the way ~~ changes topic
+- Mind you ~~ adds a limiting point
+- Speaking of ~~ needs a link word
+! *Actually* = in fact (correction).
+
+? [11] Which marker **returns** to your point after an interruption?
+- By the way ~~ new side topic
+* As I was saying ~~ correct
+- To be honest ~~ gives a true opinion
+- Speaking of ~~ links a new topic
+! *As I was saying*.
+
+? [11] "The hotel was great. ___, the breakfast was disappointing."
+- Speaking of ~~ needs a linked noun
+- By the way ~~ not a new topic
+* Mind you ~~ adds a point that limits "great"
+- As I was saying ~~ no interruption
+! *Mind you* = but remember…
+
+? [11] "Actually" in English means:
+- currently / now ~~ a common mistake (Turkish *aktüel*)
+* in fact ~~ correct
+- finally ~~ no
+- immediately ~~ no
+! *Actually* = aslında.
+
+? [11] "We missed the ferry, lost our bags, and it rained. ___, we had a great time in the end."
+* Anyway ~~ returns to the main point
+- Actually ~~ not a correction
+- Mind you ~~ wrong direction
+- By the way ~~ not a side topic
+! *Anyway* moves past details to the main point.
+
+? [12] "The streets are wet. It ___ in the night."
+* must have rained ~~ strong deduction from evidence
+- can't have rained ~~ opposite of the evidence
+- must rain ~~ present, not past
+- must have rain ~~ needs V3 *rained*
+! *must have + V3*.
+
+? [12] "She ___ the message — her phone was switched off all day."
+- must have read ~~ the evidence says she couldn't
+* can't have read ~~ strong negative deduction
+- mustn't have read ~~ not used for deduction
+- might read ~~ not past
+! Opposite of *must have* = *can't have*.
+
+? [12] "I'm not sure why he's late. He ___ in traffic."
+- must have got stuck ~~ too certain
+* might have got stuck ~~ possible
+- can't have got stuck ~~ too certain (negative)
+- might got stuck ~~ needs *have*
+! *might/may/could have* = possibility.
+
+? [12] Which sentence is grammatically correct?
+- He must have went home. ~~ needs V3 *gone*
+- He must of gone home. ~~ write *have*, not *of*
+* He must have gone home. ~~ correct
+- He must had gone home. ~~ wrong
+! modal + **have** + V3.
+
+? [12] "You ___ me! I waited for an hour." (you didn't tell me; criticism)
+- must have told ~~ deduction, not criticism
+* could have told ~~ a possible action that didn't happen
+- can't have told ~~ wrong meaning
+- might tell ~~ not past
+! *could have + V3* = you had the chance but didn't.
+
+? [13] "My phone is broken. I need a new ___."
+* one ~~ replaces "phone"
+- it ~~ *it* = the same broken phone
+- ones ~~ plural
+- so ~~ replaces clauses
+! *one* = another of the same kind.
+
+? [13] "Will the exam be difficult?" "I hope ___."
+- no ~~ wrong form
+* not ~~ *I hope not*
+- so not ~~ wrong
+- don't ~~ wrong
+! *hope so / hope not*.
+
+? [13] "She said she would call, and she ___."
+* did ~~ replaces "called"
+- was ~~ wrong auxiliary
+- so ~~ wrong
+- one ~~ wrong
+! *do/does/did* replaces a verb phrase.
+
+? [13] A story about a frightening future society where people are controlled is a:
+- utopia ~~ a perfect society
+* dystopia ~~ correct
+- biography ~~ a life story
+- comedy ~~ no
+! *dystopia* ≠ *utopia*.
+
+? [13] "I prefer the red shoes to the black ___."
+- one ~~ plural noun needs *ones*
+* ones ~~ correct
+- it ~~ wrong
+- them ones ~~ wrong
+! *ones* for plural countable nouns.
+
+? [14] "Trains are fast, ___ buses are cheap."
+* whereas ~~ shows contrast between two clauses
+- similarly ~~ shows similarity
+- both ~~ wrong position
+- like ~~ needs a noun
+! *whereas / while* + clause.
+
+? [14] Choose the correct comparative.
+- more cheaper ~~ double comparative
+* much cheaper ~~ intensifier + comparative
+- most cheaper ~~ wrong
+- cheaper more ~~ wrong
+! *much / far / a lot* + comparative.
+
+? [14] Which linking word shows a **similarity**?
+- However ~~ difference
+- In contrast ~~ difference
+* Likewise ~~ similarity
+- Unlike ~~ difference
+! *Similarly / Likewise / Like / Both*.
+
+? [14] In the point-by-point method you:
+- describe A completely, then B completely ~~ block method
+* compare A and B on each point, one point at a time ~~ correct
+- write only about one item ~~ no comparison
+- write a list of words ~~ no
+! Point-by-point = both items for each point.
+
+? [14] "Real robots are not ___ intelligent ___ film robots."
+* as … as ~~ *not as … as* = less
+- so … that ~~ different structure
+- more … as ~~ wrong
+- as … than ~~ wrong
+! *not as + adjective + as*.

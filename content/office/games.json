@@ -1,0 +1,37 @@
+{
+ "shortcuts": {
+  "title": "Match Office keyboard shortcuts to their actions",
+  "prompt": "Match each keyboard shortcut on the left with what it does.",
+  "pairs": [
+   ["Ctrl+H", "Find and Replace (Word / Excel)"],
+   ["Ctrl+Enter", "Insert a clean Page Break (Word)"],
+   ["F4 (in Excel formula)", "Toggle relative/absolute $ reference ($A$1)"],
+   ["Ctrl+Shift+L", "Toggle AutoFilter dropdowns (Excel)"],
+   ["F5 (PowerPoint)", "Start Slide Show from the beginning"],
+   ["Shift+F5 (PowerPoint)", "Start Slide Show from the current slide"],
+   ["B (during Slide Show)", "Turn projector screen black to focus on speaker"]
+  ]
+ },
+ "ecommerce": {
+  "title": "Match e-commerce models to real examples",
+  "prompt": "Connect each e-commerce model to its matching scenario.",
+  "pairs": [
+   ["B2C (Business-to-Consumer)", "An online store selling laptops directly to students"],
+   ["B2B (Business-to-Business)", "A cloud vendor selling server capacity to a university"],
+   ["C2C (Consumer-to-Consumer)", "One student selling a used textbook to another online"],
+   ["C2B (Consumer-to-Business)", "A freelance photographer licensing photos to a company"]
+  ]
+ },
+ "formats": {
+  "title": "Match file extensions to their formats",
+  "prompt": "Match each file extension with what it stores.",
+  "pairs": [
+   [".docx", "Editable Microsoft Word document"],
+   [".xlsx", "Editable Microsoft Excel workbook"],
+   [".pptx", "Editable Microsoft PowerPoint deck"],
+   [".pdf", "Fixed-layout document that looks identical everywhere"],
+   [".csv", "Plain-text comma-separated table"],
+   [".zip", "Compressed archive bundling files and folders"]
+  ]
+ }
+}

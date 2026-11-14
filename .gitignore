@@ -1,0 +1,5 @@
+# private / local only
+Crash Course Build Brief*.md
+.claude/
+__pycache__/
+*.pyc

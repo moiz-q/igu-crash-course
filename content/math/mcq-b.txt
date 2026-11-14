@@ -1,0 +1,250 @@
+# Mathematics I MCQ Bank (Part B: Lessons 08–13, 5 options each)
+
+? [08] If $x - y = 5$ and $xy = 6$, what is $x^2 + y^2$?
+- 13 ~~ $25 - 12 = 13$, wait: $(x-y)^2 = x^2 - 2xy + y^2 \implies 25 = x^2+y^2 - 12 \implies x^2+y^2 = 37$!
+- 25 ~~ forgot $+2xy$
+- 31 ~~ added $xy$ instead of $2xy$
+* 37 ~~ $x^2 + y^2 = (x - y)^2 + 2xy = 25 + 12 = 37$
+- 49 ~~ $(x+y)^2$
+! $(x-y)^2 = x^2 - 2xy + y^2 \implies x^2 + y^2 = 5^2 + 2(6) = 37$.
+
+? [08] Factor completely: $3x^2 - 27$:
+- $3(x - 9)$ ~~ $x^2$, not $x$
+- $(3x - 9)(x + 3)$ ~~ factors out another 3
+* $3(x - 3)(x + 3)$ ~~ factor 3 first: $3(x^2 - 9) = 3(x - 3)(x + 3)$
+- $3(x - 3)^2$ ~~ $(x-3)^2 = x^2 - 6x + 9$
+- $(x - 3)(x + 3)$ ~~ lost the factor of 3
+! Pull out GCF $3$, then apply difference of squares.
+
+? [08] Simplify $\frac{x^3 - 8}{x^2 + 2x + 4}$:
+- $x + 2$ ~~ $x^3 - 8 = (x - 2)(x^2 + 2x + 4)$
+* $x - 2$ ~~ numerator factors as $(x - 2)(x^2 + 2x + 4)$, canceling the denominator
+- $x - 4$ ~~ $8 = 2^3$, not $4^3$
+- $x^2 - 2$ ~~ cannot cancel terms across addition
+- $1$ ~~ not equal
+! Difference of cubes: $x^3 - 2^3 = (x - 2)(x^2 + 2x + 4)$.
+
+? [08] If $x + \frac{1}{x} = 4$, what is $x^2 + \frac{1}{x^2}$?
+- 16 ~~ forgot to subtract $2 \cdot x \cdot \frac{1}{x} = 2$
+- 18 ~~ added 2 instead of subtracting
+* 14 ~~ $(x + \frac{1}{x})^2 = x^2 + 2 + \frac{1}{x^2} = 16 \implies x^2 + \frac{1}{x^2} = 14$
+- 12 ~~ subtracted 4
+- 8 ~~ $4 \times 2$
+! Square both sides: $x^2 + 2 + \frac{1}{x^2} = 16 \implies x^2 + \frac{1}{x^2} = 14$.
+
+? [08] Factor $2x^2 + 5x - 3$:
+- $(2x + 1)(x - 3)$ ~~ gives $-5x$ in the middle
+* $(2x - 1)(x + 3)$ ~~ $2x\cdot 3 - 1\cdot x = +5x$ and $(-1)(3) = -3$
+- $(2x + 3)(x - 1)$ ~~ gives $+x$ in the middle
+- $(2x - 3)(x + 1)$ ~~ gives $-x$ in the middle
+- $(x + 3)(x - 1)$ ~~ leading coefficient is 1, not 2
+! $(2x - 1)(x + 3) = 2x^2 + 6x - x - 3 = 2x^2 + 5x - 3$.
+
+? [08] Evaluate $103^2 - 97^2$ quickly using an identity:
+- 600 ~~ $(103-97)(103+97) = 6 \times 200 = 1200$
+* 1200 ~~ $a^2 - b^2 = (103 - 97)(103 + 97) = 6 \times 200 = 1200$
+- 36 ~~ $(103 - 97)^2$
+- 200 ~~ $103 + 97$ only
+- 2400 ~~ doubled 1200
+! Difference of squares: $(103 - 97)(103 + 97) = 6 \times 200 = 1200$.
+
+? [09] Solve $\frac{x + 2}{3} - \frac{x - 1}{2} = 1$:
+- $x = -1$ ~~ check: $1/3 - (-2)/2 = 4/3 \ne 1$
+* $x = 1$ ~~ multiply by 6: $2(x+2) - 3(x-1) = 6 \implies 2x+4-3x+3=6 \implies -x+7=6 \implies x=1$
+- $x = 3$ ~~ check: $5/3 - 1 = 2/3 \ne 1$
+- $x = 5$ ~~ check: $7/3 - 2 = 1/3 \ne 1$
+- $x = -5$ ~~ sign error
+! Multiply by 6: $2x + 4 - 3x + 3 = 6 \implies 7 - x = 6 \implies x = 1$.
+
+? [09] Solve the system: $2x + 3y = 13$ and $x - y = 4$:
+- $(4, 0)$ ~~ $2(4) + 0 = 8 \ne 13$
+* $(5, 1)$ ~~ $x = y + 4 \implies 2(y+4) + 3y = 13 \implies 5y = 5 \implies y = 1, x = 5$
+- $(3, -1)$ ~~ $2(3) - 3 = 3 \ne 13$
+- $(6, 2)$ ~~ $2(6) + 6 = 18 \ne 13$
+- $(1, 5)$ ~~ $1 - 5 = -4 \ne 4$
+! Substitute $x = y + 4$ into the first equation: $5y + 8 = 13 \implies y = 1, x = 5$.
+
+? [09] For which $a$ does $(a - 3)x + 2 = 2x + b$ hold for **all** real $x$ (infinitely many solutions) when $b = 2$?
+- $a = 2$ ~~ $(2-3)x = -x \ne 2x$
+- $a = 3$ ~~ $0x = 2x$
+* $a = 5$ ~~ coefficient of $x$ must match on both sides: $a - 3 = 2 \implies a = 5$
+- $a = 0$ ~~ $-3x \ne 2x$
+- $a = -5$ ~~ $-8x \ne 2x$
+! For $0x = 0$, both sides must have the same $x$-coefficient: $a - 3 = 2 \implies a = 5$.
+
+? [09] The sum of three consecutive integers is `57`. What is the **largest** of the three?
+- 18 ~~ 18 is the smallest ($18+19+20=57$)
+- 19 ~~ 19 is the middle integer
+* 20 ~~ $n + (n+1) + (n+2) = 57 \implies 3n + 3 = 57 \implies n = 18$, largest $= 20$
+- 21 ~~ $19+20+21 = 60$
+- 22 ~~ too large
+! Middle integer is $57 / 3 = 19$, so the integers are $18, 19, 20$.
+
+? [09] If $4(x - 2) = 2(x + 6)$, find $x$:
+- 4 ~~ $4x - 8 = 2x + 12 \implies 2x = 20 \implies x = 10$
+- 6 ~~ arithmetic slip
+- 8 ~~ arithmetic slip
+* 10 ~~ $4x - 8 = 2x + 12 \implies 2x = 20 \implies x = 10$
+- 12 ~~ $2x = 24$ would need $+16$
+! $4x - 8 = 2x + 12 \implies 2x = 20 \implies x = 10$.
+
+? [10] What is the **discriminant** ($\Delta$) of $2x^2 - 4x + 5 = 0$?
+- $-24$ ~~ $\Delta = (-4)^2 - 4(2)(5) = 16 - 40 = -24$! Wait—let's mark $-24$ as `*`!
+* $-24$ ~~ $\Delta = (-4)^2 - 4(2)(5) = 16 - 40 = -24$ (no real roots)
+- $24$ ~~ subtracted wrong way
+- $56$ ~~ $16 + 40$ (sign error on $-4ac$)
+- $0$ ~~ $16 - 40 \ne 0$
+- $-56$ ~~ $(-4)^2 = +16$, not $-16$
+! $\Delta = b^2 - 4ac = (-4)^2 - 4(2)(5) = 16 - 40 = -24$.
+
+? [10] If $x_1$ and $x_2$ are the roots of $3x^2 + 9x - 12 = 0$, what is $x_1 + x_2$?
+- $3$ ~~ forgot minus sign in $-b/a$
+* $-3$ ~~ $x_1 + x_2 = -\frac{9}{3} = -3$
+- $-4$ ~~ $-4$ is $c/a = x_1 x_2$
+- $4$ ~~ $+4$
+- $-9$ ~~ forgot to divide by $a = 3$
+! By Vieta's formula, $x_1 + x_2 = -b/a = -9/3 = -3$.
+
+? [10] If $x_1, x_2$ are the roots of $x^2 - 6x + 4 = 0$, find $\frac{1}{x_1} + \frac{1}{x_2}$:
+- $\frac{2}{3}$ ~~ inverted
+* $\frac{3}{2}$ ~~ $\frac{x_1 + x_2}{x_1 x_2} = \frac{6}{4} = \frac{3}{2}$
+- $6$ ~~ forgot to divide by $x_1 x_2 = 4$
+- $4$ ~~ that is $x_1 x_2$
+- $-\frac{3}{2}$ ~~ $x_1 + x_2 = +6$, not $-6$
+! Combine fractions: $\frac{x_1 + x_2}{x_1 x_2} = \frac{6}{4} = \frac{3}{2}$.
+
+? [10] Which quadratic equation has roots $x_1 = 2$ and $x_2 = -5$?
+- $x^2 - 3x - 10 = 0$ ~~ sum is $+3$, should be $-3$ ($x^2 + 3x - 10 = 0$)
+* $x^2 + 3x - 10 = 0$ ~~ $(x - 2)(x + 5) = x^2 + 3x - 10 = 0$
+- $x^2 - 7x + 10 = 0$ ~~ roots $2$ and $5$
+- $x^2 + 7x + 10 = 0$ ~~ roots $-2$ and $-5$
+- $x^2 - 3x + 10 = 0$ ~~ product is $-10$, not $+10$
+! $(x - 2)(x + 5) = x^2 + 3x - 10 = 0$.
+
+? [10] For what positive value of $k$ does $x^2 + kx + 16 = 0$ have **one repeated real root**?
+- $4$ ~~ $\Delta = 16 - 64 < 0$
+* $8$ ~~ $\Delta = k^2 - 64 = 0 \implies k = 8$ (positive)
+- $16$ ~~ $\Delta = 256 - 64 > 0$
+- $2$ ~~ $\Delta < 0$
+- $32$ ~~ too large
+! Repeated root requires $\Delta = k^2 - 4(1)(16) = 0 \implies k = 8$.
+
+? [11] Solve $7 - 2x > 13$:
+- $x > -3$ ~~ forgot to flip `>` when dividing by $-2$
+* $x < -3$ ~~ $-2x > 6 \implies x < -3$
+- $x < 3$ ~~ sign error
+- $x > 3$ ~~ both sign and flip errors
+- $x \le -3$ ~~ original inequality is strict `>`
+! $-2x > 6$, divide by $-2$ and flip sign: $x < -3$.
+
+? [11] Find the solution set of $(x + 2)(x - 5) \le 0$:
+- $(-\infty, -2] \cup [5, \infty)$ ~~ that is where the product is $\ge 0$
+- $(-2, 5)$ ~~ strict `<` excludes endpoints
+* $[-2, 5]$ ~~ roots are $-2$ and $5$; expression is $\le 0$ between them
+- $[2, 5]$ ~~ $-2$, not $+2$
+- $[-5, 2]$ ~~ swapped signs of roots
+! Leading coefficient is positive, so $(x+2)(x-5) \le 0$ holds on $[-2, 5]$.
+
+? [11] Solve $\frac{x + 1}{x - 3} \ge 0$:
+- $(-\infty, -1] \cup [3, \infty)$ ~~ $x = 3$ makes the denominator zero (must be excluded!)
+* $(-\infty, -1] \cup (3, \infty)$ ~~ include $-1$ (numerator root), exclude $3$ (denominator root)
+- $[-1, 3)$ ~~ that is where the fraction is $\le 0$
+- $(-1, 3)$ ~~ wrong sign and excluded $-1$
+- $(3, \infty)$ ~~ missed $(-\infty, -1]$
+! Positive outside $(-1, 3)$; include $-1$, exclude $3$: $(-\infty, -1] \cup (3, \infty)$.
+
+? [11] How many integers satisfy $-4 < 2x \le 6$?
+- 4 ~~ missed an endpoint
+* 5 ~~ divide by 2: $-2 < x \le 3$, integers $\{-1, 0, 1, 2, 3\}$ (5 integers)
+- 6 ~~ $-2$ is excluded by strict `<`
+- 3 ~~ missed negatives/zero
+- 7 ~~ too many
+! $-2 < x \le 3$ contains $-1, 0, 1, 2, 3$ — 5 integers.
+
+? [11] If $-3 < x < 4$ and $1 < y < 5$, what is the **integer maximum** of $x + y$?
+- 7 ~~ $x + y < 4 + 5 = 9$, so largest integer is $8$
+* 8 ~~ $x + y < 9$, so maximum integer is $8$
+- 9 ~~ $9$ is excluded because both inequalities are strict `<`
+- 6 ~~ too small
+- 10 ~~ impossible
+! Adding strict inequalities gives $x + y < 9$, so the largest integer is $8$.
+
+? [12] Solve $|x - 3| = 7$:
+- $x = 10$ only ~~ missed the negative branch $x - 3 = -7$
+- $x = 4$ or $x = -4$ ~~ forgot the $-3$ shift
+* $x = 10$ or $x = -4$ ~~ $x - 3 = 7 \implies 10$; $x - 3 = -7 \implies -4$
+- $x = -10$ or $x = 4$ ~~ swapped signs
+- No solution ~~ $7 > 0$, so 2 solutions exist
+! $x - 3 = \pm 7$ gives $x = 10$ and $x = -4$.
+
+? [12] What is the solution set of $|2x + 1| = -5$?
+- $\{-3, 2\}$ ~~ checked without noticing RHS is negative
+- $\{-3\}$ ~~ distance cannot be $-5$
+- $\{2\}$ ~~ distance cannot be $-5$
+* $\emptyset$ (no solution) ~~ an absolute value is always $\ge 0$ and can never equal $-5$
+- $\mathbb{R}$ ~~ false
+! Absolute value is never negative, so $|2x + 1| = -5$ has no solution.
+
+? [12] Solve $|x + 2| < 5$:
+- $(-3, 7)$ ~~ shifted wrong direction
+* $(-7, 3)$ ~~ $-5 < x + 2 < 5 \implies -7 < x < 3$
+- $[-7, 3]$ ~~ strict `<` gives open interval
+- $(-\infty, -7) \cup (3, \infty)$ ~~ that is $|x + 2| > 5$
+- $(-5, 5)$ ~~ forgot $+2$
+! $-5 < x + 2 < 5 \implies -7 < x < 3$.
+
+? [12] Find the **minimum** possible value of $|x - 4| + 3$:
+- $0$ ~~ $|x - 4| \ge 0$, so adding $3$ gives $\ge 3$
+- $1$ ~~ too small
+* $3$ ~~ minimum occurs when $x = 4$, giving $0 + 3 = 3$
+- $4$ ~~ $x = 4$ gives $3$, not $4$
+- $7$ ~~ occurs at $x = 0$ or $8$
+! Since $|x - 4| \ge 0$, the smallest value is $0 + 3 = 3$ (at $x = 4$).
+
+? [12] If $1 < x < 5$, simplify $|x - 1| + |x - 6|$:
+- $2x - 7$ ~~ $x - 6 < 0$, so $|x - 6| = 6 - x$
+* $5$ ~~ $(x - 1) + (6 - x) = 5$
+- $7$ ~~ $6 + 1$
+- $2x + 5$ ~~ $x$ cancels out
+- $-5$ ~~ sum of absolute values is positive
+! On $(1, 5)$, $x - 1 > 0$ and $x - 6 < 0$, so $(x - 1) + (6 - x) = 5$.
+
+? [13] If $a : b = 3 : 4$ and $a + b = 35$, find $b$:
+- 15 ~~ $15$ is $a$
+* 20 ~~ $3k + 4k = 35 \implies k = 5 \implies b = 4(5) = 20$
+- 21 ~~ arithmetic error
+- 25 ~~ arithmetic error
+- 28 ~~ $4 \times 7$
+! $7k = 35 \implies k = 5$, so $b = 4 \times 5 = 20$.
+
+? [13] 8 machines produce a batch of parts in 15 hours. How many hours will 10 identical machines take?
+- 10 hours ~~ $8 \times 15 = 120 \ne 100$
+* 12 hours ~~ inverse proportion: $8 \times 15 = 10 \times t \implies t = 120 / 10 = 12$
+- 18.75 hours ~~ used direct proportion (more machines should take LESS time!)
+- 13 hours ~~ arithmetic slip
+- 14 hours ~~ arithmetic slip
+! Inverse proportion: $8 \cdot 15 = 10 \cdot t \implies t = 12$ hours.
+
+? [13] A laptop priced at `20,000 TL` gets a **15% discount**. What is the sale price?
+- `15,000 TL` ~~ that is a 25% discount
+- `16,500 TL` ~~ that is 17.5% off
+* `17,000 TL` ~~ $20000 \times 0.85 = 17000$ TL ($15\% = 3000$ TL off)
+- `18,500 TL` ~~ 7.5% off
+- `19,000 TL` ~~ 5% off
+! $15\%$ of $20000$ is $3000$, leaving $17000$ TL.
+
+? [13] A shop raises a price by **10%** and later cuts the new price by **10%**. Compared to the original price, the final price is:
+- Equal to the original price ~~ percentages apply to different bases
+- 1% higher ~~ $+10\%$ then $-10\%$ is $1.10 \times 0.90 = 0.99$
+* 1% lower ~~ $1.10 \times 0.90 = 0.99$ (a 1% decrease)
+- 2% lower ~~ $10\% \times 10\% = 1\%$, not $2\%$
+- 10% lower ~~ too much
+! $100 \to 110 \to 99$: a net **1% decrease**.
+
+? [13] 40 grams of salt are dissolved in 160 grams of water. What is the **salt percentage** of the mixture?
+- 25% ~~ divided $40 / 160$ instead of $40 / (40 + 160)$
+* 20% ~~ total weight $= 40 + 160 = 200$ g; $40 / 200 = 20\%$
+- 16% ~~ incorrect
+- 40% ~~ 40 g out of 200 g, not 100 g
+- 22.5% ~~ incorrect
+! Salt percentage $= \frac{\text{salt}}{\text{total mixture}} = \frac{40}{40 + 160} = \frac{40}{200} = 20\%$.

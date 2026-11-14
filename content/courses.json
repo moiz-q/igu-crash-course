@@ -1,0 +1,111 @@
+[
+ {
+  "id": "c",
+  "name": "Programming Basics I (C)",
+  "short": "Programming (C)",
+  "code": "CMP153",
+  "ects": 6,
+  "exam": "Written",
+  "intro": "This course teaches you to think like a programmer and to write small programs in **C**. You learn algorithms and flowcharts first, then C step by step: variables, input/output, operators, decisions, loops, functions, arrays, pointers and strings. It is the most important course for semester 2: **Programming Basics II** and **Object Oriented Programming** (Java) both build directly on it. Every lesson has code you can run in the browser and exercises that are checked automatically."
+ },
+ {
+  "id": "db",
+  "name": "Database Management Systems I (SQL)",
+  "short": "Databases (SQL)",
+  "code": "CMP151",
+  "ects": 5,
+  "exam": "Written",
+  "intro": "This course teaches you how to organise data in a **relational database**: designing tables with ER diagrams, cleaning the design with normalization, and then creating, filling, querying and protecting the database with **SQL**. **Database Management Systems II** (7 ECTS) in semester 2 starts from exactly these topics. The SQL playground runs a real database (SQLite) in your browser, and every query challenge is checked automatically."
+ },
+ {
+  "id": "net",
+  "name": "Computer Networks",
+  "short": "Networks",
+  "code": "CMP155",
+  "ects": 5,
+  "exam": "Multiple-choice",
+  "intro": "This course explains how computers talk to each other: network types and topologies, devices and cables, the **OSI** and **TCP/IP** models, IP addressing, **subnetting**, test commands, Wi-Fi and firewalls. Hands-on work uses **Cisco Packet Tracer**. The exams are multiple choice, but subnetting questions need real practice — use the unlimited subnetting drills until they feel easy.",
+  "mock": {
+   "midterm": {
+    "n": 30,
+    "minutes": 45
+   },
+   "final": {
+    "n": 40,
+    "minutes": 60
+   }
+  }
+ },
+ {
+  "id": "math",
+  "name": "Mathematics I",
+  "short": "Mathematics",
+  "code": "MTH153",
+  "ects": 4,
+  "exam": "Multiple-choice",
+  "intro": "This is foundation maths, **not calculus** — close to the basic-maths part of Turkey's DGS exam: number sets, divisibility, number bases, GCD/LCM, exponents, radicals, factoring, equations, inequalities, absolute value and percentages. **Mathematics II** in semester 2 assumes all of it. Every topic has a question generator with full worked solutions, so practice never runs out.",
+  "mock": {
+   "midterm": {
+    "n": 30,
+    "minutes": 45
+   },
+   "final": {
+    "n": 40,
+    "minutes": 60
+   }
+  }
+ },
+ {
+  "id": "office",
+  "name": "Integrated Office Applications",
+  "short": "Office apps",
+  "code": "CMP156",
+  "ects": 3,
+  "exam": "Multiple-choice",
+  "intro": "This course builds practical skills with **Microsoft Word, Excel and PowerPoint** and **Google Workspace** (Forms, Calendar, Drive, Docs, Sheets, Slides), plus internet and email basics. The multiple-choice exams test menus, features and keyboard shortcuts, so lessons name exact menu paths. Do the hands-on checklists in the real apps — that is the fastest way to remember them.",
+  "mock": {
+   "midterm": {
+    "n": 30,
+    "minutes": 45
+   },
+   "final": {
+    "n": 40,
+    "minutes": 60
+   }
+  }
+ },
+ {
+  "id": "en",
+  "name": "Advanced English Skills I",
+  "short": "English",
+  "code": "YDL103",
+  "ects": 3,
+  "exam": "Written",
+  "intro": "An upper-intermediate English course: grammar (narrative tenses, articles, future forms, relative clauses, the passive, past modals and more), reading, conversation phrases and paragraph writing. All your other courses are taught in English, so this one helps everywhere. The **English readiness test** at the end is general B2 practice for the proficiency exam (it is **not** a copy of IGUYET)."
+ },
+ {
+  "id": "tr",
+  "name": "Turkish Language I",
+  "short": "Turkish I",
+  "code": "TRD101E",
+  "ects": 2,
+  "exam": "Written",
+  "intro": "A compulsory national course about how Turkish works: sounds and vowel harmony, word structure and suffixes, word types, verbs and tenses, and sentence elements. This site gives a one-page overview and a quiz. If you are not a Turkish citizen, ask the department whether a different section (for example Turkish for foreigners) applies to you."
+ },
+ {
+  "id": "ata",
+  "name": "Atatürk Principles and History of Revolutions I",
+  "short": "Atatürk I",
+  "code": "ATA101E",
+  "ects": 2,
+  "exam": "Written",
+  "intro": "A compulsory national course on the late Ottoman period, the National Struggle (1919–1922) and the road to the Treaty of Lausanne (1923). This site gives a clickable timeline, a summary page and a quiz."
+ },
+ {
+  "id": "bridge",
+  "name": "Semester 2 bridge",
+  "short": "Semester 2 bridge",
+  "extra": true,
+  "intro": "What the spring courses expect from you, which semester 1 lessons each one needs, and short preview lessons on the first spring topics: C structs and files, Java basics, SQL functions and views, and functions and logarithms for Mathematics II."
+ }
+]

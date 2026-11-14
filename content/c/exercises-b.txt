@@ -1,0 +1,1385 @@
+=== c-09-01 | easy | run | Sum 1 to N
+Read a positive integer `n` and print the sum $1 + 2 + \dots + n$.
+--- stdin
+10
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        sum += i;
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+--- hint
+Initialize `sum = 0` and loop `i` from `1` to `n`.
+
+=== c-09-02 | easy | bug | Fix off-by-one loop bound
+This program should print `1 2 3 4 5` (with a trailing space), but it stops at `4`. Fix the bug.
+--- starter
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i < 5; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+--- hint
+Change `< 5` to `<= 5`.
+
+=== c-09-03 | easy | bug | Fix empty loop semicolon
+Fix the extra semicolon so the loop prints `0 1 2 3`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    for (int i = 0; i < 4; i++); {
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int i;
+    for (i = 0; i < 4; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+--- hint
+Remove the `;` right after `for (...)`.
+
+=== c-09-04 | easy | predict | Predict while loop with continue and break
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int i = 0;
+    while (i < 6) {
+        i++;
+        if (i == 2) continue;
+        if (i == 5) break;
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}
+
+=== c-09-05 | medium | fill | Factorial using a for loop
+Fill in the `____` blanks to compute `n!` (`5! = 120`).
+--- stdin
+5
+--- starter
+#include <stdio.h>
+
+int main() {
+    int n, fact = ____;
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        fact ____ i;
+    }
+    printf("%d\n", fact);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n, fact = 1;
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    printf("%d\n", fact);
+    return 0;
+}
+--- hint
+Start `fact` at `1` and multiply by `i` (`*=`).
+
+=== c-09-06 | medium | run | Sentinel while loop (stop on 0)
+Read integers until `0` is entered, then print the sum of all positive numbers entered before `0`.
+--- stdin
+4 -2 7 3 0
+--- solution
+#include <stdio.h>
+
+int main() {
+    int x, sum = 0;
+    scanf("%d", &x);
+    while (x != 0) {
+        if (x > 0) sum += x;
+        scanf("%d", &x);
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+--- hint
+Read the first `x` before `while (x != 0)`, and read the next `x` at the bottom of the loop.
+
+=== c-09-07 | medium | predict | Predict do-while output
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int x = 10;
+    do {
+        printf("%d ", x);
+        x -= 4;
+    } while (x > 5);
+    printf("end=%d\n", x);
+    return 0;
+}
+
+=== c-09-08 | exam | run | Average of N numbers
+Read an integer `N`, then read `N` integers and print their average with 2 decimal places (`Avg: 15.50`).
+--- stdin
+4 10 20 12 20
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n, x, sum = 0;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &x);
+        sum += x;
+    }
+    printf("Avg: %.2f\n", (double)sum / n);
+    return 0;
+}
+--- checklist
+- Reads `N` first, then loops `N` times
+- Accumulates `sum` initialized to `0`
+- Casts to `(double)` before dividing by `n` and formats with `%.2f`
+
+=== c-09-09 | medium | run | Multiplication table row
+Read `n` and print `n * 1` through `n * 5` on separate lines like `3 x 1 = 3`.
+--- stdin
+3
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    for (int i = 1; i <= 5; i++) {
+        printf("%d x %d = %d\n", n, i, n * i);
+    }
+    return 0;
+}
+--- hint
+Loop `i` from `1` to `5`.
+
+=== c-10-01 | easy | run | Right-triangle star pattern
+Read `n` and print a right triangle of `*` with `n` rows (row `i` has `i` stars).
+--- stdin
+4
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+--- hint
+Outer loop `i = 1..n`, inner loop `j = 1..i`, then `printf("\n")`.
+
+=== c-10-02 | easy | run | Inverted star triangle
+Read `n` and print an inverted triangle starting with `n` stars on row 1 down to `1` star on row `n`.
+--- stdin
+4
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+--- hint
+Count outer loop `i` down from `n` to `1`.
+
+=== c-10-03 | medium | run | Sum of digits
+Read a positive integer `n` and print the sum of its digits.
+--- stdin
+5083
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+    scanf("%d", &n);
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+--- hint
+Use `n % 10` to get the last digit and `n /= 10` to remove it.
+
+=== c-10-04 | medium | run | Reverse a number
+Read a positive integer `n` and print its digits reversed (e.g. `1234` → `4321`).
+--- stdin
+1234
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n, rev = 0;
+    scanf("%d", &n);
+    while (n > 0) {
+        rev = rev * 10 + (n % 10);
+        n /= 10;
+    }
+    printf("%d\n", rev);
+    return 0;
+}
+--- hint
+Shift `rev` left by multiplying by `10`, then add `n % 10`.
+
+=== c-10-05 | medium | bug | Fix prime checker for n = 1 and early print
+Fix this prime checker so `1` prints `Not prime` and `17` prints `Prime` once.
+--- stdin
+1
+--- starter
+#include <stdio.h>
+
+int main() {
+    int n, isPrime = 1;
+    scanf("%d", &n);
+    for (int d = 2; d < n; d++) {
+        if (n % d == 0) isPrime = 0;
+    }
+    if (isPrime) printf("Prime\n");
+    else printf("Not prime\n");
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n, isPrime = 1;
+    scanf("%d", &n);
+    if (n < 2) isPrime = 0;
+    for (int d = 2; d * d <= n; d++) {
+        if (n % d == 0) {
+            isPrime = 0;
+            break;
+        }
+    }
+    if (isPrime) printf("Prime\n");
+    else printf("Not prime\n");
+    return 0;
+}
+--- hint
+Numbers `< 2` (like `1` and `0`) are not prime!
+
+=== c-10-06 | medium | predict | Predict nested loop output
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d", j);
+        }
+        printf(" ");
+    }
+    printf("\n");
+    return 0;
+}
+
+=== c-10-07 | medium | run | First N Fibonacci numbers
+Read `N` (`N >= 1`) and print the first `N` Fibonacci numbers starting `0 1 1 2 3 ...` separated by spaces.
+--- stdin
+7
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int a = 0, b = 1;
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a);
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+    printf("\n");
+    return 0;
+}
+--- hint
+Keep `a = 0, b = 1`, print `a`, then advance `next = a + b; a = b; b = next;`.
+
+=== c-10-08 | exam | run | GCD using Euclid's algorithm
+Read two positive integers `a` and `b` and print their Greatest Common Divisor (GCD).
+--- stdin
+48 18
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    while (b != 0) {
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+    printf("%d\n", a);
+    return 0;
+}
+--- checklist
+- Loops while `b != 0`
+- Computes remainder `r = a % b`, shifts `a = b; b = r;`
+- Prints `a` after the loop ends
+
+=== c-10-09 | medium | run | Menu loop with switch
+Read menu choices (`1` prints `Add`, `2` prints `Sub`, `0` prints `Exit` and stops).
+--- stdin
+1 2 9 0
+--- solution
+#include <stdio.h>
+
+int main() {
+    int ch;
+    do {
+        scanf("%d", &ch);
+        switch (ch) {
+            case 1: printf("Add\n"); break;
+            case 2: printf("Sub\n"); break;
+            case 0: printf("Exit\n"); break;
+            default: printf("?\n");
+        }
+    } while (ch != 0);
+    return 0;
+}
+--- hint
+Use `do { ... } while (ch != 0);` with `switch (ch)`.
+
+=== c-11-01 | easy | run | Write a max2 function
+Write a function `int max2(int a, int b)` that returns the larger of `a` and `b`. Read two integers in `main` and print `max2(a, b)`.
+--- stdin
+18 42
+--- solution
+#include <stdio.h>
+
+int max2(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    printf("%d\n", max2(a, b));
+    return 0;
+}
+--- hint
+Define `max2` above `main` (or put a prototype above `main`).
+
+=== c-11-02 | easy | bug | Fix missing return statement
+Fix the function `square` so `square(6)` returns `36`.
+--- starter
+#include <stdio.h>
+
+int square(int n) {
+    int r = n * n;
+}
+
+int main() {
+    printf("%d\n", square(6));
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int square(int n) {
+    return n * n;
+}
+
+int main() {
+    printf("%d\n", square(6));
+    return 0;
+}
+--- hint
+An `int` function must `return` a value!
+
+=== c-11-03 | easy | predict | Predict pass-by-value behavior
+What does this program print?
+--- code
+#include <stdio.h>
+
+void addTen(int x) {
+    x += 10;
+    printf("in=%d ", x);
+}
+
+int main() {
+    int x = 5;
+    addTen(x);
+    printf("out=%d\n", x);
+    return 0;
+}
+
+=== c-11-04 | medium | fill | Write a recursive power function
+Fill in the `____` blanks so `power(2, 5)` returns `32` recursively.
+--- starter
+#include <stdio.h>
+
+int power(int base, int exp) {
+    if (exp == 0) return ____;
+    return base * power(base, ____);
+}
+
+int main() {
+    printf("%d\n", power(2, 5));
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int power(int base, int exp) {
+    if (exp == 0) return 1;
+    return base * power(base, exp - 1);
+}
+
+int main() {
+    printf("%d\n", power(2, 5));
+    return 0;
+}
+--- hint
+Base case: anything to the power `0` is `1`; recursive step reduces `exp` by `1`.
+
+=== c-11-05 | medium | predict | Predict recursive factorial trace
+What does this program print?
+--- code
+#include <stdio.h>
+
+int f(int n) {
+    if (n <= 1) return 1;
+    return n * f(n - 1);
+}
+
+int main() {
+    printf("%d %d\n", f(4), f(0));
+    return 0;
+}
+
+=== c-11-06 | medium | run | Write an isPrime function
+Write `int isPrime(int n)` returning `1` if `n` is prime and `0` otherwise. Read `n` in `main` and print `Yes` or `No`.
+--- stdin
+29
+--- solution
+#include <stdio.h>
+
+int isPrime(int n) {
+    if (n < 2) return 0;
+    for (int d = 2; d * d <= n; d++) {
+        if (n % d == 0) return 0;
+    }
+    return 1;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    printf("%s\n", isPrime(n) ? "Yes" : "No");
+    return 0;
+}
+--- hint
+Return `0` immediately when `n < 2` or a divisor is found; return `1` after the loop.
+
+=== c-11-07 | medium | predict | Predict local vs global scope
+What does this program print?
+--- code
+#include <stdio.h>
+
+int g = 10;
+
+void fn() {
+    int g = 50;
+    printf("%d ", g);
+}
+
+int main() {
+    fn();
+    printf("%d\n", g);
+    return 0;
+}
+
+=== c-11-08 | exam | run | Recursive Fibonacci function
+Write `int fib(int n)` recursively (`fib(0)=0, fib(1)=1`) and print `fib(n)` for input `n`.
+--- stdin
+8
+--- solution
+#include <stdio.h>
+
+int fib(int n) {
+    if (n < 2) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    printf("%d\n", fib(n));
+    return 0;
+}
+--- checklist
+- Base case handles `n == 0` and `n == 1`
+- Recursive return `fib(n - 1) + fib(n - 2)`
+- Reads `n` and prints result
+
+=== c-12-01 | easy | run | Sum and average of an array
+Read `5` integers into an array, then print their sum and average as `Sum=30 Avg=6.0`.
+--- stdin
+4 8 6 2 10
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a[5], sum = 0;
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &a[i]);
+        sum += a[i];
+    }
+    printf("Sum=%d Avg=%.1f\n", sum, sum / 5.0);
+    return 0;
+}
+--- hint
+Loop `i = 0 .. 4` to read `&a[i]` and add to `sum`.
+
+=== c-12-02 | easy | bug | Fix array out-of-bounds loop
+This code accesses `a[5]` on an array of size `5`! Fix the loop bound so it prints `10 20 30 40 50`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    int a[5] = {10, 20, 30, 40, 50};
+    for (int i = 1; i <= 5; i++) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a[5] = {10, 20, 30, 40, 50};
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+    return 0;
+}
+--- hint
+Arrays start at index `0` and end at `n - 1` (`i < 5`).
+
+=== c-12-03 | medium | run | Linear search in an array
+Given `int a[6] = {12, 45, 7, 23, 56, 19};`, read a `target` integer and print its index (`0..5`), or `-1` if not found.
+--- stdin
+23
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a[6] = {12, 45, 7, 23, 56, 19};
+    int target, pos = -1;
+    scanf("%d", &target);
+    for (int i = 0; i < 6; i++) {
+        if (a[i] == target) {
+            pos = i;
+            break;
+        }
+    }
+    printf("%d\n", pos);
+    return 0;
+}
+--- hint
+Start `pos = -1` and update `pos = i; break;` when `a[i] == target`.
+
+=== c-12-04 | medium | fill | Bubble sort ascending
+Fill in the `____` blanks to sort the array in ascending order.
+--- starter
+#include <stdio.h>
+
+int main() {
+    int a[5] = {5, 1, 4, 2, 3}, n = 5;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (a[j] ____ a[j + 1]) {
+                int tmp = a[j];
+                a[j] = ____;
+                a[j + 1] = tmp;
+            }
+        }
+    }
+    for (int i = 0; i < n; i++) printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a[5] = {5, 1, 4, 2, 3}, n = 5;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (a[j] > a[j + 1]) {
+                int tmp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = tmp;
+            }
+        }
+    }
+    for (int i = 0; i < n; i++) printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
+--- hint
+Swap when `a[j] > a[j + 1]`.
+
+=== c-12-05 | medium | predict | Predict array passed to a function
+What does this program print?
+--- code
+#include <stdio.h>
+
+void incFirst(int arr[], int n) {
+    arr[0] += 5;
+    n = 99;
+}
+
+int main() {
+    int a[3] = {10, 20, 30};
+    int size = 3;
+    incFirst(a, size);
+    printf("%d %d\n", a[0], size);
+    return 0;
+}
+
+=== c-12-06 | medium | run | Reverse print an array
+Read `5` integers into an array and print them in reverse order separated by spaces.
+--- stdin
+1 2 3 4 5
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a[5];
+    for (int i = 0; i < 5; i++) scanf("%d", &a[i]);
+    for (int i = 4; i >= 0; i--) printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
+--- hint
+Loop `i` from `4` down to `0`.
+
+=== c-12-07 | medium | run | Sum of a 2D matrix
+Given a `2x3` matrix `m`, print the sum of all 6 elements (`21`).
+--- solution
+#include <stdio.h>
+
+int main() {
+    int m[2][3] = { {1, 2, 3}, {4, 5, 6} };
+    int sum = 0;
+    for (int r = 0; r < 2; r++) {
+        for (int c = 0; c < 3; c++) {
+            sum += m[r][c];
+        }
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+--- hint
+Use nested loops: `r = 0..1` and `c = 0..2`.
+
+=== c-12-08 | exam | run | Function returning largest array element
+Write a function `int maxArr(int a[], int n)` that returns the largest element in `a`. Test it on `{-5, -2, -9, -1, -7}` and print `-1`.
+--- solution
+#include <stdio.h>
+
+int maxArr(int a[], int n) {
+    int m = a[0];
+    for (int i = 1; i < n; i++) {
+        if (a[i] > m) m = a[i];
+    }
+    return m;
+}
+
+int main() {
+    int nums[5] = {-5, -2, -9, -1, -7};
+    printf("%d\n", maxArr(nums, 5));
+    return 0;
+}
+--- checklist
+- Initializes `m = a[0]` (NOT `0`, which fails on negative numbers!)
+- Loops from `i = 1` to `n - 1`
+- Returns `m` and calls `maxArr(nums, 5)` from `main`
+
+=== c-13-01 | easy | predict | Predict pointer dereference
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int x = 10;
+    int *p = &x;
+    *p = 42;
+    printf("%d %d\n", x, *p);
+    return 0;
+}
+
+=== c-13-02 | easy | fill | Declare and dereference a pointer
+Fill in the `____` blanks so `p` points to `a` and doubles `a`'s value through `p`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    int a = 7;
+    int ____p = ____a;
+    *p = *p * 2;
+    printf("%d\n", a);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a = 7;
+    int *p = &a;
+    *p = *p * 2;
+    printf("%d\n", a);
+    return 0;
+}
+--- hint
+`int *p = &a;`
+
+=== c-13-03 | easy | bug | Fix uninitialized pointer bug
+`p` is `NULL` (or uninitialized) and never pointed to `x`. Fix it so it prints `50`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    int x = 50;
+    int *p = NULL;
+    printf("%d\n", *p);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int x = 50;
+    int *p = &x;
+    printf("%d\n", *p);
+    return 0;
+}
+--- hint
+Assign `p = &x;` before dereferencing `*p`.
+
+=== c-13-04 | medium | predict | Predict two pointers to the same variable
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int a = 5, b = 10;
+    int *p = &a, *q = &b;
+    p = q;
+    *p = 99;
+    printf("%d %d\n", a, b);
+    return 0;
+}
+
+=== c-13-05 | medium | predict | Predict pointer reassignment
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int x = 1, y = 2;
+    int *p = &x;
+    *p += 4;
+    p = &y;
+    *p += 8;
+    printf("%d %d\n", x, y);
+    return 0;
+}
+
+=== c-13-06 | medium | run | Add two numbers using pointers
+Declare `int a = 12, b = 8;` and pointers `p = &a, q = &b;`. Print `*p + *q`.
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a = 12, b = 8;
+    int *p = &a, *q = &b;
+    printf("%d\n", *p + *q);
+    return 0;
+}
+--- hint
+Use `*p + *q`.
+
+=== c-13-07 | medium | bug | Fix pointer declaration int* a, b
+`b` was declared as an `int` instead of `int *`. Fix the declaration so both `p` and `q` are pointers and it prints `3 7`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    int x = 3, y = 7;
+    int* p = &x, q = &y;
+    printf("%d %d\n", *p, *q);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int x = 3, y = 7;
+    int *p = &x, *q = &y;
+    printf("%d %d\n", *p, *q);
+    return 0;
+}
+--- hint
+Put `*` in front of each pointer variable: `int *p = &x, *q = &y;`.
+
+=== c-13-08 | exam | run | Find min and max via pointer parameters
+Write `void minMax(int a, int b, int *mn, int *mx)` that stores the smaller in `*mn` and larger in `*mx`. Read two ints and print `min=.. max=..`.
+--- stdin
+19 6
+--- solution
+#include <stdio.h>
+
+void minMax(int a, int b, int *mn, int *mx) {
+    if (a < b) {
+        *mn = a;
+        *mx = b;
+    } else {
+        *mn = b;
+        *mx = a;
+    }
+}
+
+int main() {
+    int x, y, lo, hi;
+    scanf("%d %d", &x, &y);
+    minMax(x, y, &lo, &hi);
+    printf("min=%d max=%d\n", lo, hi);
+    return 0;
+}
+--- checklist
+- Function takes `int *mn, int *mx`
+- Assigns through `*mn = ...` and `*mx = ...`
+- `main` passes `&lo, &hi`
+
+=== c-14-01 | easy | run | Write a swap function with pointers
+Write `void swap(int *a, int *b)` and call it in `main` to swap `x = 10` and `y = 25`, printing `25 10`.
+--- solution
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+int main() {
+    int x = 10, y = 25;
+    swap(&x, &y);
+    printf("%d %d\n", x, y);
+    return 0;
+}
+--- hint
+Pass `&x, &y` to `swap`.
+
+=== c-14-02 | easy | bug | Fix swap called without &
+Fix the call to `swap` so `x` and `y` actually swap (`9 4`).
+--- starter
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    int tmp = *a; *a = *b; *b = tmp;
+}
+
+int main() {
+    int x = 4, y = 9;
+    swap(x, y);
+    printf("%d %d\n", x, y);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    int tmp = *a; *a = *b; *b = tmp;
+}
+
+int main() {
+    int x = 4, y = 9;
+    swap(&x, &y);
+    printf("%d %d\n", x, y);
+    return 0;
+}
+--- hint
+`swap` expects addresses: `swap(&x, &y);`.
+
+=== c-14-03 | medium | predict | Predict pointer arithmetic on an array
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int a[4] = {10, 20, 30, 40};
+    int *p = a;
+    p += 2;
+    printf("%d %d\n", *p, *(p - 1));
+    return 0;
+}
+
+=== c-14-04 | medium | predict | Predict *p++ vs (*p)++
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int a[3] = {5, 10, 15};
+    int *p = a;
+    int x = *p++;
+    int y = (*p)++;
+    printf("%d %d %d %d\n", x, y, a[0], a[1]);
+    return 0;
+}
+
+=== c-14-05 | medium | fill | Sum an array using a pointer
+Fill in the `____` blanks to sum `a` using pointer `p`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    int a[4] = {3, 6, 9, 12}, sum = 0;
+    int *p = a;
+    for (int i = 0; i < 4; i++) {
+        sum += ____(p + i);
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a[4] = {3, 6, 9, 12}, sum = 0;
+    int *p = a;
+    for (int i = 0; i < 4; i++) {
+        sum += *(p + i);
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+--- hint
+Dereference `p + i` with `*`.
+
+=== c-14-06 | medium | run | Double every element via pointer
+Write `void doubleAll(int *p, int n)` that doubles every element of an array using pointer arithmetic. Test on `{2, 4, 6}` and print `4 8 12`.
+--- solution
+#include <stdio.h>
+
+void doubleAll(int *p, int n) {
+    for (int i = 0; i < n; i++) {
+        *(p + i) *= 2;
+    }
+}
+
+int main() {
+    int a[3] = {2, 4, 6};
+    doubleAll(a, 3);
+    for (int i = 0; i < 3; i++) printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
+--- hint
+`*(p + i) *= 2;`
+
+=== c-14-07 | medium | run | Reverse an array in-place with two pointers
+Use two pointers `left = a` and `right = a + 4` to reverse `{1, 2, 3, 4, 5}` in-place and print `5 4 3 2 1`.
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a[5] = {1, 2, 3, 4, 5};
+    int *left = a, *right = a + 4;
+    while (left < right) {
+        int tmp = *left;
+        *left = *right;
+        *right = tmp;
+        left++;
+        right--;
+    }
+    for (int i = 0; i < 5; i++) printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
+--- hint
+Swap `*left` and `*right`, then `left++` and `right--` while `left < right`.
+
+=== c-14-08 | exam | run | Sum and average via pointer output parameter
+Write `void stats(int *a, int n, int *sum, double *avg)`. Test on `{10, 20, 30, 40}` and print `sum=100 avg=25.0`.
+--- solution
+#include <stdio.h>
+
+void stats(int *a, int n, int *sum, double *avg) {
+    *sum = 0;
+    for (int i = 0; i < n; i++) {
+        *sum += *(a + i);
+    }
+    *avg = (double)(*sum) / n;
+}
+
+int main() {
+    int a[4] = {10, 20, 30, 40}, s;
+    double av;
+    stats(a, 4, &s, &av);
+    printf("sum=%d avg=%.1f\n", s, av);
+    return 0;
+}
+--- checklist
+- Initializes `*sum = 0` inside `stats`
+- Computes `*avg = (double)(*sum) / n`
+- Passes `&s, &av` from `main`
+
+=== c-15-01 | easy | run | String length without strlen
+Read a single word (no spaces) into `char s[50]` and print its length using a loop until `'\0'`.
+--- stdin
+Istanbul
+--- solution
+#include <stdio.h>
+
+int main() {
+    char s[50];
+    scanf("%s", s);
+    int len = 0;
+    while (s[len] != '\0') len++;
+    printf("%d\n", len);
+    return 0;
+}
+--- hint
+Count characters while `s[len] != '\0'`.
+
+=== c-15-02 | easy | bug | Fix string comparison with ==
+Fix the bug so two identical words print `Same`.
+--- stdin
+hello hello
+--- starter
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char a[30], b[30];
+    scanf("%s %s", a, b);
+    if (a == b) printf("Same\n");
+    else printf("Different\n");
+    return 0;
+}
+--- solution
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char a[30], b[30];
+    scanf("%s %s", a, b);
+    if (strcmp(a, b) == 0) printf("Same\n");
+    else printf("Different\n");
+    return 0;
+}
+--- hint
+Use `strcmp(a, b) == 0`.
+
+=== c-15-03 | easy | bug | Fix missing '\0' in manual string
+This manual char array is missing its null terminator! Fix it so `printf("%s\n", s)` prints `CAT`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    char s[4];
+    s[0] = 'C'; s[1] = 'A'; s[2] = 'T';
+    printf("%s\n", s);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    char s[4];
+    s[0] = 'C'; s[1] = 'A'; s[2] = 'T'; s[3] = '\0';
+    printf("%s\n", s);
+    return 0;
+}
+--- hint
+Add `s[3] = '\0';`.
+
+=== c-15-04 | medium | fill | Copy and concatenate strings
+Fill in the `____` blanks to copy `"Code"` into `buf` and append `" in C"`.
+--- starter
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char buf[30];
+    ____(buf, "Code");
+    ____(buf, " in C");
+    printf("%s\n", buf);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char buf[30];
+    strcpy(buf, "Code");
+    strcat(buf, " in C");
+    printf("%s\n", buf);
+    return 0;
+}
+--- hint
+Use `strcpy` and `strcat`.
+
+=== c-15-05 | medium | predict | Predict ASCII and ctype output
+What does this program print?
+--- code
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char c = 'a';
+    printf("%c %d %d\n", toupper(c), isdigit('7') != 0, isalpha('7') != 0);
+    return 0;
+}
+
+=== c-15-06 | medium | run | Count digits in a string
+Read a word `s` and print how many digit characters (`'0'..'9'`) it contains using `isdigit`.
+--- stdin
+CMP153Fall2026
+--- solution
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    scanf("%s", s);
+    int cnt = 0;
+    for (int i = 0; s[i] != '\0'; i++) {
+        if (isdigit(s[i])) cnt++;
+    }
+    printf("%d\n", cnt);
+    return 0;
+}
+--- hint
+Include `<ctype.h>` and loop until `s[i] != '\0'`.
+
+=== c-15-07 | medium | run | Convert a string to uppercase
+Read a word and print it in all uppercase using `toupper`.
+--- stdin
+Gelisim
+--- solution
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    scanf("%s", s);
+    for (int i = 0; s[i] != '\0'; i++) {
+        s[i] = toupper(s[i]);
+    }
+    printf("%s\n", s);
+    return 0;
+}
+--- hint
+Replace each `s[i]` with `toupper(s[i])`.
+
+=== c-15-08 | exam | run | Count vowels in a line (fgets)
+Read a full line with `fgets` and print the count of English vowels (`a, e, i, o, u`, case-insensitive).
+--- stdin
+Computer Programming I
+--- solution
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char line[200];
+    fgets(line, sizeof(line), stdin);
+    int v = 0;
+    for (int i = 0; line[i] != '\0'; i++) {
+        char c = tolower(line[i]);
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') v++;
+    }
+    printf("%d\n", v);
+    return 0;
+}
+--- checklist
+- Reads spaces safely with `fgets(line, sizeof(line), stdin)`
+- Normalizes case with `tolower`
+- Counts `a, e, i, o, u` and prints total
+
+=== c-16-01 | easy | predict | Predict width and alignment
+What does this program print? (Pay attention to spaces!)
+--- code
+#include <stdio.h>
+
+int main() {
+    printf("[%5d][%-5d][%05d]\n", 7, 7, 7);
+    return 0;
+}
+
+=== c-16-02 | easy | fill | Format a table row
+Fill in the `____` blanks so `"Ali"` is left-aligned in 8 chars and `3.5` is right-aligned in 6 chars with 2 decimals: `[Ali     ][  3.50]`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    printf("[____][____]\n", "Ali", 3.5);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    printf("[%-8s][%6.2f]\n", "Ali", 3.5);
+    return 0;
+}
+--- hint
+Left-align string: `%-8s`; 6-wide 2-decimal float: `%6.2f`.
+
+=== c-16-03 | easy | predict | Predict printf return value
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int k = printf("Hello");
+    printf(" %d\n", k);
+    return 0;
+}
+
+=== c-16-04 | medium | bug | Fix field width vs precision mix-up
+This should print `3.14` in a 7-character-wide field (`   3.14`), not `3.1400000`! Fix the format specifier.
+--- starter
+#include <stdio.h>
+
+int main() {
+    printf("[%2.7f]\n", 3.14159);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    printf("[%7.2f]\n", 3.14159);
+    return 0;
+}
+--- hint
+`%width.precisionf` — width comes first, precision after the dot.
+
+=== c-16-05 | medium | run | Zero-padded date printer
+Read `day`, `month`, `year` (e.g. `5 9 2026`) and print `05/09/2026`.
+--- stdin
+5 9 2026
+--- solution
+#include <stdio.h>
+
+int main() {
+    int d, m, y;
+    scanf("%d %d %d", &d, &m, &y);
+    printf("%02d/%02d/%04d\n", d, m, y);
+    return 0;
+}
+--- hint
+Use `%02d` for day and month, `%04d` for year.
+
+=== c-16-06 | medium | run | Sum integers until sentinel 0
+Read integers until `0` is entered (`while (scanf("%d", &x) == 1 && x != 0)`) and print their sum.
+--- stdin
+5 10 15 20 0
+--- solution
+#include <stdio.h>
+
+int main() {
+    int x, sum = 0;
+    while (scanf("%d", &x) == 1 && x != 0) {
+        sum += x;
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+--- hint
+Check both `scanf("%d", &x) == 1` and `x != 0` so the loop stops at `0`.
+
+=== c-16-07 | medium | predict | Predict string precision %.4s
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    printf("[%.4s][%6.3s]\n", "Programming", "Programming");
+    return 0;
+}
+
+=== c-16-08 | exam | run | Formatted grade report table
+Read 2 student names and scores (`Deniz 88 Ece 95`) and print a header and 2 rows with name left-aligned in 10 chars and score right-aligned in 5 chars.
+--- stdin
+Deniz 88 Ece 95
+--- solution
+#include <stdio.h>
+
+int main() {
+    char n1[30], n2[30];
+    int s1, s2;
+    scanf("%s %d %s %d", n1, &s1, n2, &s2);
+    printf("%-10s %5s\n", "Name", "Score");
+    printf("%-10s %5d\n", n1, s1);
+    printf("%-10s %5d\n", n2, s2);
+    return 0;
+}
+--- checklist
+- Reads names and scores cleanly
+- Uses `%-10s` for left-aligned names and `%5d` for right-aligned scores
+- Prints aligned header and rows

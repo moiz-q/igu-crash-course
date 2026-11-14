@@ -1,0 +1,13 @@
+math | Inclusion–exclusion for 2 sets | s(A ∪ B) = s(A) + s(B) - s(A ∩ B)
+math | Number of subsets of an n-element set | 2^n
+math | Number of positive divisors of p^a · q^b | (a + 1)(b + 1)
+math | Golden GCD–LCM identity | GCD(A, B) × LCM(A, B) = A × B
+math | Divisibility by 3 and 9 | Sum of digits is divisible by 3 (or 9)
+math | Divisibility by 4 and 8 | Last 2 digits divisible by 4; last 3 digits divisible by 8
+math | Repeating decimal 0.ā (single digit) | a / 9
+math | Even root of a square: √(x²) | |x| (always non-negative)
+math | Difference of squares | a² - b² = (a - b)(a + b)
+math | Quadratic discriminant Δ | Δ = b² - 4ac (>0: 2 real roots, =0: 1 repeated, <0: none)
+math | Vieta's formulas for ax² + bx + c = 0 | x₁ + x₂ = -b/a and x₁ · x₂ = c/a
+math | Dividing an inequality by a negative number | Flips the inequality sign (< becomes >, ≤ becomes ≥)
+math | Direct vs. inverse proportion | Direct: y/x = k; Inverse: x · y = k

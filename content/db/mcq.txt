@@ -1,0 +1,526 @@
+# Database Management Systems I — Question bank
+
+? [01] Which best describes **data** before it is processed?
+* Raw, unorganized facts such as `85` or `'Ankara'` ~~ Raw facts without context are data.
+- A printed report comparing semester averages ~~ A report with context and summaries is information.
+- A table of student pass rates ~~ Summarized, meaningful output is information.
+- A database backup file ~~ That is a storage artifact.
+! Data consists of raw facts; organizing and giving them context produces information.
+
+? [01] Which problem occurs when the same customer address is stored in three files and only one file is updated?
+* Data inconsistency ~~ Different copies of the same fact disagree.
+- Atomicity failure ~~ Atomicity relates to database transactions.
+- Normalization ~~ Normalization prevents this problem.
+- Primary key collision ~~ That is a uniqueness violation.
+! Redundancy (multiple copies) causes inconsistency when updates are not applied everywhere.
+
+? [01] Why did databases replace flat file systems for multi-user applications?
+- Flat files cannot store numbers ~~ Flat files can store numbers as text or binary.
+* Databases centralize data, enforce integrity rules, and manage concurrent access and security ~~ One DBMS coordinates all users safely.
+- Databases never require a schema ~~ Relational databases enforce a strict schema.
+- Flat files cannot be copied ~~ Flat files can be copied, which actually worsens redundancy.
+! A DBMS solves redundancy, inconsistency, concurrency and security problems of flat files.
+
+? [01] In the university database, "There are 14 Computer Programming students in Istanbul with an average GPA of 3.31" is an example of:
+- Raw data ~~ Raw data would be individual ungrouped numbers.
+* Information ~~ It is processed, summarized and meaningful.
+- Metadata ~~ Metadata describes table structure (column names/types), not student counts.
+- A foreign key ~~ A foreign key is a relational link column.
+! Meaningful, processed output derived from raw rows is information.
+
+? [01] Which file-system issue happens when two clerks save edits to the same spreadsheet at the same time and one overwrites the other?
+- Data redundancy ~~ Redundancy is duplicate storage.
+* Lack of concurrency control ~~ Without a DBMS locking/isolating changes, concurrent writes overwrite each other.
+- Data normalization ~~ Normalization is schema design.
+- Referential integrity ~~ Referential integrity enforces valid foreign keys.
+! A DBMS provides concurrency control so multiple users can work safely at the same time.
+
+? [02] Which software is a **DBMS**?
+- SQL ~~ SQL is a query language, not the DBMS software itself.
+* Microsoft SQL Server ~~ SQL Server is the DBMS software that stores data and executes SQL.
+- ER Diagram ~~ An ER diagram is a design drawing.
+- CSV ~~ CSV is a plain-text file format.
+! Examples of DBMS software: SQL Server, PostgreSQL, MySQL, Oracle, SQLite.
+
+? [02] Which data model organizes data into two-dimensional tables linked by primary and foreign keys?
+- Hierarchical ~~ Uses a strict single-parent tree.
+- Network ~~ Uses a graph of records and pointers.
+* Relational ~~ Uses tables (relations), rows and columns linked by keys.
+- Key-value ~~ A NoSQL model storing opaque values by key.
+! The relational model (Codd, 1970) stores data in tables linked by keys.
+
+? [02] In the ANSI-SPARC three-level architecture, what does the **external level** define?
+- How bytes and B-tree indexes are laid out on disk ~~ That is the internal (physical) level.
+- All tables and relationships in the entire database ~~ That is the conceptual level.
+* Customized views showing only the data a specific user or app needs ~~ Different users see different external views.
+- The network cable speed ~~ Hardware networking is outside ANSI-SPARC.
+! External = user views; Conceptual = whole logical schema; Internal = physical storage.
+
+? [02] What is **logical data independence**?
+* The ability to change the conceptual schema (e.g. add a column) without breaking existing user views/programs ~~ External views stay stable.
+- Keeping data in Excel instead of a DBMS ~~ Not data independence.
+- Running SQL without a computer ~~ Impossible.
+- Deleting all foreign keys ~~ Removing keys breaks integrity, not independence.
+! Three-level architecture isolates external views from conceptual changes, and conceptual design from physical storage changes.
+
+? [02] In a client–server DBMS like SQL Server, where does the query execution engine run?
+- Inside the user's web browser ~~ Only embedded engines like SQLite/sql.js run in the browser.
+* On the database server ~~ Clients (apps, SSMS) send SQL over the network to the server.
+- On the keyboard ~~ Hardware input device.
+- Inside a CSV file ~~ CSV is just text.
+! Clients send SQL requests to the database server, which processes them and returns results.
+
+? [03] Which stage of database design chooses exact DBMS column types like `NVARCHAR(50)` and indexes?
+- Conceptual design ~~ Conceptual design builds the ER model, independent of any DBMS.
+- Logical design ~~ Logical design maps ER to normalized tables and keys.
+* Physical design ~~ Physical design picks DBMS-specific types, indexes and storage.
+- Requirements gathering ~~ Happens before conceptual design.
+! Conceptual (ER) → Logical (tables/keys/3NF) → Physical (DBMS types/indexes).
+
+? [03] In a **1:N** relationship between `Departments` (1) and `Students` (N), where do you place the Foreign Key?
+* `dept_id` inside `Students` ~~ The FK always goes on the "many" (N) side.
+- `student_id` inside `Departments` ~~ That would allow only one student per department.
+- A third junction table is mandatory ~~ Junction tables are needed for M:N, not 1:N.
+- Neither table needs a key ~~ Relational links require PK and FK.
+! For 1:N, place the parent's PK as a Foreign Key in the child ("many") table.
+
+? [03] Why do we introduce a junction table like `Enrollments` between `Students` and `Courses`?
+- To avoid using Primary Keys ~~ `Enrollments` still has a Primary Key.
+* To resolve a Many-to-Many (M:N) relationship into two 1:N relationships ~~ Relational tables cannot store M:N directly.
+- Because SQL cannot join two tables ~~ SQL joins tables easily.
+- To delete duplicate students ~~ Junction tables represent relationships, not deduplication.
+! M:N relationships are always resolved with a junction table holding FKs to both sides.
+
+? [03] Which property MUST every **Primary Key** have?
+- It must be a text column ~~ Integer IDs are very common primary keys.
+* Every value must be unique and NOT NULL ~~ A PK uniquely identifies each row.
+- It must be hidden from `SELECT` ~~ PKs are normal columns you can select and join on.
+- It can contain `NULL` for new rows ~~ Primary keys can never be `NULL`.
+! Primary Key = Unique + Not Null.
+
+? [03] In an ER diagram for a hospital, `Doctors` work in `Departments` (each doctor in 1 department, each department has many doctors). What is the cardinality?
+- 1:1 ~~ A department has more than one doctor.
+* 1:N ~~ One department → many doctors.
+- M:N ~~ Each doctor belongs to only one department here.
+- 0:0 ~~ Not a valid cardinality.
+! One department has many doctors → 1:N.
+
+? [04] Which problem happens when deleting the last student in a course also erases the course's title and credits?
+- Insert anomaly ~~ Insert anomaly is being unable to add a fact.
+- Update anomaly ~~ Update anomaly is partial/inconsistent edits.
+* Delete anomaly ~~ Removing one row unintentionally destroys unrelated data.
+- Foreign key violation ~~ A FK violation blocks a delete; a delete anomaly loses data.
+! A delete anomaly occurs when deleting a record wipes out another entity's facts stored in the same row.
+
+? [04] A table stores `courses = "CMP151, CMP153"` in one cell. Which normal form does it violate?
+* 1NF ~~ 1NF requires every cell to hold a single atomic value.
+- Only 3NF ~~ It fails 1NF immediately, before 2NF or 3NF even apply.
+- Only BCNF ~~ It fails 1NF first.
+- None ~~ Multi-valued cells are never 1NF.
+! 1NF forbids lists or repeating groups in a cell.
+
+? [04] What does `A → B` mean in normalization?
+- `A` is smaller than `B` ~~ Not a comparison.
+* `B` is functionally dependent on `A` (each `A` determines one `B`) ~~ Knowing `A` gives a unique `B`.
+- `A` is deleted when `B` changes ~~ Not deletion.
+- `A` and `B` are in different databases ~~ They are attributes in a relation.
+! Functional dependency `A → B` means `A` uniquely determines `B`.
+
+? [04] Why do columns like `phone1, phone2, phone3` in a `Students` table violate 1NF?
+- They are text ~~ Text is fine in 1NF.
+* They are a repeating group ~~ Repeating columns for the same attribute violate 1NF (use a child `StudentPhones` table instead).
+- They are not integers ~~ Types don't violate 1NF.
+- They have no `DEFAULT` ~~ `DEFAULT` is optional.
+! Both comma-separated lists and repeating columns (`phone1, phone2`) violate 1NF.
+
+? [04] When you cannot add a new `Department` until a `Student` enrolls in it, what anomaly is that?
+* Insert anomaly ~~ Cannot insert valid department data without unrelated student data.
+- Update anomaly ~~ Happens on edits.
+- Delete anomaly ~~ Happens on deletes.
+- Transitive dependency ~~ A dependency pattern that *causes* anomalies, not the anomaly itself.
+! Insert anomaly = blocked from inserting one entity because another entity is absent.
+
+? [05] A table is in **2NF** when it is in 1NF and has no:
+- Foreign keys ~~ Foreign keys are allowed and expected.
+* Partial dependencies (non-key columns depending on only part of a composite PK) ~~ Every non-key column must depend on the whole PK.
+- Composite keys ~~ Composite keys are fine in 2NF as long as non-key columns depend on the whole key.
+- `NULL` values ~~ `NULL`s are unrelated to 2NF.
+! 2NF removes partial dependencies.
+
+? [05] A table `Orders(<u>order_id</u>, order_date, customer_id, customer_city)` has a single-column PK `order_id`. Which normal form does it violate?
+- 1NF ~~ All cells are atomic and it has a PK.
+- 2NF ~~ A single-column PK cannot have partial dependencies.
+* 3NF ~~ `order_id → customer_id → customer_city` is a transitive dependency.
+- None ~~ `customer_city` depends on `customer_id`, not directly on `order_id`.
+! Move `customer_id, customer_city` into a `Customers` table to reach 3NF.
+
+? [05] Why is a table with a single-column Primary Key automatically in 2NF (if it is already in 1NF)?
+- Because 2NF only applies to integers ~~ 2NF applies to all types.
+* Because there is no "smaller part" of a 1-column key to partially depend on ~~ Partial dependency requires a composite (2+ column) key.
+- Because single-column keys are always 3NF ~~ A single-column key table can still fail 3NF via transitive dependencies.
+- Because SQL Server skips 2NF ~~ Normalization is a mathematical design rule.
+! Partial dependencies can only exist when the primary key has 2 or more columns.
+
+? [05] What is a **transitive dependency**?
+- A foreign key pointing to itself ~~ That is a self-referencing FK.
+* A non-key column depending on another non-key column (`PK → X → Y`) ~~ Eliminated in 3NF.
+- Two tables with the same column name ~~ Normal for PK/FK pairs.
+- A table with no rows ~~ Empty tables still have a schema.
+! 3NF removes transitive dependencies (`PK → non-key → non-key`).
+
+? [05] Which normal form is summarized as *"the key, the whole key, and nothing but the key"*?
+- 1NF only ~~ 1NF is atomic values + key.
+- 2NF only ~~ 2NF adds "the whole key".
+* 3NF ~~ 1NF ("the key"), 2NF ("the whole key"), 3NF ("nothing but the key").
+- 0NF (UNF) ~~ UNF is unnormalized.
+! 3NF ensures every non-key attribute depends only on the entire primary key.
+
+? [06] Which SQL Server data type should you choose for storing exact prices like `149.90`?
+- `INT` ~~ `INT` drops `.90`.
+- `BIT` ~~ `BIT` only stores `0` or `1`.
+* `DECIMAL(10, 2)` ~~ Exact fixed-point decimal with 2 digits after the point.
+- `NVARCHAR(10)` ~~ Text cannot be summed or averaged cleanly.
+! Use `DECIMAL(p, s)` for money and exact decimals.
+
+? [06] Why is `NVARCHAR` preferred over `VARCHAR` for names in Turkey?
+- `NVARCHAR` takes half the disk space ~~ `NVARCHAR` actually uses 2 bytes per char (UTF-16), more than `VARCHAR`.
+* `NVARCHAR` stores Unicode characters like `ş, ğ, ı, İ, ö, ü, ç` reliably ~~ Non-Unicode `VARCHAR` can turn them into `?`.
+- `VARCHAR` only stores numbers ~~ `VARCHAR` stores text, just non-Unicode.
+- `NVARCHAR` automatically encrypts text ~~ It does not encrypt.
+! `NVARCHAR` supports Unicode across all collations.
+
+? [06] In SQL Server, which statement switches your active session to the `UniversityDB` database?
+- `SELECT UniversityDB;` ~~ `SELECT` queries rows.
+* `USE UniversityDB;` ~~ `USE` sets the current database context.
+- `OPEN UniversityDB;` ~~ Not T-SQL syntax.
+- `CONNECT UniversityDB;` ~~ Not T-SQL syntax.
+! `USE <db_name>;` switches the active database in SQL Server.
+
+? [06] Which SQL Server data type stores a true/false flag (`1` or `0`)?
+- `CHAR(1)` ~~ Stores any single character, not a boolean bit.
+* `BIT` ~~ `BIT` stores `0`, `1`, or `NULL`.
+- `DATE` ~~ Stores calendar dates.
+- `REAL` ~~ Stores floating-point numbers.
+! SQL Server uses `BIT` for boolean flags.
+
+? [06] Which tool is the standard Microsoft desktop GUI for managing SQL Server and running T-SQL queries?
+- Cisco Packet Tracer ~~ Packet Tracer is for networks.
+* SSMS (SQL Server Management Studio) ~~ SSMS is Microsoft's IDE for SQL Server.
+- Eclipse ~~ Eclipse is a Java/C IDE.
+- Microsoft PowerPoint ~~ PowerPoint is for presentations.
+! SSMS connects to SQL Server Express so you can run queries and manage databases.
+
+? [07] Which constraint ensures a `grade` column only accepts numbers from `0` to `100`?
+- `UNIQUE` ~~ Forbids duplicates, not out-of-range numbers.
+- `NOT NULL` ~~ Forbids `NULL`, not `150`.
+* `CHECK (grade >= 0 AND grade <= 100)` ~~ Rejects any value outside `0..100`.
+- `DEFAULT 0` ~~ Only provides a fallback if omitted.
+! `CHECK` enforces custom boolean rules on column values.
+
+? [07] What is the SQLite equivalent of SQL Server's `IDENTITY(1,1)`?
+- `SERIAL` ~~ PostgreSQL.
+- `AUTO_INCREMENT` ~~ MySQL.
+* `INTEGER PRIMARY KEY AUTOINCREMENT` ~~ SQLite's auto-incrementing PK syntax.
+- `SEQUENCE` ~~ Oracle/SQL Server object, not a column keyword.
+! SQL Server uses `IDENTITY(1,1)`; SQLite uses `AUTOINCREMENT`.
+
+? [07] What happens if you omit a column that has `DEFAULT '2026-Fall'` in an `INSERT` statement?
+- The `INSERT` fails ~~ It only fails if there is no default AND `NOT NULL` is set.
+* The database automatically inserts `'2026-Fall'` ~~ That is what `DEFAULT` is for.
+- It inserts `0` ~~ It uses the defined default `'2026-Fall'`.
+- It inserts `NULL` ~~ It uses `'2026-Fall'` unless you explicitly pass `NULL`.
+! `DEFAULT` supplies a value whenever the `INSERT` omits that column.
+
+? [07] Which constraint enforces referential integrity between `Students.dept_id` and `Departments.dept_id`?
+- `UNIQUE` ~~ Checks uniqueness within one table.
+* `FOREIGN KEY` ~~ Ensures every `Students.dept_id` matches an existing `Departments.dept_id`.
+- `CHECK` ~~ Checks a row's own values, not another table.
+- `DEFAULT` ~~ Supplies a fallback value.
+! A `FOREIGN KEY` prevents orphan rows pointing to a non-existent parent.
+
+? [07] Which `INSERT` syntax adds a row to `Departments (dept_name, building)`?
+- `INSERT Departments VALUES ('AI', 'Block E');` ~~ Missing `INTO`.
+* `INSERT INTO Departments (dept_name, building) VALUES ('AI', 'Block E');` ~~ Correct `INSERT INTO ... VALUES (...)` syntax.
+- `ADD INTO Departments ('AI', 'Block E');` ~~ `ADD` is not a standalone SQL statement.
+- `INSERT INTO Departments SET dept_name = 'AI';` ~~ `SET` is `UPDATE` syntax (or MySQL-only `INSERT`), not standard SQL/T-SQL.
+! Standard SQL uses `INSERT INTO table (cols) VALUES (vals);`.
+
+? [08] Which command deletes the entire `TempLogs` table — both its rows AND its column definitions?
+- `DELETE FROM TempLogs;` ~~ Deletes rows, keeps the empty table.
+- `TRUNCATE TABLE TempLogs;` ~~ Deletes all rows, keeps the empty table.
+* `DROP TABLE TempLogs;` ~~ Removes the table completely from the database.
+- `ALTER TABLE TempLogs DROP;` ~~ Incomplete/invalid syntax.
+! `DROP TABLE` destroys both data and structure.
+
+? [08] Which statement is part of **DDL** (Data Definition Language)?
+- `SELECT` ~~ DML.
+- `UPDATE` ~~ DML.
+* `ALTER TABLE` ~~ DDL modifies database structure.
+- `GRANT` ~~ DCL.
+! DDL = `CREATE`, `ALTER`, `DROP`, `TRUNCATE`.
+
+? [08] What does `TRUNCATE TABLE Logs;` do in SQL Server that `DELETE FROM Logs;` does NOT do?
+- Deletes only rows matching `WHERE` ~~ `TRUNCATE` cannot take a `WHERE` clause.
+* Resets the `IDENTITY` counter back to its seed value ~~ `DELETE` keeps the old `IDENTITY` counter.
+- Deletes the table structure too ~~ `TRUNCATE` keeps the table structure.
+- Prompts for confirmation ~~ Neither prompts.
+! `TRUNCATE TABLE` empties all rows fast and resets `IDENTITY` in SQL Server.
+
+? [08] How do you add a `phone` column to `Instructors` in SQL Server (T-SQL)?
+* `ALTER TABLE Instructors ADD phone NVARCHAR(20);` ~~ In T-SQL, `ADD` takes column name and type directly.
+- `MODIFY TABLE Instructors ADD phone NVARCHAR(20);` ~~ `MODIFY TABLE` is not valid SQL.
+- `INSERT INTO Instructors ADD phone NVARCHAR(20);` ~~ `INSERT` adds rows.
+- `CREATE COLUMN phone IN Instructors;` ~~ Invalid SQL.
+! `ALTER TABLE <tbl> ADD <col> <type>;` adds a column in T-SQL.
+
+? [08] Why might `DROP TABLE Departments;` fail with a Foreign Key error?
+- Because `Departments` is empty ~~ Empty tables drop easily if nothing references them.
+* Because another table (`Students` or `Courses`) still has a `FOREIGN KEY` referencing `Departments` ~~ Drop or alter child tables first.
+- Because `DROP TABLE` requires `WHERE` ~~ `DROP TABLE` never takes `WHERE`.
+- Because you must `TRUNCATE` first ~~ Even an empty parent table cannot be dropped while referenced by an FK.
+! You cannot drop a parent table while active foreign keys point to it.
+
+? [09] Which query finds students whose `first_name` ends with `'a'`?
+- `WHERE first_name LIKE 'a%'` ~~ Matches names *starting* with `a`.
+* `WHERE first_name LIKE '%a'` ~~ `%` matches any prefix before a final `a`.
+- `WHERE first_name = '%a'` ~~ `=` looks for the literal `%` character.
+- `WHERE first_name LIKE '_a'` ~~ Matches only 2-letter names ending in `a`.
+! In `LIKE`, `%` = zero or more characters; `_` = exactly one character.
+
+? [09] What does `SELECT DISTINCT city FROM Students;` do?
+- Sorts cities alphabetically ~~ Sorting requires `ORDER BY`.
+* Lists each city name only once, removing duplicates ~~ `DISTINCT` deduplicates result rows.
+- Counts how many cities exist ~~ Counting requires `COUNT(DISTINCT city)`.
+- Deletes duplicate cities from the table ~~ `SELECT` never modifies stored rows.
+! `DISTINCT` removes duplicate rows from the query output.
+
+? [09] How do you sort `Students` by `gpa` from **highest to lowest**?
+- `ORDER BY gpa` ~~ Default `ORDER BY` is ascending (`ASC`, lowest first).
+* `ORDER BY gpa DESC` ~~ `DESC` sorts descending (highest first).
+- `SORT BY gpa DESC` ~~ SQL uses `ORDER BY`, not `SORT BY`.
+- `GROUP BY gpa DESC` ~~ `GROUP BY` groups rows, it doesn't sort them.
+! Use `ORDER BY col DESC` for descending order.
+
+? [09] Why does `SELECT * FROM Students WHERE email = NULL;` return 0 rows even when some emails are missing?
+- `email` is a text column ~~ Type does not matter.
+* In SQL, `NULL = NULL` evaluates to UNKNOWN (not true); you must use `IS NULL` ~~ Always use `IS NULL` / `IS NOT NULL`.
+- `SELECT *` cannot read `NULL`s ~~ `SELECT *` displays `NULL`s fine.
+- You need double equals `== NULL` ~~ SQL uses `=`, and `IS NULL` for `NULL`.
+! Always test for missing values with `IS NULL` or `IS NOT NULL`.
+
+? [09] Which `WHERE` condition is equivalent to `WHERE credits >= 3 AND credits <= 5`?
+- `WHERE credits IN (3, 5)` ~~ Matches only 3 or 5, missing 4.
+* `WHERE credits BETWEEN 3 AND 5` ~~ `BETWEEN` is inclusive of both endpoints.
+- `WHERE credits LIKE '3-5'` ~~ `LIKE` is for text patterns.
+- `WHERE credits > 3 AND credits < 5` ~~ Excludes 3 and 5.
+! `BETWEEN a AND b` includes both `a` and `b`.
+
+? [10] Which aggregate function ignores `NULL` values when computing a result?
+- Only `COUNT(*)` ~~ `COUNT(*)` counts every row, *including* `NULL`s.
+* `AVG(grade)` (and `SUM`, `MIN`, `MAX`, `COUNT(grade)`) ~~ All column aggregates ignore `NULL`s.
+- None of them ~~ Column aggregates ignore `NULL`s.
+- Only `MIN` ~~ All five (`SUM, AVG, MIN, MAX, COUNT(col)`) ignore `NULL`s.
+! `COUNT(*)` counts rows; `COUNT(col)`, `SUM`, `AVG`, `MIN`, `MAX` skip `NULL`s.
+
+? [10] What is the difference between `WHERE` and `HAVING`?
+- No difference; they are synonyms ~~ They run at different stages.
+* `WHERE` filters individual rows *before* `GROUP BY`; `HAVING` filters groups *after* `GROUP BY` ~~ Aggregates like `HAVING COUNT(*) > 2` belong in `HAVING`.
+- `HAVING` is only for `DELETE` ~~ `HAVING` is used in `SELECT`.
+- `WHERE` runs after `ORDER BY` ~~ `WHERE` runs near the very start, before grouping.
+! Filter rows with `WHERE`; filter grouped summaries with `HAVING`.
+
+? [10] In what order does SQL logically process a `SELECT` query?
+- `SELECT` → `FROM` → `WHERE` → `GROUP BY` ~~ `FROM` and `WHERE` must run before `SELECT`.
+* `FROM` → `WHERE` → `GROUP BY` → `HAVING` → `SELECT` → `ORDER BY` ~~ Standard logical SQL query processing order.
+- `ORDER BY` → `SELECT` → `FROM` → `WHERE` ~~ `ORDER BY` runs last.
+- `GROUP BY` → `WHERE` → `FROM` → `SELECT` ~~ `FROM` always comes first.
+! Remember: `FROM` → `WHERE` → `GROUP BY` → `HAVING` → `SELECT` → `ORDER BY`.
+
+? [10] If `Enrollments` has 4 rows with grades `[80, 90, NULL, 70]`, what does `AVG(grade)` return?
+- `60` (`240 / 4`) ~~ `NULL` is NOT treated as `0`.
+* `80` (`240 / 3`) ~~ `AVG` ignores `NULL` and divides by the 3 non-NULL grades.
+- `NULL` ~~ Single-row `+` with `NULL` gives `NULL`, but `AVG()` skips `NULL`s.
+- An error ~~ `AVG` handles `NULL`s without error.
+! Aggregate functions ignore `NULL` values (so `240 / 3 = 80`).
+
+? [10] Which query counts how many students live in each `city`?
+- `SELECT city, COUNT(*) FROM Students;` ~~ Missing `GROUP BY city`.
+* `SELECT city, COUNT(*) FROM Students GROUP BY city;` ~~ Groups by `city` so `COUNT(*)` counts per city.
+- `SELECT city, SUM(*) FROM Students GROUP BY city;` ~~ `SUM(*)` is invalid; use `COUNT(*)`.
+- `SELECT DISTINCT city, COUNT(*) FROM Students;` ~~ Missing `GROUP BY city`.
+! Whenever you mix a regular column (`city`) with an aggregate (`COUNT(*)`), put the regular column in `GROUP BY`.
+
+? [11] Which join returns ONLY rows where the join key matches in **both** tables?
+* `INNER JOIN` ~~ Keeps only matching pairs from both tables.
+- `LEFT JOIN` ~~ Keeps all left rows even without a match.
+- `RIGHT JOIN` ~~ Keeps all right rows even without a match.
+- `FULL OUTER JOIN` ~~ Keeps all rows from both tables.
+! `INNER JOIN` returns the intersection where both tables match.
+
+? [11] How do you find all `Courses` that have **zero** rows in `Enrollments`?
+- `FROM Courses c INNER JOIN Enrollments e ON c.course_id = e.course_id WHERE e.enrollment_id IS NULL` ~~ `INNER JOIN` already dropped unmatched courses!
+* `FROM Courses c LEFT JOIN Enrollments e ON c.course_id = e.course_id WHERE e.enrollment_id IS NULL` ~~ `LEFT JOIN` keeps unmatched courses with `e.enrollment_id` = `NULL`.
+- `FROM Courses c RIGHT JOIN Enrollments e ON c.course_id = e.course_id` ~~ Keeps all enrollments, not unmatched courses.
+- `FROM Courses c CROSS JOIN Enrollments e` ~~ Creates all pairs.
+! `LEFT JOIN ... WHERE right_pk IS NULL` is the standard pattern to find unmatched rows.
+
+? [11] You run `SELECT s.first_name, e.grade FROM Students s LEFT JOIN Enrollments e ON s.student_id = e.student_id WHERE e.grade >= 80;`. What happens to students with NO enrollments?
+- They appear with `grade = NULL` ~~ The `WHERE e.grade >= 80` filter removes them!
+* They are excluded because `NULL >= 80` is not true ~~ Filtering the right table in `WHERE` turns a `LEFT JOIN` into an `INNER JOIN`.
+- The query fails with an error ~~ It runs, just drops unmatched rows.
+- Their grade becomes `80` ~~ `NULL` is never changed to `80`.
+! Put filters on the optional (right) table inside `ON ... AND e.grade >= 80` if you want to keep unmatched left rows.
+
+? [11] When joining `Students` and `Departments` (both have `dept_id`), why should you write `s.dept_id`?
+- It makes the query case-insensitive ~~ SQL keywords are already case-insensitive.
+* Without a table alias/prefix, `dept_id` is ambiguous because both tables have a column with that name ~~ The DBMS doesn't know which table's `dept_id` you mean.
+- It deletes duplicate columns ~~ Aliases only disambiguate names.
+- It is only required in SQLite ~~ All SQL engines require disambiguating shared column names.
+! Prefix shared column names with table aliases (`s.dept_id`, `d.dept_id`).
+
+? [11] What does `A RIGHT JOIN B ON ...` return?
+- All rows from `A`, plus matches from `B` ~~ That is `LEFT JOIN`.
+* All rows from `B`, plus matches (or `NULL`s) from `A` ~~ Equivalent to `B LEFT JOIN A ON ...`.
+- Only rows in `A` that are not in `B` ~~ Not a `RIGHT JOIN`.
+- Twice as many rows as `INNER JOIN` ~~ Row count depends on matches.
+! `A RIGHT JOIN B` is identical to `B LEFT JOIN A`.
+
+? [12] What happens if you run `DELETE FROM Enrollments;` without a `WHERE` clause?
+- Nothing is deleted ~~ SQL does not protect you from missing `WHERE`.
+- Only the last row is deleted ~~ Every row is deleted.
+* Every row in `Enrollments` is deleted ~~ Without `WHERE`, `DELETE` affects all rows.
+- The table structure is also deleted ~~ `DROP TABLE` deletes the structure; `DELETE` keeps the empty table.
+! Always double-check `WHERE` before running `DELETE` or `UPDATE`.
+
+? [12] Which `UPDATE` syntax is valid?
+- `UPDATE Students SET gpa = 3.5 AND city = 'Ankara' WHERE student_id = 1;` ~~ Use a comma `,` between assignments, not `AND`.
+* `UPDATE Students SET gpa = 3.5, city = 'Ankara' WHERE student_id = 1;` ~~ Comma-separated `column = value` pairs in `SET`.
+- `UPDATE Students VALUES (3.5, 'Ankara') WHERE student_id = 1;` ~~ `VALUES` is for `INSERT`.
+- `SET Students gpa = 3.5 WHERE student_id = 1;` ~~ Must start with `UPDATE <table> SET ...`.
+! In `UPDATE`, separate multiple column updates with commas.
+
+? [12] Why might `DELETE FROM Departments WHERE dept_id = 1;` fail?
+- Because `dept_id = 1` is a number ~~ Numbers are fine.
+* Because `Students` or `Courses` still has rows with `dept_id = 1` (Foreign Key constraint) ~~ You cannot delete a parent row while children reference it.
+- Because `DELETE` cannot use `=` ~~ `=` is standard in `WHERE`.
+- Because `Departments` has a `UNIQUE` constraint ~~ `UNIQUE` prevents duplicate inserts, not deletes.
+! Foreign keys protect referential integrity by blocking deletion of referenced parent rows.
+
+? [12] Which command adds 2 points to every student's grade in `course_id = 1`?
+- `INSERT INTO Enrollments (grade) VALUES (grade + 2) WHERE course_id = 1;` ~~ `INSERT` creates new rows.
+* `UPDATE Enrollments SET grade = grade + 2 WHERE course_id = 1;` ~~ `UPDATE` modifies existing rows.
+- `ALTER TABLE Enrollments SET grade = grade + 2;` ~~ `ALTER TABLE` changes structure.
+- `SELECT grade + 2 FROM Enrollments WHERE course_id = 1;` ~~ `SELECT` only reads; it does not save changes.
+! Use `UPDATE ... SET col = col + 2 WHERE ...` to modify existing rows.
+
+? [12] What is the safest way to test a `DELETE` query before committing it?
+- Run `DROP TABLE` first ~~ Never!
+* Preview the rows with `SELECT * ... WHERE ...` first, and wrap the `DELETE` in `BEGIN` / `ROLLBACK` or `COMMIT` ~~ Verify the exact rows before making it permanent.
+- Remove the `WHERE` clause ~~ That deletes everything.
+- Turn off foreign keys ~~ Disabling constraints risks corrupting data.
+! Always verify your `WHERE` clause with `SELECT` first.
+
+? [13] Which DCL command gives `report_user` permission to run `SELECT` on `Students`?
+* `GRANT SELECT ON Students TO report_user;` ~~ `GRANT` assigns permissions.
+- `REVOKE SELECT ON Students FROM report_user;` ~~ `REVOKE` removes permissions.
+- `DENY SELECT ON Students TO report_user;` ~~ `DENY` blocks permissions.
+- `GIVE SELECT ON Students TO report_user;` ~~ `GIVE` is not a SQL keyword.
+! DCL permissions use `GRANT`, `REVOKE`, and `DENY`.
+
+? [13] A user is a member of `db_datareader`, which has `SELECT` on all tables, but you want to block them from reading `Instructors`. Which command works?
+- `REVOKE SELECT ON Instructors FROM user1;` ~~ They still inherit `SELECT` via `db_datareader`.
+* `DENY SELECT ON Instructors TO user1;` ~~ `DENY` explicitly blocks the permission and overrides role `GRANT`s.
+- `REMOVE SELECT ON Instructors FROM user1;` ~~ Not valid SQL.
+- `ALTER TABLE Instructors HIDE;` ~~ Not valid SQL.
+! `DENY` takes precedence over any `GRANT` (direct or from a role).
+
+? [13] In SQL Server, what is the difference between a **Login** and a **User**?
+- No difference ~~ One is server-level, one is database-level.
+* A **Login** authenticates to the SQL Server instance; a **User** is mapped to that login inside a specific database ~~ Logins enter the server; Users hold permissions inside a database.
+- A User is only for admins ~~ Any account needs a database User to access objects in that DB.
+- Logins are only for SQLite ~~ SQLite has neither logins nor users.
+! Login = server-level authentication; User = database-level identity.
+
+? [13] What does the **principle of least privilege** mean?
+- Every user gets `db_owner` so they don't see errors ~~ Violates least privilege completely.
+* Every user or app gets only the minimum permissions needed for its job ~~ Reduces security risk.
+- Passwords must be at least 3 characters ~~ Unrelated (and too short!).
+- Only 1 user can connect per hour ~~ Least privilege is about *what* you can do, not connection count.
+! Grant only the permissions genuinely required — never `sa` or `DROP` for a read-only app.
+
+? [13] Why do DBAs assign permissions to **roles** instead of individual users?
+- SQL Server forbids granting to users ~~ You *can* grant to users directly, it just doesn't scale.
+* Roles group permissions once so adding/removing staff only means changing role membership ~~ Easier and less error-prone to maintain.
+- Roles bypass `DENY` ~~ `DENY` still overrides role `GRANT`s.
+- Roles automatically back up the database ~~ Unrelated to backups.
+! Role-based access control keeps permissions clean as people join or leave.
+
+? [14] Which operator should you use when a subquery in `WHERE` can return **multiple** rows?
+- `=` ~~ `=` fails if the subquery returns more than 1 row.
+* `IN` (or `EXISTS`) ~~ `IN` checks membership in a multi-row list.
+- `LIKE` ~~ `LIKE` compares a string to a single pattern.
+- `BETWEEN` ~~ `BETWEEN` expects two scalar bounds.
+! Use `IN` or `EXISTS` for multi-row subqueries; `=` only works for 1-row, 1-column scalar subqueries.
+
+? [14] Which command permanently saves all changes made since `BEGIN TRANSACTION`?
+- `ROLLBACK` ~~ `ROLLBACK` undoes the changes.
+* `COMMIT` ~~ `COMMIT` makes the transaction's changes permanent.
+- `SAVE` ~~ Not the standard commit command.
+- `END` ~~ `END` closes a `BEGIN...END` code block, not a transaction.
+! `BEGIN` starts a transaction, `COMMIT` saves it, `ROLLBACK` undoes it.
+
+? [14] In **ACID**, what does **Durability** mean?
+- All steps succeed or none do ~~ That is Atomicity.
+- Constraints remain valid ~~ That is Consistency.
+- Concurrent users don't see half-done work ~~ That is Isolation.
+* Once a transaction is committed, its changes survive crashes and power loss ~~ Stored safely on disk/log.
+! A = Atomicity, C = Consistency, I = Isolation, D = Durability.
+
+? [14] What is a **correlated subquery**?
+- A subquery that runs without `FROM` ~~ Can exist, not what "correlated" means.
+* A subquery that references a column from the outer query (e.g. `WHERE e.student_id = s.student_id`) ~~ Re-evaluated for each outer row.
+- A subquery inside `ORDER BY` ~~ Correlation is about referencing the outer query.
+- Two `SELECT`s joined by `UNION` ~~ `UNION` is a set operation, not a subquery.
+! In `WHERE EXISTS (SELECT 1 FROM Enrollments e WHERE e.student_id = s.student_id)`, the inner query uses `s.student_id` from the outer query.
+
+? [14] Which ACID property prevents User B from reading User A's uncommitted, half-finished transfer?
+- Atomicity ~~ Atomicity is all-or-nothing.
+- Consistency ~~ Consistency is rule/constraint validity.
+* Isolation ~~ Isolation keeps concurrent transactions from seeing each other's intermediate states.
+- Durability ~~ Durability is crash survival after `COMMIT`.
+! Isolation protects concurrent transactions from interfering with each other.
+
+? [15] Which backup type copies **only** the data that changed since the last **full** backup?
+- Full backup ~~ Copies the entire database.
+* Differential backup ~~ Copies all changes since the last full backup.
+- Mirror backup ~~ Not a standard SQL Server backup term.
+- Schema script ~~ Exports `CREATE TABLE` DDL, not a binary backup.
+! A differential backup captures everything changed since the most recent full backup.
+
+? [15] You have a Sunday Full backup and daily Differential backups (Mon, Tue, Wed). To recover on Thursday, what do you restore?
+- Sunday Full + Mon + Tue + Wed differentials ~~ You don't need Mon or Tue because Wed differential already includes all changes since Sunday.
+* Sunday Full + Wednesday Differential ~~ Restore the last full backup, then the latest differential.
+- Only Wednesday Differential ~~ A differential cannot be restored without its base full backup.
+- Only Sunday Full ~~ You would lose Mon–Wed's data.
+! Differential backups are cumulative since the last full backup: restore Full + latest Differential.
+
+? [15] Which file format is best for exporting a query result to open in Excel?
+* `.csv` (Comma-Separated Values) ~~ Plain-text table format supported natively by Excel.
+- `.bak` ~~ SQL Server binary backup format.
+- `.ldf` ~~ SQL Server transaction log file.
+- `.c` ~~ C source code file.
+! Export tabular data as `.csv` for spreadsheets.
+
+? [15] Why should backups NOT be stored only on the same hard drive as the live database?
+- SQL Server forbids writing `.bak` to the same drive ~~ SQL Server allows it, though it is risky.
+* If that drive fails or is destroyed, you lose both the live database and its backups ~~ Always keep a copy off-drive / off-site.
+- Backups on the same drive cannot be restored ~~ They can, until the drive dies.
+- It doubles the row count in tables ~~ Backups don't alter live tables.
+! Store backups on separate storage / off-site so a single hardware failure cannot wipe both.
+
+? [15] What does **Tasks › Generate Scripts…** in SSMS produce?
+- A compressed binary `.bak` file ~~ That is **Tasks › Back Up…**.
+* A `.sql` text file with `CREATE TABLE` (and optionally `INSERT`) statements ~~ Useful for recreating the schema on another server.
+- An Excel `.xlsx` chart ~~ SSMS does not generate Excel charts.
+- A Packet Tracer `.pkt` file ~~ Packet Tracer is for networking.
+! Generate Scripts creates readable `.sql` scripts of your database objects (and optionally rows).

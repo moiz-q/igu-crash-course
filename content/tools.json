@@ -1,0 +1,22 @@
+[
+ {"id": "subnet-calc", "course": "net", "title": "Subnetting calculator", "topic": "net-12", "diff": "easy", "widget": "subnetcalc", "intro": "Type any IPv4 address and prefix. You get every answer plus the hand method, step by step."},
+ {"id": "subnet-drill", "course": "net", "title": "Subnetting drills (unlimited)", "topic": "net-12", "diff": "exam", "widget": "subnetdrill", "intro": "Random questions with instant checking and worked solutions. Do at least 20 until they feel easy."},
+ {"id": "base-conv", "course": "net", "title": "Binary / decimal / hex converter", "topic": "net-10", "diff": "easy", "widget": "baseconv", "intro": "Convert between bases and see the steps."},
+ {"id": "math-sets", "course": "math", "title": "Drill: sets", "topic": "math-01", "diff": "medium", "widget": "mathdrill", "args": {"topic": "sets"}},
+ {"id": "math-fractions", "course": "math", "title": "Drill: fractions", "topic": "math-02", "diff": "medium", "widget": "mathdrill", "args": {"topic": "fractions"}},
+ {"id": "math-divisibility", "course": "math", "title": "Drill: divisibility and remainders", "topic": "math-03", "diff": "medium", "widget": "mathdrill", "args": {"topic": "divisibility"}},
+ {"id": "math-bases", "course": "math", "title": "Drill: number bases", "topic": "math-04", "diff": "medium", "widget": "mathdrill", "args": {"topic": "bases"}},
+ {"id": "math-modular", "course": "math", "title": "Drill: modular arithmetic", "topic": "math-04", "diff": "medium", "widget": "mathdrill", "args": {"topic": "modular"}},
+ {"id": "math-primes", "course": "math", "title": "Drill: divisors and factorials", "topic": "math-05", "diff": "medium", "widget": "mathdrill", "args": {"topic": "primes"}},
+ {"id": "math-gcdlcm", "course": "math", "title": "Drill: GCD and LCM", "topic": "math-05", "diff": "medium", "widget": "mathdrill", "args": {"topic": "gcdlcm"}},
+ {"id": "math-exponents", "course": "math", "title": "Drill: exponents", "topic": "math-06", "diff": "medium", "widget": "mathdrill", "args": {"topic": "exponents"}},
+ {"id": "math-radicals", "course": "math", "title": "Drill: radicals", "topic": "math-07", "diff": "medium", "widget": "mathdrill", "args": {"topic": "radicals"}},
+ {"id": "math-factoring", "course": "math", "title": "Drill: factoring", "topic": "math-08", "diff": "medium", "widget": "mathdrill", "args": {"topic": "factoring"}},
+ {"id": "math-linear", "course": "math", "title": "Drill: first-degree equations", "topic": "math-09", "diff": "medium", "widget": "mathdrill", "args": {"topic": "linear"}},
+ {"id": "math-quadratic", "course": "math", "title": "Drill: second-degree equations", "topic": "math-10", "diff": "medium", "widget": "mathdrill", "args": {"topic": "quadratic"}},
+ {"id": "math-inequalities", "course": "math", "title": "Drill: inequalities", "topic": "math-11", "diff": "medium", "widget": "mathdrill", "args": {"topic": "inequalities"}},
+ {"id": "math-absolute", "course": "math", "title": "Drill: absolute value", "topic": "math-12", "diff": "medium", "widget": "mathdrill", "args": {"topic": "absolute"}},
+ {"id": "math-ratio", "course": "math", "title": "Drill: ratio, proportion, percentages", "topic": "math-13", "diff": "medium", "widget": "mathdrill", "args": {"topic": "ratio"}},
+ {"id": "math-mixed", "course": "math", "title": "Drill: mixed review (all topics)", "topic": "math-14", "diff": "exam", "widget": "mathdrill", "intro": "Choose “Mixed” to get questions from every topic, like the exam."},
+ {"id": "excel-formulas", "course": "office", "title": "Excel formula practice sheet", "topic": "office-09", "diff": "medium", "widget": "formula", "intro": "A small spreadsheet that runs in your browser. Type formulas into the blue cells and check them."}
+]

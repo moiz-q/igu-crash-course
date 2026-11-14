@@ -1,0 +1,16 @@
+net | 7 OSI layers (top to bottom) | Application, Presentation, Session, Transport, Network, Data Link, Physical
+net | 4 TCP/IP layers (top to bottom) | Application, Transport, Internet, Network Access (Link)
+net | PDU at Layer 4, 3, 2, 1 | Segment (4), Packet (3), Frame (2), Bit (1)
+net | Switch vs. Router | Switch forwards Frames in one LAN by MAC; Router forwards Packets between networks by IP
+net | Straight-through vs. Crossover cable | Straight-through = unlike devices (PC↔Switch); Crossover = like devices (PC↔PC, Switch↔Switch)
+net | Max Cat5e/Cat6 UTP length | 100 meters
+net | Port 22 vs. Port 23 | 22 = SSH (encrypted); 23 = Telnet (unencrypted)
+net | Port 80 vs. Port 443 | 80 = HTTP (unencrypted); 443 = HTTPS (TLS encrypted)
+net | Port 53 and Ports 67/68 | 53 = DNS (name→IP); 67/68 = DHCP (auto IP assignment)
+net | Private IPv4 ranges (RFC 1918) | 10.0.0.0/8, 172.16.0.0–172.31.255.255 (/12), 192.168.0.0/16
+net | APIPA address `169.254.x.x` meaning | Host could not reach a DHCP server
+net | Usable hosts formula in a subnet | 2^h - 2 (where h = number of host 0-bits in the mask)
+net | `/26` subnet mask and usable hosts | 255.255.255.192; 62 usable hosts (block size 64)
+net | `/30` subnet mask and usable hosts | 255.255.255.252; 2 usable hosts (point-to-point router links)
+net | 2.4 GHz non-overlapping Wi-Fi channels | Channels 1, 6, and 11
+net | CIA triad | Confidentiality (encryption), Integrity (hashes), Availability (uptime/redundancy)

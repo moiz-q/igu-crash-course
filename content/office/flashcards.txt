@@ -1,0 +1,12 @@
+office | `Ctrl+H` in Word/Excel | Find and Replace
+office | `Ctrl+Enter` in Word | Insert a Page Break
+office | `Ctrl+Shift+E` in Word | Toggle Track Changes
+office | `F4` in Excel formula bar | Cycle relative/absolute cell locks (`A1` → `$A$1`)
+office | `Ctrl+Shift+L` in Excel | Toggle AutoFilter on table headers
+office | `F5` vs `Shift+F5` in PowerPoint | `F5`: Slide Show from beginning; `Shift+F5`: from current slide
+office | `B` during PowerPoint Slide Show | Black screen (pauses slides so audience focuses on speaker)
+office | `COUNT` vs `COUNTA` in Excel | `COUNT` counts numbers only; `COUNTA` counts all non-empty cells
+office | `TOPLA`, `ORTALAMA`, `EĞER` in Turkish Excel | `SUM`, `AVERAGE`, `IF`
+office | `References → Table of Contents` requirement | Headings must use `Heading 1 / 2` styles (not just Bold + large font)
+office | Page Break vs Section Break in Word | Section Break is required to mix Portrait/Landscape or change headers per chapter
+office | `View → Slide Master` in PowerPoint | Global template for logos, fonts, and footers across all slides

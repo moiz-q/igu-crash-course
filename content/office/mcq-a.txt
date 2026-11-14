@@ -1,0 +1,309 @@
+# Office Applications MCQ Bank (Part A: Lessons 01–06)
+
+? [01] Which Google search operator restricts results to a single domain such as `.edu.tr`?
+- `filetype:` ~~ filters by file extension (e.g., `pdf`)
+* `site:` ~~ `site:edu.tr` searches only within `.edu.tr` domains
+- `inurl:` ~~ matches URL text, not strictly the domain
+- `-` ~~ excludes a keyword
+! Use `site:edu.tr` to limit search results to Turkish university domains.
+
+? [01] Which search query finds the exact phrase `computer networks` in PDF format while excluding the word `cisco`?
+- `computer networks pdf -cisco` ~~ does not require exact phrase or PDF filetype
+* `"computer networks" filetype:pdf -cisco` ~~ quotes force exact phrase, `filetype:pdf` filters format, `-cisco` excludes
+- `site:pdf "computer networks"` ~~ `site:` expects a domain, not a file type
+- `"computer networks" +pdf` ~~ `+` does not filter by file extension
+! Combine `"..."`, `filetype:pdf`, and `-word` for targeted academic searches.
+
+? [01] When sending an announcement to 50 students who do not know each other, where should you put their email addresses?
+- `To` ~~ exposes everyone's email address
+- `CC` ~~ exposes everyone's email address
+* `BCC` ~~ hides recipients' addresses from one another
+- `Reply-To` ~~ sets where replies go
+! Always use BCC for group announcements to protect privacy.
+
+? [01] What does **CC** stand for in email?
+- Central Copy ~~ incorrect
+* Carbon Copy ~~ visible copy sent to people who should stay informed
+- Closed Copy ~~ incorrect
+- Cloud Copy ~~ incorrect
+! CC = Carbon Copy (recipients are visible to all).
+
+? [01] A company sells cloud accounting software to other businesses. Which e-commerce model is this?
+- B2C ~~ business to individual consumer
+* B2B ~~ Business-to-Business
+- C2C ~~ consumer to consumer
+- C2B ~~ consumer to business
+! Business selling products or services to another business is B2B.
+
+? [01] An individual sells a second-hand laptop to another individual on an online marketplace. Which model is this?
+- B2B ~~ business to business
+- B2C ~~ business to consumer
+* C2C ~~ Consumer-to-Consumer
+- G2C ~~ government to citizen
+! Person-to-person sales via a platform are C2C.
+
+? [01] A freelance designer sells custom icons to a software company. Which e-commerce model best describes this?
+- B2B ~~ two companies
+- B2C ~~ company selling to consumer
+- C2C ~~ two consumers
+* C2B ~~ Consumer-to-Business (individual providing value to a business)
+! An individual offering goods or services to a business is C2B.
+
+? [01] Which email subject line is **most professional** when asking a professor about a lab grade?
+- `help urgent` ~~ vague, no course or topic
+- `(no subject)` ~~ unprofessional and easily missed
+* `CMP151 Sec 1 — Question on Lab 4 Grade` ~~ clear course, section, and topic
+- `Can you check my grade please because I think there is a mistake on question 3` ~~ way too long for a subject line
+! A good subject line is concise and includes the course code and topic.
+
+? [01] What does the minus sign (`-`) do in a Google search like `java -coffee`?
+- Searches only for `coffee` ~~ opposite
+* Excludes results containing the word `coffee` ~~ keeps results focused on Java programming
+- Searches for exact phrase `"java coffee"` ~~ quotes do exact phrase
+- Forces PDF results ~~ `filetype:pdf` does that
+! Prefixing a word with `-` (no space) removes pages containing that word.
+
+? [02] Which file extension produces a **fixed-layout** document that looks identical across Windows, Mac, Linux, and phones?
+- `.docx` ~~ fonts/spacing can shift if fonts are missing
+- `.txt` ~~ unformatted plain text
+* `.pdf` ~~ Portable Document Format preserves exact layout
+- `.csv` ~~ comma-separated table data
+! Always export final reports and CVs as `.pdf` when layout matters.
+
+? [02] Which file extension stores a spreadsheet workbook created in Microsoft Excel?
+- `.docx` ~~ Word document
+* `.xlsx` ~~ Excel workbook
+- `.pptx` ~~ PowerPoint presentation
+- `.zip` ~~ compressed archive
+! `.xlsx` is the standard Microsoft Excel workbook extension.
+
+? [02] You need to submit 5 separate `.c` source files through a portal that only allows **1 file** upload. What should you do?
+- Paste all 5 into a `.pptx` ~~ wrong format
+* Compress the folder into a single `.zip` archive ~~ bundles multiple files into one uploadable file
+- Rename the folder to `.pdf` ~~ renaming a folder does not make a valid PDF
+- Delete 4 of the files ~~ loses work
+! Compress multiple files/folders into a `.zip` archive.
+
+? [02] What is a `.csv` file?
+- A compressed PowerPoint ~~ `.pptx` / `.zip`
+* A plain-text table where columns are separated by commas ~~ easily opened in Excel, Python, or SQL tools
+- An encrypted PDF ~~ `.pdf`
+- A Word macro template ~~ `.dotm`
+! CSV stands for Comma-Separated Values.
+
+? [02] Why is it good practice to enable **File name extensions** in Windows File Explorer?
+- It makes files smaller ~~ display setting only
+* You can immediately verify the true file type (e.g., `.pdf` vs `.docx` vs `.exe`) ~~ prevents submitting shortcuts or opening disguised executables
+- It automatically backs up to OneDrive ~~ unrelated
+- It enables Track Changes ~~ Word feature
+! Seeing file extensions prevents format mix-ups and improves security awareness.
+
+? [02] You share a Google Drive folder of lecture slides with classmates and want them to download slides **without** deleting or editing them. Which role should you assign?
+* Viewer ~~ read and download only
+- Commenter ~~ can add comments
+- Editor ~~ can edit and delete files
+- Owner ~~ transfers full ownership
+! Assign **Viewer** for read-only sharing.
+
+? [02] Which Google Drive permission allows a teammate to propose comments on a document without directly overwriting the body text?
+- Viewer ~~ cannot comment
+* Commenter ~~ can add comments/suggestions without editing original text directly
+- Editor ~~ edits directly
+- Restricted ~~ blocks access
+! Commenter lets reviewers leave feedback safely.
+
+? [02] What is the native editable file extension for Microsoft PowerPoint?
+- `.docx` ~~ Word
+- `.xlsx` ~~ Excel
+* `.pptx` ~~ PowerPoint presentation
+- `.pdf` ~~ exported fixed document
+! `.pptx` is the modern XML-based PowerPoint extension.
+
+? [03] In Google Docs, which mode marks your edits as colored suggestions for teammates to accept or reject?
+- Editing ~~ changes text immediately without review prompts
+* Suggesting ~~ proposes insertions/deletions for approval
+- Viewing ~~ read-only
+- Offline ~~ local cache mode
+! Suggesting mode is Google Docs' equivalent of Track Changes.
+
+? [03] How can you restore yesterday's version of a Google Doc after accidental deletions?
+- `Tools → Spelling` ~~ checks spelling
+* `File → Version history → See version history` ~~ lets you view and restore earlier snapshots
+- `Insert → Bookmark` ~~ adds internal link
+- `Format → Clear formatting` ~~ strips styles
+! Version history keeps timestamped revisions you can restore.
+
+? [03] Where do you click in **Google Forms** to send all survey answers automatically into a live spreadsheet?
+- `Questions → Add section` ~~ splits the form into pages
+* `Responses → Link to Sheets` ~~ creates/links a Google Sheet collecting every submission
+- `Settings → Presentation` ~~ edits confirmation message
+- `Send → Embed HTML` ~~ embeds form on a website
+! `Responses → Link to Sheets` streams all form answers into Google Sheets.
+
+? [03] In Google Forms, what does toggling **Required** on a question do?
+- Makes the question worth 10 points ~~ quiz point values are set in Answer Key
+* Prevents the user from submitting the form without answering that question ~~ avoids missing Student IDs or names
+- Hides the question from mobile users ~~ displays on all devices
+- Converts the form to a PDF ~~ unrelated
+! **Required** enforces non-empty answers before submission.
+
+? [03] Which Google Workspace tool lets you build a simple multi-page course portfolio or project website without writing HTML?
+- Google Sheets ~~ spreadsheets
+- Google Forms ~~ surveys/quizzes
+* Google Sites ~~ drag-and-drop website builder
+- Google Keep ~~ quick notes
+! Google Sites creates clean web pages with embedded Docs, Sheets, and Slides.
+
+? [03] In Google Docs, how do you export a finished document to PDF?
+- `Edit → Paste without formatting` ~~ pastes plain text
+* `File → Download → PDF Document (.pdf)` ~~ exports a `.pdf` file
+- `Insert → Drawing` ~~ draws diagrams
+- `View → Mode → Viewing` ~~ switches view mode only
+! Use `File → Download → PDF Document (.pdf)`.
+
+? [03] What happens if you turn on **"Make this a quiz"** in Google Forms Settings?
+- Responses are deleted after 1 hour ~~ responses are kept
+* You can set an Answer Key, point values, and automatic grading for MCQs ~~ great for self-check quizzes
+- Only 5 people can submit ~~ no 5-person limit
+- It converts the form into Google Slides ~~ stays a Form
+! Quiz mode enables answer keys, point values, and auto-grading.
+
+? [04] Which keyboard shortcut opens **Find and Replace** in Microsoft Word?
+- `Ctrl+F` ~~ opens Find only
+* `Ctrl+H` ~~ opens Find and Replace
+- `Ctrl+J` ~~ Justify alignment
+- `Ctrl+K` ~~ Insert Hyperlink
+! `Ctrl+H` opens Find & Replace directly.
+
+? [04] Which alignment stretches text evenly so both the left and right edges of a paragraph line up with the margins?
+- Align Left (`Ctrl+L`) ~~ ragged right edge
+- Center (`Ctrl+E`) ~~ centered lines
+- Align Right (`Ctrl+R`) ~~ ragged left edge
+* Justify (`Ctrl+J`) ~~ aligns both left and right edges
+! Justify (`Ctrl+J`) is standard for formal reports and articles.
+
+? [04] What does the **Format Painter** (`Home → Clipboard`) do in Word?
+- Changes the page background color ~~ `Design → Page Color` does that
+* Copies font and paragraph formatting from selected text and applies it to other text ~~ saves re-applying bold/font/spacing manually
+- Checks grammar ~~ `Review → Editor` checks grammar
+- Inserts a picture ~~ `Insert → Pictures`
+! Format Painter copies formatting, not text content.
+
+? [04] What does clicking the **`¶` (Show/Hide)** button (`Home → Paragraph`) reveal?
+- Page numbers ~~ shown in headers/footers
+* Hidden spaces, tab arrows, paragraph marks, and page/section breaks ~~ helps spot extra spaces or stray breaks
+- Word count ~~ shown in the status bar
+- Tracked comments ~~ shown in Review pane
+! `¶` reveals non-printing formatting symbols.
+
+? [04] When pasting text from a website into Word without bringing weird background colors and fonts, which paste option should you use?
+- `Ctrl+V` (Keep Source Formatting) ~~ keeps website styling
+* Paste Special → **Keep Text Only** (`Ctrl+Shift+V`) ~~ adopts your document's clean style
+- Screenshot paste ~~ pastes an uneditable image
+- Format Painter ~~ copies formatting after pasting
+! **Keep Text Only** strips unwanted web HTML styling.
+
+? [04] Which shortcut **Undoes** your last action, and which **Redoes** it?
+- `Ctrl+U` and `Ctrl+R` ~~ Underline and Right-align in Word
+* `Ctrl+Z` (Undo) and `Ctrl+Y` (Redo) ~~ universal editing shortcuts
+- `Ctrl+X` and `Ctrl+V` ~~ Cut and Paste
+- `Ctrl+S` and `Ctrl+P` ~~ Save and Print
+! `Ctrl+Z` = Undo; `Ctrl+Y` = Redo.
+
+? [04] Why is pressing `Enter` 15 times to push a new chapter onto the next page bad practice?
+- Word crashes after 10 Enters ~~ Word doesn't crash
+* Any text added or deleted earlier shifts all those blank lines, misaligning the next page ~~ use `Ctrl+Enter` (Page Break) instead
+- It disables spellcheck ~~ unrelated
+- It turns the file into `.txt` ~~ unrelated
+! Use a **Page Break** (`Ctrl+Enter`) so chapters always start cleanly at the top of a page.
+
+? [05] What must you apply to chapter titles so Word's **Automatic Table of Contents** (`References → Table of Contents`) detects them?
+- Bold + 18 pt font manually ~~ TOC ignores manual font styling
+* Built-in Heading styles (`Home → Styles → Heading 1`, `Heading 2`, etc.) ~~ TOC reads Heading style levels
+- Highlight color ~~ ignored by TOC
+- Justify alignment ~~ ignored by TOC
+! Automatic TOC builds entries from `Heading 1`, `Heading 2`, `Heading 3` styles.
+
+? [05] After editing your report and adding two pages, your Table of Contents page numbers are outdated. How do you fix them?
+- Delete and retype every page number ~~ error-prone
+* Right-click the Table of Contents → **Update Field → Update entire table** ~~ refreshes headings and page numbers in one click
+- Export to `.txt` ~~ loses formatting
+- Press `Ctrl+H` ~~ Find & Replace
+! Right-click TOC → **Update Field** refreshes all titles and page numbers.
+
+? [05] Which break type is required if you want **Page 4** to be **Landscape** while the rest of the report remains **Portrait**?
+- Line Break (`Shift+Enter`) ~~ breaks a line only
+- Page Break (`Ctrl+Enter`) ~~ shares the same page setup
+* **Section Break (Next Page)** (`Layout → Breaks → Next Page`) ~~ gives each section independent orientation and margins
+- Column Break ~~ moves to next column
+! Section Breaks isolate page orientation, margins, and headers/footers.
+
+? [05] How do you hide the page number on **Page 1** (your cover page) while showing numbers `2, 3, 4...` on later pages?
+- Delete the number on Page 1 manually ~~ deleting it removes it from ALL pages in that section!
+* Double-click the header/footer → tick **Different First Page** under Header & Footer tools ~~ separates Page 1's header/footer from the rest
+- Change font color to white on Page 1 ~~ still copies/selects in PDF
+- Turn off Track Changes ~~ unrelated
+! **Different First Page** gives Page 1 its own blank header/footer.
+
+? [05] Which Ribbon tab holds **Margins**, **Orientation**, and **Page Size** in Microsoft Word?
+- `Home` ~~ font, paragraph, styles
+- `Insert` ~~ tables, pictures, headers
+* `Layout` (or `Page Layout`) ~~ margins, orientation, size, columns, breaks
+- `Review` ~~ spelling, comments, Track Changes
+! Page setup options live on the **Layout** tab.
+
+? [05] Which shortcut inserts a **Page Break** in Word?
+- `Ctrl+B` ~~ Bold
+* `Ctrl+Enter` ~~ Page Break
+- `Shift+Enter` ~~ Line Break (soft return)
+- `Alt+Enter` ~~ repeat / Excel newline
+! `Ctrl+Enter` inserts a Page Break.
+
+? [05] What is the main advantage of using Word **Styles** (`Normal`, `Heading 1`, `Heading 2`) across a 30-page thesis?
+- Word skips spellcheck on styled text ~~ spellcheck still runs
+* You can change the look of all headings at once by modifying the style, and auto-generate a Table of Contents ~~ keeps formatting consistent
+- It encrypts the `.docx` ~~ styles do not encrypt
+- It reduces page count by half ~~ unrelated
+! Styles ensure visual consistency and power the Navigation Pane and TOC.
+
+? [06] Which Ribbon path adds an auto-numbered label like `Figure 1: System Diagram` below an image?
+- `Home → Borders` ~~ adds borders
+* `References → Captions → Insert Caption` (or Right-click image → Insert Caption) ~~ automatically numbers figures and updates if reordered
+- `Layout → Position` ~~ positions image on page
+- `Review → New Comment` ~~ adds a review comment
+! `Insert Caption` auto-numbers figures and tables.
+
+? [06] Where do you enable **Track Changes** in Microsoft Word?
+- `Insert → Links` ~~ hyperlinks/bookmarks
+- `Design → Document Formatting` ~~ themes
+* `Review → Tracking → Track Changes` (`Ctrl+Shift+E`) ~~ records all edits for approval
+- `View → Show → Ruler` ~~ toggles ruler
+! Track Changes is under the **Review** tab (`Ctrl+Shift+E`).
+
+? [06] Which Word feature keeps a table's column header row visible at the top of every new page when a long table spans multiple pages?
+- `Home → Center` ~~ centers text
+* Table **Layout** tab → **Repeat Header Rows** ~~ automatically repeats the top header row on each page
+- `Insert → Page Number` ~~ numbers pages
+- `View → Split` ~~ splits editor window
+! Select the table's header row and enable **Repeat Header Rows**.
+
+? [06] Which tab lets you choose a citation style (**APA**, **IEEE**, **MLA**) and insert a formatted **Bibliography**?
+- `Home` ~~ clipboard, font, paragraph
+- `Layout` ~~ page setup
+* `References` (`References → Citations & Bibliography`) ~~ manages sources and bibliographies
+- `Mailings` ~~ mail merge
+! Citations, Bibliography, Captions, and Table of Contents are all on the **References** tab.
+
+? [06] What should you do with **Track Changes** before exporting your final report to PDF for submission?
+- Leave all red deletions visible ~~ makes the final PDF look unfinished
+* **Accept** (or Reject) all changes and toggle **Track Changes** off ~~ produces a clean final document
+- Delete the Bibliography ~~ keep references
+- Convert tables to images ~~ keep real tables
+! Always resolve all tracked changes before final PDF export.
+
+? [06] Which menu path exports a Word document to PDF?
+- `Insert → Object` ~~ embeds objects
+* `File → Export → Create PDF/XPS` (or `File → Save As` → PDF) ~~ creates a `.pdf` file
+- `Review → Compare` ~~ compares two documents
+- `View → Print Layout` ~~ screen view mode
+! Use `File → Export → Create PDF/XPS` or `Save As → PDF`.

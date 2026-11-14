@@ -1,0 +1,421 @@
+# Computer Networks MCQ Bank (Part A: Lessons 01–08)
+
+? [01] Which four elements are required for every computer network?
+- Only routers and web browsers ~~ networks also need hosts, media, and protocols
+* End devices, intermediary devices, transmission media, and protocols ~~ all four work together to move data
+- Only Wi-Fi and fiber cables ~~ copper and protocols are omitted
+- A web server and an email server ~~ P2P networks do not need dedicated servers
+! Every network combines hosts, intermediary devices, media, and shared protocols.
+
+? [01] In a peer-to-peer (P2P) network, which statement is true?
+- One central server controls all logins ~~ that describes client-server
+* Every device can act as both a client and a server ~~ peers share directly without a dedicated server
+- Devices must connect with fiber-optic cables ~~ P2P works over any medium
+- It only works across different countries ~~ P2P works on small local LANs as well
+! P2P networks have no dedicated central server; each peer can request and provide resources.
+
+? [01] Which 1969 project introduced packet switching and became the ancestor of the modern internet?
+- World Wide Web ~~ Tim Berners-Lee proposed the Web in 1989
+* ARPANET ~~ ARPANET connected four university computers using packet switching
+- Ethernet 802.11 ~~ 802.11 is Wi-Fi
+- Bluetooth SIG ~~ Bluetooth is a short-range PAN standard
+! ARPANET (1969) pioneered packet switching; TCP/IP became its standard in 1983.
+
+? [01] What is a network **protocol**?
+- A physical copper cable ~~ cables are transmission media
+* An agreed set of rules for formatting and exchanging data ~~ both sender and receiver follow the same rules
+- A brand of network switch ~~ vendors build hardware that implements protocols
+- A type of computer monitor ~~ monitors are output hardware
+! Protocols (like IP, TCP, HTTP) define the format, timing, and rules of communication.
+
+? [01] Which statement accurately separates the **internet** from the **World Wide Web**?
+- They are identical terms ~~ the Web is one service on top of the internet
+* The internet is the global network of networks; the Web is HTTP/HTML pages running on it ~~ email and SSH also use the internet without using the Web
+- The Web came first in 1969 ~~ ARPANET came in 1969; the Web came in 1989
+- The internet is only software in your browser ~~ the internet includes physical routers, cables, and ISPs
+! The internet is the infrastructure; the Web is an application running on top of it.
+
+? [01] What is the main advantage of a **client-server** network over a peer-to-peer network?
+- No cables or Wi-Fi are needed ~~ physical or wireless media are still required
+* Centralized security, permissions, and backups are easier to manage ~~ servers store data in one controlled place
+- It never needs IP addresses ~~ IP is still required on TCP/IP networks
+- Every user's laptop must stay turned on 24/7 ~~ only the server needs to stay online
+! Client-server centralizes administration, backups, and security policies.
+
+? [01] In what year did ARPANET adopt **TCP/IP** as its standard protocol suite?
+- 1969 ~~ 1969 was the first ARPANET link
+* 1983 ~~ January 1, 1983 is known as the birth of the modern TCP/IP internet
+- 1995 ~~ commercial ISPs grew in the mid-1990s
+- 2007 ~~ 2007 was the modern smartphone era
+! ARPANET switched to TCP/IP in 1983.
+
+? [01] When your browser loads `https://gelisim.edu.tr`, what role does your laptop play?
+- Intermediary router ~~ routers forward packets between networks
+* Client ~~ the browser requests the web page from the server
+- Server ~~ the university web host is the server
+- Transmission medium ~~ Wi-Fi or Ethernet is the medium
+! The requesting device/application is the client.
+
+? [02] Which network type covers a small personal space of 1–10 meters (e.g., Bluetooth earbuds to phone)?
+* PAN ~~ Personal Area Network
+- LAN ~~ Local Area Network covers a room or building
+- MAN ~~ Metropolitan Area Network covers a city
+- WAN ~~ Wide Area Network spans large regions
+! PAN covers personal devices within a few meters.
+
+? [02] A company connects branch offices in Istanbul, Ankara, and Izmir using leased ISP lines. What type of network is this?
+- PAN ~~ only a few meters
+- LAN ~~ limited to one building/campus
+- MAN ~~ limited to one city
+* WAN ~~ spans multiple cities across the country
+! Networks spanning cities or countries are Wide Area Networks (WANs).
+
+? [02] In which topology does every device connect to a single central switch?
+- Bus ~~ devices tap into one shared backbone cable
+* Star ~~ every host has its own cable to a central switch
+- Ring ~~ devices form a closed point-to-point loop
+- Full mesh ~~ every device connects directly to every other device
+! Star topology is the standard layout for modern Ethernet LANs.
+
+? [02] Which topology provides the highest fault tolerance because every node connects directly to every other node?
+- Bus ~~ one backbone break stops the bus
+- Star ~~ if the central switch fails, the star stops
+- Ring ~~ a break can disrupt a simple ring
+* Full mesh ~~ multiple redundant paths exist between every pair of nodes
+! Full mesh has $n(n-1)/2$ links and survives link failures easily.
+
+? [02] What is the difference between **physical** and **logical** topology?
+- Physical means wireless; logical means wired ~~ both can be wired or wireless
+* Physical is how cables and devices are arranged; logical is the path data actually follows ~~ for example, physically star-wired Ethernet can behave differently logically
+- Logical topology cannot exist without a router ~~ LANs have logical topologies too
+- Physical topology only applies to WANs ~~ physical topology applies to every network
+! Physical = layout of hardware/cables; logical = data flow path.
+
+? [02] A 5-floor campus building connects each floor's star-wired PCs to a floor switch, and all floor switches to a core switch. Which topology is this?
+- Bus ~~ no shared coaxial backbone
+- Ring ~~ switches are not in a closed loop
+* Tree (hierarchical) ~~ multiple star switches connected to a root/core switch
+- PAN ~~ a 5-floor building is a LAN, not a PAN
+! Linking star networks to a central root switch forms a tree (hierarchical) topology.
+
+? [02] Why are **terminators** required at both ends of a classic bus topology?
+- To assign IP addresses ~~ DHCP assigns IP addresses
+* To absorb signals so they do not bounce back and cause interference ~~ un-terminated ends reflect signals
+- To convert copper to fiber ~~ terminators are simple resistors
+- To encrypt frames ~~ encryption is done in software/protocols
+! Bus terminators absorb electrical signals at the cable ends.
+
+? [02] What happens in a **star** topology if the cable to `PC-4` is cut?
+- The entire LAN stops working ~~ that happens in a bus, not a star
+* Only `PC-4` loses connectivity; all other PCs keep working ~~ each host has an independent link to the switch
+- All packets reverse direction ~~ that describes a dual ring
+- The switch turns into a router ~~ the switch keeps operating normally
+! Star topology isolates single-cable faults to one host.
+
+? [03] Which device operates at Layer 2 and forwards frames only to the port matching the destination MAC address?
+- Hub ~~ Layer 1 hub floods signals to all ports
+* Switch ~~ Layer 2 switch maintains a MAC address table
+- Repeater ~~ Layer 1 repeater only boosts signals
+- Modem ~~ converts ISP line signals
+! Switches learn source MACs and forward frames selectively to the destination port.
+
+? [03] Why did **switches** replace **hubs** in modern Ethernet LANs?
+- Hubs cannot connect more than 2 PCs ~~ hubs came in 4, 8, or 24 ports
+* Hubs flood every signal to all ports (shared collision domain), whereas switches give each port its own collision domain ~~ switches improve speed and security
+- Hubs only work with fiber ~~ hubs were mostly copper UTP
+- Switches automatically assign public IPv4 addresses ~~ DHCP servers assign IPs
+! Switches eliminate shared collision domains by isolating traffic per port.
+
+? [03] Which device is required to route packets **between** `192.168.1.0/24` and `192.168.2.0/24`?
+- Hub ~~ Layer 1 only
+- Unmanaged Layer 2 switch ~~ stays within one broadcast domain/subnet
+* Router ~~ Layer 3 device that forwards packets across different IP networks
+- Access Point ~~ Layer 2 wireless bridge
+! Routers connect distinct IP networks at Layer 3.
+
+? [03] What is a **collision domain** on a 24-port Ethernet switch?
+- All 24 ports together ~~ that is true for a hub, not a switch
+* Each individual switch port is its own collision domain ~~ full-duplex links on a switch do not collide
+- The entire internet ~~ routers and switches separate collision domains
+- Only the uplink port ~~ every port is separate
+! Each port on a Layer 2 switch is a separate collision domain, while all ports (in one VLAN) share one broadcast domain.
+
+? [03] What is a **broadcast domain** bounded by?
+- A hub ~~ hubs forward broadcasts to all ports
+- A repeater ~~ repeaters forward everything
+* A router ~~ routers do not forward Layer 2 broadcasts between interfaces
+- A patch panel ~~ patch panels are passive wiring
+! Routers separate broadcast domains; switches forward broadcasts within a LAN.
+
+? [03] What is the role of a **NIC (Network Interface Card)**?
+- To route packets across the internet ~~ routers do that
+* To physically connect a host to the network medium and provide a MAC address ~~ every wired/wireless host needs a NIC
+- To amplify ISP fiber signals across cities ~~ repeaters/amplifiers do that
+- To store DNS records for a domain ~~ DNS servers do that
+! A NIC connects a computer to wired or wireless media and holds a burned-in MAC address.
+
+? [03] Which device converts analog/line signals from a phone or cable ISP line into digital data for your home router?
+- Switch ~~ connects local LAN devices
+* Modem ~~ modulates and demodulates ISP line signals
+- Hub ~~ repeats local Ethernet signals
+- Access Point ~~ provides Wi-Fi inside the LAN
+! A modem translates between the ISP's physical line signaling and digital Ethernet frames.
+
+? [03] A wireless **Access Point (AP)** primarily operates at which OSI layer?
+- Layer 1 only ~~ it understands Wi-Fi and Ethernet MAC frames
+* Layer 2 (Data Link) ~~ bridges 802.11 wireless frames to 802.3 Ethernet frames
+- Layer 4 (Transport) ~~ does not manage TCP ports
+- Layer 7 (Application) ~~ does not process HTTP/SMTP
+! An AP bridges wireless clients onto a wired LAN at Layer 2.
+
+? [04] What is the maximum cable length for a standard Cat5e/Cat6 Ethernet UTP run?
+- 25 meters ~~ too short
+- 50 meters ~~ too short
+* 100 meters ~~ 100 m is the standard Ethernet UTP limit
+- 500 meters ~~ 500 m is coaxial/fiber territory
+! Copper twisted-pair Ethernet (Cat5e/Cat6) is limited to 100 meters.
+
+? [04] Why are the copper wire pairs twisted inside a UTP cable?
+- To make the cable harder to bend ~~ twisting is electrical, not mechanical
+* To cancel out crosstalk and electromagnetic interference (EMI) ~~ balanced twisted pairs cancel noise
+- To increase the cable length to 10 km ~~ UTP is still limited to 100 m
+- To carry light pulses ~~ fiber carries light, not copper
+! Twisting pairs reduces crosstalk between pairs and external EMI.
+
+? [04] Which medium is **completely immune** to electromagnetic interference (EMI)?
+- UTP Cat5e ~~ copper picks up EMI
+- STP Cat6 ~~ shielded copper reduces EMI, not 100% immune
+- Coaxial ~~ copper core can still suffer strong EMI
+* Fiber-optic ~~ transmits pulses of light instead of electricity
+! Because fiber uses light in glass/plastic, electrical interference cannot corrupt the signal.
+
+? [04] Assuming Auto-MDIX is disabled, which cable connects a **PC to a Switch**?
+* Straight-through ~~ unlike devices use straight-through cables
+- Crossover ~~ crossover connects like devices
+- Coaxial ~~ Ethernet PCs use RJ-45 UTP
+- Console rollover ~~ console is only for CLI management
+! Unlike devices (PC–Switch, Switch–Router) use a straight-through cable.
+
+? [04] Assuming Auto-MDIX is disabled, which cable connects **two Switches** directly together?
+- Straight-through ~~ straight-through connects unlike devices
+* Crossover ~~ like devices (Switch–Switch, PC–PC, Router–Router) use crossover
+- Rollover ~~ rollover is for console ports
+- RJ-11 phone cable ~~ RJ-11 is 4/6-pin telephone cable, not Ethernet
+! Like devices require a crossover cable when Auto-MDIX is off.
+
+? [04] Which connector is standard on Cat5e/Cat6 Ethernet cables?
+- RJ-11 ~~ RJ-11 is smaller (telephone)
+* RJ-45 ~~ 8-pin modular connector for Ethernet
+- BNC ~~ BNC is for coaxial cable
+- LC / SC ~~ LC and SC are fiber-optic connectors
+! Ethernet UTP cables terminate in 8-pin RJ-45 plugs.
+
+? [04] Which fiber-optic type uses laser light and a narrow core for distances of 10–40+ km?
+- Multi-mode fiber (MMF) ~~ MMF has a wider core and shorter range (up to ~550 m–2 km)
+* Single-mode fiber (SMF) ~~ SMF uses lasers for long-distance campus/WAN links
+- Cat6a UTP ~~ Cat6a is copper, 100 m max
+- RG-6 Coaxial ~~ coaxial is copper
+! Single-mode fiber (SMF) supports long-haul runs using laser light.
+
+? [04] You need to link two campus buildings 350 meters apart outdoors. Which cable should you choose?
+- Cat5e UTP ~~ 350 m exceeds the 100 m UTP limit
+- Cat6 UTP ~~ still limited to 100 m
+* Fiber-optic ~~ handles 350 m easily and is safe from outdoor lightning/EMI
+- Crossover copper ~~ still limited to 100 m
+! Fiber-optic handles distances well beyond 100 m and avoids ground loops/EMI.
+
+? [05] In Cisco Packet Tracer, what does a **green triangle** on a link mean?
+- The port is shut down ~~ shut down ports show red
+- Spanning Tree is still checking ~~ Spanning Tree shows amber/orange
+* The physical and data-link connection is up and active ~~ ready for traffic
+- The IP address is wrong ~~ link triangles show Layer 1/2 status, not IP validity
+! Green triangles indicate an active Layer 1/2 link.
+
+? [05] Why do newly connected **switch ports** stay **amber (orange)** for ~30 seconds in Packet Tracer?
+- The cable is broken ~~ a broken link is red
+* Spanning Tree Protocol (STP) is checking for loops before forwarding ~~ click Fast Forward Time (`Alt+D`) to skip the wait
+- The PC has no IP address ~~ STP runs before IP
+- The switch needs a password ~~ switches work out of the box
+! Switch ports transition through STP listening/learning (amber) before turning green.
+
+? [05] In Packet Tracer, what is the difference between **Realtime** and **Simulation** mode?
+- Realtime requires internet access ~~ Packet Tracer works completely offline
+* Realtime runs traffic immediately; Simulation pauses time so you can inspect packets hop by hop ~~ Simulation is best for learning ARP/ICMP/routing
+- Simulation mode disables all IP addresses ~~ Simulation uses your configured IPs
+- Realtime mode cannot run `ping` ~~ `ping` works in both modes
+! Simulation mode lets you step through each PDU with Capture/Forward.
+
+? [05] Which Packet Tracer cable icon represents **Copper Cross-Over**?
+- Solid black line ~~ solid black is Copper Straight-Through
+* Dashed black line ~~ dashed black is Copper Cross-Over
+- Light-blue curved line ~~ light-blue is Console
+- Orange solid line ~~ orange is Fiber
+! Copper Cross-Over is drawn as a dashed black line in Packet Tracer.
+
+? [05] Where in Packet Tracer do you configure a PC's static IP address?
+- Physical tab → Power button ~~ Physical tab shows hardware modules
+* Desktop tab → IP Configuration ~~ set Static IP, Subnet Mask, and Default Gateway here
+- Simulation tab → Event List ~~ Event List shows captured PDUs
+- Switch CLI → `ipconfig` ~~ `ipconfig` is a Windows/PC Command Prompt tool
+! PC IP settings live under Desktop → IP Configuration.
+
+? [05] Which button in Packet Tracer speeds up the 30-second switch port startup delay?
+- Delete (X) ~~ deletes devices/cables
+* Fast Forward Time (`Alt+D`) ~~ advances simulation clock by 30 seconds per click
+- Add Simple PDU ~~ sends a test ping
+- Inspect (magnifying glass) ~~ views ARP/routing tables
+! Fast Forward Time advances the virtual clock so amber STP ports turn green immediately.
+
+? [06] In a single-switch LAN with `PC0` (`192.168.1.10/24`) and `PC1` (`192.168.1.11/24`), is a **Default Gateway** required for them to ping each other?
+- Yes, `ping` always fails without a gateway ~~ a gateway is only needed to leave the local subnet
+* No, both PCs are on the same subnet (`192.168.1.0/24`) ~~ they communicate directly through the switch
+- Yes, the switch needs a gateway IP ~~ switches forward frames at Layer 2
+- Only if using Simulation mode ~~ mode does not change routing rules
+! Same-subnet communication does not use a default gateway.
+
+? [06] Which protocol does `PC0` run first when you type `ping 192.168.1.11` for the very first time?
+- DNS ~~ you typed an IP, not a domain name
+- HTTP ~~ `ping` uses ICMP, not HTTP
+* ARP ~~ `PC0` must discover `PC1`'s MAC address before building the Ethernet frame
+- DHCP ~~ IPs were configured statically
+! ARP resolves an IPv4 address to a MAC address on the local LAN.
+
+? [06] Which protocol's Echo Request and Echo Reply messages are sent by `ping`?
+- TCP ~~ TCP is for reliable streams, not `ping`
+- UDP ~~ `ping` does not use UDP ports
+* ICMP ~~ Internet Control Message Protocol carries Echo Request/Reply
+- ARP ~~ ARP resolves IP to MAC
+! `ping` uses ICMP Echo Request and Echo Reply.
+
+? [06] `PC0` is `192.168.1.10 / 255.255.255.0` and `PC1` is `192.168.2.11 / 255.255.255.0` on one switch. Why does `ping` fail?
+- `255.255.255.0` is an invalid mask ~~ it is a valid `/24` mask
+* They are in different IP subnets (`192.168.1.x` vs. `192.168.2.x`) and have no router ~~ Layer 2 switches do not route between subnets
+- Switch0 only supports 192.168.0.x ~~ switches are IP-agnostic for forwarding
+- You need a crossover cable ~~ PC to switch uses straight-through
+! Different subnets require a Layer 3 router to communicate.
+
+? [06] What happens if `PC0` and `PC1` are both given `192.168.1.10/24` on the same LAN?
+- Packet Tracer balances traffic between them ~~ duplicate IPs break networking
+* An IP address conflict occurs and `ping` fails ~~ every host on a network must have a unique IP
+- The switch automatically renumbers `PC1` ~~ switches never change host IPs
+- Both PCs speed up ~~ duplicate IPs cause errors
+! Duplicate IPv4 addresses on the same subnet cause an address conflict.
+
+? [06] In `PC0`'s Command Prompt, what output confirms a successful `ping`?
+- `Request timed out` ~~ indicates no reply was received
+- `Destination host unreachable` ~~ indicates routing or ARP failure
+* `Reply from 192.168.1.11: bytes=32 time<1ms TTL=128` ~~ confirms Echo Reply was received
+- `Unknown host` ~~ indicates DNS failed for a hostname
+! A `Reply from ...` line with `0% loss` confirms bidirectional Layer 3 connectivity.
+
+? [07] Which OSI layer is Layer 3?
+- Data Link ~~ Layer 2
+* Network ~~ Layer 3 (IP addressing and routing)
+- Transport ~~ Layer 4
+- Session ~~ Layer 5
+! OSI from 1 to 7: Physical, Data Link, Network, Transport, Session, Presentation, Application.
+
+? [07] What is the PDU called at the **Transport** layer (Layer 4) for TCP?
+- Bit ~~ Layer 1
+- Frame ~~ Layer 2
+- Packet ~~ Layer 3
+* Segment ~~ Layer 4 (TCP Segment)
+! Transport = Segment (TCP) / Datagram (UDP); Network = Packet; Data Link = Frame; Physical = Bit.
+
+? [07] Which OSI layer is responsible for **encryption (TLS)**, **compression**, and **character encoding (UTF-8)**?
+- Application (7) ~~ Application provides app protocols like HTTP and SMTP
+* Presentation (6) ~~ Presentation handles data format, compression, and encryption
+- Session (5) ~~ Session manages dialog/sessions
+- Network (3) ~~ Network handles IP routing
+! Layer 6 (Presentation) formats, compresses, and encrypts data.
+
+? [07] As data moves **down** the OSI stack on the sending computer (Layer 7 → Layer 1), what is the process called?
+* Encapsulation ~~ each layer wraps the data with its own header (and trailer at Layer 2)
+- Decapsulation ~~ decapsulation happens moving up (1 → 7) on the receiver
+- Fragmentation ~~ fragmentation splits oversized IP packets
+- Modulation ~~ modulation encodes bits onto a carrier signal
+! Encapsulation adds protocol headers down the stack; decapsulation removes them up the stack.
+
+? [07] Which OSI layer adds **source and destination MAC addresses** and a **Frame Check Sequence (FCS)**?
+- Physical (1) ~~ Physical sends raw bits
+* Data Link (2) ~~ Data Link builds Ethernet/Wi-Fi frames with MACs and FCS
+- Network (3) ~~ Network adds IP addresses
+- Transport (4) ~~ Transport adds port numbers
+! Layer 2 (Data Link) builds Frames with MAC addresses and FCS.
+
+? [07] Which OSI layer manages **port numbers** (such as 80 or 443) and breaks large data into smaller chunks?
+- Network (3) ~~ Network uses IP addresses, not ports
+* Transport (4) ~~ Transport uses TCP/UDP ports and segmentation
+- Session (5) ~~ Session manages sessions
+- Data Link (2) ~~ Data Link uses MAC addresses
+! Transport (Layer 4) handles segmentation and port numbers.
+
+? [07] Which list shows the **correct order** of OSI layers from Layer 1 (bottom) to Layer 7 (top)?
+- Application, Presentation, Session, Transport, Network, Data Link, Physical ~~ that is 7 → 1 (top to bottom)
+* Physical, Data Link, Network, Transport, Session, Presentation, Application ~~ correct bottom-up order (1 → 7)
+- Physical, Network, Data Link, Transport, Session, Presentation, Application ~~ Data Link (2) comes before Network (3)
+- Data Link, Physical, Network, Transport, Presentation, Session, Application ~~ Physical is 1 and Session is 5 before Presentation 6
+! From Layer 1 up: Physical → Data Link → Network → Transport → Session → Presentation → Application.
+
+? [07] On the receiving host, what happens during **decapsulation**?
+- More headers are added at every layer ~~ headers are added on the sender (encapsulation)
+* Each layer reads and strips off its own header as data moves from Layer 1 up to Layer 7 ~~ leaving clean application data at Layer 7
+- All MAC and IP addresses are converted to binary ~~ they are already binary on the wire
+- The frame is sent back to the switch ~~ the host delivers the data up to the app
+! Decapsulation strips headers from Layer 1 upward to Layer 7.
+
+? [08] Using **even parity**, what parity bit is added to `1010110`?
+* `0` ~~ `1010110` has four `1`s (already even), so parity bit = `0`
+- `1` ~~ adding `1` would make five `1`s (odd)
+- `11` ~~ parity is one bit
+- `00` ~~ parity is one bit
+! Even parity keeps the total count of `1`s even.
+
+? [08] What is the main weakness of a single **parity bit**?
+- It cannot detect any 1-bit error ~~ it always detects 1-bit errors
+* It fails to detect an even number of flipped bits (such as a 2-bit error) ~~ two flips keep the parity even/odd unchanged
+- It doubles the size of every frame ~~ it adds only 1 bit
+- It requires a router ~~ parity is a simple bit check
+! Parity catches 1, 3, 5… bit errors, but misses 2, 4, 6… bit errors.
+
+? [08] What does an Ethernet NIC or switch do when a frame fails the **CRC / FCS** check?
+- Automatically repairs the corrupted bit ~~ CRC detects errors; it is not an error-correcting code
+* Discards (drops) the corrupted frame ~~ higher layers like TCP handle retransmission
+- Broadcasts the frame to all ports ~~ flooding bad frames wastes bandwidth
+- Sends an email to the user ~~ Layer 2 drops bad frames silently
+! Ethernet drops frames that fail the 32-bit FCS check.
+
+? [08] Which media access control method is used by **Wi-Fi (IEEE 802.11)**?
+- CSMA/CD ~~ CSMA/CD is for legacy wired Ethernet hubs
+* CSMA/CA ~~ Collision Avoidance (listen, random backoff, optional RTS/CTS)
+- Token Passing ~~ used in legacy Token Ring
+- Static TDM ~~ used in telephony circuits
+! Wi-Fi uses CSMA/CA because wireless radios cannot easily detect collisions while transmitting.
+
+? [08] Why do modern switched **full-duplex** Ethernet links not experience collisions?
+- Switches run CSMA/CA ~~ CSMA/CA is for Wi-Fi
+* Send and receive use separate wire pairs and only one host is on each switch port ~~ no two devices share the same transmit wire
+- Ethernet frames have no MAC addresses ~~ Ethernet frames always have MACs
+- Full-duplex disables FCS ~~ FCS is still checked
+! Full-duplex switched Ethernet gives each port dedicated transmit and receive paths.
+
+? [08] How many bits are in a standard Ethernet **MAC address**?
+- 16 bits ~~ port numbers are 16 bits
+- 32 bits ~~ IPv4 addresses are 32 bits
+* 48 bits ~~ written as 6 bytes (12 hex digits), e.g., `00:1A:2B:3C:4D:5E`
+- 128 bits ~~ IPv6 addresses are 128 bits
+! Ethernet MAC addresses are 48 bits (6 octets) written in hexadecimal.
+
+? [08] In **CSMA/CD** (legacy wired Ethernet), what does a station do right after detecting a collision?
+- Powers off its NIC ~~ it only pauses briefly
+* Sends a jam signal, waits a random backoff time, and tries again ~~ random backoff prevents both stations from colliding again immediately
+- Switches to Wi-Fi ~~ wired NICs retry on the same wire
+- Doubles its IP address ~~ Layer 2 does not modify IP addresses
+! CSMA/CD stations send a jam signal and wait a random backoff before retransmitting.
+
+? [08] Which part of an Ethernet frame holds the **CRC** value?
+- Preamble ~~ Preamble synchronizes clocks at the start
+- Source MAC ~~ holds sender's 48-bit MAC
+* FCS (Frame Check Sequence) trailer ~~ placed at the end of the frame
+- Type/Length field ~~ identifies the Layer 3 protocol (e.g., IPv4)
+! The 4-byte FCS trailer at the end of an Ethernet frame carries the CRC check.

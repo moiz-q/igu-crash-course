@@ -1,0 +1,443 @@
+=== db-q01 | easy | INSERT | db-07 | Add a new department
+Insert a new department named `'Robotics'` in `'Block E'` into `Departments`.
+--- sql
+INSERT INTO Departments (dept_name, building) VALUES ('Robotics', 'Block E');
+--- check
+SELECT dept_name, building FROM Departments WHERE dept_name = 'Robotics';
+--- hint
+Use `INSERT INTO Departments (dept_name, building) VALUES (...)`.
+
+=== db-q02 | easy | INSERT | db-07 | Add a student relying on defaults
+Insert a student named `'Selim'` `'Kaya'` from `'Izmir'`, born `'2006-03-15'`, in `dept_id = 1`, `enrollment_year = 2026`, with `gpa = 3.20` (leave `email` NULL).
+--- sql
+INSERT INTO Students (first_name, last_name, city, birth_date, dept_id, enrollment_year, gpa)
+VALUES ('Selim', 'Kaya', 'Izmir', '2006-03-15', 1, 2026, 3.20);
+--- check
+SELECT first_name, last_name, city, gpa FROM Students WHERE first_name = 'Selim' AND last_name = 'Kaya';
+--- hint
+List the columns you are providing in `INSERT INTO Students (...)`, omitting `student_id` and `email`.
+
+=== db-q03 | medium | INSERT | db-07 | Enroll a student with DEFAULT semester
+Enroll `student_id = 23` in `course_id = 1` with `grade = 88`, letting `semester` use its `DEFAULT` value.
+--- sql
+INSERT INTO Enrollments (student_id, course_id, grade) VALUES (23, 1, 88);
+--- check
+SELECT student_id, course_id, semester, grade FROM Enrollments WHERE student_id = 23 AND course_id = 1;
+--- hint
+Omit `semester` from the column list so the `DEFAULT '2026-Fall'` constraint fills it in.
+
+=== db-q04 | easy | DDL | db-08 | Create a Projects table
+Create a table named `Projects` with columns: `project_id` (INTEGER PRIMARY KEY AUTOINCREMENT), `title` (TEXT NOT NULL), and `budget` (REAL DEFAULT 1000).
+--- sql
+CREATE TABLE Projects (
+    project_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    budget REAL DEFAULT 1000
+);
+--- check
+SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'Projects';
+--- hint
+Use `CREATE TABLE Projects (...)`.
+
+=== db-q05 | medium | DDL | db-08 | Alter and populate a new table
+Create a table `Rooms (room_id INTEGER PRIMARY KEY, code TEXT NOT NULL)`, then add a `capacity` (`INTEGER`) column using `ALTER TABLE`, and insert `(1, 'A-101', 40)`.
+--- sql
+CREATE TABLE Rooms (room_id INTEGER PRIMARY KEY, code TEXT NOT NULL);
+ALTER TABLE Rooms ADD COLUMN capacity INTEGER;
+INSERT INTO Rooms (room_id, code, capacity) VALUES (1, 'A-101', 40);
+--- check
+SELECT room_id, code, capacity FROM Rooms;
+--- hint
+Remember `ALTER TABLE Rooms ADD COLUMN capacity INTEGER;`.
+
+=== db-q06 | medium | DDL | db-08 | Create a table with a CHECK constraint
+Create a table `Exams (exam_id INTEGER PRIMARY KEY, max_score INTEGER CHECK (max_score > 0))` and insert `(1, 100)`.
+--- sql
+CREATE TABLE Exams (
+    exam_id INTEGER PRIMARY KEY,
+    max_score INTEGER CHECK (max_score > 0)
+);
+INSERT INTO Exams (exam_id, max_score) VALUES (1, 100);
+--- check
+SELECT exam_id, max_score FROM Exams;
+--- hint
+Put `CHECK (max_score > 0)` after the column type.
+
+=== db-q07 | easy | SELECT | db-09 | All departments
+List `dept_id`, `dept_name` and `building` for all departments, ordered by `dept_id`.
+--- sql
+SELECT dept_id, dept_name, building FROM Departments ORDER BY dept_id;
+--- hint
+Select the three columns and add `ORDER BY dept_id`.
+
+=== db-q08 | easy | SELECT | db-09 | Distinct student cities
+List each distinct `city` from `Students`, sorted alphabetically (`city`).
+--- sql
+SELECT DISTINCT city FROM Students ORDER BY city;
+--- hint
+Use `SELECT DISTINCT city`.
+
+=== db-q09 | easy | SELECT | db-09 | Students in Istanbul
+List `first_name` and `last_name` of all students whose `city` is `'Istanbul'`, ordered by `last_name`, `first_name`.
+--- sql
+SELECT first_name, last_name FROM Students WHERE city = 'Istanbul' ORDER BY last_name, first_name;
+--- hint
+Use `WHERE city = 'Istanbul'`.
+
+=== db-q10 | easy | SELECT | db-09 | High-GPA students
+List `first_name`, `last_name` and `gpa` of students with `gpa >= 3.5`, ordered from highest GPA to lowest.
+--- sql
+SELECT first_name, last_name, gpa FROM Students WHERE gpa >= 3.5 ORDER BY gpa DESC;
+--- hint
+Use `ORDER BY gpa DESC`.
+
+=== db-q11 | easy | SELECT | db-09 | Top 5 highest-paid instructors
+List `first_name`, `last_name` and `salary` of the 5 highest-paid instructors, ordered from highest salary to lowest.
+--- sql
+SELECT first_name, last_name, salary FROM Instructors ORDER BY salary DESC LIMIT 5;
+--- hint
+Use `ORDER BY salary DESC LIMIT 5` (in SQL Server: `SELECT TOP 5 ...`).
+
+=== db-q12 | easy | SELECT | db-09 | Missing student emails
+List `student_id`, `first_name` and `last_name` of students whose `email` is missing (`NULL`), ordered by `student_id`.
+--- sql
+SELECT student_id, first_name, last_name FROM Students WHERE email IS NULL ORDER BY student_id;
+--- hint
+Never write `= NULL`; use `IS NULL`.
+
+=== db-q13 | easy | SELECT | db-09 | Students from Ankara or Izmir
+List `first_name`, `last_name` and `city` of students from `'Ankara'` or `'Izmir'`, ordered by `city`, `last_name`.
+--- sql
+SELECT first_name, last_name, city FROM Students WHERE city IN ('Ankara', 'Izmir') ORDER BY city, last_name;
+--- hint
+Use `city IN ('Ankara', 'Izmir')`.
+
+=== db-q14 | easy | SELECT | db-09 | Courses with 4 to 6 credits
+List `course_code`, `title` and `credits` for courses with `credits` between 4 and 6 (inclusive), ordered by `course_code`.
+--- sql
+SELECT course_code, title, credits FROM Courses WHERE credits BETWEEN 4 AND 6 ORDER BY course_code;
+--- hint
+Use `BETWEEN 4 AND 6`.
+
+=== db-q15 | medium | SELECT | db-09 | Last names starting with A
+List `first_name` and `last_name` of students whose `last_name` starts with `'A'`, ordered by `last_name`, `first_name`.
+--- sql
+SELECT first_name, last_name FROM Students WHERE last_name LIKE 'A%' ORDER BY last_name, first_name;
+--- hint
+Use `LIKE 'A%'`.
+
+=== db-q16 | medium | SELECT | db-09 | CMP courses
+List `course_code` and `title` of all courses whose `course_code` starts with `'CMP'`, ordered by `course_code`.
+--- sql
+SELECT course_code, title FROM Courses WHERE course_code LIKE 'CMP%' ORDER BY course_code;
+--- hint
+Use `course_code LIKE 'CMP%'`.
+
+=== db-q17 | medium | SELECT | db-09 | Istanbul 2026 students with GPA >= 3.2
+List `first_name`, `last_name` and `gpa` of students from `'Istanbul'` who enrolled in `2026` and have `gpa >= 3.2`, ordered by `gpa` descending.
+--- sql
+SELECT first_name, last_name, gpa
+FROM Students
+WHERE city = 'Istanbul' AND enrollment_year = 2026 AND gpa >= 3.2
+ORDER BY gpa DESC;
+--- hint
+Combine all three conditions with `AND`.
+
+=== db-q18 | medium | SELECT | db-09 | Students NOT in Istanbul with known GPA
+List `first_name`, `last_name`, `city`, `gpa` for students whose `city` is not `'Istanbul'` and whose `gpa` is not `NULL`, ordered by `student_id`.
+--- sql
+SELECT first_name, last_name, city, gpa
+FROM Students
+WHERE city <> 'Istanbul' AND gpa IS NOT NULL
+ORDER BY student_id;
+--- hint
+Use `city <> 'Istanbul'` (or `!=`) and `gpa IS NOT NULL`.
+
+=== db-q19 | easy | Aggregates | db-10 | Count all students
+Return one column `total_students` showing the total number of rows in `Students`.
+--- sql
+SELECT COUNT(*) AS total_students FROM Students;
+--- hint
+Use `COUNT(*) AS total_students`.
+
+=== db-q20 | easy | Aggregates | db-10 | Average instructor salary
+Return one column `avg_salary` showing the average salary of all instructors (rounded to 2 decimals with `ROUND(..., 2)`).
+--- sql
+SELECT ROUND(AVG(salary), 2) AS avg_salary FROM Instructors;
+--- hint
+Use `ROUND(AVG(salary), 2) AS avg_salary`.
+
+=== db-q21 | easy | Aggregates | db-10 | Min and max grade
+Return `min_grade` and `max_grade` across all graded rows in `Enrollments`.
+--- sql
+SELECT MIN(grade) AS min_grade, MAX(grade) AS max_grade FROM Enrollments;
+--- hint
+`MIN` and `MAX` ignore `NULL` grades automatically.
+
+=== db-q22 | medium | GROUP BY | db-10 | Students per city
+List `city` and `student_count` for every city in `Students`, ordered by `student_count` descending, then `city` ascending.
+--- sql
+SELECT city, COUNT(*) AS student_count
+FROM Students
+GROUP BY city
+ORDER BY student_count DESC, city ASC;
+--- hint
+Group by `city` and count rows.
+
+=== db-q23 | medium | GROUP BY | db-10 | Cities with at least 3 students
+List `city` and `student_count` for cities that have 3 or more students, ordered by `student_count` descending.
+--- sql
+SELECT city, COUNT(*) AS student_count
+FROM Students
+GROUP BY city
+HAVING COUNT(*) >= 3
+ORDER BY student_count DESC;
+--- hint
+Use `HAVING COUNT(*) >= 3` after `GROUP BY city`.
+
+=== db-q24 | medium | GROUP BY | db-10 | Average GPA by enrollment year
+List `enrollment_year` and `avg_gpa` (`ROUND(AVG(gpa), 2)`) for each enrollment year, ordered by `enrollment_year`.
+--- sql
+SELECT enrollment_year, ROUND(AVG(gpa), 2) AS avg_gpa
+FROM Students
+GROUP BY enrollment_year
+ORDER BY enrollment_year;
+--- hint
+Group by `enrollment_year`.
+
+=== db-q25 | medium | GROUP BY | db-10 | Total credits per department
+List `dept_id` and `total_credits` (`SUM(credits)`) for each department in `Courses`, ordered by `dept_id`.
+--- sql
+SELECT dept_id, SUM(credits) AS total_credits
+FROM Courses
+GROUP BY dept_id
+ORDER BY dept_id;
+--- hint
+Sum `credits` grouped by `dept_id`.
+
+=== db-q26 | exam | GROUP BY | db-10 | Courses with average grade >= 85
+From `Enrollments`, list `course_id` and `avg_grade` (`ROUND(AVG(grade), 2)`) for courses whose average grade is at least 85, ordered by `avg_grade` descending.
+--- sql
+SELECT course_id, ROUND(AVG(grade), 2) AS avg_grade
+FROM Enrollments
+WHERE grade IS NOT NULL
+GROUP BY course_id
+HAVING AVG(grade) >= 85
+ORDER BY avg_grade DESC;
+--- hint
+Filter groups with `HAVING AVG(grade) >= 85`.
+
+=== db-q27 | easy | JOIN | db-11 | Students with their department name
+List `s.first_name`, `s.last_name` and `d.dept_name` for every student, ordered by `s.student_id`.
+--- sql
+SELECT s.first_name, s.last_name, d.dept_name
+FROM Students s
+JOIN Departments d ON s.dept_id = d.dept_id
+ORDER BY s.student_id;
+--- hint
+Join `Students` and `Departments` on `dept_id`.
+
+=== db-q28 | easy | JOIN | db-11 | Courses with instructor names
+List `c.course_code`, `c.title`, `i.first_name` and `i.last_name` for every course, ordered by `c.course_code`.
+--- sql
+SELECT c.course_code, c.title, i.first_name, i.last_name
+FROM Courses c
+JOIN Instructors i ON c.instructor_id = i.instructor_id
+ORDER BY c.course_code;
+--- hint
+Join `Courses` and `Instructors` on `instructor_id`.
+
+=== db-q29 | medium | JOIN | db-11 | All enrollments with student and course
+List `s.first_name`, `s.last_name`, `c.course_code` and `e.grade` for all rows in `Enrollments`, ordered by `s.last_name`, `c.course_code`.
+--- sql
+SELECT s.first_name, s.last_name, c.course_code, e.grade
+FROM Enrollments e
+JOIN Students s ON e.student_id = s.student_id
+JOIN Courses c ON e.course_id = c.course_id
+ORDER BY s.last_name, c.course_code;
+--- hint
+Chain two `JOIN`s starting from `Enrollments`.
+
+=== db-q30 | medium | JOIN | db-11 | Students with NO enrollments
+List `s.student_id`, `s.first_name` and `s.last_name` of students who have zero rows in `Enrollments`, ordered by `s.student_id`.
+--- sql
+SELECT s.student_id, s.first_name, s.last_name
+FROM Students s
+LEFT JOIN Enrollments e ON s.student_id = e.student_id
+WHERE e.enrollment_id IS NULL
+ORDER BY s.student_id;
+--- hint
+Use `LEFT JOIN Enrollments` and filter `WHERE e.enrollment_id IS NULL`.
+
+=== db-q31 | medium | JOIN | db-11 | Enrollment count per course (including 0)
+List `c.course_code`, `c.title` and `enrolled_count` (`COUNT(e.enrollment_id)`) for **every** course — including courses with 0 enrollments — ordered by `enrolled_count` descending, `c.course_code` ascending.
+--- sql
+SELECT c.course_code, c.title, COUNT(e.enrollment_id) AS enrolled_count
+FROM Courses c
+LEFT JOIN Enrollments e ON c.course_id = e.course_id
+GROUP BY c.course_id, c.course_code, c.title
+ORDER BY enrolled_count DESC, c.course_code ASC;
+--- hint
+Use `LEFT JOIN` and `COUNT(e.enrollment_id)` (not `COUNT(*)`, which would count 1 for an unmatched course!).
+
+=== db-q32 | exam | JOIN | db-11 | Department student counts
+List `d.dept_name` and `student_count` (`COUNT(s.student_id)`) for all departments, ordered by `student_count` descending, `d.dept_name` ascending.
+--- sql
+SELECT d.dept_name, COUNT(s.student_id) AS student_count
+FROM Departments d
+LEFT JOIN Students s ON d.dept_id = s.dept_id
+GROUP BY d.dept_id, d.dept_name
+ORDER BY student_count DESC, d.dept_name ASC;
+--- hint
+Use `LEFT JOIN Students` so departments with 0 students still appear.
+
+=== db-q33 | exam | JOIN | db-11 | Highest grade per student
+List `s.first_name`, `s.last_name` and `best_grade` (`MAX(e.grade)`) for students who have at least one non-NULL grade, ordered by `best_grade` descending, `s.last_name` ascending.
+--- sql
+SELECT s.first_name, s.last_name, MAX(e.grade) AS best_grade
+FROM Students s
+JOIN Enrollments e ON s.student_id = e.student_id
+WHERE e.grade IS NOT NULL
+GROUP BY s.student_id, s.first_name, s.last_name
+ORDER BY best_grade DESC, s.last_name ASC;
+--- hint
+Filter `e.grade IS NOT NULL`, group by student, and take `MAX(e.grade)`.
+
+=== db-q34 | easy | UPDATE | db-12 | Update one student's city
+Update `student_id = 5` in `Students` so their `city` becomes `'Istanbul'`.
+--- sql
+UPDATE Students SET city = 'Istanbul' WHERE student_id = 5;
+--- check
+SELECT student_id, first_name, city FROM Students WHERE student_id = 5;
+--- hint
+Always include `WHERE student_id = 5`!
+
+=== db-q35 | medium | UPDATE | db-12 | Raise salaries in Department 1
+Give a 10% raise (`salary = salary * 1.10`) to all instructors in `dept_id = 1`.
+--- sql
+UPDATE Instructors SET salary = salary * 1.10 WHERE dept_id = 1;
+--- check
+SELECT instructor_id, first_name, salary FROM Instructors WHERE dept_id = 1 ORDER BY instructor_id;
+--- hint
+Use `SET salary = salary * 1.10 WHERE dept_id = 1`.
+
+=== db-q36 | medium | DELETE | db-12 | Delete NULL-grade enrollments
+Delete all rows from `Enrollments` where `grade IS NULL`.
+--- sql
+DELETE FROM Enrollments WHERE grade IS NULL;
+--- check
+SELECT COUNT(*) AS remaining_enrollments FROM Enrollments;
+--- hint
+Use `DELETE FROM Enrollments WHERE grade IS NULL;`.
+
+=== db-q37 | medium | UPDATE | db-12 | Update missing GPA
+Set `gpa = 2.00` for all students whose `gpa IS NULL`.
+--- sql
+UPDATE Students SET gpa = 2.00 WHERE gpa IS NULL;
+--- check
+SELECT student_id, first_name, gpa FROM Students WHERE student_id IN (8, 18, 24) ORDER BY student_id;
+--- hint
+Use `WHERE gpa IS NULL`.
+
+=== db-q38 | medium | Subquery | db-14 | Students above average GPA
+List `first_name`, `last_name` and `gpa` of students whose `gpa` is strictly greater than the average GPA of all students, ordered by `gpa` descending.
+--- sql
+SELECT first_name, last_name, gpa
+FROM Students
+WHERE gpa > (SELECT AVG(gpa) FROM Students)
+ORDER BY gpa DESC;
+--- hint
+Compare `gpa > (SELECT AVG(gpa) FROM Students)`.
+
+=== db-q39 | medium | Subquery | db-14 | Instructors earning above average
+List `first_name`, `last_name` and `salary` of instructors who earn more than the average instructor salary, ordered by `salary` descending.
+--- sql
+SELECT first_name, last_name, salary
+FROM Instructors
+WHERE salary > (SELECT AVG(salary) FROM Instructors)
+ORDER BY salary DESC;
+--- hint
+Use a scalar subquery `(SELECT AVG(salary) FROM Instructors)`.
+
+=== db-q40 | medium | Subquery | db-14 | Courses in Block B
+Using a subquery with `IN`, list `course_code` and `title` of courses belonging to departments in `'Block B'`, ordered by `course_code`.
+--- sql
+SELECT course_code, title
+FROM Courses
+WHERE dept_id IN (SELECT dept_id FROM Departments WHERE building = 'Block B')
+ORDER BY course_code;
+--- hint
+`WHERE dept_id IN (SELECT dept_id FROM Departments WHERE building = 'Block B')`.
+
+=== db-q41 | medium | Subquery | db-14 | Students enrolled in CMP153 (IN)
+Using a subquery, list `first_name` and `last_name` of students enrolled in `'CMP153'`, ordered by `last_name`, `first_name`.
+--- sql
+SELECT first_name, last_name
+FROM Students
+WHERE student_id IN (
+    SELECT e.student_id
+    FROM Enrollments e
+    JOIN Courses c ON e.course_id = c.course_id
+    WHERE c.course_code = 'CMP153'
+)
+ORDER BY last_name, first_name;
+--- hint
+Find `student_id`s in `Enrollments` joined with `Courses` where `course_code = 'CMP153'`.
+
+=== db-q42 | exam | Subquery | db-14 | Courses with no enrollments (NOT EXISTS)
+Using `NOT EXISTS`, list `course_code` and `title` of courses that have zero enrollments, ordered by `course_code`.
+--- sql
+SELECT c.course_code, c.title
+FROM Courses c
+WHERE NOT EXISTS (
+    SELECT 1 FROM Enrollments e WHERE e.course_id = c.course_id
+)
+ORDER BY c.course_code;
+--- hint
+Correlate `e.course_id = c.course_id` inside `NOT EXISTS (...)`.
+
+=== db-q43 | exam | Subquery | db-14 | Students with a grade >= 90 (EXISTS)
+Using `EXISTS`, list `first_name` and `last_name` of students who have at least one grade of 90 or higher, ordered by `last_name`, `first_name`.
+--- sql
+SELECT s.first_name, s.last_name
+FROM Students s
+WHERE EXISTS (
+    SELECT 1 FROM Enrollments e
+    WHERE e.student_id = s.student_id AND e.grade >= 90
+)
+ORDER BY s.last_name, s.first_name;
+--- hint
+Use `WHERE EXISTS (SELECT 1 FROM Enrollments e WHERE e.student_id = s.student_id AND e.grade >= 90)`.
+
+=== db-q44 | exam | Subquery | db-14 | Highest-paid instructor(s)
+List `first_name`, `last_name` and `salary` of the instructor(s) earning the maximum salary.
+--- sql
+SELECT first_name, last_name, salary
+FROM Instructors
+WHERE salary = (SELECT MAX(salary) FROM Instructors);
+--- hint
+Compare `salary = (SELECT MAX(salary) FROM Instructors)`.
+
+=== db-q45 | exam | Subquery | db-14 | Average of department averages
+Using a subquery in `FROM`, return one column `avg_dept_salary` (`ROUND(AVG(dept_avg), 2)`) showing the average of each department's average instructor salary.
+--- sql
+SELECT ROUND(AVG(dept_avg), 2) AS avg_dept_salary
+FROM (
+    SELECT dept_id, AVG(salary) AS dept_avg
+    FROM Instructors
+    GROUP BY dept_id
+);
+--- hint
+Group by `dept_id` in the inner query, then take `ROUND(AVG(dept_avg), 2)` in the outer query.
+
+=== db-q46 | exam | JOIN | db-11 | Students with 2 or more enrollments
+List `s.first_name`, `s.last_name` and `course_count` (`COUNT(*)`) for students enrolled in at least 2 courses, ordered by `course_count` descending, `s.last_name` ascending.
+--- sql
+SELECT s.first_name, s.last_name, COUNT(*) AS course_count
+FROM Students s
+JOIN Enrollments e ON s.student_id = e.student_id
+GROUP BY s.student_id, s.first_name, s.last_name
+HAVING COUNT(*) >= 2
+ORDER BY course_count DESC, s.last_name ASC;
+--- hint
+Join `Students` and `Enrollments`, group by student, and use `HAVING COUNT(*) >= 2`.

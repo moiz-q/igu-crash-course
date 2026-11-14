@@ -1,0 +1,400 @@
+# Computer Networks MCQ Bank (Part B: Lessons 09–16)
+
+? [09] How many layers are in the **TCP/IP model**?
+- 3 ~~ TCP/IP has 4 layers
+* 4 ~~ Application, Transport, Internet, Network Access (Link)
+- 5 ~~ sometimes taught as a hybrid, but standard TCP/IP is 4
+- 7 ~~ OSI has 7 layers
+! The TCP/IP model has 4 layers.
+
+? [09] Which TCP/IP layer corresponds to OSI Layers 5, 6, and 7 combined?
+* Application ~~ TCP/IP Application covers OSI Session, Presentation, and Application
+- Transport ~~ maps to OSI Layer 4
+- Internet ~~ maps to OSI Layer 3
+- Network Access ~~ maps to OSI Layers 1 and 2
+! TCP/IP's Application layer merges OSI Layers 5, 6, and 7.
+
+? [09] What are the three packets in a **TCP three-way handshake**?
+- `HELLO`, `OK`, `BYE` ~~ not TCP flags
+* `SYN`, `SYN-ACK`, `ACK` ~~ client sends SYN, server replies SYN-ACK, client confirms ACK
+- `ARP`, `ICMP`, `DNS` ~~ those are separate protocols
+- `FIN`, `RST`, `PSH` ~~ FIN/RST close or reset connections
+! TCP opens a reliable connection with `SYN` → `SYN-ACK` → `ACK`.
+
+? [09] Which transport protocol is **connectionless**, has low overhead (8-byte header), and is preferred for live voice/video and DNS?
+- TCP ~~ TCP is connection-oriented with a 20-byte header and retransmissions
+* UDP ~~ User Datagram Protocol is fast and connectionless
+- ICMP ~~ ICMP is a Layer 3 diagnostic protocol
+- ARP ~~ ARP resolves IP to MAC at Layer 2/3
+! UDP provides fast, connectionless delivery without handshakes or retransmissions.
+
+? [09] Which port number does **SSH** (encrypted remote login) use by default?
+- 21 ~~ port 21 is FTP control
+* 22 ~~ port 22 is SSH
+- 23 ~~ port 23 is unencrypted Telnet
+- 25 ~~ port 25 is SMTP
+! SSH runs on TCP port 22; Telnet runs on TCP port 23.
+
+? [09] Which protocol uses **UDP port 53** (and sometimes TCP 53) to translate domain names like `igu.edu.tr` into IP addresses?
+- DHCP ~~ DHCP uses ports 67/68
+- HTTP ~~ HTTP uses port 80
+* DNS ~~ Domain Name System uses port 53
+- SMTP ~~ SMTP uses port 25
+! DNS translates hostnames to IP addresses on port 53.
+
+? [09] Which port number does **HTTP** (unencrypted web) use?
+- 25 ~~ SMTP
+- 53 ~~ DNS
+* 80 ~~ HTTP uses TCP port 80 (HTTPS uses 443)
+- 443 ~~ HTTPS uses 443
+! HTTP = port 80; HTTPS = port 443.
+
+? [09] Which protocol uses ports **67 and 68** to automatically assign IP addresses, subnet masks, and gateways to clients?
+- DNS ~~ DNS resolves names (port 53)
+* DHCP ~~ Dynamic Host Configuration Protocol uses UDP 67 (server) and 68 (client)
+- FTP ~~ FTP transfers files (20/21)
+- SSH ~~ SSH is remote shell (22)
+! DHCP automatically leases IP configuration using UDP ports 67/68.
+
+? [09] Why is **SSH** strongly preferred over **Telnet** for managing routers and servers?
+- Telnet only works on IPv6 ~~ Telnet works on IPv4
+* Telnet sends passwords and commands in plain text, while SSH encrypts all traffic ~~ anyone sniffing the LAN can read Telnet passwords
+- SSH uses UDP so it is faster ~~ SSH uses TCP port 22
+- Telnet cannot connect to switches ~~ switches support Telnet, though it is insecure
+! Always use SSH (port 22) instead of unencrypted Telnet (port 23).
+
+? [10] Convert the 8-bit binary number `10101010` to decimal.
+- 168 ~~ `10101000` is 168
+* 170 ~~ `128 + 32 + 8 + 2 = 170`
+- 172 ~~ `10101100` is 172
+- 192 ~~ `11000000` is 192
+! Add the active bit weights: $128 + 32 + 8 + 2 = 170$.
+
+? [10] Convert the decimal number `224` to 8-bit binary.
+- `11000000` ~~ `128 + 64 = 192`
+* `11100000` ~~ `128 + 64 + 32 = 224`
+- `11110000` ~~ `128 + 64 + 32 + 16 = 240`
+- `11111000` ~~ `248`
+! $128 + 64 + 32 = 224$, which is `11100000`.
+
+? [10] What is the hexadecimal equivalent of the 8-bit binary number `11111111` (decimal 255)?
+- `AA` ~~ `AA` is `10101010` (170)
+- `EE` ~~ `EE` is `11101110` (238)
+* `FF` ~~ `1111` = `F` (15), so `11111111` = `FF`
+- `10` ~~ `10` in hex is 16 in decimal
+! Each 4-bit nibble `1111` equals hex `F`, so `255` = `FF`.
+
+? [10] Which of these is an **invalid** IPv4 address?
+- `10.0.0.1` ~~ valid private Class A IP
+- `172.16.254.1` ~~ valid private Class B IP
+* `192.168.1.256` ~~ `256` exceeds the maximum 8-bit octet value (`255`)
+- `127.0.0.1` ~~ valid loopback address
+! Every IPv4 octet must be between `0` and `255`.
+
+? [10] How many binary bits make up **one hexadecimal digit**?
+- 2 bits ~~ 2 bits only give 4 values
+* 4 bits ~~ $2^4 = 16$ values (`0`–`F`)
+- 8 bits ~~ 8 bits = 2 hex digits (1 byte)
+- 16 bits ~~ 16 bits = 4 hex digits
+! One hex digit represents 4 binary bits (one nibble).
+
+? [10] Convert hexadecimal `C0` to decimal.
+- 168 ~~ `A8` is 168
+* 192 ~~ `C` = 12, so $12 \times 16 + 0 = 192$
+- 200 ~~ `C8` is 200
+- 255 ~~ `FF` is 255
+! `C0` in hex = $(12 \times 16) + 0 = 192$.
+
+? [10] How many octets (bytes) are in an IPv4 address?
+- 2 ~~ 16 bits
+* 4 ~~ 4 octets × 8 bits = 32 bits
+- 6 ~~ MAC addresses have 6 octets (48 bits)
+- 8 ~~ IPv6 has 8 hextets (128 bits)
+! IPv4 has 4 octets totaling 32 bits.
+
+? [10] What is the decimal value of `00011111`?
+- 15 ~~ `00001111` is 15
+* 31 ~~ `16 + 8 + 4 + 2 + 1 = 31` (or `32 - 1`)
+- 32 ~~ `00100000` is 32
+- 63 ~~ `00111111` is 63
+! `00011111` = $16+8+4+2+1 = 31$.
+
+? [11] Which IPv4 class has a first octet between `192` and `223` and a default mask of `/24`?
+- Class A ~~ `1–126` (`/8`)
+- Class B ~~ `128–191` (`/16`)
+* Class C ~~ `192–223` (`/24`)
+- Class D ~~ `224–239` (multicast)
+! Class C addresses start with `192`–`223`.
+
+? [11] Which IPv4 address range is **Class B private** (RFC 1918)?
+- `10.0.0.0 – 10.255.255.255` ~~ Class A private
+* `172.16.0.0 – 172.31.255.255` ~~ Class B private (`172.16.0.0/12`)
+- `172.16.0.0 – 172.64.255.255` ~~ stops at `172.31.255.255`, not `64`
+- `192.168.0.0 – 192.168.255.255` ~~ Class C private
+! Class B private is `172.16.0.0` to `172.31.255.255`.
+
+? [11] What is `127.0.0.1` used for?
+- Default gateway on all Cisco routers ~~ gateways are usually `.1` of your LAN subnet
+* Loopback address to test the local host's own TCP/IP stack ~~ `ping 127.0.0.1` never leaves the PC
+- Public DNS server ~~ public DNS is e.g. `8.8.8.8` or `1.1.1.1`
+- Broadcast to the entire internet ~~ `255.255.255.255` is local broadcast
+! `127.0.0.0/8` (`127.0.0.1`) is the IPv4 loopback range.
+
+? [11] A laptop shows IP `169.254.23.10` after plugging in an Ethernet cable. What does this indicate?
+- The laptop has a valid public IP ~~ `169.254.x.x` is link-local APIPA
+* The laptop could not reach a DHCP server and self-assigned an APIPA address ~~ check the DHCP service or cable/VLAN
+- NAT is blocking DNS ~~ APIPA happens before gateway/DNS
+- IPv6 is enabled ~~ `169.254.x.x` is IPv4 APIPA
+! APIPA (`169.254.0.0/16`) means DHCP failed to respond.
+
+? [11] What problem does **NAT (Network Address Translation)** solve?
+- It speeds up Wi-Fi channels ~~ NAT is Layer 3/4 address translation
+* It lets an entire private LAN share one (or a few) public IPv4 addresses on the internet ~~ mitigates IPv4 address exhaustion
+- It replaces MAC addresses on switches ~~ switches still use MACs
+- It encrypts all web traffic ~~ TLS encrypts web traffic, not NAT
+! NAT translates private RFC 1918 addresses to public IPv4 addresses at the router.
+
+? [11] How many bits long is an **IPv6** address?
+- 32 bits ~~ IPv4 is 32 bits
+- 48 bits ~~ MAC is 48 bits
+- 64 bits ~~ only the interface ID half of IPv6
+* 128 bits ~~ written as 8 groups of 4 hex digits
+! IPv6 uses 128-bit addresses.
+
+? [11] What is the shortened form of the IPv6 address `2001:0db8:0000:0000:0000:0000:0000:0001`?
+- `2001:db8::0::1` ~~ `::` can appear only once
+* `2001:db8::1` ~~ drop leading zeros (`0db8`→`db8`, `0001`→`1`) and compress the single run of zero groups with `::`
+- `2001:db8:1` ~~ missing `::` leaves the length ambiguous
+- `2001::db8::1` ~~ `::` cannot be used twice
+! Drop leading zeros in each group and replace one contiguous block of all-zero groups with `::`.
+
+? [11] Which IPv4 address is a **public** (internet-routable) address?
+- `10.45.12.1` ~~ Class A private
+- `192.168.50.25` ~~ Class C private
+- `172.24.0.1` ~~ Class B private (`172.16–31`)
+* `172.32.0.1` ~~ outside `172.31.255.255`, so it is public
+! `172.32.x.x` is outside the `172.16.0.0–172.31.255.255` private range.
+
+? [12] What is the dotted-decimal subnet mask for `/26`?
+- `255.255.255.128` ~~ `/25`
+* `255.255.255.192` ~~ `128 + 64 = 192` (2 borrowed bits in 4th octet)
+- `255.255.255.224` ~~ `/27`
+- `255.255.255.240` ~~ `/28`
+! `/26` borrows 2 bits in the 4th octet: `11000000` = `192`.
+
+? [12] How many **usable host** addresses are in a `/27` subnet?
+- 14 ~~ `/28`
+* 30 ~~ $32 - 27 = 5$ host bits; $2^5 - 2 = 30$ usable hosts
+- 32 ~~ 32 is total addresses before subtracting network and broadcast
+- 62 ~~ `/26`
+! A `/27` has 5 host bits: $2^5 - 2 = 30$ usable hosts.
+
+? [12] What is the **broadcast address** for the subnet `192.168.5.64/26`?
+- `192.168.5.64` ~~ that is the network address
+- `192.168.5.126` ~~ that is the last usable host
+* `192.168.5.127` ~~ block size is 64; next subnet is `.128`, so broadcast is `.127`
+- `192.168.5.255` ~~ `.255` is the broadcast for `/24`, not `/26`
+! Subnet `.64/26` spans `.64` to `.127`; the last address `.127` is the broadcast address.
+
+? [12] Which subnet contains the host `192.168.1.200/27`?
+- `192.168.1.128/27` ~~ `.128–.159`
+- `192.168.1.160/27` ~~ `.160–.191`
+* `192.168.1.192/27` ~~ block size is 32 (`192..223`), which contains `200`
+- `192.168.1.224/27` ~~ `.224–.255`
+! `/27` steps by 32: `0, 32, 64, 96, 128, 160, 192, 224`. `200` is in `.192/27`.
+
+? [12] Why do we subtract **2** in the formula $2^h - 2$?
+- Routers steal 2 addresses automatically ~~ only 1 IP is needed for a gateway, and it counts as a usable host
+* The first address (Network ID) and last address (Broadcast) cannot be assigned to hosts ~~ both are reserved per subnet
+- Two addresses are reserved for IPv6 ~~ IPv4 subnets don't reserve for IPv6
+- Windows reserves 2 addresses for DNS ~~ DNS servers use normal host IPs
+! Network ID (all host bits 0) and Broadcast (all host bits 1) are unusable for hosts.
+
+? [12] What is the **first usable host** address in `10.10.10.16/28`?
+- `10.10.10.16` ~~ `.16` is the network address
+* `10.10.10.17` ~~ one above the network address `.16`
+- `10.10.10.30` ~~ `.30` is the last usable host
+- `10.10.10.31` ~~ `.31` is the broadcast address
+! Network `.16`, first host `.17`, last host `.30`, broadcast `.31`.
+
+? [12] Which CIDR prefix corresponds to subnet mask `255.255.255.248`?
+- `/27` ~~ `.224`
+- `/28` ~~ `.240`
+* `/29` ~~ `248` = `11111000` (5 bits in 4th octet, $24 + 5 = 29$)
+- `/30` ~~ `.252`
+! `248` has five `1` bits, giving $24 + 5 = /29$.
+
+? [12] A host has IP `192.168.4.127` with mask `255.255.255.128` (`/25`). Why does the OS reject this IP?
+- It is a Class A address ~~ `192.168.4.x` is Class C
+* `.127` is the **broadcast address** of the `192.168.4.0/25` subnet ~~ `.0–.127` broadcast is `.127`
+- It is the loopback address ~~ loopback is `127.x.x.x` in the first octet
+- `.127` is too large for an octet ~~ octets go up to `255`
+! In `192.168.4.0/25`, usable hosts are `.1`–`.126`; `.127` is the broadcast address.
+
+? [13] You need a subnet that supports at least **40 hosts** while wasting the fewest addresses. Which mask should you use?
+- `/27` (`255.255.255.224`) ~~ only 30 usable hosts (too small)
+* `/26` (`255.255.255.192`) ~~ 62 usable hosts (smallest fit for 40)
+- `/25` (`255.255.255.128`) ~~ 126 usable hosts (wastes more)
+- `/24` (`255.255.255.0`) ~~ 254 usable hosts
+! $2^5 - 2 = 30 < 40$, while $2^6 - 2 = 62 \ge 40$, so `/26` is the best fit.
+
+? [13] When designing **VLSM** subnets for departments needing 100, 45, and 10 hosts, in what order should you allocate them?
+- Smallest to largest (10, 45, 100) ~~ allocating small blocks first can fragment space and block the 100-host subnet
+* Largest to smallest (100, 45, 10) ~~ keeps subnets aligned cleanly on power-of-2 boundaries
+- Alphabetical by room name ~~ size determines alignment, not name
+- Random order ~~ risks overlapping subnets
+! Always allocate the largest host requirement first in VLSM.
+
+? [13] In a two-LAN Packet Tracer lab (`192.168.1.0/24` on `Gig0/0` and `192.168.2.0/24` on `Gig0/1`), what should `PC0` (`192.168.1.10`) use as its **Default Gateway**?
+- `192.168.2.1` ~~ the gateway must be on `PC0`'s own local subnet
+* `192.168.1.1` (the IP of `Router0` `Gig0/0`) ~~ hosts send cross-subnet packets to their local router interface
+- `255.255.255.0` ~~ that is a subnet mask, not a gateway
+- `127.0.0.1` ~~ that is loopback
+! A host's default gateway must be an IP in the host's own local subnet (the router interface on that LAN).
+
+? [13] You cabled `Switch0` to `Router0` (`Gig0/0`) and configured `192.168.1.1`, but the triangle stays **red**. What did you likely forget?
+- Setting DNS on the router ~~ DNS doesn't affect Layer 1/2 link light
+* Enabling the interface (`Port Status: On` / `no shutdown`) ~~ Cisco router ports are shut down by default
+- Using a crossover cable ~~ Switch to Router uses straight-through
+- Waiting 30 seconds for STP ~~ STP turns amber, not red
+! Cisco router interfaces start administratively down until `no shutdown` / Port Status On is set.
+
+? [13] Which subnet mask is ideal for a point-to-point link between two routers (needing only 2 usable IPs)?
+- `/28` ~~ 14 usable IPs
+- `/29` ~~ 6 usable IPs
+* `/30` (`255.255.255.252`) ~~ $2^2 - 2 = 2$ usable IPs
+- `/24` ~~ 254 usable IPs
+! `/30` wastes zero usable host addresses on a 2-router link.
+
+? [13] Starting at `192.168.10.0/24`, you assign `192.168.10.0/26` to Lab A. What is the **network address** of the next available `/27` subnet for Lab B?
+- `192.168.10.63` ~~ `.63` is Lab A's broadcast address
+* `192.168.10.64` ~~ Lab A uses `.0`–`.63`, so Lab B starts at `.64/27`
+- `192.168.10.65` ~~ `.65` is the first usable host of `.64/27`
+- `192.168.10.128` ~~ leaves `.64–.127` unused
+! `192.168.10.0/26` ends at `.63`, so the next subnet begins at `192.168.10.64`.
+
+? [13] In Packet Tracer, why does the **first** `ping` across a newly built routed network often say `Request timed out`, while replies 2, 3, and 4 succeed?
+- The router reboots after packet 1 ~~ routers do not reboot on ping
+* ARP takes a moment at each hop (PC→Router, Router→Target PC) before the 2-second ICMP timeout expires ~~ subsequent pings use the cached ARP entries
+- TCP handshake takes 3 packets ~~ `ping` uses ICMP, not TCP
+- The switch deletes MAC addresses after every packet ~~ switches cache MACs for minutes
+! Initial ARP resolution across two hops often causes the very first ICMP echo to time out.
+
+? [14] Which command shows your Windows PC's IPv4 address, subnet mask, and default gateway?
+- `nslookup` ~~ queries DNS
+* `ipconfig` ~~ displays local IP configuration (`ipconfig /all` adds MAC and DNS)
+- `tracert` ~~ traces router hops
+- `arp -a` ~~ shows cached IP-to-MAC pairs
+! `ipconfig` displays local TCP/IP adapter settings on Windows.
+
+? [14] Which command lists every **router hop** between your PC and `8.8.8.8`?
+- `ping 8.8.8.8` ~~ only tests end-to-end reachability
+- `netstat -an` ~~ shows local connections and listening ports
+* `tracert 8.8.8.8` ~~ prints each router hop along the path
+- `ipconfig /all` ~~ shows local adapter config only
+! `tracert` (Windows) / `traceroute` (Linux/macOS) maps each hop.
+
+? [14] `ping 8.8.8.8` succeeds, but `ping google.com` says *"Ping request could not find host google.com"*. What is broken?
+- Physical Ethernet cable ~~ `8.8.8.8` succeeded
+- Default gateway ~~ traffic reached `8.8.8.8` on the internet
+* DNS name resolution ~~ IP works, but domain-to-IP lookup failed
+- Switch MAC table ~~ Layer 2 is working
+! Reaching raw IPs while domain names fail indicates a DNS issue.
+
+? [14] Which command shows active **TCP/UDP connections** and **listening ports** on your computer?
+- `arp -a` ~~ shows IP-to-MAC cache
+- `nslookup` ~~ queries DNS
+* `netstat -an` ~~ displays open ports and active connections numerically
+- `tracert` ~~ traces network hops
+! `netstat -an` inspects local sockets, connections, and listening ports.
+
+? [14] Which command displays the local **IP-to-MAC** address cache on a PC?
+* `arp -a` ~~ shows learned IP-to-MAC mappings on the LAN
+- `ipconfig` ~~ shows your own IP/mask/gateway
+- `ping -a` ~~ resolves hostname via DNS
+- `netstat -r` ~~ shows the routing table
+! `arp -a` prints the Address Resolution Protocol cache.
+
+? [14] Why might `ping` to a public website time out even though you can open the site in a browser?
+- Browsers do not use IP ~~ browsers use IP and TCP
+* Many servers and firewalls block incoming ICMP Echo Requests for security ~~ HTTPS (port 443) is allowed while ICMP is dropped
+- `ping` only works on private LANs ~~ `ping` works over the internet when allowed
+- `ping` requires Telnet ~~ `ping` uses ICMP
+! Firewalls often drop ICMP (`ping`) while permitting HTTPS (`443`).
+
+? [15] Which three channels in the **2.4 GHz** Wi-Fi band do **not** overlap?
+- 1, 2, 3 ~~ adjacent channels overlap
+- 3, 6, 9 ~~ 3 and 6 overlap (need 5 channels spacing)
+* 1, 6, 11 ~~ spaced 5 channels apart, zero overlap
+- 1, 5, 10 ~~ 1 and 5 overlap
+! Always assign 2.4 GHz APs to channels 1, 6, and 11.
+
+? [15] How does **5 GHz** Wi-Fi compare to **2.4 GHz** Wi-Fi?
+- 5 GHz has longer range through concrete walls ~~ 2.4 GHz penetrates walls better
+* 5 GHz provides higher throughput and less congestion, but shorter range ~~ higher frequency attenuates faster
+- 5 GHz has fewer channels than 2.4 GHz ~~ 5 GHz has many more non-overlapping channels
+- 5 GHz is only for Bluetooth ~~ Bluetooth uses 2.4 GHz
+! 2.4 GHz = better range; 5 GHz = faster speed and cleaner spectrum.
+
+? [15] Which IEEE standard corresponds to **Wi-Fi 6**?
+- 802.11b ~~ early 11 Mbps 2.4 GHz
+- 802.11n ~~ Wi-Fi 4
+- 802.11ac ~~ Wi-Fi 5
+* 802.11ax ~~ Wi-Fi 6 (high efficiency in dense environments)
+! 802.11ax is Wi-Fi 6; 802.11ac is Wi-Fi 5; 802.11n is Wi-Fi 4.
+
+? [15] Which wireless security protocol is the **strongest modern standard**?
+- WEP ~~ completely broken
+- WPA (TKIP) ~~ deprecated
+- Open with hidden SSID ~~ unencrypted; sniffers still see traffic
+* WPA3 ~~ modern standard protecting against offline dictionary attacks (WPA2-AES is also widely used)
+! Use WPA3 (or WPA2-AES) and never WEP.
+
+? [15] Why is **hiding the SSID** not sufficient security for a Wi-Fi network?
+- It turns off the Wi-Fi radio ~~ the AP still transmits beacons/probe responses
+* Anyone with a wireless sniffer can still capture the SSID and read unencrypted frames ~~ real security requires WPA2/WPA3 encryption
+- It breaks DHCP ~~ DHCP still works
+- It forces 2.4 GHz only ~~ SSID hiding works on both bands
+! Hiding an SSID is obscurity, not encryption.
+
+? [16] What do the three letters of the **CIA triad** stand for?
+- Control, Internet, Access ~~ incorrect
+* Confidentiality, Integrity, Availability ~~ the three core pillars of information security
+- Cipher, IP, Authentication ~~ incorrect
+- Cisco, IEEE, ANSI ~~ those are organizations/standards
+! CIA = Confidentiality, Integrity, Availability.
+
+? [16] Ensuring that a message cannot be secretly modified during transit protects which CIA goal?
+- Confidentiality ~~ Confidentiality prevents unauthorized reading
+* Integrity ~~ Integrity guarantees data has not been altered
+- Availability ~~ Availability ensures uptime for authorized users
+- Scalability ~~ not part of the CIA triad
+! Integrity ensures data accuracy and detects tampering (via hashes/HMAC).
+
+? [16] In a **DDoS (Distributed Denial of Service)** attack, which CIA pillar is directly targeted?
+- Confidentiality ~~ DDoS does not steal secrets directly
+- Integrity ~~ DDoS does not modify stored files
+* Availability ~~ flooding a server makes it unreachable for legitimate users
+- Encryption ~~ not a CIA pillar
+! DDoS attacks exhaust bandwidth or server resources to break Availability.
+
+? [16] How does a **stateful firewall** improve on a simple stateless packet-filtering firewall?
+- It replaces all switches ~~ firewalls filter traffic, switches forward LAN frames
+* It tracks active connection state so return traffic for allowed outgoing requests is permitted automatically ~~ reduces manual rule errors and blocks unsolicited inbound packets
+- It physically cuts cables ~~ firewalls filter in software/hardware
+- It assigns MAC addresses ~~ NICs have burned-in MACs
+! Stateful firewalls track connection tables rather than inspecting every packet in isolation.
+
+? [16] In what order does a router evaluate rules in an **ACL (Access Control List)**?
+- Bottom to top ~~ always top to bottom
+* Top to bottom, stopping at the first match ~~ place specific rules before broad deny/permit rules
+- Most permissive rule first ~~ order in the list determines priority
+- Randomly ~~ deterministic top-down order
+! ACLs stop on the first matching rule from top to bottom.
+
+? [16] What does a **VPN** provide when connecting from a coffee shop Wi-Fi to your university's internal network?
+- Free faster Wi-Fi bandwidth ~~ VPNs add slight encryption overhead
+* An encrypted, authenticated tunnel across the untrusted public network ~~ protects traffic from local Wi-Fi sniffers
+- A new physical MAC address ~~ VPNs operate at Layer 3/4/7
+- Automatic antivirus removal ~~ VPNs encrypt transit traffic, not disk files
+! A VPN wraps your traffic in an encrypted tunnel over public networks.

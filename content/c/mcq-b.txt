@@ -1,0 +1,281 @@
+# Programming Basics I (C) — MCQ bank Part B (weeks 9–15)
+
+? [09] How many times does `for (int i = 2; i < 10; i += 2)` run?
+- `5` ~~ Stops before `10`: `2, 4, 6, 8` is 4 times.
+* `4` ~~ Runs for `i = 2, 4, 6, 8`.
+- `8` ~~ Step is `+= 2`, not `++`.
+- `10` ~~ Starts at 2 and steps by 2.
+! Trace the values of `i`: `2, 4, 6, 8` → 4 iterations.
+
+? [09] What is the difference between `break` and `continue` inside a loop?
+- Both exit the loop immediately ~~ Only `break` exits the loop.
+* `break` exits the loop completely; `continue` skips the rest of the current pass and jumps to the next iteration ~~ In `for`, `continue` still runs the step (`i++`).
+- `continue` restarts `main()` ~~ It only advances to the next loop iteration.
+- `break` only works in `switch` ~~ `break` works in `switch` and all loops (`for`, `while`, `do-while`).
+! `break` = stop looping; `continue` = skip this pass, keep looping.
+
+? [09] What happens when you write `int i = 1; while (i <= 5); { printf("%d", i); i++; }`?
+- Prints `12345` ~~ The `;` after `while (...)` makes the loop body empty!
+* Infinite loop (prints nothing) ~~ `i` stays `1`, so `1 <= 5` stays true forever.
+- Prints `1` ~~ Never reaches `{ ... }`.
+- Compile error ~~ Syntactically valid, logically an infinite loop.
+! Never put a semicolon `;` right after `while (...)` or `for (...)`.
+
+? [09] Which loop is best when you want to ask a user for a password **at least once** and repeat while it is wrong?
+- `for` ~~ `for` checks before the first run.
+- `while` ~~ `while` checks before the first run.
+* `do-while` ~~ Post-test loop guaranteed to run at least once.
+- `switch` ~~ `switch` is a branch, not a loop.
+! Use `do { ... } while (...);` when the body must execute at least once.
+
+? [09] How many stars does `for (int i = 0; i < 3; i++) for (int j = 0; j < 4; j++) printf("*");` print?
+- `7` ~~ Nested loops multiply: `3 * 4`, not `3 + 4`.
+* `12` ~~ `3` outer iterations × `4` inner iterations = `12`.
+- `3` ~~ Inner loop runs 4 times per outer pass.
+- `4` ~~ Outer loop runs 3 times.
+! Nested loops multiply iteration counts: `3 × 4 = 12`.
+
+? [10] How do you remove the last decimal digit from a positive integer `n`?
+- `n = n % 10;` ~~ `n % 10` *keeps* only the last digit.
+* `n = n / 10;` ~~ Integer division by 10 drops the ones digit (e.g. `472 / 10 == 47`).
+- `n = n - 10;` ~~ Subtracts 10 instead of shifting digits.
+- `n = n * 10;` ~~ Adds a trailing zero.
+! `n % 10` = last digit; `n / 10` = remaining digits.
+
+? [10] In Euclid's GCD algorithm (`while (b != 0) { r = a % b; a = b; b = r; }`), what holds the GCD when the loop stops?
+- `b` ~~ `b` is `0` when the loop stops.
+* `a` ~~ `a` holds the last non-zero divisor, which is the GCD.
+- `r` ~~ `r` is `0` on the final step.
+- `a * b` ~~ `0`.
+! When `b` reaches `0`, `a` is the GCD.
+
+? [10] What are the first 6 Fibonacci numbers starting from `0, 1`?
+- `0, 1, 1, 2, 4, 8` ~~ `2 + 1 = 3`, not `4`.
+* `0, 1, 1, 2, 3, 5` ~~ Each number is the sum of the previous two.
+- `1, 2, 3, 4, 5, 6` ~~ That's counting numbers.
+- `0, 1, 2, 3, 5, 8` ~~ Missing the second `1` (`0 + 1 = 1`).
+! Fibonacci: `0, 1, 1, 2, 3, 5, 8, 13, ...`.
+
+? [10] To check if `n` is prime, up to what limit do you actually need to test divisors `d`?
+- Only `d = 2` ~~ `9` is odd (`9 % 2 != 0`) and not prime (`3 * 3`).
+* `d * d <= n` (i.e. $\sqrt{n}$) ~~ If `n` has a factor $> \sqrt{n}$, the other factor is $< \sqrt{n}$.
+- `d <= n * 2` ~~ Divisors of `n` cannot exceed `n`.
+- `d = 1` ~~ Every integer is divisible by `1`.
+! Testing `d` from `2` while `d * d <= n` (after `if (n < 2) return 0;`) is both fast and exact.
+
+? [10] When building a menu with `switch` inside a `do-while` loop, what should the loop condition be?
+- `while (choice == 0);` ~~ That repeats *only* when the user chose Exit (`0`)!
+* `while (choice != 0);` ~~ Keep looping as long as the user has not chosen Exit (`0`).
+- `while (1);` without any `break` ~~ Infinite loop.
+- `while (choice > 0);` ~~ Negative invalid choices would exit instead of showing "Invalid".
+! Repeat `while (choice != EXIT_CODE);`.
+
+? [11] What does a **function prototype** at the top of a `.c` file end with?
+- `{ ... }` ~~ That's a function definition.
+* `;` ~~ A prototype is a declaration ending with a semicolon, e.g. `int add(int a, int b);`.
+- `:` ~~ C does not use colons for prototypes.
+- `return 0;` ~~ Statements go inside the definition body.
+! Prototype: `return_type name(param_types);`.
+
+? [11] By default, how are regular `int` arguments passed to functions in C?
+- Pass-by-reference ~~ Only when you explicitly pass pointers (`&x`).
+* Pass-by-value (a copy is passed) ~~ Changes to the parameter do not affect the caller's variable.
+- Pass-by-name ~~ Not used in C.
+- Global sharing ~~ Parameters are local to the function.
+! Regular variables are passed by value (copied).
+
+? [11] What happens if a `void` function tries to execute `return 5;`?
+- It returns `5` anyway ~~ `void` functions cannot return a value.
+* Compile error ~~ A `void` function may only use `return;` with no value.
+- It prints `5` ~~ `return` does not print.
+- It sets `main`'s return to `5` ~~ `return` only exits the current function.
+! `void` means "returns nothing", so `return <expr>;` is an error.
+
+? [11] What are the two required parts of a recursive function?
+- Two `for` loops ~~ Recursion replaces loops with self-calls.
+* A **base case** (stopping condition) and a **recursive step** moving toward the base case ~~ Without both, it recurses forever.
+- A global variable and a `switch` ~~ Not required.
+- `malloc` and `free` ~~ Dynamic memory is not required for recursion.
+! Base case + recursive step toward the base case.
+
+? [11] Trace `int f(int n) { return n <= 1 ? 1 : n + f(n - 1); }` for `f(4)`.
+- `24` ~~ It uses `+`, not `*`!
+* `10` ~~ `4 + 3 + 2 + 1 = 10`.
+- `4` ~~ Adds all steps down to 1.
+- `6` ~~ `3 + 2 + 1 = 6`, missing `4 +`.
+! `f(4) = 4 + f(3) = 4 + 3 + f(2) = 4 + 3 + 2 + f(1) = 4 + 3 + 2 + 1 = 10`.
+
+? [12] For `int a[10];`, which indices are valid?
+- `1` to `10` ~~ C arrays start at `0`, and `a[10]` is out of bounds!
+* `0` to `9` ~~ Valid indices are `0 .. size - 1`.
+- `0` to `10` ~~ `a[10]` is one past the end (out of bounds).
+- `-1` to `9` ~~ Negative indices access memory before the array.
+! `N` elements → indices `0` through `N - 1`.
+
+? [12] What happens if you write `int a[4] = {10, 20};`?
+- Compile error because 2 elements are missing ~~ Partial initialization is legal in C.
+* `a[0]=10, a[1]=20`, and the remaining elements `a[2], a[3]` are automatically set to `0` ~~ Any unspecified elements in a partial initializer are zero-filled.
+- `a[2]` and `a[3]` hold garbage ~~ Only completely uninitialized local arrays hold garbage.
+- `a` shrinks to size 2 ~~ Its size remains 4.
+! Partial array initialization (`int a[4] = {0};` is a famous trick) sets remaining elements to `0`.
+
+? [12] In **bubble sort** of an array of size `n`, why is the inner loop limit `n - 1 - i`?
+- Because `a[n]` is `0` ~~ `a[n]` is out of bounds.
+* Because after each pass `i`, the largest `i` elements are already in their final positions at the end, and we compare `a[j]` with `a[j + 1]` ~~ Avoids out-of-bounds `a[j + 1]` and skips already-sorted tail elements.
+- To sort in descending order ~~ Comparison `>` vs `<` controls order.
+- To skip `a[0]` ~~ `j` starts at `0`.
+! Stopping at `n - 1 - i` ensures `j + 1 < n` and avoids re-checking sorted elements at the end.
+
+? [12] What does linear search return by convention when the target value is NOT in the array?
+- `0` ~~ `0` is a valid array index (the first element)!
+* `-1` ~~ `-1` is never a valid index, so it clearly means "not found".
+- `1` ~~ `1` is a valid index.
+- `n` ~~ `-1` is the standard sentinel.
+! Return `-1` when not found, because `0 .. n-1` are valid indices.
+
+? [12] How do you pass a 1D `int` array `scores` of size `20` to a function `avg`?
+- `avg(scores[20], 20)` ~~ `scores[20]` passes a single out-of-bounds `int`, not the array!
+* `avg(scores, 20)` ~~ Passing the array name passes the address of `scores[0]`, and `20` tells the function its length.
+- `avg(&scores[], 20)` ~~ Invalid syntax.
+- `avg(int scores, 20)` ~~ Don't put the type in a function call.
+! Pass the array name (`scores`) and its size (`20`).
+
+? [13] What does the `&` operator do in `int *p = &x;`?
+- Dereferences `p` ~~ `*p` dereferences.
+* Gets the **memory address** of `x` ~~ `&x` means "address of `x`".
+- Bitwise AND ~~ Unary `&x` is address-of; binary `a & b` is bitwise AND.
+- Multiplies `x` ~~ `*` multiplies.
+! `&var` returns the memory address of `var`.
+
+? [13] Given `int x = 10; int *p = &x; *p = 30;`, what is `x` now?
+- `10` ~~ `*p = 30` writes through `p` directly into `x`.
+* `30` ~~ `p` points to `x`, so `*p` *is* `x`.
+- Address of `p` ~~ `x` holds `30`.
+- Compile error ~~ Valid pointer dereference.
+! Dereferencing `p` (`*p = 30`) modifies the variable `p` points to (`x`).
+
+? [13] What is the danger of `int *p; *p = 5;`?
+- `p` is set to `0` ~~ Uninitialized local pointers hold random garbage addresses!
+* `p` holds a garbage address, so writing to `*p` causes undefined behavior / crash ~~ Always point `p` at a valid variable (or `NULL`) first.
+- `5` becomes a `double` ~~ Unrelated.
+- It only works in `void` functions ~~ It is unsafe everywhere.
+! Never dereference an uninitialized or `NULL` pointer.
+
+? [13] How do you declare TWO pointers to `int` on one line?
+- `int* p, q;` ~~ Here `p` is `int *`, but `q` is a plain `int`!
+* `int *p, *q;` ~~ Both `p` and `q` have `*`.
+- `*int p, q;` ~~ Invalid syntax.
+- `pointer p, q;` ~~ C has no `pointer` keyword.
+! Put `*` before each pointer variable name: `int *p, *q;`.
+
+? [13] On a 64-bit computer, how large is `sizeof(int *)` vs `sizeof(char *)`?
+- `4` vs `1` ~~ Those are `sizeof(int)` and `sizeof(char)`, not pointer sizes!
+* Both are `8` bytes ~~ Every memory address on a 64-bit system is 8 bytes, regardless of what type it points to.
+- `16` vs `8` ~~ All data pointers have the same size on a given architecture.
+- `0` ~~ Pointers occupy memory too.
+! A pointer stores a memory address, so `int *`, `char *`, `double *` all have the same size (8 bytes on 64-bit).
+
+? [14] Why does `void swap(int *a, int *b)` succeed where `void swap(int a, int b)` fails?
+- Pointers are faster ~~ Not the reason.
+* Pointers receive the **addresses** of the caller's variables, so `*a` and `*b` modify the originals in `main` ~~ `int a, b` only swaps local copies.
+- `int *` ignores `return` ~~ Both are `void`.
+- `int a, b` cannot hold integers ~~ They hold copies.
+! Pass-by-reference (via pointers) lets a function change variables in the caller.
+
+? [14] Given `int arr[5] = {2, 4, 6, 8, 10}; int *p = arr;`, what is `*(p + 3)`?
+- `5` ~~ Check the values in `arr`.
+- `6` ~~ `*(p + 2)` is `6`.
+* `8` ~~ `p + 3` points to `arr[3]`, which is `8`.
+- `10` ~~ `*(p + 4)` is `10`.
+! `*(p + i)` is equivalent to `arr[i]`.
+
+? [14] If `double *p` holds address `0x2000` and `sizeof(double) == 8`, what address is `p + 2`?
+- `0x2002` ~~ Pointer arithmetic scales by `sizeof(double)`.
+* `0x2010` (`0x2000 + 2 * 8 = 0x2000 + 16`) ~~ `16` in hex is `0x10`, so `0x2000 + 0x10 = 0x2010`.
+- `0x2008` ~~ That is `p + 1`.
+- `0x2020` ~~ That would be `p + 4`.
+! `p + k` advances by `k * sizeof(*p)` bytes.
+
+? [14] What is the difference between `(*p)++` and `*p++`?
+- Identical ~~ Operator precedence differs!
+* `(*p)++` increments the **value** pointed to by `p`; `*p++` reads `*p` and advances the **pointer** `p` to the next element ~~ `++` binds tighter than `*`.
+- `*p++` is a syntax error ~~ Both are valid C.
+- `(*p)++` advances `p` twice ~~ Only increments the target value once.
+! Use parentheses `(*p)++` when you want to increment the value at `p`.
+
+? [14] Which expression is equivalent to `arr[i]`?
+- `*arr + i` ~~ Adds `i` to `arr[0]`!
+* `*(arr + i)` ~~ Pointer arithmetic then dereference.
+- `&arr + i` ~~ Advances by `i` whole arrays.
+- `arr * i` ~~ Invalid on pointers.
+! `arr[i]` is defined in C as `*(arr + i)`.
+
+? [15] What marks the end of every C string?
+- `\n` ~~ Newline is just a normal character inside text.
+* `'\0'` (null character, ASCII `0`) ~~ String functions stop at `'\0'`.
+- `' '` ~~ Spaces can appear inside strings.
+- `EOF` ~~ `EOF` is for file/input streams, not inside strings.
+! C strings are null-terminated char arrays ending in `'\0'`.
+
+? [15] What does `strcmp("apple", "apple")` return?
+- `1` ~~ Non-zero means *not* equal!
+* `0` ~~ `strcmp` returns `0` when strings match exactly.
+- `-1` ~~ Negative means first < second.
+- `5` ~~ `strlen` returns `5`.
+! `strcmp(a, b) == 0` tests string equality.
+
+? [15] What does `strlen("Code")` return?
+- `5` ~~ `strlen` does NOT count `'\0'`.
+* `4` ~~ Counts `'C', 'o', 'd', 'e'` before `'\0'`.
+- `3` ~~ Counts all 4 letters.
+- `0` ~~ Only `""` has length `0`.
+! `strlen` counts characters before `'\0'`; `sizeof("Code")` is `5` (includes `'\0'`).
+
+? [15] Which `<ctype.h>` function checks if `char c` is `'0'..'9'`?
+- `isalpha(c)` ~~ Checks letters `A-Z`, `a-z`.
+* `isdigit(c)` ~~ Returns non-zero if `c` is a digit `'0'..'9'`.
+- `toupper(c)` ~~ Converts lowercase to uppercase.
+- `strlen(c)` ~~ `strlen` is for strings, not a single `char`.
+! `<ctype.h>` provides `isdigit`, `isalpha`, `isalnum`, `toupper`, `tolower`.
+
+? [15] Why is `char name[10]; name = "Deniz";` a compile error?
+- `"Deniz"` is too long ~~ `"Deniz"` needs 6 bytes, which fits in 10.
+* Arrays cannot be assigned with `=` after declaration; use `strcpy(name, "Deniz");` ~~ `=` only works in the initialization `char name[10] = "Deniz";`.
+- Missing `&` ~~ Arrays don't use `&` here.
+- `char` cannot hold letters ~~ `char` holds letters.
+! Use `strcpy(dst, src)` from `<string.h>` to copy into an existing `char` array.
+
+? [16] What does `printf("%-6s!", "Hi");` print (using `·` for spaces)?
+- `····Hi!` ~~ Without `-`, it right-aligns.
+* `Hi····!` ~~ `-6s` left-aligns `"Hi"` in 6 columns, padding 4 spaces on the right.
+- `Hi!` ~~ Minimum width `6` adds 4 spaces.
+- `0000Hi!` ~~ `%s` pads with spaces, not zeros.
+! `-` left-aligns the field.
+
+? [16] What does `printf("%04d", 7);` print?
+- `   7` ~~ Space-padded is `%4d`.
+* `0007` ~~ `0` flag pads with leading zeros to width 4.
+- `7000` ~~ Padding is on the left, not right.
+- `7.000` ~~ `%d` is integer, no decimal point.
+! `%04d` pads integers with leading zeros up to width 4.
+
+? [16] What does `printf("%.2f", 5.678);` print?
+- `5.67` ~~ `printf` rounds, it does not truncate!
+* `5.68` ~~ Rounded to 2 decimal places.
+- `5.6` ~~ `.2f` prints 2 decimal digits.
+- `05.68` ~~ No leading zero width specified.
+! `printf` rounds floating-point output to the requested precision.
+
+? [16] What does `while (scanf("%d", &x) == 1)` do?
+- Reads exactly 1 integer and stops ~~ `== 1` means "1 item read on *each* pass".
+* Keeps reading integers until input ends or a non-integer is encountered ~~ `scanf` returns the count of items successfully read.
+- Loops forever ~~ Stops when `scanf` returns `0` or `EOF`.
+- Prints `1` ~~ `scanf` reads, it doesn't print.
+! Checking `scanf(...) == N` is the standard way to verify `N` items were read.
+
+? [16] What does `int k = printf("OK\n");` assign to `k`?
+- `2` ~~ `\n` is also 1 character.
+* `3` ~~ `'O'`, `'K'`, `'\n'` = 3 characters printed.
+- `0` ~~ `printf` returns character count, not `0`.
+- `1` ~~ Returns total characters, not lines.
+! `printf` returns the number of characters printed.

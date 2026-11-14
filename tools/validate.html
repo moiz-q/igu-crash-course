@@ -1,0 +1,69 @@
+<!doctype html><meta charset="utf-8"><title>content validator</title>
+<pre id="o">running…</pre>
+<script>
+/* Content validator. Open with headless Chrome:
+   chrome --headless=new --allow-file-access-from-files --virtual-time-budget=120000 --dump-dom file:///.../tools/validate.html
+   Optional ?only=c,db to limit courses. Checks every C solution / example with MiniC and every SQL challenge with sql.js. */
+window.CC = { data: { c: {} } }; CC.provideIndex = d => { CC.data.index = d; }; CC.provideCourse = (id, d) => { CC.data.c[id] = d; };
+const load = src => new Promise((res, rej) => { const s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = () => rej(new Error('cannot load ' + src)); document.head.appendChild(s); });
+const out = []; let errors = 0, warns = 0, checked = 0;
+const err = m => { errors++; out.push('ERROR ' + m); }, warn = m => { warns++; out.push('warn  ' + m); };
+const norm = s => String(s).replace(/\r/g, '').split('\n').map(l => l.replace(/[ \t]+$/, '')).join('\n').replace(/\n+$/, '');
+(async () => {
+  try {
+    await load('../data/index.js'); await load('../assets/js/minic.js');
+    const only = new URLSearchParams(location.search).get('only');
+    const ids = CC.data.index.courses.map(c => c.id).filter(id => !only || only.split(',').includes(id));
+    for (const id of ids) await load('../data/' + id + '.js');
+    const run = (code, stdin) => MiniC.run(code, { stdin: stdin || '' });
+    const P = new DOMParser();
+    // C-like code blocks inside every page of every course
+    for (const id of ids) {
+      const d = CC.data.c[id];
+      const pages = Object.entries(d.lessons).concat([['cheatsheet', d.cheat], ['mock-midterm', d.mocks.midterm], ['mock-final', d.mocks.final]]).filter(p => p[1]);
+      for (const [pid, pg] of pages) {
+        const doc = P.parseFromString(pg.html, 'text/html');
+        doc.querySelectorAll('[data-widget="crun"], [data-widget="memviz"]').forEach((w, k) => {
+          checked++; const src = w.querySelector('pre.src').textContent; const r = run(src, (w.dataset.stdin || '').replace(/\\n/g, '\n'));
+          if (!r.ok && !w.dataset.fails) err(`${pid} c-block #${k + 1}: ${r.error.phase} error line ${r.error.line}: ${r.error.message}`);
+          if (r.ok && w.dataset.fails) err(`${pid} c-block #${k + 1}: marked data-fails but ran fine`);
+          if (r.needMoreInput) warn(`${pid} c-block #${k + 1}: needs more stdin (add stdin="...")`);
+        });
+        doc.querySelectorAll('[data-widget]').forEach(w => { const n = w.dataset.widget; if (!['crun', 'memviz', 'sqlrun', 'quiz', 'gaps', 'checklist', 'rubric', 'flow', 'erd', 'stepper', 'timeline', 'mcq', 'exercises', 'challenges', 'subnetcalc', 'subnetdrill', 'baseconv', 'mathdrill', 'formula', 'topology', 'venn', 'order', 'match'].includes(n)) err(`${pid}: unknown widget "${n}"`); if ((n === 'order' || n === 'match') && !(d.extra.games && d.extra.games[w.dataset.set])) err(`${pid}: game set "${w.dataset.set}" missing in games.json`); if (n === 'stepper') { try { JSON.parse(w.querySelector('pre.src').textContent); } catch (e) { err(`${pid}: stepper JSON invalid: ${e.message}`); } } if (n === 'mcq') { const pool = (CC.data.c[w.dataset.course] || d).bank.filter(q => !w.dataset.tag || w.dataset.tag === 'all' || w.dataset.tag.split(',').includes(q.tag)); if (!pool.length) err(`${pid}: mcq widget has no questions for tag ${w.dataset.tag}`); } });
+      }
+      // C exercises
+      for (const ex of d.exercises || []) {
+        checked++;
+        if (ex.kind === 'predict') { const r = run(ex.code, ex.stdin); if (!r.ok) err(`${ex.id} predict code fails: ${r.error.message} (line ${r.error.line})`); else if (r.needMoreInput) warn(`${ex.id}: needs more stdin`); continue; }
+        const r = run(ex.solution, ex.stdin);
+        if (!r.ok) { err(`${ex.id} solution fails: ${r.error.phase} line ${r.error.line}: ${r.error.message}`); continue; }
+        if (r.needMoreInput) warn(`${ex.id}: solution wants more stdin than given`);
+        if (!r.output.trim()) warn(`${ex.id}: solution prints nothing`);
+        if (ex.kind === 'bug') { const s = run(ex.starter, ex.stdin); if (s.ok && norm(s.output) === norm(r.output)) err(`${ex.id}: buggy starter gives the same output as the solution`); }
+        if (ex.kind === 'fill' && !ex.starter.includes('____')) err(`${ex.id}: fill exercise starter has no ____`);
+        if (ex.kind === 'run' && ex.starter !== undefined) { const s = run(ex.starter, ex.stdin); if (s.ok && !ex.starter.includes('____') && norm(s.output) === norm(r.output) && s.output.trim()) warn(`${ex.id}: starter already produces the expected output`); }
+      }
+    }
+    // SQL
+    if (ids.includes('db')) {
+      const d = CC.data.c.db;
+      await load('../vendor/sqljs/sql-wasm-b64.js'); await load('../vendor/sqljs/sql-wasm.js');
+      const SQL = await initSqlJs({ wasmBinary: Uint8Array.from(atob(window.SQL_WASM_B64), c => c.charCodeAt(0)) });
+      const fresh = () => { const db = new SQL.Database(); db.run(d.extra.seed); return db; };
+      try { const db = fresh(); const t = db.exec("SELECT name FROM sqlite_master WHERE type='table'")[0].values.map(v => v[0]); out.push('seed tables: ' + t.map(n => n + '=' + db.exec('SELECT COUNT(*) FROM ' + n)[0].values[0][0]).join(', ')); db.close(); } catch (e) { err('seed.sql fails: ' + e.message); }
+      for (const ch of d.challenges) {
+        checked++; const db = fresh();
+        try { let res = db.exec(ch.sql); if (ch.check) res = db.exec(ch.check); const last = res[res.length - 1]; if (!last || !last.values.length) warn(`${ch.id}: model result is empty`); }
+        catch (e) { err(`${ch.id}: model SQL fails: ${e.message}`); } finally { db.close(); }
+      }
+      for (const [pid, pg] of Object.entries(d.lessons).concat([['cheatsheet', d.cheat]]).filter(p => p[1])) {
+        P.parseFromString(pg.html, 'text/html').querySelectorAll('[data-widget="sqlrun"]').forEach((w, k) => {
+          checked++; const db = fresh(); try { db.exec(w.querySelector('pre.src').textContent); if (w.dataset.fails) err(`${pid} sql-block #${k + 1}: marked data-fails but ran fine`); } catch (e) { if (!w.dataset.fails) err(`${pid} sql-block #${k + 1}: ${e.message}`); } finally { db.close(); }
+        });
+      }
+    }
+    out.unshift(`checked ${checked} items in [${ids.join(', ')}]: ${errors} error(s), ${warns} warning(s)`);
+  } catch (e) { out.unshift('VALIDATOR CRASHED: ' + e.message); }
+  document.getElementById('o').textContent = out.join('\n');
+})();
+</script>

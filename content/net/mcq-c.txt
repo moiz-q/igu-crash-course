@@ -1,0 +1,239 @@
+# Computer Networks MCQ Bank (Part C: Extra Practice across Lessons 01–16)
+
+? [01] Which organization/project created HTTP, HTML, and URLs in 1989?
+- ARPANET ~~ ARPANET (1969) built packet switching
+* CERN (Tim Berners-Lee) ~~ invented the World Wide Web in 1989
+- IEEE ~~ IEEE standardizes Ethernet and Wi-Fi
+- Cisco ~~ Cisco builds networking hardware
+! Tim Berners-Lee proposed the World Wide Web at CERN in 1989.
+
+? [02] Which topology uses the **most** cable because every node has a direct link to every other node?
+- Bus ~~ single shared backbone
+- Star ~~ one link per host to switch
+- Ring ~~ one link to each neighbor
+* Full mesh ~~ $n(n-1)/2$ links
+! Full mesh maximizes redundancy at the cost of the most cabling.
+
+? [03] Which device breaks up **both** collision domains AND broadcast domains?
+- Hub ~~ one collision domain, one broadcast domain
+- Layer 2 Switch ~~ separates collision domains per port, but shares one broadcast domain
+* Router ~~ each router interface is a separate collision and broadcast domain
+- Repeater ~~ extends Layer 1 signals only
+! Routers separate broadcast domains (and collision domains).
+
+? [04] Which Ethernet cable category supports 1 Gbps up to 100 m and is the minimum standard for modern Gigabit LANs?
+- Cat3 ~~ 10 Mbps legacy phone/Ethernet
+* Cat5e ~~ supports 1000 Mbps (1 Gbps) up to 100 m
+- RG-59 ~~ coaxial cable
+- RJ-11 ~~ telephone connector
+! Cat5e (and Cat6) support Gigabit Ethernet up to 100 meters.
+
+? [05] In Packet Tracer, which tab on a PC lets you open **Command Prompt** to run `ping` and `ipconfig`?
+- Physical ~~ shows power button and NIC modules
+- Config ~~ shows basic GUI interface fields
+* Desktop ~~ contains IP Configuration, Command Prompt, Web Browser
+- Attributes ~~ shows object metadata
+! Command Prompt and IP Configuration are inside the Desktop tab.
+
+? [06] In Guided Lab 1, why did `Switch0` learn `PC0`'s MAC address automatically?
+- You typed it into Switch0's IP Configuration ~~ Layer 2 switches don't need manual MAC entry
+* Switch0 reads the **Source MAC** of incoming frames and records the port in its MAC table ~~ dynamic MAC learning
+- ARP asked the router ~~ there was no router in Lab 1
+- `ping` programmed the switch ~~ any Ethernet frame triggers source MAC learning
+! Switches dynamically learn source MAC addresses and their incoming port numbers.
+
+? [07] Which OSI layer is responsible for starting, maintaining, and ending a communication dialog (session)?
+- Presentation (6) ~~ formatting, compression, encryption
+* Session (5) ~~ dialog control and session management
+- Transport (4) ~~ ports and segmentation
+- Network (3) ~~ IP addressing and routing
+! Layer 5 (Session) manages sessions between applications.
+
+? [08] What does **CSMA** stand for in CSMA/CD and CSMA/CA?
+- Central Switch Media Access ~~ incorrect
+* Carrier Sense Multiple Access ~~ listen to the medium before transmitting
+- Cyclic Signal Mode Allocation ~~ incorrect
+- Cable Speed Modulation Algorithm ~~ incorrect
+! Carrier Sense Multiple Access means devices listen for an idle channel before sending.
+
+? [09] Which port numbers does **FTP** use?
+- 22 and 23 ~~ SSH and Telnet
+* 20 and 21 ~~ FTP data (20) and control (21)
+- 67 and 68 ~~ DHCP
+- 80 and 443 ~~ HTTP and HTTPS
+! FTP uses TCP ports 20 (data) and 21 (control).
+
+? [09] Which protocol sends outgoing email between mail servers on TCP port **25**?
+- DNS ~~ port 53
+- HTTP ~~ port 80
+* SMTP ~~ Simple Mail Transfer Protocol (port 25)
+- DHCP ~~ ports 67/68
+! SMTP sends outgoing email on port 25.
+
+? [10] Convert decimal `128` to 8-bit binary.
+* `10000000` ~~ only the $2^7 = 128$ bit is 1
+- `01000000` ~~ 64
+- `11000000` ~~ 192
+- `10000001` ~~ 129
+! `10000000` = 128.
+
+? [10] Convert hexadecimal `0A` to decimal.
+- 8 ~~ `08`
+* 10 ~~ `A` = 10 in hexadecimal
+- 11 ~~ `B` = 11
+- 16 ~~ `10` in hex = 16
+! Hex `A` equals decimal `10`.
+
+? [11] Which IPv4 class is reserved for **multicast** (`224–239`)?
+- Class B ~~ `128–191`
+- Class C ~~ `192–223`
+* Class D ~~ `224–239` (multicast)
+- Class E ~~ `240–255` (experimental)
+! Class D (`224.0.0.0–239.255.255.255`) is used for multicast.
+
+? [11] What is the IPv6 **loopback** address?
+- `127.0.0.1` ~~ IPv4 loopback
+* `::1` ~~ 127 zero bits followed by a 1 bit
+- `fe80::1` ~~ typical link-local gateway
+- `2001:db8::` ~~ documentation prefix
+! `::1` is the IPv6 loopback address.
+
+? [12] How many **usable hosts** are in a `/24` (`255.255.255.0`) subnet?
+- 256 ~~ total addresses before subtracting network and broadcast
+* 254 ~~ $2^8 - 2 = 254$
+- 255 ~~ broadcast is also reserved
+- 126 ~~ `/25`
+! A `/24` has 8 host bits: $2^8 - 2 = 254$ usable hosts.
+
+? [12] What is the **block size** in the 4th octet for a `/28` (`255.255.255.240`) mask?
+- 8 ~~ `/29`
+* 16 ~~ $256 - 240 = 16$
+- 32 ~~ `/27`
+- 64 ~~ `/26`
+! $256 - 240 = 16$, so subnets step by 16 (`0, 16, 32, 48...`).
+
+? [13] You need **100 usable hosts** in one subnet. What is the smallest CIDR prefix that fits?
+- `/26` ~~ 62 usable hosts (too small)
+* `/25` ~~ $2^7 - 2 = 126$ usable hosts
+- `/24` ~~ 254 usable hosts (larger than needed)
+- `/27` ~~ 30 usable hosts
+! $2^7 - 2 = 126 \ge 100$, so `/25` (`255.255.255.128`) is the smallest fit.
+
+? [13] In `192.168.10.32/27`, what is the **last usable host** address?
+- `192.168.10.64` ~~ next subnet
+- `192.168.10.63` ~~ broadcast address of `.32/27`
+* `192.168.10.62` ~~ one below the broadcast `.63`
+- `192.168.10.33` ~~ first usable host
+! Block size 32 → range `.32–.63`; usable hosts are `.33–.62`.
+
+? [14] Which command checks if your own PC's TCP/IP stack is functioning without touching any external cable or router?
+* `ping 127.0.0.1` ~~ tests the local loopback interface
+- `ping 8.8.8.8` ~~ requires working gateway and internet
+- `tracert 1.1.1.1` ~~ sends packets across external routers
+- `nslookup google.com` ~~ queries an external DNS server
+! Pinging `127.0.0.1` tests the local TCP/IP stack internally.
+
+? [14] What does `nslookup gelisim.edu.tr` return?
+- The MAC address of the web server ~~ MACs are only local on your LAN
+* The IP address(es) returned by your DNS server for `gelisim.edu.tr` ~~ verifies DNS resolution
+- Every router hop to the website ~~ `tracert` shows hops
+- All open TCP ports on your PC ~~ `netstat` shows open ports
+! `nslookup` queries DNS to resolve a domain name to its IP address.
+
+? [14] On Windows, which command shows your **Default Gateway**?
+- `arp -a` ~~ shows IP-to-MAC cache
+- `netstat -an` ~~ shows active ports
+* `ipconfig` ~~ prints IPv4 Address, Subnet Mask, and Default Gateway
+- `nslookup` ~~ queries DNS
+! `ipconfig` displays your IP, mask, and default gateway.
+
+? [14] In `tracert`, what does a line showing `*  *  *  Request timed out.` at one hop usually mean?
+- Your PC is unplugged ~~ earlier hops already replied
+* That specific router is configured not to send ICMP Time Exceeded replies ~~ later hops may still reply normally
+- DNS is down ~~ `tracert` can still trace IPs
+- Your MAC address expired ~~ unrelated to `tracert`
+! Some routers drop/ignore TTL-expired probes without breaking forwarding.
+
+? [15] Which Wi-Fi standard was the first to operate exclusively in **5 GHz** with multi-gigabit speeds (Wi-Fi 5)?
+- 802.11b ~~ 2.4 GHz
+- 802.11g ~~ 2.4 GHz
+- 802.11n ~~ 2.4 & 5 GHz (Wi-Fi 4)
+* 802.11ac ~~ 5 GHz only (Wi-Fi 5)
+! 802.11ac (Wi-Fi 5) operates in the 5 GHz band.
+
+? [15] What does **SSID** stand for?
+- Secure Signal ID ~~ incorrect
+* Service Set Identifier ~~ the broadcast name of a Wi-Fi network
+- Static Subnet ID ~~ incorrect
+- Switch Serial ID ~~ incorrect
+! SSID = Service Set Identifier (your Wi-Fi network name).
+
+? [15] Why does **2.4 GHz** Wi-Fi often experience more interference than **5 GHz**?
+- 2.4 GHz has 24 non-overlapping channels ~~ it only has 3 (1, 6, 11)
+* 2.4 GHz has only 3 non-overlapping channels and is shared with Bluetooth, baby monitors, and microwave ovens ~~ crowded spectrum
+- 2.4 GHz cannot use WPA2 ~~ WPA2 works on both bands
+- 2.4 GHz travels shorter distances ~~ 2.4 GHz travels farther, picking up neighbors' APs too
+! Longer range + only 3 non-overlapping channels + shared devices cause 2.4 GHz congestion.
+
+? [15] Which encryption cipher is required by **WPA2** and **WPA3**?
+- DES ~~ broken 56-bit cipher
+- RC4 (WEP) ~~ broken stream cipher
+* AES ~~ strong block cipher used by WPA2/WPA3
+- ROT13 ~~ trivial letter shift
+! WPA2 and WPA3 use AES encryption.
+
+? [16] An attacker sends a fake email pretending to be your university IT desk to steal your login password. What is this attack called?
+- DDoS ~~ floods availability
+* Phishing ~~ social engineering via deceptive email/site
+- MAC flooding ~~ overflows a switch MAC table
+- Port scanning ~~ probes open ports
+! Phishing tricks users into revealing credentials.
+
+? [16] An attacker sits between a coffee-shop laptop and the router, silently reading and modifying traffic. What attack is this?
+- Phishing ~~ deceptive email/web lure
+* Man-in-the-Middle (MITM) ~~ intercepting and potentially altering traffic between two parties
+- Brute force ~~ guessing passwords repeatedly
+- Ransomware ~~ encrypting files on disk
+! MITM intercepts communications between two endpoints.
+
+? [16] Keeping redundant power supplies and daily tested backups mainly protects which part of the **CIA triad**?
+- Confidentiality ~~ keeping secrets private
+- Integrity ~~ preventing unauthorized edits
+* Availability ~~ ensuring systems and data stay usable when needed
+- Authentication ~~ verifying identity
+! Backups and redundancy ensure Availability after hardware failure or attack.
+
+? [16] What happens when a packet reaches the end of an ACL without matching any explicit rule?
+- It is forwarded with high priority ~~ never
+* It hits the **implicit `deny any`** rule and is dropped ~~ always add a `permit` rule for traffic you want to allow
+- It is sent to DNS ~~ unrelated
+- It is encrypted with VPN ~~ unrelated
+! Standard and extended ACLs end with an invisible implicit deny all.
+
+? [16] Which protocol encrypts web browser traffic so local Wi-Fi sniffers cannot read passwords or cookies?
+- HTTP ~~ plain text
+- Telnet ~~ plain text
+- FTP ~~ plain text
+* HTTPS (HTTP over TLS) ~~ encrypts HTTP traffic end-to-end
+! HTTPS uses TLS to encrypt web traffic.
+
+? [16] What is the safest replacement for **Telnet** when managing a switch or Linux server remotely?
+- HTTP ~~ web protocol, unencrypted
+* SSH (port 22) ~~ encrypted command-line session
+- TFTP ~~ unencrypted file transfer
+- ICMP ~~ diagnostic ping only
+! Always use SSH instead of Telnet.
+
+? [15] Which Wi-Fi band is shared with Bluetooth and microwave ovens, often causing interference?
+* 2.4 GHz ~~ crowded unlicensed ISM band
+- 5 GHz ~~ much less crowded
+- 6 GHz ~~ Wi-Fi 6E band
+- 60 GHz ~~ short-range directional
+! 2.4 GHz is shared with many consumer devices.
+
+? [16] Why should you disable **Telnet** (port 23) on routers and switches?
+- Telnet uses too much CPU ~~ it is lightweight, just insecure
+* Telnet transmits usernames, passwords, and commands in unencrypted plain text ~~ use SSH (port 22) instead
+- Telnet only works over Wi-Fi ~~ it works over any IP link
+- Telnet blocks HTTPS ~~ unrelated
+! Telnet has no encryption; SSH replaces it securely.

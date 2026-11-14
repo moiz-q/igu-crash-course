@@ -1,0 +1,452 @@
+# Office Applications MCQ Bank (Part C: Extra Practice)
+
+? [01] Which search query finds PowerPoint decks (`.pptx`) about `cloud computing`?
+- `cloud computing pptx` ~~ finds web pages mentioning the word pptx
+* `"cloud computing" filetype:pptx` ~~ filters for exact phrase and `.pptx` files
+- `site:pptx "cloud computing"` ~~ `site:` expects a domain
+- `cloud computing -pptx` ~~ excludes `.pptx`
+! Use `filetype:pptx` to search specifically for PowerPoint files.
+
+? [01] Why should you avoid using `"Re: Hi"` or leaving the subject blank on an email to a lecturer?
+- Email servers reject blank subjects ~~ servers deliver them, but humans ignore or filter them
+* It looks unprofessional and makes it hard for the lecturer to know which course or request you are writing about ~~ include course code and topic
+- It disables attachments ~~ attachments still work
+- It sends the email via BCC ~~ unrelated
+! A clear subject line helps recipients prioritize and find your message.
+
+? [01] Which e-commerce model describes an online bookstore like Amazon Retail selling books directly to shoppers?
+- B2B ~~ business to business
+* B2C ~~ Business-to-Consumer
+- C2C ~~ consumer to consumer
+- C2B ~~ consumer to business
+! Retail stores selling to individual consumers are B2C.
+
+? [02] Which file format is best for importing a clean table of 500 students into Excel or SQLite without extra formatting?
+- `.docx` ~~ Word document
+- `.pdf` ~~ fixed layout
+* `.csv` ~~ plain-text comma-separated table
+- `.pptx` ~~ presentation slides
+! `.csv` is the universal plain-text tabular exchange format.
+
+? [02] What happens when you compress a 10 MB folder into a `.zip` file?
+- All files inside are permanently deleted ~~ originals remain untouched
+* The folder is bundled into one smaller archive file that can be extracted later ~~ ideal for email and portal uploads
+- Every `.docx` turns into `.pdf` ~~ formats inside stay the same
+- It becomes read-only forever ~~ files can be unzipped and edited
+! `.zip` archives bundle and compress files/folders without losing data.
+
+? [02] Which Windows File Explorer setting lets you see `.docx`, `.pdf`, and `.exe` at the end of filenames?
+- `View → Large icons` ~~ changes icon size
+* `View → Show → File name extensions` (or `View → File name extensions`) ~~ reveals true extensions
+- `Home → Pin to Quick access` ~~ pins folder
+- `Share → Zip` ~~ creates archive
+! Enabling File name extensions prevents mistaking file types.
+
+? [03] In Google Docs, how do you mention a teammate so they get an email notification about a comment?
+- Type `#name` ~~ hashtags don't notify in Docs
+* Insert a Comment (`Ctrl+Alt+M`) and type `@` followed by their email/name ~~ assigns/notifies the teammate
+- Bold their name ~~ no notification
+- Change font to red ~~ no notification
+! Typing `@email` inside a Google Docs comment notifies and optionally assigns the action item.
+
+? [03] In Google Forms, which question type allows respondents to pick **more than one** option (e.g., "Select all languages you know")?
+- Multiple choice ~~ allows only 1 choice
+* Checkboxes ~~ allows selecting multiple options
+- Linear scale ~~ picks 1 number on a scale
+- Short answer ~~ free text
+! Use **Checkboxes** for multi-select questions and **Multiple choice** for single-select.
+
+? [03] Where do you publish a **Google Site** so visitors can view it with a link?
+- `File → Print` ~~ prints pages
+* Click the **Publish** button in the top-right corner ~~ sets web address and visibility
+- `Responses → Link to Sheets` ~~ Google Forms feature
+- `Slide Show → F5` ~~ PowerPoint shortcut
+! Click **Publish** in Google Sites to make your site live.
+
+? [04] Which keyboard shortcut applies **Italic** formatting in Word, Excel, and PowerPoint?
+- `Ctrl+B` ~~ Bold
+* `Ctrl+I` ~~ Italic
+- `Ctrl+U` ~~ Underline
+- `Ctrl+J` ~~ Justify (Word)
+! `Ctrl+B` = Bold, `Ctrl+I` = Italic, `Ctrl+U` = Underline.
+
+? [04] Which shortcut **Selects All** content in the current document or slide?
+* `Ctrl+A` ~~ Select All
+- `Ctrl+S` ~~ Save
+- `Ctrl+C` ~~ Copy
+- `Ctrl+X` ~~ Cut
+! `Ctrl+A` selects all text/items.
+
+? [04] You want to replace every occurrence of `"IGU"` with `"İGÜ"` across a 15-page Word file. Which shortcut opens the tool?
+- `Ctrl+F` ~~ Find only
+* `Ctrl+H` ~~ Find and Replace (click **Replace All**)
+- `Ctrl+Z` ~~ Undo
+- `Ctrl+P` ~~ Print
+! Press `Ctrl+H` and use Replace All.
+
+? [05] In Word, which view on the left sidebar lets you jump quickly between `Heading 1` and `Heading 2` chapters?
+- Print Preview ~~ shows printed pages
+* **Navigation Pane** (`View → Show → Navigation Pane` or `Ctrl+F` → Headings tab) ~~ displays document heading outline
+- Macro Viewer ~~ VBA macros
+- Ruler ~~ sets margins and tabs
+! Heading styles populate both the Table of Contents and the Navigation Pane.
+
+? [05] Where do you change page margins (e.g., Narrow vs. Normal) in Microsoft Word?
+- `Home → Font` ~~ font settings
+- `Insert → Pages` ~~ cover/blank/page break
+* `Layout → Page Setup → Margins` ~~ controls top, bottom, left, right margins
+- `References → Footnotes` ~~ footnotes
+! Margins, Orientation, and Size live under `Layout → Page Setup`.
+
+? [05] What is the difference between `Shift+Enter` and `Ctrl+Enter` in Word?
+- Both insert a new page ~~ `Shift+Enter` stays on the same page
+* `Shift+Enter` starts a new line inside the **same paragraph**; `Ctrl+Enter` starts a **new page** ~~ useful inside bullet lists vs. chapters
+- Both insert a Section Break ~~ Section Breaks are in `Layout → Breaks`
+- `Shift+Enter` deletes the line ~~ never
+! `Shift+Enter` = soft line break; `Ctrl+Enter` = Page Break.
+
+? [06] In Microsoft Word, which tab contains **Spelling & Grammar (Editor)**, **Word Count**, and **Track Changes**?
+- `References` ~~ TOC, captions, citations
+* `Review` ~~ proofing, comments, tracking, compare
+- `Mailings` ~~ envelopes, mail merge
+- `Design` ~~ themes, colors, watermark
+! Proofing and collaboration tools live on the **Review** tab.
+
+? [06] After inserting a new figure above `Figure 1`, how do you update caption numbers if one didn't refresh immediately?
+- Retype every figure number ~~ error-prone
+* Select all (`Ctrl+A`) and press **`F9`** (Update Fields) ~~ refreshes all captions, cross-references, and TOC fields
+- Save as `.txt` ~~ loses formatting
+- Restart Windows ~~ unnecessary
+! Pressing `F9` updates Word fields including captions and TOC.
+
+? [06] What is a **cross-reference** (`References → Captions → Cross-reference`) used for in Word?
+- Deleting duplicate words ~~ Find & Replace
+* Inserting a clickable link in text like `"see Figure 2"` that updates automatically if the figure number changes ~~ keeps text references accurate
+- Drawing arrows on images ~~ `Insert → Shapes`
+- Merging two tables ~~ unrelated
+! Cross-references keep in-text mentions (`Figure 2`, `Table 1`) synchronized automatically.
+
+? [07] Which Excel error appears when you delete a row or column that a formula was pointing to?
+- `#DIV/0!` ~~ division by zero
+- `#NAME?` ~~ unknown function or unquoted name
+* `#REF!` ~~ invalid/deleted cell reference
+- `###` ~~ narrow column
+! `#REF!` means a referenced cell no longer exists.
+
+? [07] What does `F2` do when a cell is selected in Excel?
+- Saves the workbook ~~ `Ctrl+S`
+* Enters **Edit mode** inside the selected cell (and highlights referenced cells in color) ~~ quick keyboard editing
+- Locks `$A$1` ~~ `F4` locks `$`
+- Opens Filter ~~ `Ctrl+Shift+L`
+! Press `F2` to edit a cell's contents/formula directly.
+
+? [07] When dragging `=A$1*B2` **down** from Row 2 to Row 3, what does the formula become?
+- `=A$1*B2` ~~ `B2` is relative so it shifts
+* `=A$1*B3` ~~ `$1` locks row 1, while `B2` shifts to `B3`
+- `=A$2*B3` ~~ `$1` stays locked at row 1
+- `=$A$1*B3` ~~ `A` had no `$`, though dragging down doesn't change column `A` anyway
+! Mixed reference `A$1` locks row 1 when copied vertically.
+
+? [08] Which Excel function returns **how many non-empty cells** (both text and numbers) are in `A1:A10`?
+- `COUNT(A1:A10)` ~~ counts numbers only
+* `COUNTA(A1:A10)` ~~ counts all non-blank cells
+- `SUM(A1:A10)` ~~ sums numbers
+- `LEN(A1:A10)` ~~ returns character length of one string
+! `COUNTA` counts every cell that is not empty.
+
+? [08] What does `=MAX(12, 45, 7, 30)` return?
+- `7` ~~ `MIN` returns `7`
+- `23.5` ~~ `AVERAGE` returns `23.5`
+* `45` ~~ largest value in the list
+- `94` ~~ `SUM` returns `94`
+! `MAX` returns the highest numeric value (`45`).
+
+? [08] What is the Turkish Excel name for `SUM`?
+- `ORTALAMA` ~~ `AVERAGE`
+* `TOPLA` ~~ `SUM`
+- `EĞER` ~~ `IF`
+- `MAK` ~~ `MAX`
+! `SUM` in Turkish Excel is `TOPLA`.
+
+? [08] Which formula returns `1` if `A1` is `"Yes"` and `0` otherwise?
+* `=IF(A1="Yes", 1, 0)` ~~ checks `A1="Yes"`, returns `1` or `0`
+- `=IF(A1=Yes, 1, 0)` ~~ `Yes` without quotes causes `#NAME?`
+- `=COUNT(A1="Yes")` ~~ invalid use of `COUNT`
+- `=SUMIF(A1, "Yes", 1)` ~~ `SUMIF` expects a range for sum_range
+! Quote `"Yes"` and use `=IF(A1="Yes", 1, 0)`.
+
+? [09] Which Excel feature lets you keep **both** Row 1 and Column A visible while scrolling right and down?
+- `Freeze Top Row` ~~ freezes only Row 1
+- `Freeze First Column` ~~ freezes only Column A
+* Select cell **`B2`**, then click `View → Freeze Panes → Freeze Panes` ~~ freezes everything above (`Row 1`) and left (`Col A`) of `B2`
+- `Split Window` ~~ creates separate scrollable panes rather than pinned headers
+! Selecting `B2` and clicking `Freeze Panes` locks both Row 1 and Column A.
+
+? [09] Which chart is **least suitable** for a table with 18 small categories?
+* Pie chart ~~ 18 tiny slices are impossible to read or compare
+- Horizontal Bar chart ~~ easy to read 18 labels cleanly
+- Column chart ~~ readable with angled/clean labels
+- Sorted Bar chart ~~ best for many categories
+! Avoid Pie charts when there are more than ~5–6 categories.
+
+? [09] Where in Excel do you set **Landscape** orientation and **Fit Sheet on One Page** before printing?
+- `Insert → Charts` ~~ charts
+* `Page Layout → Page Setup / Scale to Fit` (or `File → Print`) ~~ controls print orientation and scaling
+- `Data → Filter` ~~ filtering
+- `Review → Protect Sheet` ~~ sheet protection
+! `Page Layout` controls print orientation, margins, and scaling.
+
+? [10] In PowerPoint, what is a **Placeholder** on a Slide Layout?
+- A permanent locked image ~~ placeholders hold editable content
+* A dotted-border container (for Title, Text, Chart, Picture) defined by the Layout ~~ keeps alignment consistent across slides
+- A slide transition ~~ transitions are between slides
+- A speaker note ~~ notes sit below the slide
+! Using layout placeholders keeps text positions and Outline View clean.
+
+? [10] Which view in PowerPoint shows small thumbnails of **all** slides in a grid so you can easily drag to reorder or delete slides?
+- Normal View ~~ edits one slide at a time
+* **Slide Sorter** (`View → Slide Sorter`) ~~ grid of all slide thumbnails
+- Notes Page ~~ shows 1 slide + speaker notes
+- Reading View ~~ previews presentation in a window
+! Slide Sorter is ideal for reordering slides and checking visual flow.
+
+? [11] Why is a dark photo background with thin white text risky on a classroom projector?
+- Projectors cannot show photos ~~ they can, just with lower contrast
+* Bright areas of the photo wash out the white text, hurting readability ~~ add a semi-transparent dark overlay box or use a solid background
+- It makes the `.pptx` impossible to save ~~ saves fine
+- It disables animations ~~ unrelated
+! Always ensure high contrast behind every word on a slide.
+
+? [11] How can you link an **Excel chart** into PowerPoint so updating numbers in Excel can update the slide chart?
+- Take a screenshot with `Win+Shift+S` ~~ static image, never updates
+* Copy the chart in Excel and paste in PowerPoint using **Keep Source Formatting & Link Data** ~~ links back to the `.xlsx` file
+- Export the Excel sheet to `.txt` ~~ loses chart
+- Type the numbers into a SmartArt graphic ~~ not linked to Excel
+! Linking Excel data keeps slide charts synchronized with spreadsheet updates.
+
+? [12] Which PowerPoint animation category makes an object **appear onto** the slide (such as `Fade` or `Fly In`)?
+* **Entrance** (green icons) ~~ brings objects onto the slide
+- **Emphasis** (yellow icons) ~~ highlights an object already on the slide
+- **Exit** (red icons) ~~ removes an object from the slide
+- **Motion Paths** ~~ moves an object along a path
+! Green = Entrance, Yellow = Emphasis, Red = Exit.
+
+? [12] Why should you set bullet animations to **On Click** (By Paragraph) rather than showing all 6 bullets immediately?
+- It reduces file size ~~ same size
+* It prevents the audience from reading Bullet #5 while you are still explaining Bullet #1 ~~ keeps attention synchronized with your voice
+- PowerPoint requires it to save ~~ optional
+- It turns on Presenter View ~~ unrelated
+! Revealing bullets one by one keeps the audience focused on your current point.
+
+? [13] During a live PowerPoint presentation, which key exits Slide Show mode and returns to the editor?
+- `B` ~~ Black screen
+- `W` ~~ White screen
+* `Esc` ~~ exits Slide Show
+- `F5` ~~ restarts Slide Show from Slide 1
+! Press `Esc` to end Slide Show.
+
+? [13] Which export option turns a timed or narrated PowerPoint presentation into a standalone `.mp4` movie?
+- `File → Export → Create PDF/XPS` ~~ static pages
+* `File → Export → Create a Video` ~~ renders slides, timings, and audio to `.mp4`
+- `File → Save As → .csv` ~~ invalid for presentations
+- `Slide Show → Rehearse Timings` ~~ records timings before exporting
+! `File → Export → Create a Video` produces a playable video file.
+
+? [13] What does `File → Print → Full Page Slides` → **`6 Slides Horizontal`** do?
+- Deletes 6 slides ~~ prints only
+* Prints 6 slide thumbnails per page as a compact handout ~~ saves paper for study handouts
+- Runs Slide Show 6 times ~~ printing only
+- Exports 6 PDFs ~~ prints/exports one document
+! `6 Slides Horizontal` creates compact multi-slide handouts.
+
+? [01] What is the difference between the Internet and the World Wide Web?
+- They are the same thing ~~ the Web is only one service on the Internet
+* The Internet is the global network; the Web is a service of linked pages that runs on it ~~ correct
+- The Web is older than the Internet ~~ the Internet came first (ARPANET 1969, Web 1989–91)
+- The Internet is only for email ~~ email is one service on it
+- The Web works without the Internet ~~ the Web needs the Internet
+! Internet = network; Web = pages + links + browsers.
+
+? [01] A padlock icon and "https://" in the address bar mean that:
+- the site is government-approved ~~ no
+* the connection between your browser and the site is encrypted ~~ correct
+- the site has no cookies ~~ unrelated
+- the site is free ~~ unrelated
+- the page is saved offline ~~ unrelated
+! HTTPS = encrypted HTTP.
+
+? [01] An email from "Gelisim-Support <help@gelisim-verify.net>" asks you to confirm your password with a link. This is most likely:
+- spam advertising ~~ it asks for credentials, which is more dangerous
+* phishing ~~ a fake sender trying to steal your login
+- a malicious attachment ~~ there is no attachment
+- a BCC message ~~ BCC is an email field
+- a cookie ~~ not related
+! Check the real sender domain; universities never ask for passwords by email.
+
+? [01] Which e-commerce model is a company selling laptops to a ministry through a tender?
+- B2C ~~ consumer
+- C2C ~~ consumers
+* B2G ~~ business to government
+- C2B ~~ consumer to business
+- B2B ~~ the buyer is a government, not a business
+! B2G = business to government.
+
+? [01] Which browser feature does NOT keep history or cookies after you close the window?
+- Bookmarks ~~ saves links
+- Cache ~~ stores files
+* Private / Incognito window ~~ correct
+- Home page ~~ startup page
+- Downloads ~~ a list of files
+! Incognito: `Ctrl+Shift+N` in Chrome.
+
+? [01] You send a newsletter to 200 students and do not want them to see each other's addresses. Put the addresses in:
+- To ~~ everyone sees them
+- CC ~~ everyone sees them
+* BCC ~~ hidden from other receivers
+- Subject ~~ no
+- Signature ~~ no
+! BCC = blind carbon copy.
+
+? [03] Which Google Forms question type lets respondents choose MORE than one option?
+- Multiple choice ~~ only one option
+* Checkboxes ~~ one or more options
+- Dropdown ~~ only one option
+- Linear scale ~~ one number
+- Short answer ~~ free text
+! Checkboxes = several; multiple choice = one.
+
+? [03] Which Google Forms question type requires respondents to sign in to a Google account?
+- Paragraph ~~ no sign-in needed
+- Date ~~ no sign-in needed
+* File upload ~~ files are stored in the form owner's Drive
+- Linear scale ~~ no sign-in needed
+- Checkbox grid ~~ no sign-in needed
+! File upload needs sign-in.
+
+? [03] In Google Calendar, how do you add a video meeting link to an event?
+- Insert → Video ~~ not a Calendar menu
+* Click "Add Google Meet video conferencing" in the event ~~ correct
+- Email the guests a phone number ~~ not a Meet link
+- Share the calendar publicly ~~ no
+- Use Version history ~~ unrelated
+! The Meet link is created automatically.
+
+? [03] A Google Drive user who can add comments but cannot change the text has the role:
+- Viewer ~~ cannot comment
+* Commenter ~~ correct
+- Editor ~~ can change text
+- Owner ~~ full control
+- Guest ~~ not a Drive role
+! Viewer < Commenter < Editor.
+
+? [03] Where can you restore an older version of a Google Doc?
+- Edit → Undo ~~ only recent actions
+* File → Version history ~~ correct
+- Insert → Bookmark ~~ unrelated
+- Tools → Spelling ~~ unrelated
+- Share → General access ~~ permissions
+! Version history keeps earlier versions.
+
+? [04] Which Word view opens when you click the File tab?
+- Print Layout ~~ a document view
+* Backstage view ~~ correct
+- Outline view ~~ a document view
+- Read Mode ~~ a document view
+- Draft view ~~ a document view
+! File tab = Backstage view.
+
+? [04] Which file extension is a Word template?
+- .docx ~~ normal document
+- .docm ~~ document with macros
+* .dotx ~~ template
+- .pdf ~~ fixed-layout file
+- .xlsx ~~ Excel workbook
+! .dotx = Word template.
+
+? [04] Before emailing a report, you want to remove hidden comments and the author name. Use:
+- Protect Document → Mark as Final ~~ doesn't remove data
+* File → Info → Check for Issues → Inspect Document ~~ correct
+- Review → Spelling & Grammar ~~ unrelated
+- Home → Clear All Formatting ~~ removes formatting only
+- Layout → Margins ~~ unrelated
+! Inspect Document removes hidden data.
+
+? [04] To require a password to OPEN a Word file, use:
+- Restrict Editing ~~ controls editing, not opening
+* Protect Document → Encrypt with Password ~~ correct
+- Mark as Final ~~ only a warning
+- AutoSave ~~ unrelated
+- Inspect Document ~~ unrelated
+! Encrypt with Password.
+
+? [04] Double-clicking the Format Painter button lets you:
+- copy text ~~ it copies formatting
+* apply the same formatting to several places until you press Esc ~~ correct
+- paste unformatted text ~~ that's Paste Special
+- clear formatting ~~ different command
+- open the Styles pane ~~ different
+! Single click = once; double-click = many times.
+
+? [04] AutoSave in Word works only when the file is saved in:
+- the Desktop folder ~~ local files use AutoRecover
+* OneDrive or SharePoint ~~ correct
+- a USB flash drive ~~ no
+- the Recycle Bin ~~ no
+- an email attachment ~~ no
+! AutoSave = cloud files.
+
+? [06] Which command pastes text WITHOUT its original formatting?
+- Ctrl+V ~~ keeps formatting by default
+* Paste Special → Unformatted Text (or Keep Text Only) ~~ correct
+- Format Painter ~~ copies formatting
+- Find and Replace ~~ unrelated
+- Ctrl+G ~~ Go To
+! `Ctrl+Alt+V` opens Paste Special.
+
+? [06] Which shortcut opens Go To in Word?
+- Ctrl+F ~~ Find
+- Ctrl+H ~~ Replace
+* Ctrl+G ~~ Go To (F5 also works)
+- Ctrl+R ~~ align right
+- Ctrl+J ~~ justify
+! Go To: `Ctrl+G` or `F5`.
+
+? [06] Where do you add your own AutoCorrect entries in Word?
+- Home → Font ~~ no
+* File → Options → Proofing → AutoCorrect Options ~~ correct
+- Insert → Symbol ~~ inserts symbols
+- Review → Track Changes ~~ no
+- View → Macros ~~ no
+! AutoCorrect is in Proofing options.
+
+? [07] Which shortcut moves to cell A1 in Excel?
+- Ctrl+End ~~ last used cell
+* Ctrl+Home ~~ A1
+- Home ~~ start of the row only
+- Ctrl+A ~~ select all
+- F2 ~~ edit cell
+! `Ctrl+Home` → A1.
+
+? [07] What is lost when you save an Excel workbook as .csv?
+- Nothing ~~ a lot is lost
+* Formatting, formulas (only values remain) and every sheet except the active one ~~ correct
+- Only the column widths ~~ much more is lost
+- The cell values ~~ values are kept
+- The file name ~~ no
+! CSV = plain text values, one sheet.
+
+? [07] Which feature keeps the header row visible while you scroll?
+- Split ~~ divides the window
+* Freeze Panes → Freeze Top Row ~~ correct
+- Wrap Text ~~ text inside a cell
+- Merge & Center ~~ joins cells
+- Hide ~~ hides rows
+! View → Freeze Panes.
+
+? [11] Which PowerPoint feature suggests ready-made layouts for the current slide?
+- Slide Master ~~ edits layouts manually
+* Designer (Design Ideas) ~~ correct
+- Slide Sorter ~~ a view
+- Animation Pane ~~ animations
+- Outline View ~~ a view
+! Design → Designer.

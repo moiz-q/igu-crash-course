@@ -1,0 +1,634 @@
+=== c-05-01 | easy | run | Print a two-line greeting
+Write a C program that prints:
+`Hello, IGU!`
+on the first line and
+`Semester 1`
+on the second line.
+--- solution
+#include <stdio.h>
+
+int main() {
+    printf("Hello, IGU!\n");
+    printf("Semester 1\n");
+    return 0;
+}
+--- hint
+Use two `printf` calls (or one with `\n` in the middle).
+
+=== c-05-02 | easy | fill | Declare and print variables
+Fill in the `____` blanks so the program declares an `int` named `credits` with value `30` and a `char` named `grade` with value `'A'`, then prints `30 A`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    ____ credits = 30;
+    ____ grade = 'A';
+    printf("%d %c\n", ____, ____);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int credits = 30;
+    char grade = 'A';
+    printf("%d %c\n", credits, grade);
+    return 0;
+}
+--- hint
+Whole numbers use `int`, single characters use `char`.
+
+=== c-05-03 | easy | bug | Fix the char quote bug
+This program fails to compile because of wrong quotes and a missing semicolon. Fix it so it prints `Level: B`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    char level = "B"
+    printf("Level: %c\n", level);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    char level = 'B';
+    printf("Level: %c\n", level);
+    return 0;
+}
+--- hint
+Single characters need single quotes `'B'`, and statements end with `;`.
+
+=== c-05-04 | easy | predict | Predict variable values
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int a = 5;
+    int b = a + 3;
+    a = 10;
+    printf("%d %d\n", a, b);
+    return 0;
+}
+
+=== c-05-05 | medium | run | Rectangle area and perimeter
+Declare `int width = 7, height = 4;`. Compute and print:
+`Area: 28`
+`Perimeter: 22`
+--- solution
+#include <stdio.h>
+
+int main() {
+    int width = 7, height = 4;
+    printf("Area: %d\n", width * height);
+    printf("Perimeter: %d\n", 2 * (width + height));
+    return 0;
+}
+--- hint
+Perimeter is `2 * (width + height)`.
+
+=== c-05-06 | medium | bug | Fix the invalid variable name
+Fix the variable name and missing initialization so it prints `Score: 95`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    int 1score = 95;
+    printf("Score: %d\n", 1score);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int score1 = 95;
+    printf("Score: %d\n", score1);
+    return 0;
+}
+--- hint
+Variable names cannot start with a digit.
+
+=== c-05-07 | medium | predict | Predict sizeof output
+What does this program print? (On 64-bit systems `int` is 4 bytes, `double` is 8 bytes, `char` is 1 byte.)
+--- code
+#include <stdio.h>
+
+int main() {
+    printf("%d %d %d\n", (int)sizeof(char), (int)sizeof(int), (int)sizeof(double));
+    return 0;
+}
+
+=== c-05-08 | exam | run | Swap two variables using a temporary
+Write a program with `int a = 12, b = 34;`. Swap their values using a temporary variable `tmp`, then print `a=34 b=12`.
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a = 12, b = 34;
+    int tmp = a;
+    a = b;
+    b = tmp;
+    printf("a=%d b=%d\n", a, b);
+    return 0;
+}
+--- checklist
+- Declares `a`, `b`, and a third `tmp` variable
+- Performs the 3-step swap `tmp = a; a = b; b = tmp;`
+- Prints `a=34 b=12` with `\n`
+
+=== c-06-01 | easy | run | Read and double an integer
+Read one integer `n` from input and print `2 * n` followed by a newline.
+--- stdin
+15
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    printf("%d\n", 2 * n);
+    return 0;
+}
+--- hint
+Remember `&n` in `scanf`.
+
+=== c-06-02 | easy | bug | Fix the missing & in scanf
+Fix the bug so the program reads two integers and prints their sum.
+--- stdin
+8 13
+--- starter
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    scanf("%d %d", a, b);
+    printf("%d\n", a + b);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    printf("%d\n", a + b);
+    return 0;
+}
+--- hint
+`scanf` needs `&a` and `&b`.
+
+=== c-06-03 | easy | fill | Read a double and print 2 decimals
+Fill in the `____` blanks to read a `double x` and print it with 2 decimal places.
+--- stdin
+3.14159
+--- starter
+#include <stdio.h>
+
+int main() {
+    double x;
+    scanf("____", &x);
+    printf("____\n", x);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    double x;
+    scanf("%lf", &x);
+    printf("%.2f\n", x);
+    return 0;
+}
+--- hint
+`scanf` uses `%lf` for `double`; `printf` uses `%.2f`.
+
+=== c-06-04 | medium | bug | Fix double scanf specifier
+This program uses `%f` to read a `double`. Fix it so `7.5` prints as `15.00`.
+--- stdin
+7.5
+--- starter
+#include <stdio.h>
+
+int main() {
+    double x;
+    scanf("%f", &x);
+    printf("%.2f\n", x * 2);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    double x;
+    scanf("%lf", &x);
+    printf("%.2f\n", x * 2);
+    return 0;
+}
+--- hint
+Change `%f` to `%lf` in `scanf`.
+
+=== c-06-05 | medium | predict | Predict printf with tabs and percent
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int p = 85;
+    printf("Score:\t%d%%\n", p);
+    return 0;
+}
+
+=== c-06-06 | medium | run | Read int and char safely
+Read an integer `n` and a character `c` (separated by newline in input) and print `n=4 c=K`.
+--- stdin
+4
+K
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n;
+    char c;
+    scanf("%d", &n);
+    scanf(" %c", &c);
+    printf("n=%d c=%c\n", n, c);
+    return 0;
+}
+--- hint
+Put a space before `%c` (`" %c"`) to skip the newline after `4`.
+
+=== c-06-07 | medium | run | Average of three integers
+Read 3 integers and print their average with 2 decimal places.
+--- stdin
+10 15 20
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    printf("%.2f\n", (a + b + c) / 3.0);
+    return 0;
+}
+--- hint
+Divide by `3.0` (not `3`) so you don't lose the decimal part.
+
+=== c-06-08 | exam | run | Temperature converter (C to F)
+Read a temperature in Celsius as a `double` and print Fahrenheit (`F = C * 9.0 / 5.0 + 32.0`) formatted as `F = 77.00`.
+--- stdin
+25.0
+--- solution
+#include <stdio.h>
+
+int main() {
+    double c, f;
+    scanf("%lf", &c);
+    f = c * 9.0 / 5.0 + 32.0;
+    printf("F = %.2f\n", f);
+    return 0;
+}
+--- checklist
+- Uses `double` and reads with `%lf`
+- Uses floating-point division `9.0 / 5.0`
+- Prints `F = %.2f\n`
+
+=== c-07-01 | easy | predict | Predict integer division and modulo
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int a = 17, b = 5;
+    printf("%d %d\n", a / b, a % b);
+    return 0;
+}
+
+=== c-07-02 | easy | predict | Predict prefix and postfix ++
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int i = 4;
+    int a = i++;
+    int b = ++i;
+    printf("%d %d %d\n", i, a, b);
+    return 0;
+}
+
+=== c-07-03 | easy | fill | Fix integer division with a cast
+Fill in the `____` blank so `7 / 2` prints `3.50`.
+--- starter
+#include <stdio.h>
+
+int main() {
+    int a = 7, b = 2;
+    double res = ____a / b;
+    printf("%.2f\n", res);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a = 7, b = 2;
+    double res = (double)a / b;
+    printf("%.2f\n", res);
+    return 0;
+}
+--- hint
+Cast `a` to `(double)` before dividing.
+
+=== c-07-04 | medium | predict | Predict operator precedence
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int x = 2 + 3 * 4 - 10 / 4;
+    int y = (2 + 3) * (4 - 1);
+    printf("%d %d\n", x, y);
+    return 0;
+}
+
+=== c-07-05 | medium | predict | Predict logical and short-circuit output
+What does this program print?
+--- code
+#include <stdio.h>
+
+int main() {
+    int a = 0, b = 5;
+    int r = (a && (b = 99));
+    printf("%d %d\n", r, b);
+    return 0;
+}
+
+=== c-07-06 | medium | bug | Fix chained comparison bug
+Fix the condition so it prints `In range` only when `x` is between `10` and `20` inclusive (for `x = 25`, it should print `Out`).
+--- stdin
+25
+--- starter
+#include <stdio.h>
+
+int main() {
+    int x;
+    scanf("%d", &x);
+    if (10 <= x <= 20) {
+        printf("In range\n");
+    } else {
+        printf("Out\n");
+    }
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int x;
+    scanf("%d", &x);
+    if (x >= 10 && x <= 20) {
+        printf("In range\n");
+    } else {
+        printf("Out\n");
+    }
+    return 0;
+}
+--- hint
+Split `10 <= x <= 20` using `&&`.
+
+=== c-07-07 | medium | run | Split total minutes into hours and minutes
+Read `total` minutes (an integer) and print hours and remaining minutes as `2h 15m`.
+--- stdin
+135
+--- solution
+#include <stdio.h>
+
+int main() {
+    int total;
+    scanf("%d", &total);
+    printf("%dh %dm\n", total / 60, total % 60);
+    return 0;
+}
+--- hint
+Use `/` for hours and `%` for remaining minutes.
+
+=== c-07-08 | exam | run | Sum of digits of a 3-digit number
+Read a 3-digit integer `n` (e.g. `472`) and print the sum of its digits (`13`) using `/` and `%`.
+--- stdin
+472
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int d1 = n / 100;
+    int d2 = (n / 10) % 10;
+    int d3 = n % 10;
+    printf("%d\n", d1 + d2 + d3);
+    return 0;
+}
+--- checklist
+- Extracts hundreds digit with `n / 100`
+- Extracts tens digit with `(n / 10) % 10`
+- Extracts ones digit with `n % 10` and prints the sum
+
+=== c-08-01 | easy | run | Even or odd
+Read an integer `n`. Print `Even` if it is even, or `Odd` if it is odd.
+--- stdin
+19
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    if (n % 2 == 0) {
+        printf("Even\n");
+    } else {
+        printf("Odd\n");
+    }
+    return 0;
+}
+--- hint
+Check `n % 2 == 0`.
+
+=== c-08-02 | easy | bug | Fix assignment = instead of ==
+Fix the bug so `x = 3` prints `Not five`.
+--- stdin
+3
+--- starter
+#include <stdio.h>
+
+int main() {
+    int x;
+    scanf("%d", &x);
+    if (x = 5) {
+        printf("Five\n");
+    } else {
+        printf("Not five\n");
+    }
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int x;
+    scanf("%d", &x);
+    if (x == 5) {
+        printf("Five\n");
+    } else {
+        printf("Not five\n");
+    }
+    return 0;
+}
+--- hint
+Comparison in C is `==`, not `=`.
+
+=== c-08-03 | easy | bug | Fix missing break in switch
+Fix the `switch` so input `2` prints only `Two`.
+--- stdin
+2
+--- starter
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    switch (n) {
+        case 1: printf("One\n"); break;
+        case 2: printf("Two\n");
+        case 3: printf("Three\n"); break;
+        default: printf("Other\n");
+    }
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    switch (n) {
+        case 1: printf("One\n"); break;
+        case 2: printf("Two\n"); break;
+        case 3: printf("Three\n"); break;
+        default: printf("Other\n");
+    }
+    return 0;
+}
+--- hint
+Add `break;` at the end of `case 2`.
+
+=== c-08-04 | medium | predict | Predict else-if chain
+What does this program print?
+--- stdin
+75
+--- code
+#include <stdio.h>
+
+int main() {
+    int s;
+    scanf("%d", &s);
+    if (s >= 90) printf("A");
+    else if (s >= 70) printf("B");
+    if (s >= 50) printf("C");
+    printf("\n");
+    return 0;
+}
+
+=== c-08-05 | medium | fill | Ternary operator max
+Fill in the `____` blank using the ternary operator `?:` to store the larger of `a` and `b` in `m`.
+--- stdin
+12 27
+--- starter
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    int m = ____;
+    printf("%d\n", m);
+    return 0;
+}
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    int m = (a > b) ? a : b;
+    printf("%d\n", m);
+    return 0;
+}
+--- hint
+Syntax: `(a > b) ? a : b`.
+
+=== c-08-06 | medium | run | Simple switch calculator
+Read two integers `a` and `b` and an operator `op` (`+`, `-`, `*`, `/`) on one line (e.g. `10 3 +`). Use `switch (op)` to print the integer result (for `/`, print `Zero` if `b == 0`).
+--- stdin
+12 4 *
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    char op;
+    scanf("%d %d %c", &a, &b, &op);
+    switch (op) {
+        case '+': printf("%d\n", a + b); break;
+        case '-': printf("%d\n", a - b); break;
+        case '*': printf("%d\n", a * b); break;
+        case '/':
+            if (b == 0) printf("Zero\n");
+            else printf("%d\n", a / b);
+            break;
+        default: printf("Invalid\n");
+    }
+    return 0;
+}
+--- hint
+Remember ` %c` in `scanf` and `break;` after each `case`.
+
+=== c-08-07 | medium | run | Largest of three numbers
+Read 3 integers and print the largest one.
+--- stdin
+14 29 21
+--- solution
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    int max = a;
+    if (b > max) max = b;
+    if (c > max) max = c;
+    printf("%d\n", max);
+    return 0;
+}
+--- hint
+Start with `max = a`, then check `b` and `c`.
+
+=== c-08-08 | exam | run | Leap year check
+Read a year `y`. Print `Leap` if it is divisible by 400, OR divisible by 4 and NOT divisible by 100; otherwise print `Normal`.
+--- stdin
+2024
+--- solution
+#include <stdio.h>
+
+int main() {
+    int y;
+    scanf("%d", &y);
+    if ((y % 400 == 0) || (y % 4 == 0 && y % 100 != 0)) {
+        printf("Leap\n");
+    } else {
+        printf("Normal\n");
+    }
+    return 0;
+}
+--- checklist
+- Checks `y % 400 == 0`
+- Checks `y % 4 == 0 && y % 100 != 0`
+- Combines conditions with `||` and prints `Leap` / `Normal`

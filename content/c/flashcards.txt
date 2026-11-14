@@ -1,0 +1,14 @@
+c | `int` format specifier (`printf` / `scanf`) | `%d` (and `&x` in `scanf`)
+c | `double` format specifier (`printf` vs `scanf`) | `%f` in `printf`, `%lf` in `scanf`
+c | `char` in `scanf` safely | `" %c"` (leading space skips leftover `\n`)
+c | Integer division `7 / 2` | `3` (fractional part is truncated toward zero)
+c | Modulo operator `7 % 2` | `1` (remainder after integer division)
+c | Difference between `=` and `==` | `=` assigns a value; `==` compares two values
+c | `while` vs `do-while` | `while` checks condition first (0+ runs); `do-while` runs body first (1+ runs)
+c | `break` vs `continue` in a loop | `break` exits the loop; `continue` skips to the next iteration
+c | Array index range for `int a[5]` | `a[0]` through `a[4]` (never `a[5]`)
+c | String terminator in C | `'\0'` (null character, value 0)
+c | Compare two C strings `a` and `b` | `strcmp(a, b) == 0` (never `a == b`)
+c | Address-of `&x` vs dereference `*p` | `&x` gives the memory address of `x`; `*p` accesses the value at address `p`
+c | Struct member access via pointer `p` | `p->field` (shorthand for `(*p).field`)
+c | Open file check | Always check `if (fp == NULL)` after `fopen` and call `fclose(fp)`

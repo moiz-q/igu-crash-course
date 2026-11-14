@@ -1,0 +1,71 @@
+{
+ "osi": {
+  "title": "Order the 7 OSI layers (top = 7, bottom = 1)",
+  "prompt": "Drag or move the OSI layers into the correct order from Layer 7 (top) down to Layer 1 (bottom).",
+  "items": [
+   "7. Application (HTTP, DNS, SMTP)",
+   "6. Presentation (Encryption, JPEG, UTF-8)",
+   "5. Session (Dialog control & sessions)",
+   "4. Transport (TCP/UDP, ports)",
+   "3. Network (IP addresses, routing)",
+   "2. Data Link (MAC addresses, frames)",
+   "1. Physical (Bits, cables, signals)"
+  ]
+ },
+ "tcpip": {
+  "title": "Order the 4 TCP/IP layers (top to bottom)",
+  "prompt": "Arrange the 4 layers of the TCP/IP model from top (closest to the user app) to bottom (wire/radio).",
+  "items": [
+   "Application (HTTP, DNS, DHCP, SSH)",
+   "Transport (TCP, UDP)",
+   "Internet (IPv4, IPv6, ICMP)",
+   "Network Access / Link (Ethernet, Wi-Fi)"
+  ]
+ },
+ "encap": {
+  "title": "Order data encapsulation on the sender (top to bottom)",
+  "prompt": "Put the steps of encapsulation in order as data travels down the sender's stack.",
+  "items": [
+   "1. Application creates user Data",
+   "2. Transport adds TCP/UDP port header → Segment",
+   "3. Network adds source & destination IP → Packet",
+   "4. Data Link adds MAC header + FCS trailer → Frame",
+   "5. Physical transmits raw Bits onto the medium"
+  ]
+ },
+ "devlayer": {
+  "title": "Match each network device to its primary OSI layer",
+  "prompt": "Match each device on the left with the OSI layer where it operates.",
+  "pairs": [
+   ["Hub / Repeater", "Layer 1 — Physical (repeats raw bits)"],
+   ["Switch (Layer 2)", "Layer 2 — Data Link (MAC address table)"],
+   ["Wireless Access Point", "Layer 2 — Data Link (bridges Wi-Fi to LAN)"],
+   ["Router", "Layer 3 — Network (routes IP packets)"]
+  ]
+ },
+ "ports": {
+  "title": "Match protocols to their well-known port numbers",
+  "prompt": "Match each application protocol to its default TCP/UDP port.",
+  "pairs": [
+   ["FTP (Control)", "Port 21"],
+   ["SSH", "Port 22"],
+   ["Telnet", "Port 23"],
+   ["SMTP", "Port 25"],
+   ["DNS", "Port 53"],
+   ["DHCP", "Ports 67 / 68"],
+   ["HTTP", "Port 80"],
+   ["HTTPS", "Port 443"]
+  ]
+ },
+ "pdu": {
+  "title": "Match each OSI layer to its PDU",
+  "prompt": "Connect the OSI layer to the name of its Protocol Data Unit (PDU).",
+  "pairs": [
+   ["Application / Presentation / Session", "Data"],
+   ["Transport (TCP)", "Segment"],
+   ["Network (IP)", "Packet"],
+   ["Data Link (Ethernet)", "Frame"],
+   ["Physical (Cable / Radio)", "Bit"]
+  ]
+ }
+}

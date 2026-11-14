@@ -1,0 +1,281 @@
+# Programming Basics I (C) — MCQ bank Part A (weeks 1–8)
+
+? [01] Which component holds running programs and variables temporarily, and loses its contents when power is turned off?
+- CPU ~~ The CPU executes instructions; it is not main working memory.
+* RAM ~~ RAM is fast, volatile working memory.
+- SSD ~~ SSD is permanent (non-volatile) storage.
+- GPU ~~ GPU handles graphics/parallel compute, not main system memory.
+! RAM is volatile workspace cleared on power-off; permanent files live on SSD/HDD.
+
+? [01] Which statement about **C** is true?
+- C is an interpreted language like Python ~~ C is compiled before running.
+* C uses a compiler (such as `gcc`) to translate source code into machine code before execution ~~ Compiled executables run directly on the CPU.
+- C requires a web browser to run ~~ Standard C compiles to native machine code.
+- C cannot work with hardware or memory ~~ C is famous for low-level memory access.
+! C is a compiled language: `.c` source → compiler (`gcc`) → machine code executable.
+
+? [01] What is the correct order of steps to run a C program from scratch?
+- Run → Compile → Write source ~~ You cannot run what hasn't been written or compiled.
+* Write source code → Compile → Run executable ~~ Source → machine code → execution.
+- Compile → Write source → Link ~~ You must write the `.c` file first.
+- Write machine code → Compile to C ~~ Compilers translate high-level C *into* machine code.
+! Write `main.c` → compile with `gcc main.c -o main` → run `./main`.
+
+? [01] Which part of the computer performs arithmetic (`+`, `-`) and logic comparisons?
+* CPU ~~ The Central Processing Unit (specifically its ALU) executes arithmetic and logic.
+- RAM ~~ RAM stores data and instructions.
+- Hard drive ~~ Storage holds files long-term.
+- Keyboard ~~ Input device.
+! The CPU is the processor that fetches and executes instructions.
+
+? [01] How do the **Internet** and the **World Wide Web** relate?
+- They are the exact same thing ~~ The Web is just one service on the Internet.
+* The Internet is the global network of connected networks; the Web is the system of hypertext pages (HTTP/HTML) running on top of it ~~ Email and SSH also use the Internet without being the Web.
+- The Web existed before ARPANET ~~ ARPANET (1969) came 20 years before the Web (1989).
+- The Internet runs inside a single web browser ~~ The Internet is global infrastructure.
+! ARPANET (late 1960s) + TCP/IP → the Internet; Tim Berners-Lee (1989–91) → the Web.
+
+? [02] Which property MUST every valid algorithm have?
+- It must be written in C ~~ Algorithms are language-independent.
+* It must consist of clear, ordered steps and finish in a finite number of steps ~~ Infinite or vague steps are not valid algorithms.
+- It must take at least 3 inputs ~~ Some algorithms take 0, 1, or many inputs.
+- It must contain a `switch` statement ~~ `switch` is a C construct, not an algorithm requirement.
+! An algorithm is finite, unambiguous, and ordered.
+
+? [02] Why do programmers write **pseudocode** before coding?
+- Because `gcc` compiles pseudocode faster ~~ `gcc` cannot compile pseudocode.
+* To design and check the logic in plain human-readable steps without syntax distractions ~~ Once the logic is clear, translating to C is easy.
+- To encrypt the program ~~ Pseudocode is not encryption.
+- To measure CPU clock speed ~~ Unrelated.
+! Pseudocode helps you focus on logic before syntax.
+
+? [02] Trace: `x = 2; y = 3; x = x + y; y = x - y; x = x - y;`. What are `x` and `y` at the end?
+- `x = 2, y = 3` ~~ The steps swap the values.
+* `x = 3, y = 2` ~~ `x=5`, `y=5-3=2`, `x=5-2=3` — a classic no-temp swap!
+- `x = 5, y = 2` ~~ The last step sets `x = 5 - 2 = 3`.
+- `x = 5, y = 5` ~~ Check the subtractions carefully.
+! Tracing line by line: `(2,3) → (5,3) → (5,2) → (3,2)`.
+
+? [02] In pseudocode, what should happen if a student's `score` is checked with `IF score >= 50 THEN OUTPUT "Pass" ELSE OUTPUT "Fail"` for `score = 50`?
+- Output `"Fail"` ~~ `>=` includes `50`.
+* Output `"Pass"` ~~ `50 >= 50` is true.
+- Nothing is printed ~~ `ELSE` handles false; here the condition is true.
+- Error ~~ Valid comparison.
+! `>=` means greater than or equal to, so `50` passes.
+
+? [02] Which step is missing in: `START; READ n; sum = sum + n; OUTPUT sum; STOP`?
+- `END` ~~ `STOP` is already there.
+* Initializing `sum = 0` before adding `n` ~~ Without `sum = 0`, `sum`'s starting value is undefined.
+- Declaring `int main()` ~~ Not needed in pseudocode.
+- Dividing by 2 ~~ Not part of summing.
+! Always initialize accumulators like `sum = 0` before using them.
+
+? [03] Which flowchart symbol represents a **Yes/No decision**?
+- Oval / rounded pill ~~ Marks Start and End.
+- Rectangle ~~ Represents a process/calculation.
+* Diamond ~~ Represents a condition with two outgoing arrows (Yes/No).
+- Parallelogram ~~ Represents Input/Output.
+! Diamond = Decision; Parallelogram = I/O; Rectangle = Process; Oval = Start/End.
+
+? [03] Which flowchart symbol should contain `Read a, b`?
+- Rectangle ~~ Rectangles are for calculations/assignments.
+* Parallelogram ~~ Input and Output use a parallelogram.
+- Diamond ~~ Diamonds are for conditions.
+- Circle ~~ Standard flowcharts use ovals for Start/End.
+! Input/Output operations use a parallelogram.
+
+? [03] Which flowchart symbol should contain `avg = (a + b) / 2.0`?
+* Rectangle ~~ Calculations and assignments go in a Process rectangle.
+- Parallelogram ~~ Parallelograms are for `Read` and `Print`.
+- Diamond ~~ Not a Yes/No question.
+- Oval ~~ Only for Start and End.
+! Assignments and math formulas belong in Process rectangles.
+
+? [03] What is wrong with a flowchart diamond that has only **one** arrow leaving it?
+- Nothing, that is normal ~~ A decision must branch!
+* A decision tests a true/false condition and must have **two** outgoing branches (`Yes` and `No`) ~~ Otherwise it cannot branch.
+- Diamonds should have zero outgoing arrows ~~ Only `End` has zero outgoing arrows.
+- Diamonds cannot have incoming arrows ~~ Every step after Start has at least one incoming arrow.
+! Every Decision diamond needs both a Yes/True branch and a No/False branch.
+
+? [03] How is a **loop** shown in a flowchart?
+- With a bigger rectangle ~~ Size doesn't make a loop.
+* With a flow arrow pointing **back up** to an earlier decision/step ~~ Repeating until the condition becomes false.
+- With two `Start` ovals ~~ A flowchart has only one `Start`.
+- Loops cannot be drawn in flowcharts ~~ Flowcharts represent loops with back-arrows.
+! A flow line returning to an earlier node forms a loop.
+
+? [04] In a flowchart to find the **maximum** of `N` input numbers, what should `max` start as?
+- `0` ~~ Fails if all inputs are negative!
+* The **first** number read ~~ Guaranteed to work for negative and positive numbers alike.
+- `N` ~~ `N` is the count, not a value.
+- `1000` ~~ Fails if all inputs are smaller than 1000!
+! Always initialize `max` (and `min`) to the first value read.
+
+? [04] In a factorial (`N!`) flowchart, what must `fact` be initialized to?
+- `0` ~~ Multiplying by `0` always gives `0`.
+* `1` ~~ `1` is the multiplicative identity (and `0! = 1`).
+- `N` ~~ Would compute `N * N!`.
+- `-1` ~~ Would flip the sign.
+! Initialize product accumulators to `1` and sum accumulators to `0`.
+
+? [04] In the `sum = 1 + 2 + ... + N` flowchart (`sum = 0, i = 1`, while `i <= N`: `sum = sum + i; i = i + 1`), what happens if `N = 0`?
+- Infinite loop ~~ `i <= N` (`1 <= 0`) is immediately false, so the loop doesn't run.
+* It prints `0` ~~ Loop is skipped and `sum` remains `0`.
+- It prints `1` ~~ `i` is not added when `1 <= 0` is false.
+- It crashes ~~ Valid comparison.
+! Because `i <= N` is checked before the body, `N = 0` prints `0`.
+
+? [04] When finding the **largest of 3 numbers (`a, b, c`)**, which approach is simplest and least error-prone?
+- Checking all 6 permutations ~~ Too many branches.
+* Set `max = a`, then `if (b > max) max = b`, then `if (c > max) max = c` ~~ Clean, linear, and easy to extend to `N` numbers.
+- Add `a + b + c` ~~ Gives the sum, not the max.
+- Sort only `a` and `b` ~~ Ignores `c`.
+! Starting with `max = a` and updating with each remaining value needs only 2 comparisons.
+
+? [04] In a grade-letter flowchart (`>= 90` A, `>= 70` B, `>= 50` C, else F), what does `score = 85` print?
+- `A` ~~ `85 >= 90` is false.
+* `B` ~~ First check `>= 90` is false; second check `85 >= 70` is true → `B`.
+- `C` ~~ It already took the `B` branch and jumped to End.
+- `BC` ~~ In an `else-if` chain, only one branch runs.
+! Each `No` branch leads to the next threshold, and each `Yes` branch prints and jumps to `End`.
+
+? [05] Which `#include` header is required for `printf` and `scanf`?
+- `#include <string.h>` ~~ For string functions like `strlen`, `strcpy`.
+* `#include <stdio.h>` ~~ Standard Input/Output header.
+- `#include <ctype.h>` ~~ For character checks like `isdigit`, `toupper`.
+- `#include <math.h>` ~~ For math functions like `sqrt`, `pow`.
+! `<stdio.h>` provides `printf`, `scanf`, `fgets`, `fopen`, etc.
+
+? [05] Which of these is an **invalid** C variable name?
+- `_total` ~~ Leading underscore is valid (though avoid double underscores).
+- `gpa2` ~~ Digits after the first character are valid.
+* `2nd_grade` ~~ Variable names cannot start with a digit.
+- `maxValue` ~~ Valid camelCase identifier.
+! Identifiers must start with a letter or `_`, never a digit.
+
+? [05] Which C type stores `'Z'`?
+- `int` ~~ `int` is for whole numbers.
+- `double` ~~ `double` is for decimals.
+* `char` ~~ `char` stores a single character in 1 byte.
+- `float` ~~ `float` is for decimals.
+! Use `char` with single quotes `'Z'`.
+
+? [05] What is the value of `x` right after `int x;` (with no `= ...`) inside `main()`?
+- Guaranteed to be `0` ~~ C does NOT zero-initialize local variables!
+* Uninitialized (indeterminate garbage) ~~ Reading it before assigning causes undefined behavior.
+- `NULL` ~~ `NULL` is for pointers.
+- `-1` ~~ Not guaranteed.
+! Always initialize local variables before reading them.
+
+? [05] What does `sizeof(char)` always equal in C?
+* `1` byte ~~ By the C standard, `sizeof(char)` is always `1`.
+- `2` bytes ~~ That's `short` (typically) or Java's `char`, not C's `char`.
+- `4` bytes ~~ `4` is typical for `int` and `float`.
+- `8` bytes ~~ `8` is typical for `double` and 64-bit pointers.
+! `sizeof(char)` is always 1 byte in C.
+
+? [06] Which `printf` format specifier prints a `double` rounded to 2 decimal places?
+- `%d` ~~ `%d` is for `int`.
+* `%.2f` ~~ `.2f` prints 2 digits after the decimal point.
+- `%2f` ~~ `2` before the dot is minimum width, not precision.
+- `%c` ~~ `%c` prints a `char`.
+! `%.2f` formats `float` or `double` to 2 decimal places.
+
+? [06] What is wrong with `double d; scanf("%f", &d);`?
+- Missing `;` ~~ Semicolons are fine.
+* `%f` in `scanf` expects a `float*`, not a `double*`; you must use `%lf` ~~ `printf` accepts `%f` for both, but `scanf` requires `%lf` for `double`.
+- `&d` should be `d` ~~ `scanf` requires `&d`.
+- `double` cannot be read with `scanf` ~~ It can, with `%lf`.
+! In `scanf`, `%f` = `float`, `%lf` = `double`.
+
+? [06] Why do we often write `scanf(" %c", &ch);` (with a leading space) after reading an `int`?
+- To print a space ~~ `scanf` reads, it doesn't print.
+* To skip any leftover whitespace or newline (`\n`) from the previous `Enter` key ~~ Without the space, `%c` reads the `\n`!
+- To convert `ch` to uppercase ~~ `toupper` does that.
+- It is a syntax error ~~ Leading space in `scanf` format is valid and skips whitespace.
+! A space in `" %c"` consumes leftover `\n` and spaces before reading the character.
+
+? [06] How do you print a literal `%` sign using `printf`?
+- `\%` ~~ Backslash does not escape `%`.
+* `%%` ~~ Double percent prints one `%`.
+- `%` ~~ A single `%` starts a format specifier.
+- `"%"` alone ~~ Inside `printf("%")`, `%` expects a specifier letter.
+! Use `%%` inside `printf` to output a single `%`.
+
+? [06] What does `printf("A\nB\tC");` output?
+- `A\nB\tC` ~~ `\n` and `\t` are escape sequences.
+* `A` on line 1, then `B`, a tab, and `C` on line 2 ~~ `\n` = newline, `\t` = tab.
+- `ABC` on one line ~~ `\n` breaks the line.
+- Compile error ~~ Valid escape sequences.
+! `\n` inserts a newline; `\t` inserts a horizontal tab.
+
+? [07] What is the value of `9 / 4` in C?
+- `2.25` ~~ Both `9` and `4` are `int`, so integer division truncates.
+* `2` ~~ `int / int` drops the `.25` remainder.
+- `3` ~~ Integer division never rounds up.
+- `1` ~~ `9 % 4` is `1`; `9 / 4` is `2`.
+! Integer division truncates toward zero: `9 / 4 == 2`, `9 % 4 == 1`.
+
+? [07] What does `int x = 5; int y = ++x;` produce?
+- `x = 5, y = 5` ~~ `++x` increments `x`.
+- `x = 6, y = 5` ~~ That would be postfix `y = x++`.
+* `x = 6, y = 6` ~~ Prefix `++x` increments `x` first, then returns the new value `6`.
+- `x = 5, y = 6` ~~ `x` is also `6`.
+! Prefix `++x`: increment first, then use; Postfix `x++`: use first, then increment.
+
+? [07] What is `2 + 3 * 4 % 5` in C?
+- `0` ~~ `*` and `%` have higher precedence than `+`, and associate left-to-right.
+* `4` ~~ `3 * 4 = 12`, `12 % 5 = 2`, `2 + 2 = 4`.
+- `20` ~~ `(2 + 3) * 4 = 20`, ignoring `% 5`.
+- `14` ~~ Missing `% 5`.
+! `*` and `%` run left-to-right before `+`: `2 + ((3 * 4) % 5) = 2 + (12 % 5) = 2 + 2 = 4`.
+
+? [07] What is the value of `5 > 3 && 2 > 10`?
+- `1` ~~ `2 > 10` is false, so `&&` returns `0`.
+* `0` ~~ `&&` is true (`1`) only if *both* sides are true.
+- `5` ~~ Logical operators return `0` or `1`.
+- `10` ~~ Logical operators return `0` or `1`.
+! `1 && 0` evaluates to `0` (false).
+
+? [07] What happens in `int a = 1, b = 0; if (a || (b = 7)) {}`?
+- `b` becomes `7` ~~ Because `a` is already true (`1`), `||` short-circuits and skips `(b = 7)`!
+* `b` stays `0` ~~ Short-circuit evaluation skips the right side of `||` when the left side is true.
+- Compile error ~~ Valid C.
+- `a` becomes `0` ~~ `a` is not modified.
+! `||` short-circuits when the left side is true; `&&` short-circuits when the left side is false.
+
+? [08] What does `if (x = 0) printf("Yes"); else printf("No");` do?
+- Prints `Yes` ~~ `x = 0` assigns `0` to `x`, and `0` is false!
+* Sets `x` to `0` and prints `No` ~~ Assignment returns the assigned value (`0`), which is false.
+- Fails to compile ~~ C allows assignment inside `if`, though it's usually a bug!
+- Leaves `x` unchanged ~~ `=` overwrites `x`.
+! Always use `==` for comparison; `=` is assignment.
+
+? [08] What does `(8 > 5) ? 100 : 200` evaluate to?
+* `100` ~~ Because `8 > 5` is true, the ternary operator returns the first value (`100`).
+- `200` ~~ `200` is returned only when the condition is false.
+- `1` ~~ It returns `100`, not `1`.
+- `0` ~~ It returns `100`.
+! `cond ? a : b` evaluates to `a` if `cond` is true, else `b`.
+
+? [08] In a `switch (k)` block, when does `default:` run?
+- Always at the end ~~ Only if no `case` matched (or if a matching `case` above it lacked `break;`).
+* When `k` does not match any `case` (or falls through into it) ~~ `default` is the fallback branch.
+- Only when `k == 0` ~~ `case 0:` matches `0`.
+- Before `case 1:` ~~ It runs only if no case matches.
+! `default:` handles any value not matched by the `case` labels.
+
+? [08] What does `int x = 1; switch (x) { case 1: printf("A"); case 2: printf("B"); break; }` print?
+- `A` ~~ Missing `break;` after `case 1`!
+* `AB` ~~ `case 1` prints `A`, falls through to `case 2` printing `B`, then `break;` stops.
+- `B` ~~ `x` is `1`, so `case 1` runs first.
+- Nothing ~~ `case 1` matches.
+! Always put `break;` at the end of each `case` unless fall-through is intentional.
+
+? [08] Which condition checks if `n` is divisible by **both** 3 and 5?
+- `n % 3 == 0 || n % 5 == 0` ~~ `||` means "either 3 or 5".
+* `n % 3 == 0 && n % 5 == 0` ~~ `&&` requires both remainders to be `0`.
+- `n / 3 == 0 && n / 5 == 0` ~~ `/` is quotient, not remainder!
+- `n % 3 && n % 5` ~~ Non-zero remainder is true in C, so that checks *not* divisible!
+! Divisible by `k` means `n % k == 0`.

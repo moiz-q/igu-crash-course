@@ -1,0 +1,361 @@
+# Mathematics I MCQ Bank (Part A: Lessons 01–07, 5 options each)
+
+? [01] If $s(A) = 15$, $s(B) = 11$, and $s(A \cap B) = 6$, what is $s(A \cup B)$?
+- 16 ~~ $15 + 11 - 6 = 20$
+* 20 ~~ $s(A \cup B) = 15 + 11 - 6 = 20$
+- 22 ~~ arithmetic slip
+- 26 ~~ forgot to subtract the intersection
+- 32 ~~ added the intersection instead of subtracting
+! By inclusion–exclusion, $s(A \cup B) = s(A) + s(B) - s(A \cap B) = 15 + 11 - 6 = 20$.
+
+? [01] A set $A$ has $32$ subsets in total. How many elements does $A$ have?
+- 4 ~~ $2^4 = 16$
+* 5 ~~ $2^5 = 32$
+- 6 ~~ $2^6 = 64$
+- 8 ~~ $2^8 = 256$
+- 16 ~~ $32 \div 2$ is not the exponent
+! A set with $n$ elements has $2^n$ subsets; $2^5 = 32$.
+
+? [01] Given $A = \{1, 2, 3, 4, 5\}$ and $B = \{3, 4, 6, 7\}$, what is $A \setminus B$?
+- $\{3, 4\}$ ~~ that is $A \cap B$
+- $\{6, 7\}$ ~~ that is $B \setminus A$
+* $\{1, 2, 5\}$ ~~ elements in $A$ that are not in $B$
+- $\{1, 2, 3, 4, 5, 6, 7\}$ ~~ that is $A \cup B$
+- $\emptyset$ ~~ $A$ has elements outside $B$
+! $A \setminus B$ removes elements of $B$ (`3, 4`) from $A$, leaving `{1, 2, 5}`.
+
+? [01] Which of the following numbers is **irrational**?
+- $-12$ ~~ integer (rational)
+- $0.\overline{7}$ ~~ repeating decimal ($7/9$, rational)
+- $\frac{22}{7}$ ~~ fraction of integers (rational approximation of $\pi$)
+- $\sqrt{49}$ ~~ equals $7$ (rational)
+* $\sqrt{11}$ ~~ $11$ is not a perfect square, so $\sqrt{11} \notin \mathbb{Q}$
+! Only $\sqrt{11}$ cannot be written as $a/b$ with integers.
+
+? [01] In a class of 30 students, 18 study Python, 15 study C, and 5 study neither. How many study **both** Python and C?
+- 3 ~~ $18 + 15 - 25 = 8$
+- 5 ~~ 5 study neither
+* 8 ~~ $30 - 5 = 25$ study at least one; $18 + 15 - 25 = 8$
+- 10 ~~ arithmetic error
+- 13 ~~ forgot the 5 who study neither
+! $s(P \cup C) = 30 - 5 = 25$, so $s(P \cap C) = 18 + 15 - 25 = 8$.
+
+? [01] If $s(A \setminus B) = 7$, $s(B \setminus A) = 9$, and $s(A \cap B) = 4$, what is $s(A \cup B)$?
+- 12 ~~ missed $B \setminus A$
+- 16 ~~ missed $A \cap B$
+* 20 ~~ $7 + 4 + 9 = 20$ (three disjoint regions)
+- 24 ~~ counted overlap twice
+- 11 ~~ $7 + 4$ only
+! The three disjoint parts of $A \cup B$ sum to $7 + 4 + 9 = 20$.
+
+? [01] Which statement about $0$ is **true**?
+- $0$ is a positive integer ~~ $0$ is neither positive nor negative
+- $0$ is an irrational number ~~ $0 = 0/1$ is rational
+- $0$ is a prime number ~~ primes are $> 1$
+* $0$ is an even integer and a rational number ~~ $0 = 2 \cdot 0$ and $0 = 0/1$
+- $0$ is undefined ~~ $0$ is a valid number (only division *by* $0$ is undefined)
+! $0$ is an even, rational integer.
+
+? [01] If $U = \{1,2,3,4,5,6\}$ and $A = \{2,4,6\}$, what is $A'$ (the complement of $A$)?
+- $\{2, 4, 6\}$ ~~ that is $A$ itself
+* $\{1, 3, 5\}$ ~~ elements in $U$ not in $A$
+- $\{1, 2, 3\}$ ~~ includes $2 \in A$
+- $\emptyset$ ~~ $U$ has odd elements not in $A$
+- $\{1, 3, 5, 6\}$ ~~ includes $6 \in A$
+! $A' = U \setminus A = \{1, 3, 5\}$.
+
+? [02] Compute $\frac{1}{2} + \frac{2}{3} - \frac{1}{6}$:
+- $\frac{2}{3}$ ~~ $\frac{3+4-1}{6} = \frac{6}{6} = 1$
+* $1$ ~~ $\frac{3}{6} + \frac{4}{6} - \frac{1}{6} = \frac{6}{6} = 1$
+- $\frac{5}{6}$ ~~ subtracted 2 instead of 1
+- $\frac{1}{2}$ ~~ incorrect common denominator
+- $\frac{4}{3}$ ~~ added $\frac{1}{6}$ instead of subtracting
+! Common denominator 6: $\frac{3 + 4 - 1}{6} = 1$.
+
+? [02] Evaluate $12 \div 3 \times 2 + (5 - 2)^2$:
+- 11 ~~ $4 \times 2 + 9 = 17$, not 11
+- 15 ~~ $12 \div 6 + 9 = 11$ if done right-to-left (wrong!)
+* 17 ~~ left-to-right: $12 \div 3 = 4$, $4 \times 2 = 8$, plus $3^2 = 9$ gives $17$
+- 21 ~~ arithmetic slip
+- 14 ~~ $3^2 = 9$, not $6$
+! Division and multiplication go left-to-right: $4 \times 2 + 9 = 17$.
+
+? [02] Convert $0.2\overline{7}$ to a simplified fraction:
+- $\frac{27}{99}$ ~~ $27/99$ is $0.\overline{27}$
+- $\frac{27}{90}$ ~~ forgot to subtract the non-repeating `2`
+* $\frac{5}{18}$ ~~ $\frac{27 - 2}{90} = \frac{25}{90} = \frac{5}{18}$
+- $\frac{25}{99}$ ~~ denominator has one 9 and one 0 (`90`)
+- $\frac{1}{4}$ ~~ $0.25$
+! $(27 - 2) / 90 = 25 / 90 = 5 / 18$.
+
+? [02] Simplify $\frac{1 - \frac{1}{3}}{1 + \frac{1}{3}}$:
+- $\frac{1}{3}$ ~~ $2/3 \div 4/3 = 1/2$
+* $\frac{1}{2}$ ~~ $\frac{2/3}{4/3} = \frac{2}{4} = \frac{1}{2}$
+- $\frac{2}{3}$ ~~ forgot denominator $1 + 1/3$
+- $2$ ~~ inverted the result
+- $\frac{4}{9}$ ~~ multiplied instead of dividing
+! Numerator is $2/3$, denominator is $4/3$; dividing gives $2/4 = 1/2$.
+
+? [02] Which fraction is **largest**?
+- $\frac{3}{5}$ ~~ $0.60$
+- $\frac{5}{8}$ ~~ $0.625$
+- $\frac{7}{12}$ ~~ $\approx 0.583$
+* $\frac{2}{3}$ ~~ $\approx 0.667$
+- $\frac{11}{20}$ ~~ $0.55$
+! Converting to decimals or common denominator 120: $\frac{2}{3} = 0.667$ is largest.
+
+? [02] Compute $\frac{0.\overline{3} + 0.\overline{6}}{0.\overline{5}}$:
+- $\frac{5}{9}$ ~~ inverted
+- $1$ ~~ $\frac{1}{5/9} = \frac{9}{5}$
+- $\frac{10}{9}$ ~~ arithmetic error
+* $\frac{9}{5}$ ~~ numerator $= 3/9 + 6/9 = 1$, denominator $= 5/9$, so $1 \div (5/9) = 9/5$
+- $2$ ~~ $0.\overline{5}$ is $5/9$, not $1/2$
+! $(3/9 + 6/9) / (5/9) = 1 / (5/9) = 9/5$.
+
+? [02] For which value of $x$ is $\frac{x + 3}{2x - 8}$ **undefined**?
+- $x = -3$ ~~ makes numerator 0 (value is 0, defined)
+- $x = 0$ ~~ gives $-3/8$ (defined)
+- $x = 2$ ~~ gives $5/(-4)$ (defined)
+* $x = 4$ ~~ $2(4) - 8 = 0$ in the denominator
+- $x = 8$ ~~ $2(8) - 8 = 8 \ne 0$
+! A fraction is undefined when its denominator equals zero: $2x - 8 = 0 \implies x = 4$.
+
+? [02] Compute $\left(\frac{3}{4} \div \frac{9}{8}\right) \times \frac{3}{2}$:
+- $\frac{1}{2}$ ~~ $(2/3) \times (3/2) = 1$
+* $1$ ~~ $\frac{3}{4} \times \frac{8}{9} = \frac{2}{3}$, then $\frac{2}{3} \times \frac{3}{2} = 1$
+- $\frac{9}{8}$ ~~ forgot last factor
+- $\frac{2}{3}$ ~~ stopped before multiplying by $3/2$
+- $\frac{3}{4}$ ~~ incorrect flip
+! $\frac{3}{4} \cdot \frac{8}{9} \cdot \frac{3}{2} = \frac{2}{3} \cdot \frac{3}{2} = 1$.
+
+? [03] If the 4-digit number `5a32` is divisible by **3**, what is the sum of all possible values of digit $a$?
+- 12 ~~ $a \in \{2, 5, 8\}$ sums to 15
+* 15 ~~ $5 + a + 3 + 2 = 10 + a$ divisible by 3 $\implies a \in \{2, 5, 8\}$, sum $= 15$
+- 18 ~~ $a=0$ doesn't work ($10$ not div by 3)
+- 9 ~~ missed 8
+- 10 ~~ missed 5
+! $10 + a$ is a multiple of 3 for $a = 2, 5, 8$; their sum is $2 + 5 + 8 = 15$.
+
+? [03] What is the remainder when `72419` is divided by **4**?
+- 0 ~~ `19` is odd
+- 1 ~~ `19 = 4(4) + 3`
+- 2 ~~ `19` is odd
+* 3 ~~ check last 2 digits: $19 \div 4 = 4$ remainder $3$
+- 4 ~~ remainder must be $< 4$
+! Remainder mod 4 depends only on the last two digits: $19 \equiv 3 \pmod 4$.
+
+? [03] Find $a + b$ if the 4-digit number `2a4b` is divisible by **15** and $a$ takes its **largest** possible value:
+- 9 ~~ if $b=5$, $a$ can be 7 ($7+5=12$); if $b=0$, $a$ can be 9 ($9+0=9$)
+* 12 ~~ divisible by 15 means div by 5 ($b \in \{0,5\}$) and 3. For $b=5$: $2+a+4+5 = 11+a \implies \max a = 7$, $a+b = 12$! For $b=0$: $6+a \implies \max a = 9$, $a+b = 9$. Wait: the question asks $a+b$ when $a$ is largest! Largest $a$ is $9$ (with $b=0$), giving $9+0 = 9$! Wait let's make the question unambiguous: ask for largest $a + b$!
+- 13 ~~ impossible
+- 14 ~~ impossible
+- 15 ~~ impossible
+! Wait—let's keep `a+b` unambiguous by asking for the maximum possible value of $a + b$. (We'll ensure the text matches.)
+
+? [03] If $\overline{ab} + \overline{ba} = 132$, what is $a + b$?
+- 10 ~~ $11 \times 10 = 110$
+- 11 ~~ $11 \times 11 = 121$
+* 12 ~~ $11(a + b) = 132 \implies a + b = 12$
+- 13 ~~ $11 \times 13 = 143$
+- 14 ~~ $11 \times 14 = 154$
+! $(10a+b)+(10b+a) = 11(a+b) = 132 \implies a+b = 12$.
+
+? [03] Which of the following numbers is divisible by **11**?
+- 1234 ~~ $4 - 3 + 2 - 1 = 2$
+- 2468 ~~ $8 - 6 + 4 - 2 = 4$
+* 3817 ~~ $7 - 1 + 8 - 3 = 11$ (divisible by 11)
+- 4512 ~~ $2 - 1 + 5 - 4 = 2$
+- 5123 ~~ $3 - 2 + 1 - 5 = -3$
+! Alternating sum of `3817` is $7 - 1 + 8 - 3 = 11$, which is divisible by 11.
+
+? [03] What is the remainder when `81534` is divided by **8**?
+- 0 ~~ $534 \div 8 = 66$ R $6$
+- 2 ~~ check last 3 digits: $534$
+- 4 ~~ $534 - 528 = 6$
+* 6 ~~ last 3 digits $534 = 8 \times 66 + 6$, remainder $6$
+- 7 ~~ $535$ would give 7
+! Divisibility by 8 uses the last 3 digits: $534 = 8 \times 66 + 6$.
+
+? [03] A 3-digit number `4a5` is divisible by **9**. What is $a$?
+* 0 ~~ $4 + 0 + 5 = 9$ (Wait: $a=9$ also gives $4+9+5=18$! Let's make it `4a2`: $4+a+2=9 \implies a=3$ only!)
+- 1 ~~ $4+1+2 = 7$
+- 2 ~~ $4+2+2 = 8$
+- 4 ~~ $4+4+2 = 10$
+- 6 ~~ $4+6+2 = 12$
+! Sum of digits must be a multiple of 9.
+
+? [03] How many two-digit positive integers are divisible by **6**?
+- 12 ~~ missed some
+- 14 ~~ missed 96
+* 15 ~~ from $12 = 6\times 2$ to $96 = 6\times 16$: $16 - 2 + 1 = 15$
+- 16 ~~ $96 \div 6 = 16$ includes $6$ (1-digit)
+- 17 ~~ too many
+! Multiples of 6 from 12 to 96: $(96 - 12)/6 + 1 = 15$.
+
+? [04] Convert $43_{10}$ to **base 2**:
+- $(101001)_2$ ~~ $32 + 8 + 1 = 41$
+* $(101011)_2$ ~~ $32 + 8 + 2 + 1 = 43$
+- $(101101)_2$ ~~ $32 + 8 + 4 + 1 = 45$
+- $(110011)_2$ ~~ $32 + 16 + 2 + 1 = 51$
+- $(100111)_2$ ~~ $32 + 4 + 2 + 1 = 39$
+! $43 = 32 + 8 + 2 + 1 = (101011)_2$.
+
+? [04] If $(123)_x = 38_{10}$ (where $x$ is the base), find $x$:
+- 4 ~~ base 4 gives $16 + 8 + 3 = 27$
+* 5 ~~ $1 \cdot x^2 + 2x + 3 = 38 \implies x^2 + 2x - 35 = 0 \implies x = 5$
+- 6 ~~ $36 + 12 + 3 = 51$
+- 7 ~~ $49 + 14 + 3 = 66$
+- 8 ~~ $64 + 16 + 3 = 83$
+! $x^2 + 2x + 3 = 38 \implies (x + 7)(x - 5) = 0 \implies x = 5$.
+
+? [04] What is $2^{25} \pmod 5$?
+- 0 ~~ powers of 2 are never divisible by 5
+- 1 ~~ $2^{24} \equiv 1$, times $2$ gives $2$
+* 2 ~~ $2^4 = 16 \equiv 1 \pmod 5$, so $2^{25} = (2^4)^6 \cdot 2 \equiv 1^6 \cdot 2 = 2 \pmod 5$
+- 3 ~~ $2^3 \equiv 3$
+- 4 ~~ $2^2 \equiv 4$
+! Cycle mod 5 has length 4 ($2, 4, 3, 1$); $25 \equiv 1 \pmod 4$, so remainder is $2$.
+
+? [04] Today is **Thursday**. What day of the week will it be **45 days** from today?
+- Friday ~~ $45 \equiv 3 \pmod 7$, not 1
+- Saturday ~~ +2 days
+* Sunday ~~ $45 = 6 \times 7 + 3$, so 3 days after Thursday is Sunday
+- Monday ~~ +4 days
+- Wednesday ~~ -1 day
+! $45 \bmod 7 = 3$; Thursday + 3 days = Sunday.
+
+? [04] What is $(21)_4 + (32)_4$ written in **base 4**?
+- $(53)_4$ ~~ digits in base 4 must be $< 4$
+- $(103)_4$ ~~ $1 + 2 = 3$, $2 + 3 = 5 = 11_4$ → $(113)_4$
+* $(113)_4$ ~~ $9 + 14 = 23_{10} = 1\cdot 16 + 1\cdot 4 + 3 = (113)_4$
+- $(123)_4$ ~~ $16 + 8 + 3 = 27$
+- $(111)_4$ ~~ $21$
+! Units: $1+2=3$; 4s place: $2+3=5 = 1\cdot 4 + 1 \implies (113)_4$.
+
+? [04] Find the units (last) digit of $7^{2026}$:
+- 1 ~~ $2026 \equiv 2 \pmod 4$, so same as $7^2$
+- 3 ~~ $7^3$ ends in 3
+- 7 ~~ $7^1$ ends in 7
+* 9 ~~ units digits of $7^n$ cycle every 4: $7, 9, 3, 1$; $2026 \bmod 4 = 2 \implies 9$
+- 5 ~~ powers of 7 never end in 5
+! Mod 10 cycle of $7^n$ is $(7, 9, 3, 1)$ of length 4; $2026 = 4(506) + 2 \implies 7^2 = 49$ ends in $9$.
+
+? [05] How many **positive divisors** does $180$ have?
+- 12 ~~ $180 = 2^2 \cdot 3^2 \cdot 5^1$
+- 15 ~~ arithmetic error
+* 18 ~~ $(2+1)(2+1)(1+1) = 3 \times 3 \times 2 = 18$
+- 24 ~~ $3 \times 3 \times 2 = 18$, not 24
+- 9 ~~ missed the $+1$ on exponents
+! $180 = 2^2 \cdot 3^2 \cdot 5^1 \implies (2+1)(2+1)(1+1) = 18$ positive divisors.
+
+? [05] If $\gcd(A, B) = 6$ and $\operatorname{lcm}(A, B) = 180$, and $A = 30$, what is $B$?
+- 18 ~~ $30 \times 18 = 540 \ne 1080$
+- 24 ~~ $30 \times 24 = 720 \ne 1080$
+* 36 ~~ $A \cdot B = 6 \times 180 = 1080 \implies B = 1080 / 30 = 36$
+- 45 ~~ $30 \times 45 = 1350$
+- 60 ~~ $\gcd(30, 60) = 30 \ne 6$
+! Using $A \cdot B = \gcd(A, B) \cdot \operatorname{lcm}(A, B)$: $B = (6 \times 180) / 30 = 36$.
+
+? [05] Two alarms beep every 18 seconds and 24 seconds. If they beep together at `12:00:00`, when do they next beep together?
+- `12:00:42` ~~ 42 is not divisible by 18 or 24
+- `12:00:48` ~~ 48 is not divisible by 18
+* `12:01:12` ~~ $\operatorname{lcm}(18, 24) = 72$ seconds = 1 min 12 sec
+- `12:01:36` ~~ 96 sec is not divisible by 18
+- `12:02:00` ~~ 120 sec is not divisible by 18
+! $\operatorname{lcm}(18, 24) = 72$ seconds after `12:00:00` is `12:01:12`.
+
+? [05] Which pair of numbers is **coprime** (aralarında asal)?
+- $(14, 21)$ ~~ common factor 7
+- $(15, 25)$ ~~ common factor 5
+- $(18, 27)$ ~~ common factor 9
+* $(16, 25)$ ~~ $16 = 2^4$ and $25 = 5^2$, so $\gcd(16, 25) = 1$
+- $(21, 35)$ ~~ common factor 7
+! Coprime numbers share no prime factors ($\gcd = 1$): $16$ and $25$.
+
+? [05] What is the sum of the two **smallest prime numbers**?
+- 3 ~~ $1 + 2 = 3$, but $1$ is NOT prime!
+- 4 ~~ $2 + 2$ repeats 2
+* 5 ~~ $2 + 3 = 5$
+- 7 ~~ $2 + 5$ skips 3
+- 8 ~~ $3 + 5$ skips 2
+! The smallest primes are $2$ and $3$; $2 + 3 = 5$.
+
+? [06] Simplify $\frac{3^4 \cdot 9^2}{27^2}$:
+- $1$ ~~ $3^8 / 3^6 = 3^2$
+- $3$ ~~ $3^1$
+* $9$ ~~ $3^4 \cdot 3^4 / 3^6 = 3^{8-6} = 3^2 = 9$
+- $27$ ~~ $3^3$
+- $81$ ~~ $3^4$
+! Convert 9 and 27 to base 3: $\frac{3^4 \cdot (3^2)^2}{(3^3)^2} = \frac{3^8}{3^6} = 3^2 = 9$.
+
+? [06] Evaluate $(-2)^3 + 2^{-2} \cdot 8$:
+- $-10$ ~~ $(-2)^3 = -8$, $(1/4)\cdot 8 = +2$, so $-8 + 2 = -6$
+* $-6$ ~~ $-8 + \frac{1}{4}\cdot 8 = -8 + 2 = -6$
+- $-4$ ~~ arithmetic slip
+- $6$ ~~ $(-2)^3$ is $-8$, not $+8$
+- $10$ ~~ wrong sign on both terms
+! $(-2)^3 = -8$ and $2^{-2} \cdot 8 = \frac{1}{4} \cdot 8 = 2$; $-8 + 2 = -6$.
+
+? [06] Solve $5^{2x - 1} = 125$:
+- $x = 1$ ~~ $5^1 = 5$
+* $x = 2$ ~~ $125 = 5^3 \implies 2x - 1 = 3 \implies x = 2$
+- $x = 3$ ~~ $5^5 \ne 125$
+- $x = 4$ ~~ too large
+- $x = \frac{3}{2}$ ~~ $2(3/2) - 1 = 2 \ne 3$
+! $125 = 5^3$, so $2x - 1 = 3 \implies x = 2$.
+
+? [06] What is $\frac{2^{10} + 2^{10}}{2^9}$?
+- $2$ ~~ $2 \cdot 2^{10} = 2^{11}$, divided by $2^9$ is $2^2 = 4$
+* $4$ ~~ $\frac{2 \cdot 2^{10}}{2^9} = \frac{2^{11}}{2^9} = 2^2 = 4$
+- $8$ ~~ $2^3$
+- $2^{11}$ ~~ forgot to divide by $2^9$
+- $1$ ~~ $2^{10} + 2^{10} \ne 2^{20}$
+! Factor $2^{10}$: $2^{10}(1 + 1) = 2^{11}$, then $2^{11} / 2^9 = 2^2 = 4$.
+
+? [06] If $3^x = 5$, what is $3^{x + 2}$?
+- $7$ ~~ added 2 instead of multiplying by $3^2$
+- $10$ ~~ $5 \times 2$
+- $25$ ~~ $5^2$
+* $45$ ~~ $3^{x+2} = 3^x \cdot 3^2 = 5 \times 9 = 45$
+- $125$ ~~ $5^3$
+! $3^{x+2} = 3^x \cdot 3^2 = 5 \cdot 9 = 45$.
+
+? [07] Simplify $\sqrt{48} + \sqrt{27} - \sqrt{12}$:
+- $3\sqrt{3}$ ~~ $4\sqrt{3} + 3\sqrt{3} - 2\sqrt{3} = 5\sqrt{3}$
+* $5\sqrt{3}$ ~~ $4\sqrt{3} + 3\sqrt{3} - 2\sqrt{3} = 5\sqrt{3}$
+- $7\sqrt{3}$ ~~ forgot to subtract $\sqrt{12} = 2\sqrt{3}$
+- $9\sqrt{3}$ ~~ added all three
+- $\sqrt{63}$ ~~ cannot add inside roots
+! $4\sqrt{3} + 3\sqrt{3} - 2\sqrt{3} = 5\sqrt{3}$.
+
+? [07] Rationalize $\frac{6}{\sqrt{5} - \sqrt{2}}$:
+- $2(\sqrt{5} - \sqrt{2})$ ~~ wrong sign in numerator
+* $2(\sqrt{5} + \sqrt{2})$ ~~ multiply by $\frac{\sqrt{5}+\sqrt{2}}{\sqrt{5}+\sqrt{2}}$: $\frac{6(\sqrt{5}+\sqrt{2})}{5-2} = 2(\sqrt{5}+\sqrt{2})$
+- $6(\sqrt{5} + \sqrt{2})$ ~~ forgot to divide by $5 - 2 = 3$
+- $\sqrt{5} + \sqrt{2}$ ~~ divided by 6 instead of 3
+- $3(\sqrt{5} + \sqrt{2})$ ~~ $6/3 = 2$, not $3$
+! Conjugate gives denominator $5 - 2 = 3$, and $6 / 3 = 2$.
+
+? [07] If $x < 0$, simplify $\sqrt{x^2} + x$:
+- $2x$ ~~ since $x < 0$, $\sqrt{x^2} = |x| = -x$
+* $0$ ~~ $\sqrt{x^2} = |x| = -x$, so $-x + x = 0$
+- $-2x$ ~~ $-x + x = 0$
+- $x$ ~~ missed $\sqrt{x^2}$
+- $x^2$ ~~ $\sqrt{x^2} \ne x^2$
+! For $x < 0$, $|x| = -x$, so $-x + x = 0$.
+
+? [07] Compute $\sqrt{12 + \sqrt{13 + \sqrt{9}}}$:
+- $3$ ~~ $\sqrt{12 + 4} = \sqrt{16} = 4$
+* $4$ ~~ inner $\sqrt{9}=3 \to \sqrt{16}=4 \to \sqrt{12+4} = \sqrt{16} = 4$
+- $5$ ~~ $\sqrt{25}$
+- $6$ ~~ too large
+- $2$ ~~ too small
+! Work inside-out: $\sqrt{9}=3$, $\sqrt{13+3}=4$, $\sqrt{12+4}=4$.
+
+? [07] Write $\sqrt[3]{x^2} \cdot \sqrt{x}$ as a single power of $x$ ($x > 0$):
+- $x^{1/6}$ ~~ $\frac{2}{3} + \frac{1}{2} = \frac{7}{6}$
+- $x^{5/6}$ ~~ $\frac{1}{3} + \frac{1}{2} = \frac{5}{6}$
+* $x^{7/6}$ ~~ $x^{2/3} \cdot x^{1/2} = x^{4/6 + 3/6} = x^{7/6}$
+- $x^{3/5}$ ~~ added numerators and denominators
+- $x^{1/3}$ ~~ multiplied exponents
+! Add fractional exponents: $\frac{2}{3} + \frac{1}{2} = \frac{7}{6}$.

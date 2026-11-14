@@ -1,0 +1,62 @@
+{
+ "weeks": [
+  {"week": 1, "items": [
+   {"col": "Programming (C)", "text": "Algorithms, flowcharts, intro to C, data types", "lessons": ["c-01", "c-02", "c-03", "c-04", "c-05"]},
+   {"col": "Databases", "text": "Data, information, databases; DBMS and data models", "lessons": ["db-01", "db-02"]},
+   {"col": "Networks", "text": "Network basics, internet history", "lessons": ["net-01"]},
+   {"col": "Math", "text": "Sets, number sets, rational numbers", "lessons": ["math-01", "math-02"]},
+   {"col": "Office", "text": "Internet services, Google tools", "lessons": ["office-01", "office-02", "office-03"]}
+  ]},
+  {"week": 2, "items": [
+   {"col": "Programming (C)", "text": "Input/output, operators", "lessons": ["c-06", "c-07"]},
+   {"col": "Databases", "text": "ER diagrams", "lessons": ["db-03"]},
+   {"col": "Networks", "text": "Topologies, network types, devices, cabling", "lessons": ["net-02", "net-03", "net-04"]},
+   {"col": "Math", "text": "Digits, divisibility, bases, primes, GCD/LCM", "lessons": ["math-03", "math-04", "math-05"]},
+   {"col": "Office", "text": "Word", "lessons": ["office-04", "office-05", "office-06"]}
+  ]},
+  {"week": 3, "items": [
+   {"col": "Programming (C)", "text": "Decisions (if, switch), loops", "lessons": ["c-08", "c-09", "c-10"]},
+   {"col": "Databases", "text": "Normalization", "lessons": ["db-04", "db-05"]},
+   {"col": "Networks", "text": "Packet Tracer setup and first LAN", "lessons": ["net-05", "net-06"]},
+   {"col": "Math", "text": "Exponents, radicals", "lessons": ["math-06", "math-07"]},
+   {"col": "English", "text": "Weeks 1–3: level check, narrative tenses, agreeing and disagreeing", "lessons": ["en-01", "en-02", "en-03"]}
+  ]},
+  {"week": 4, "items": [
+   {"col": "Programming (C)", "text": "Functions, arrays", "lessons": ["c-11", "c-12"]},
+   {"col": "Databases", "text": "Tool install; creating tables; DDL", "lessons": ["db-06", "db-07", "db-08"]},
+   {"col": "Networks", "text": "OSI model; error detection", "lessons": ["net-07", "net-08"]},
+   {"col": "Math", "text": "Factoring, first-degree equations", "lessons": ["math-08", "math-09"]},
+   {"col": "Office", "text": "Excel", "lessons": ["office-07", "office-08", "office-09"]}
+  ]},
+  {"week": 5, "items": [
+   {"col": "Programming (C)", "text": "Pointers", "lessons": ["c-13", "c-14"]},
+   {"col": "Databases", "text": "DML: SELECT, INSERT, UPDATE, DELETE", "lessons": ["db-09", "db-10", "db-11", "db-12"]},
+   {"col": "Networks", "text": "TCP/IP model; IPv4/IPv6 addressing", "lessons": ["net-09", "net-10", "net-11"]},
+   {"col": "Math", "text": "Second-degree equations", "lessons": ["math-10"]},
+   {"col": "English", "text": "Weeks 4–6: gist and detail, senses and articles, how-to web article", "lessons": ["en-04", "en-05", "en-06"]}
+  ]},
+  {"week": 6, "items": [
+   {"col": "Programming (C)", "text": "Characters and strings, formatted I/O", "lessons": ["c-15", "c-16"]},
+   {"col": "Databases", "text": "DCL, subqueries, transactions, backup/export", "lessons": ["db-13", "db-14", "db-15"]},
+   {"col": "Networks", "text": "Subnetting (heavy practice)", "lessons": ["net-12", "net-13"], "href": "#/tool/subnet-drill", "link": "Open the subnetting drills"},
+   {"col": "Math", "text": "Inequalities, absolute value, ratio, percentages", "lessons": ["math-11", "math-12", "math-13"]},
+   {"col": "Office", "text": "PowerPoint", "lessons": ["office-10", "office-11", "office-12", "office-13"]}
+  ]},
+  {"week": 7, "items": [
+   {"col": "Programming (C)", "text": "Review + C mock exams", "href": "#/mock/c/midterm", "link": "C midterm mock"},
+   {"col": "Databases", "text": "Review + SQL mock exams", "href": "#/mock/db/midterm", "link": "SQL midterm mock"},
+   {"col": "Networks", "text": "Test commands, wireless, firewalls + mock exams", "lessons": ["net-14", "net-15", "net-16"]},
+   {"col": "Math", "text": "Review + math mock exams", "lessons": ["math-14"], "href": "#/mock/math/midterm", "link": "Math midterm mock"},
+   {"col": "English, Turkish, Atatürk", "text": "English weeks 8–10: future forms, film review, passive; Turkish and Atatürk overviews", "lessons": ["en-07", "en-08", "en-09", "tr-01", "ata-01"]},
+   {"col": "Office", "text": "Mixed hands-on tasks", "lessons": ["office-14"]}
+  ]},
+  {"week": 8, "items": [
+   {"col": "Programming (C)", "text": "Bridge: structs, file I/O preview", "lessons": ["bridge-02", "bridge-03"]},
+   {"col": "Databases", "text": "Bridge: SQL functions preview", "lessons": ["bridge-06"]},
+   {"col": "Networks", "text": "Weak-spot review: redo drills and the final mock", "href": "#/mock/net/final", "link": "Networks final mock"},
+   {"col": "Math", "text": "Bridge: functions, logarithms preview", "lessons": ["bridge-07", "bridge-08"]},
+   {"col": "Java + OOP preview", "text": "What spring expects; C to Java; first class and object", "lessons": ["bridge-01", "bridge-04", "bridge-05"]},
+   {"col": "English", "text": "English weeks 11–15 + B2 readiness test", "lessons": ["en-10", "en-11", "en-12", "en-13", "en-14", "en-ready"]}
+  ]}
+ ]
+}

@@ -1,0 +1,13 @@
+db | SQL: DDL commands | CREATE, ALTER, DROP, TRUNCATE (change structure)
+db | SQL: DML commands | SELECT, INSERT, UPDATE, DELETE (read/change rows)
+db | SQL: DCL commands | GRANT, REVOKE, DENY (permissions)
+db | SQL: TCL commands | BEGIN, COMMIT, ROLLBACK (transactions)
+db | SELECT clause order | SELECT → FROM → JOIN → WHERE → GROUP BY → HAVING → ORDER BY
+db | SQL execution order | FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY
+db | Test for NULL in SQL | Always use `IS NULL` or `IS NOT NULL` (never `= NULL`)
+db | SQLite LIMIT vs SQL Server | SQLite: `LIMIT 5` at end; SQL Server: `SELECT TOP 5 ...`
+db | SQLite AUTOINCREMENT vs SQL Server | SQLite: `INTEGER PRIMARY KEY AUTOINCREMENT`; SQL Server: `INT PRIMARY KEY IDENTITY(1,1)`
+db | ACID: A, C, I, D | Atomicity (all-or-nothing), Consistency (valid rules), Isolation (no interference), Durability (survives crash)
+db | 1NF rule | Every cell holds one atomic value and the table has a Primary Key
+db | 2NF rule | In 1NF + no partial dependencies on part of a composite PK
+db | 3NF rule | In 2NF + no transitive dependencies between non-key columns
