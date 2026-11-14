@@ -6,6 +6,9 @@ A free, static study website that covers the semester 1 courses of the Computer 
 
 ## What's inside
 
+**Start with Essentials** (`#/essentials`): one short page per course (10–25 minutes, about 2.5 hours in total) with only the big ideas — each explained in plain words with one example, a "go deeper" link to the full lesson, and a 5-question check. The full lessons below are for depth and practice.
+
+
 | Course | Lessons | Practice |
 | --- | --- | --- |
 | Programming Basics I (C) | 16 | 98 exercises (write code, predict output, find the bug, fill the blank) run in the browser; memory visualizer; 80-question bank; written midterm + final mocks |
@@ -31,7 +34,7 @@ The site is plain static files. It is deployed with GitHub Pages from the `main`
 
 ## Add or change content
 
-All teaching content is in `content/` as Markdown and plain-text files; the format is documented in [`content/FORMAT.md`](content/FORMAT.md). Adding a lesson needs no code change.
+All teaching content is in `content/` (each course's quick version is `content/<course>/essentials.md`, built from `:::idea Title` blocks) as Markdown and plain-text files; the format is documented in [`content/FORMAT.md`](content/FORMAT.md). Adding a lesson needs no code change.
 
 1. Edit or add files in `content/<course>/`.
 2. Rebuild the data bundles: `python tools/build.py` (Python 3, standard library only). It writes `data/*.js` and prints warnings for anything that breaks the lesson template.

@@ -171,7 +171,7 @@ def parse_args(s):
         args[m.group(1)] = m.group(3) if m.group(3) is not None else m.group(2)
     return args
 
-CALLOUT = {'note': 'Note', 'tip': 'Tip', 'warn': 'Watch out', 'tsql': 'In SQL Server (T-SQL)', 'example': 'Worked example', 'exam': 'Exam tip'}
+CALLOUT = {'note': 'Note', 'tip': 'Tip', 'warn': 'Watch out', 'tsql': 'In SQL Server (T-SQL)', 'example': 'Worked example', 'exam': 'Exam tip', 'idea': 'Big idea', 'remember': 'Remember'}
 
 def render(text, doc, top=True):
     lines = text.split('\n')
@@ -505,13 +505,17 @@ def main():
         for jf in glob.glob(os.path.join(cdir, '*.json')):
             data['extra'][os.path.splitext(os.path.basename(jf))[0]] = json.loads(read(jf))
         # cheat sheet + written mocks + extra pages
-        for name in ('cheatsheet', 'mock-midterm', 'mock-final', 'index'):
+        for name in ('cheatsheet', 'mock-midterm', 'mock-final', 'index', 'essentials'):
             pth = os.path.join(cdir, name + '.md')
             if os.path.exists(pth):
                 meta, page, d = doc_page(pth, cid + '/' + name)
                 page['title'] = meta.get('title', name)
                 if meta.get('minutes'): page['minutes'] = int(meta['minutes'])
                 if name == 'cheatsheet': data['cheat'] = page; cmeta['hasCheat'] = True
+                elif name == 'essentials':
+                    data['essentials'] = page; page['intro'] = meta.get('intro', '')
+                    cmeta['ess'] = {'title': page['title'], 'min': page.get('minutes', 15), 'ideas': page['html'].count('callout-idea'), 'intro': meta.get('intro', '')}
+                    if 'quiz' not in d.has: warn(cid + '/essentials.md has no quiz')
                 elif name == 'index': data['extra']['index'] = page
                 else:
                     kind = name.split('-')[1]; data['mocks'][kind] = page

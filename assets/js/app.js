@@ -9,9 +9,10 @@ CC.$ = $; CC.$$ = $$; CC.esc = esc;
 
 /* ---------- progress store (localStorage, always wrapped in try/catch) ---------- */
 const KEY = 'igu-cc-v1';
-const blank = () => ({ v: 1, done: {}, quiz: {}, ex: {}, checks: {}, cards: {}, mocks: {}, drafts: {}, plan: { start: null }, theme: null, last: null });
+const blank = () => ({ v: 1, ess: {}, done: {}, quiz: {}, ex: {}, checks: {}, cards: {}, mocks: {}, drafts: {}, plan: { start: null }, theme: null, last: null });
 let S;
 try { S = Object.assign(blank(), JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) { S = blank(); }
+if (!S.ess) S.ess = {};
 let storageOk = true;
 function save() {
   try { localStorage.setItem(KEY, JSON.stringify(S)); storageOk = true; } catch (e) { storageOk = false; }
@@ -91,6 +92,7 @@ CC.tex = t => '<span class="math" data-tex="' + esc(t) + '"></span>';
 const idx = () => CC.data.index;
 const courseMeta = id => idx().courses.find(c => c.id === id);
 const mainCourses = () => idx().courses.filter(c => !c.extra);
+const essCourses = () => idx().courses.filter(c => c.ess);
 const prog = c => { const t = c.lessons.length, d = c.lessons.filter(l => S.done[l]).length; return { d, t, p: t ? Math.round(100 * d / t) : 0 }; };
 const overall = () => { let d = 0, t = 0; mainCourses().forEach(c => { const p = prog(c); d += p.d; t += p.t; }); return { d, t, p: t ? Math.round(100 * d / t) : 0 }; };
 const R = 27, CIRC = 2 * Math.PI * R;
@@ -116,7 +118,8 @@ function chrome() {
   $('#top-progress').textContent = o.p + '%';
   $('#top-progress').setAttribute('aria-label', 'Overall progress ' + o.p + ' percent');
   const cur = h => here === h || (h !== '#/' && here.startsWith(h)) ? ' aria-current="page"' : '';
-  let h = `<a href="#/"${here === '#/' || here === '' ? ' aria-current="page"' : ''}>⌂ Home</a><h3>Courses</h3>`;
+  const ec = essCourses(), ed = ec.filter(c => S.ess[c.id]).length;
+  let h = `<a href="#/"${here === '#/' || here === '' ? ' aria-current="page"' : ''}>⌂ Home</a><a href="#/essentials"${cur('#/essentials')}>⚡ Essentials (quick course)<span class="pct">${ed}/${ec.length}</span></a><h3>Full courses</h3>`;
   const curLesson = /^#\/lesson\/(.+)$/.exec(here); const lc = curLesson && idx().lessons[curLesson[1]] ? idx().lessons[curLesson[1]].course : null;
   mainCourses().forEach(c => { const on = here === '#/course/' + c.id || lc === c.id; h += `<a href="#/course/${c.id}" data-course="${c.id}"${on ? ' aria-current="page"' : ''}><span class="dot"></span>${esc(c.short)}<span class="pct">${prog(c).p}%</span></a>`; });
   h += `<h3>Practise</h3><a href="#/practice"${cur('#/practice')}>✎ Practice hub</a><a href="#/mocks"${cur('#/mock')}>⏱ Mock exams</a><a href="#/flashcards"${cur('#/flashcards')}>❏ Flashcards</a>
@@ -181,9 +184,13 @@ route(/^\/$/, async () => {
   const o = overall(); const nl = nextLesson(); const lm = nl && idx().lessons[nl];
   const started = o.d > 0 || S.last;
   const cta = lm ? `<a class="btn primary" href="#/lesson/${lm.id}">${started ? 'Continue' : 'Start first lesson'}: ${esc(lm.title)}</a>` : `<a class="btn primary" href="#/mocks">All lessons done — take a mock exam</a>`;
+  const ec = essCourses(), ed = ec.filter(c => S.ess[c.id]).length, eNext = ec.find(c => !S.ess[c.id]), eMin = ec.reduce((a, c) => a + c.ess.min, 0);
+  const essCard = `<div class="card ess-hero"><div class="hero">${ring(Math.round(100 * ed / (ec.length || 1)), true)}<div class="grow"><span class="badge accent">Start here · about ${eMin >= 60 ? Math.round(eMin / 30) / 2 + ' hours' : eMin + ' minutes'} in total</span><h2>Essentials: the quick crash course</h2><p>Only the big ideas of each course — the part that gives you most of the understanding. One short page per course, no details you don't need yet.</p>${eNext ? `<a class="btn primary" href="#/essentials/${eNext.id}">${ed ? 'Continue' : 'Start'}: ${esc(eNext.short)} essentials (${eNext.ess.min} min)</a>` : '<a class="btn primary" href="#/essentials">All essentials done ✓ — review them</a>'} <a class="btn" href="#/essentials">See all ${ec.length}</a></div></div></div>`;
   const html = `<h1>Semester 1 crash course</h1>
-<p class="lead">Everything your classmates learned in the fall semester of Computer Programming (English) at İGÜ, in short lessons with practice.</p>
-<div class="card hero">${ring(o.p, true)}<div class="grow"><h2>${started ? 'Continue where you left off' : 'Start here'}</h2><p class="muted">${o.d} of ${o.t} lessons done${lm ? ' · next: <b>' + esc(courseMeta(lm.course).short) + '</b>' : ''}</p>${cta}</div></div>
+<p class="lead">What your classmates learned in the fall semester of Computer Programming (English) at İGÜ. Start with the <b>Essentials</b>; use the full lessons when you want to go deeper or practise.</p>
+${essCard}
+<h2>Full courses</h2>
+<div class="card hero">${ring(o.p, true)}<div class="grow"><h2>${started ? 'Continue the full lessons' : 'Full lessons (when you are ready)'}</h2><p class="muted">${o.d} of ${o.t} lessons done${lm ? ' · next: <b>' + esc(courseMeta(lm.course).short) + '</b>' : ''}</p>${cta}</div></div>
 <div class="grid two" style="margin-top:.9rem">${todayCard()}<div class="card"><h2>How each lesson works</h2><ol class="steps"><li>Read the short explanation</li><li>Study the worked example</li><li>Try it yourself</li><li>Answer the quick check</li><li>Mark it complete</li></ol></div></div>
 <h2>Courses <span class="muted small">(most important first)</span></h2>
 <div class="grid two">${mainCourses().map(courseCard).join('')}</div>
@@ -216,6 +223,7 @@ route(/^\/course\/([\w-]+)$/, async (m) => {
   });
   if (hasMid) list += `<li><div class="marker">Weeks 16–17 — Final exam (covers everything, 50% of the grade)${mockLink('final')}</div></li>`;
   const links = [];
+  if (c.ess) links.push(`<a class="btn" href="#/essentials/${c.id}">⚡ Essentials (${c.ess.min} min)</a>`);
   if (c.hasCheat) links.push(`<a class="btn" href="#/cheat/${c.id}">Cheat sheet</a>`);
   if (idx().practice.some(x => x.c === c.id)) links.push(`<a class="btn" href="#/practice?course=${c.id}">Practice set</a>`);
   if (mockLink('midterm')) links.push(`<a class="btn" href="#/mock/${c.id}/midterm">Midterm mock</a>`);
@@ -331,6 +339,19 @@ route(/^\/mock\/([\w-]+)\/(midterm|final)$/, async (m) => {
 });
 
 /* cheat sheets */
+route(/^\/essentials$/, async () => {
+  const ec = essCourses();
+  const rows = ec.map((c, i) => `<li><a class="row" href="#/essentials/${c.id}" data-course="${c.id}"><span class="tick ${S.ess[c.id] ? 'done' : ''}" aria-hidden="true">✓</span><span class="grow"><b>${i + 1}. ${esc(c.name)}</b><small>${c.ess.min} min · ${c.ess.ideas} big ideas${c.ess.intro ? ' · ' + esc(c.ess.intro) : ''}</small></span><span aria-hidden="true">›</span></a></li>`).join('');
+  return { title: 'Essentials', html: `<h1>Essentials: the quick crash course</h1><p class="lead">One short page per course with only the ideas that matter most. Read them in order — the most important courses come first. Each page ends with a 5-question check.</p><div class="callout callout-tip"><div class="callout-h">How to use this</div><p>Read one page a day. Don't try to memorise everything — aim to <b>understand</b> each big idea. When an idea feels unclear, use the “Go deeper” link under it to open the full lesson.</p></div><ul class="list card">${rows}</ul>` };
+});
+route(/^\/essentials\/([\w-]+)$/, async (m) => {
+  const c = courseMeta(m[1]); if (!c || !c.ess) throw new Error('No essentials page for this course');
+  const data = await CC.course(c.id); const pg = data.essentials; const ec = essCourses(); const i = ec.indexOf(c); const nx = ec[i + 1];
+  const nav = () => `<button class="btn ${S.ess[c.id] ? '' : 'primary'}" id="ess-done" type="button" aria-pressed="${!!S.ess[c.id]}">${S.ess[c.id] ? '✓ Done (tap to undo)' : 'I understand these ideas — mark done'}</button>${nx ? `<a class="btn ${S.ess[c.id] ? 'primary' : ''}" href="#/essentials/${nx.id}">Next: ${esc(nx.short)} essentials →</a>` : `<a class="btn ${S.ess[c.id] ? 'primary' : ''}" href="#/essentials">Back to all essentials</a>`}`;
+  return { title: c.short + ' essentials', course: c.id, ctx: { course: data, courseId: c.id, page: pg, lessonId: 'ess-' + c.id },
+    html: `${crumbs(['Home', '#/'], ['Essentials', '#/essentials'], [c.short])}<h1>${esc(pg.title)}</h1><p class="muted">${c.ess.min} minutes · ${c.ess.ideas} big ideas · <a href="#/course/${c.id}">full course (${c.lessons.length} lessons)</a></p><article class="lesson ess">${pg.html}</article><div class="lesson-nav" id="ess-nav">${nav()}</div>`,
+    after(main) { $('#ess-nav', main).addEventListener('click', e => { if (e.target.id !== 'ess-done') return; if (S.ess[c.id]) delete S.ess[c.id]; else S.ess[c.id] = Date.now(); save(); $('#ess-nav', main).innerHTML = nav(); $('#ess-done', main).focus(); }); } };
+});
 route(/^\/cheats$/, async () => ({ title: 'Cheat sheets', wide: true, html: `<h1>Cheat sheets</h1><p class="lead">One page per course. Open one and press “Print” — it prints clean black on white.</p><div class="grid three">${idx().courses.filter(c => c.hasCheat).map(c => `<a class="card course-card" data-course="${c.id}" href="#/cheat/${c.id}"><span class="grow"><h3>${esc(c.short)}</h3><span class="muted small">${esc(c.code || '')}</span></span></a>`).join('')}</div>` }));
 route(/^\/cheat\/([\w-]+)$/, async (m) => {
   const c = courseMeta(m[1]); const data = await CC.course(c.id); if (!data.cheat) throw new Error('No cheat sheet for this course');
