@@ -8,6 +8,9 @@ minutes: 18
 
 Networks are described in two main ways: **how big an area they cover** (network type) and **how devices are arranged and connected** (topology).
 
+
+@widget viz name=net-topos
+
 ## Network types by size
 
 | Type | Full name | Typical range | Example |

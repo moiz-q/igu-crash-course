@@ -8,6 +8,9 @@ minutes: 22
 
 How will we pay for things in ten years? Will cash disappear? Talking about **trends** means talking about the **future** and giving **opinions**. This lesson covers both.
 
+
+@widget viz name=en-future
+
 ## Five ways to talk about the future
 
 | Form | Structure | Use it for | Example |

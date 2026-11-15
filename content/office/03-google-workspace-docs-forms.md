@@ -8,6 +8,9 @@ minutes: 15
 
 **Google Workspace** (Drive, Docs, Sheets, Slides, Forms, Sites) runs right in your browser with automatic saving and real-time multi-user editing.
 
+
+@widget viz name=off-roles
+
 ## Google Docs collaboration
 
 - **Suggesting mode** (top-right pencil icon → **Suggesting**): edits appear as colored tracked suggestions instead of overwriting text—great for group reports!

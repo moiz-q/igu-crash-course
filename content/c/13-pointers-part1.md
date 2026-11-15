@@ -8,6 +8,9 @@ minutes: 20
 
 Every variable you declare lives at a numbered byte location in RAM, called its **memory address**. A **pointer** (*işaretçi*) is simply a variable whose value is the **memory address** of another variable.
 
+
+@widget viz name=c-pointer
+
 ## `&` (address-of) and `*` (dereference)
 
 Two operators do all the work:

@@ -8,6 +8,9 @@ minutes: 15
 
 A **flowchart** (*akış şeması*) is a visual map of an algorithm. Instead of reading paragraphs, you follow arrows from **Start** to **End**. Flowcharts appear very often in Programming Basics I written exams!
 
+
+@widget viz name=c-symbols
+
 ## The 5 standard symbols
 
 | Symbol | Shape | Meaning |

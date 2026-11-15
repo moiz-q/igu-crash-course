@@ -13,6 +13,10 @@ This is a short overview of **Turkish Language I (TRD101E)**, a compulsory 2-ECT
 If you are not a Turkish citizen, ask the department secretary whether you take TRD101E or a **Turkish for Foreigners** course instead.
 :::
 
+
+@widget viz name=tr-lego
+@widget viz name=tr-harmony
+
 ## 1. Language and Turkish among world languages
 
 **Language** is a living, rule-governed system that people use to share thoughts and feelings. It changes slowly over time and carries culture.

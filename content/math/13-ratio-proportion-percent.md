@@ -8,6 +8,9 @@ minutes: 20
 
 **Ratio and proportion** (oran–orantı) and **percentages** appear on almost every Turkish university math exam and in real-world programming (discounts, tax, progress bars, mixing data).
 
+
+@widget viz name=math-percent
+
 ## Ratio and proportion
 
 If $\frac{a}{b} = \frac{c}{d} = k$:

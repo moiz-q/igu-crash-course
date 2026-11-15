@@ -1,83 +1,52 @@
 ---
 title: Mathematics I — the essentials
-minutes: 25
+minutes: 18
 intro: numbers, divisibility, exponents and roots, factoring, equations, percentages
 ---
 
-This is **high-school basic maths, not calculus**. The exam is multiple choice, so what matters is knowing the few rules that unlock each question type. Six ideas cover most of it.
+Basic maths, **not calculus**. Seven pictures cover the question types.
 
-:::idea Kinds of numbers and divisibility
-$\mathbb{N}$ natural (0, 1, 2…) ⊂ $\mathbb{Z}$ integers (… −1, 0, 1 …) ⊂ $\mathbb{Q}$ fractions ⊂ $\mathbb{R}$ real numbers. Numbers like $\sqrt{2}$ and $\pi$ are **irrational**.
-
-Quick divisibility tests: **2** last digit even · **3** digit sum divisible by 3 · **4** last two digits · **5** ends in 0 or 5 · **9** digit sum divisible by 9 · **10** ends in 0.
-
-Example: 4,512 → digit sum 12 → divisible by 3, not by 9.
-
-[Go deeper: divisibility](#/lesson/math-03)
+:::idea Number sets fit inside each other
+@widget viz name=math-sets
+Divisible by **3 or 9**? Add the digits. By **4**? Look at the last two digits. [Go deeper](#/lesson/math-03)
 :::
 
-:::idea GCD and LCM
-Break numbers into **prime factors**. $12 = 2^2 \cdot 3$, $18 = 2 \cdot 3^2$.
-
-- **GCD** (EBOB) = common primes, **smallest** powers: $2 \cdot 3 = 6$.
-- **LCM** (EKOK) = all primes, **largest** powers: $2^2 \cdot 3^2 = 36$.
-
-GCD questions sound like "cut into **equal pieces**, as **large** as possible". LCM questions sound like "when do they **meet again**?"
-
-[Go deeper: GCD and LCM](#/lesson/math-05)
+:::idea GCD and LCM from prime factors
+@widget viz name=math-gcd
+GCD → "equal pieces, as big as possible". LCM → "when do they meet again?" [Go deeper](#/lesson/math-05)
 :::
 
-:::idea Exponents and roots
-| Rule | Example |
-| --- | --- |
-| $a^m \cdot a^n = a^{m+n}$ | $2^3 \cdot 2^4 = 2^7$ |
-| $a^m / a^n = a^{m-n}$ | $5^6 / 5^4 = 5^2$ |
-| $(a^m)^n = a^{mn}$ | $(3^2)^3 = 3^6$ |
-| $a^0 = 1$, $a^{-n} = \frac{1}{a^n}$ | $2^{-3} = \frac{1}{8}$ |
-| $\sqrt{a \cdot b} = \sqrt{a}\sqrt{b}$ | $\sqrt{50} = 5\sqrt{2}$ |
-
-Same base → add/subtract the exponents. To solve $2^{x} = 32$, write $32 = 2^5$, so $x = 5$.
-
-[Go deeper: exponents](#/lesson/math-06) · [radicals](#/lesson/math-07)
+:::idea Same base: add the exponents
+@widget viz name=math-exp
+$a^0 = 1$ · $a^{-n} = \frac{1}{a^n}$ · $(a^m)^n = a^{mn}$ · $\sqrt{50} = 5\sqrt{2}$. [Go deeper](#/lesson/math-06)
 :::
 
-:::idea Factoring: three patterns
-- **Take out what's common:** $6x + 9 = 3(2x + 3)$
-- **Difference of squares:** $a^2 - b^2 = (a-b)(a+b)$ → $x^2 - 25 = (x-5)(x+5)$
-- **Trinomial:** find two numbers that **multiply** to $c$ and **add** to $b$: $x^2 + 5x + 6 = (x+2)(x+3)$
-
-Factoring is the key to simplifying fractions and solving quadratics.
-
-[Go deeper: factoring](#/lesson/math-08)
+:::idea Factoring = finding the sides
+@widget viz name=math-area
+Also: $a^2 - b^2 = (a-b)(a+b)$. Quadratics: $\Delta = b^2 - 4ac$ (>0 two roots, =0 one, <0 none). [Go deeper](#/lesson/math-08)
 :::
 
-:::idea Solving equations and inequalities
-- **Linear:** do the same thing to both sides. $3x + 4 = 19 \Rightarrow 3x = 15 \Rightarrow x = 5$.
-- **Quadratic** $ax^2 + bx + c = 0$: factor, or use $x = \frac{-b \pm \sqrt{\Delta}}{2a}$ with $\Delta = b^2 - 4ac$. $\Delta > 0$ two roots, $= 0$ one, $< 0$ none. Sum of roots $= -b/a$, product $= c/a$.
-- **Inequalities:** like equations, **but multiplying or dividing by a negative flips the sign**: $-2x > 6 \Rightarrow x < -3$.
-- **Absolute value** = distance from 0: $|x - 3| = 5 \Rightarrow x = 8$ or $x = -2$.
-
-[Go deeper: quadratics](#/lesson/math-10) · [inequalities](#/lesson/math-11) · [absolute value](#/lesson/math-12)
+:::idea Inequalities on a number line
+@widget viz name=math-ineq
+[Go deeper](#/lesson/math-11)
 :::
 
-:::idea Ratio and percentages
-- **Percent of:** 20% of 150 = $150 \cdot 0.20 = 30$.
-- **Increase / decrease by p%:** multiply by $(1 + p/100)$ or $(1 - p/100)$. 200 TL + 15% = $200 \cdot 1.15 = 230$ TL.
-- **Profit %** is always calculated on the **cost** price.
-- **Direct proportion:** more → more (price of 3 books vs 6 books). **Inverse:** more → less (more workers → fewer days; workers × days stays the same).
+:::idea Absolute value = distance
+@widget viz name=math-abs
+[Go deeper](#/lesson/math-12)
+:::
 
-[Go deeper: ratio and percentages](#/lesson/math-13)
+:::idea Percentages as a bar
+@widget viz name=math-percent
+Profit % is always taken from the **cost**. [Go deeper](#/lesson/math-13)
 :::
 
 :::remember If you remember only this
-- Divisibility by 3 and 9: add the digits.
-- GCD = smallest powers (equal pieces); LCM = largest powers (meeting again).
-- Same base: multiply → add exponents. $a^0 = 1$, negative exponent = fraction.
-- $a^2 - b^2 = (a-b)(a+b)$; $\Delta = b^2 - 4ac$.
-- Multiply/divide an inequality by a negative → flip the sign.
+- digit sum → divisible by 3 or 9
+- GCD = shared factors · LCM = all factors
+- same base → add exponents · $a^0 = 1$
+- ÷ by a negative flips the inequality · |x − a| = distance from a
 :::
-
-Practise with the [random question generator](#/tool/math-mixed) — it never runs out and shows every step.
 
 ## Quick check
 

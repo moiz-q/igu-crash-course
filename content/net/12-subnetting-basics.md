@@ -8,6 +8,9 @@ minutes: 25
 
 **Subnetting** splits one large IPv4 network into smaller networks (**subnets**). This reduces broadcast traffic, improves security, and saves IP addresses.
 
+
+@widget viz name=net-ip
+
 ## The subnet mask and CIDR (`/n`)
 
 Every IPv4 address has two parts: the **network portion** (left) and the **host portion** (right). The **subnet mask** tells your device where the split happens:

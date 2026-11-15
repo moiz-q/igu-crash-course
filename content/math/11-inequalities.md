@@ -8,6 +8,9 @@ minutes: 18
 
 An **inequality** uses `<`, `>`, `≤`, or `≥` instead of `=`. Most rules match solving equations—with **one critical twist**.
 
+
+@widget viz name=math-ineq
+
 ## The golden rule of inequalities
 
 **Multiplying or dividing both sides by a negative number FLIPS the inequality sign!**

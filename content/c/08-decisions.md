@@ -8,6 +8,9 @@ minutes: 20
 
 Until now, every line in `main` ran from top to bottom. **Decision structures** let your program choose different paths based on conditions.
 
+
+@widget viz name=c-ifelse
+
 ## `if`, `else if` and `else`
 
 ```c run stdin="78"

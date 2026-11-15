@@ -11,7 +11,7 @@ const err = m => { errors++; out.push('ERROR ' + m); }, warn = m => { warns++; o
 const norm = s => String(s).replace(/\r/g, '').split('\n').map(l => l.replace(/[ \t]+$/, '')).join('\n').replace(/\n+$/, '');
 (async () => {
   try {
-    await load('../data/index.js'); await load('../assets/js/minic.js');
+    await load('../data/index.js'); await load('../assets/js/minic.js'); CC.widgets = {}; CC.esc = x => String(x); await load('../assets/js/viz.js');
     const only = new URLSearchParams(location.search).get('only');
     const ids = CC.data.index.courses.map(c => c.id).filter(id => !only || only.split(',').includes(id));
     for (const id of ids) await load('../data/' + id + '.js');
@@ -20,7 +20,7 @@ const norm = s => String(s).replace(/\r/g, '').split('\n').map(l => l.replace(/[
     // C-like code blocks inside every page of every course
     for (const id of ids) {
       const d = CC.data.c[id];
-      const pages = Object.entries(d.lessons).concat([['cheatsheet', d.cheat], ['mock-midterm', d.mocks.midterm], ['mock-final', d.mocks.final]]).filter(p => p[1]);
+      const pages = Object.entries(d.lessons).concat([['cheatsheet', d.cheat], ['mock-midterm', d.mocks.midterm], ['mock-final', d.mocks.final], ['essentials', d.essentials]]).filter(p => p[1]);
       for (const [pid, pg] of pages) {
         const doc = P.parseFromString(pg.html, 'text/html');
         doc.querySelectorAll('[data-widget="crun"], [data-widget="memviz"]').forEach((w, k) => {
@@ -29,7 +29,7 @@ const norm = s => String(s).replace(/\r/g, '').split('\n').map(l => l.replace(/[
           if (r.ok && w.dataset.fails) err(`${pid} c-block #${k + 1}: marked data-fails but ran fine`);
           if (r.needMoreInput) warn(`${pid} c-block #${k + 1}: needs more stdin (add stdin="...")`);
         });
-        doc.querySelectorAll('[data-widget]').forEach(w => { const n = w.dataset.widget; if (!['crun', 'memviz', 'sqlrun', 'quiz', 'gaps', 'checklist', 'rubric', 'flow', 'erd', 'stepper', 'timeline', 'mcq', 'exercises', 'challenges', 'subnetcalc', 'subnetdrill', 'baseconv', 'mathdrill', 'formula', 'topology', 'venn', 'order', 'match'].includes(n)) err(`${pid}: unknown widget "${n}"`); if ((n === 'order' || n === 'match') && !(d.extra.games && d.extra.games[w.dataset.set])) err(`${pid}: game set "${w.dataset.set}" missing in games.json`); if (n === 'stepper') { try { JSON.parse(w.querySelector('pre.src').textContent); } catch (e) { err(`${pid}: stepper JSON invalid: ${e.message}`); } } if (n === 'mcq') { const pool = (CC.data.c[w.dataset.course] || d).bank.filter(q => !w.dataset.tag || w.dataset.tag === 'all' || w.dataset.tag.split(',').includes(q.tag)); if (!pool.length) err(`${pid}: mcq widget has no questions for tag ${w.dataset.tag}`); } });
+        doc.querySelectorAll('[data-widget]').forEach(w => { const n = w.dataset.widget; if (!['crun', 'memviz', 'sqlrun', 'quiz', 'gaps', 'checklist', 'rubric', 'flow', 'erd', 'stepper', 'timeline', 'mcq', 'exercises', 'challenges', 'subnetcalc', 'subnetdrill', 'baseconv', 'mathdrill', 'formula', 'topology', 'venn', 'order', 'match', 'viz'].includes(n)) err(`${pid}: unknown widget "${n}"`); if (n === 'viz') { if (!CC.viz[w.dataset.name]) err(`${pid}: unknown diagram "${w.dataset.name}"`); else try { CC.viz[w.dataset.name](); } catch (e) { err(`${pid}: diagram ${w.dataset.name} failed: ${e.message}`); } } if ((n === 'order' || n === 'match') && !(d.extra.games && d.extra.games[w.dataset.set])) err(`${pid}: game set "${w.dataset.set}" missing in games.json`); if (n === 'stepper') { try { JSON.parse(w.querySelector('pre.src').textContent); } catch (e) { err(`${pid}: stepper JSON invalid: ${e.message}`); } } if (n === 'mcq') { const pool = (CC.data.c[w.dataset.course] || d).bank.filter(q => !w.dataset.tag || w.dataset.tag === 'all' || w.dataset.tag.split(',').includes(q.tag)); if (!pool.length) err(`${pid}: mcq widget has no questions for tag ${w.dataset.tag}`); } });
       }
       // C exercises
       for (const ex of d.exercises || []) {
@@ -56,7 +56,7 @@ const norm = s => String(s).replace(/\r/g, '').split('\n').map(l => l.replace(/[
         try { let res = db.exec(ch.sql); if (ch.check) res = db.exec(ch.check); const last = res[res.length - 1]; if (!last || !last.values.length) warn(`${ch.id}: model result is empty`); }
         catch (e) { err(`${ch.id}: model SQL fails: ${e.message}`); } finally { db.close(); }
       }
-      for (const [pid, pg] of Object.entries(d.lessons).concat([['cheatsheet', d.cheat]]).filter(p => p[1])) {
+      for (const [pid, pg] of Object.entries(d.lessons).concat([['cheatsheet', d.cheat], ['essentials', d.essentials]]).filter(p => p[1])) {
         P.parseFromString(pg.html, 'text/html').querySelectorAll('[data-widget="sqlrun"]').forEach((w, k) => {
           checked++; const db = fresh(); try { db.exec(w.querySelector('pre.src').textContent); if (w.dataset.fails) err(`${pid} sql-block #${k + 1}: marked data-fails but ran fine`); } catch (e) { if (!w.dataset.fails) err(`${pid} sql-block #${k + 1}: ${e.message}`); } finally { db.close(); }
         });

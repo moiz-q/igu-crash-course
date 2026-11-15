@@ -12,6 +12,9 @@ $$|x| = \begin{cases} x & \text{if } x \ge 0 \\ -x & \text{if } x < 0 \end{cases
 
 Examples: $|5| = 5$, $|-5| = 5$, $|3 - \pi| = \pi - 3$ (because $3 - \pi < 0$, so we negate it to make it positive!).
 
+
+@widget viz name=math-abs
+
 ## Equations & inequalities (for $a > 0$)
 
 | Form | Equivalent rule | Example |

@@ -8,6 +8,10 @@ minutes: 20
 
 Sending a message across a network involves many jobs: formatting text, breaking data into chunks, adding IP addresses, adding MAC addresses, and putting electrical pulses on a wire. The **OSI (Open Systems Interconnection) model** splits these jobs into **7 layers** so engineers can design and troubleshoot each part independently.
 
+
+@widget viz name=net-osi
+@widget viz name=net-encap
+
 ## The 7 OSI layers (top to bottom)
 
 | # | Layer | Main job | PDU name | Example |

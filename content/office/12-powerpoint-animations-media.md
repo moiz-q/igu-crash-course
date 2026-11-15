@@ -8,6 +8,9 @@ minutes: 16
 
 Motion in PowerPoint should guide the audience's eye—never distract them.
 
+
+@widget viz name=off-anim
+
 ## Transitions vs. Animations
 
 | Feature | Applies to | Ribbon tab | Example |

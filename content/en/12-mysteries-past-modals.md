@@ -8,6 +8,9 @@ minutes: 22
 
 When we don't know exactly what happened, we **guess from the evidence**. Detectives, scientists and ordinary people do this all the time: *"He **must have missed** the bus."* *"She **can't have seen** the message."* These are **past modals of deduction**.
 
+
+@widget viz name=en-certainty
+
 ## Structure
 
 **modal + have + past participle (V3)**

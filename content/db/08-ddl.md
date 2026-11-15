@@ -8,6 +8,9 @@ minutes: 20
 
 SQL commands are grouped by job. **DDL (Data Definition Language)** builds and changes the *structure* of the database (tables, columns, constraints) — not the rows inside.
 
+
+@widget viz name=db-families
+
 ## The four DDL commands
 
 | Command | Purpose | Effect on table |

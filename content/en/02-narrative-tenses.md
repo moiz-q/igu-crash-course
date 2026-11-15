@@ -8,6 +8,9 @@ minutes: 22
 
 When you describe what happened in a lab, a project, or a story, you need four **narrative tenses** to show **which action finished**, **which was in progress**, and **which happened earlier**.
 
+
+@widget viz name=en-past
+
 ## The four narrative tenses
 
 | Tense | Form | Use | Example |

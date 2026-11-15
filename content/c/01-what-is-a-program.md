@@ -8,6 +8,9 @@ minutes: 15
 
 A computer is very fast, but on its own it cannot think. A **program** is a step-by-step list of instructions written by a programmer so the computer knows exactly what to do.
 
+
+@widget viz name=c-pipeline
+
 ## Main parts of a computer
 
 | Part | Role | Example |

@@ -8,6 +8,9 @@ minutes: 15
 
 University courses expect you to search academic sources, email instructors professionally, and recognize common online business models.
 
+
+@widget viz name=off-email
+
 ## Smarter web searching
 
 | Operator | What it does | Example |

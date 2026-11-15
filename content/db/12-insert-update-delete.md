@@ -8,6 +8,9 @@ minutes: 15
 
 Besides reading data with `SELECT`, DML gives you three commands that **change** rows: `INSERT`, `UPDATE`, and `DELETE`.
 
+
+@widget viz name=db-delete
+
 ## `INSERT`, `UPDATE`, `DELETE`
 
 ```sql run

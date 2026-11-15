@@ -8,6 +8,9 @@ minutes: 15
 
 Every app you use — a university portal, a bank, an online shop — needs to store facts and find them again later. Before databases existed, programs saved data in plain text or binary files. That caused big problems as data grew.
 
+
+@widget viz name=db-table
+
 ## Data vs information
 
 - **Data (*veri*):** Raw, unprocessed facts with no context on their own. Example: `85`, `Deniz`, `CMP153`.

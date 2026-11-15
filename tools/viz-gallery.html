@@ -1,0 +1,7 @@
+<!doctype html><html data-theme="light"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>diagram gallery</title>
+<link rel="stylesheet" href="../assets/css/app.css">
+<body style="padding:16px"><p><button onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark'">toggle theme</button></p><div id="g"></div>
+<script>window.CC={widgets:{},esc:s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))};</script>
+<script src="../assets/js/viz.js"></script>
+<script>const course={c:'c',db:'db',net:'net',math:'math',off:'office',en:'en',tr:'tr',ata:'ata'};
+document.getElementById('g').innerHTML=Object.keys(CC.viz).map(k=>`<section data-course="${course[k.split('-')[0]]}" style="max-width:520px;margin:0 0 18px"><h4 style="margin:4px 0">${k}</h4>${CC.viz[k]()}</section>`).join('');</script>

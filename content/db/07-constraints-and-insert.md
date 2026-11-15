@@ -8,6 +8,9 @@ minutes: 20
 
 A good database does not trust applications to send clean data — it enforces rules itself using **constraints** (*kısıtlamalar*).
 
+
+@widget viz name=db-keys
+
 ## The 6 core constraints
 
 | Constraint | What it guarantees | Example |

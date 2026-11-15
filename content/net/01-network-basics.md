@@ -8,6 +8,9 @@ minutes: 15
 
 A **computer network** is two or more devices connected together so they can share data and resources (such as files, printers, or an internet connection). Every time you send a message or load a web page, your device is talking across a network.
 
+
+@widget viz name=net-sizes
+
 ## What makes a network work?
 
 Every network needs four basic pieces:

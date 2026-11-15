@@ -8,6 +8,9 @@ minutes: 22
 
 Many things that were science fiction fifty years ago — video calls, robot vacuum cleaners, talking computers — are normal today. Others, like flying cars and time travel, are still fiction. In this lesson you compare the two, and learn how to write a strong **comparison paragraph**: a paragraph that shows how two things are **similar** and how they are **different**.
 
+
+@widget viz name=en-paragraph
+
 ## Language for comparing
 
 | Similarities | Differences |

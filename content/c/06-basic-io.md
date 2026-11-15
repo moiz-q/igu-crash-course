@@ -8,6 +8,9 @@ minutes: 20
 
 Programs become interactive when they display results (`printf`) and read values typed by the user (`scanf`). Both live in `<stdio.h>`.
 
+
+@widget viz name=c-io
+
 ## `printf` and format specifiers
 
 A **format specifier** (*biçim belirteci*) is a placeholder starting with `%` inside the quotes of `printf`, telling C what type of value to print there:

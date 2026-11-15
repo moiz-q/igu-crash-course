@@ -8,6 +8,9 @@ minutes: 16
 
 **Microsoft Word** is the standard tool for lab reports, assignments, and CVs. Clean formatting and keyboard shortcuts save hours every semester.
 
+
+@widget viz name=off-ribbon
+
 ## Core Ribbon paths (Microsoft 365 / Word)
 
 - **Font & size**: `Home → Font` group (e.g., Calibri/Arial/Times New Roman 11–12 pt).

@@ -9,6 +9,9 @@ kind: overview
 
 This is a concise overview of **Atatürk Principles and History of Revolutions I (ATA101E)**, a compulsory 2-ECTS course. It covers the late Ottoman reform efforts, the collapse of the empire after World War I, the National Struggle led by Mustafa Kemal Atatürk, and the diplomatic recognition of the new Turkish state in 1923.
 
+
+@widget viz name=ata-phases
+
 ## Interactive timeline
 
 ```timeline

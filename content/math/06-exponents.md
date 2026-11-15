@@ -8,6 +8,9 @@ minutes: 18
 
 Exponents express repeated multiplication compactly: $a^n = \underbrace{a \cdot a \cdots a}_{n \text{ times}}$.
 
+
+@widget viz name=math-exp
+
 ## Core laws of exponents ($a \ne 0$)
 
 | Rule | Formula | Example |

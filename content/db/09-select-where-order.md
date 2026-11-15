@@ -8,6 +8,9 @@ minutes: 25
 
 Most of your day-to-day SQL work is **DML (Data Manipulation Language)** — especially `SELECT`, which reads data without changing it.
 
+
+@widget viz name=db-order
+
 ## Clause order in `SELECT`
 
 You write a `SELECT` query in this fixed order:

@@ -8,6 +8,9 @@ minutes: 18
 
 Before solving equations, mathematics gives us a language for grouping objects (**sets**) and naming the kinds of numbers we work with (**number systems**).
 
+
+@widget viz name=math-sets
+
 ## Sets and set operations
 
 A **set** is a well-defined collection of distinct elements, written inside curly braces, such as $A = \{1, 2, 3, 4\}$.

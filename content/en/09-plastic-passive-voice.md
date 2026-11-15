@@ -8,6 +8,9 @@ minutes: 22
 
 When we describe how something **is made**, what **was invented** or what **has been done** about a problem, the important thing is usually the **action**, not the person who did it. That is when English uses the **passive voice**. Our topic is plastic: its history and its uses.
 
+
+@widget viz name=en-passive
+
 ## Active vs. passive
 
 > **Active:** Factories **produce** about 400 million tonnes of plastic every year.

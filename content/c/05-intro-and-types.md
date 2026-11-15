@@ -8,6 +8,10 @@ minutes: 20
 
 Every C program has the same basic skeleton. Once you learn it, you can focus on solving problems.
 
+
+@widget viz name=c-skeleton
+@widget viz name=c-variables
+
 ## Anatomy of a C program
 
 ```c run

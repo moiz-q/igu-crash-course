@@ -8,6 +8,9 @@ minutes: 20
 
 Factoring turns a sum into a product—which is essential for simplifying fractions and solving quadratic equations.
 
+
+@widget viz name=math-area
+
 ## Must-know identities (Özdeşlikler)
 
 | Name | Formula | Example |

@@ -8,6 +8,9 @@ minutes: 25
 
 When you need to store 50 student grades, creating `g1, g2, ..., g50` is impossible to manage. An **array** (*dizi*) stores a fixed-size list of values of the **same type** side by side in memory.
 
+
+@widget viz name=c-array
+
 ## 1D arrays and 0-based indexing
 
 An array of size `N` has valid indices **`0` through `N - 1`**!

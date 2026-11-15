@@ -8,6 +8,9 @@ minutes: 15
 
 Suppose someone puts all student, course and department facts into one giant spreadsheet-like table. Why is that a bad idea? Because of **anomalies** (*anormallikler*) — bugs that happen when you add, change or delete data.
 
+
+@widget viz name=db-normalize
+
 ## The three anomalies
 
 Look at this unnormalized `CourseSheet` table:

@@ -1,40 +1,25 @@
 ---
 title: Turkish Language I — the essentials
-minutes: 10
+minutes: 6
 intro: how Turkish builds words, vowel harmony, word order
 ---
 
-This course is about **how Turkish works** as a language. Three ideas explain most of it. (If you are not a Turkish citizen, ask the department whether a "Turkish for foreigners" section applies to you.)
+Three pictures explain how Turkish works. (Not a Turkish citizen? Ask the department whether "Turkish for foreigners" applies.)
 
-:::idea Turkish builds words like Lego
-Turkish is an **agglutinative** language: you add **suffixes** (ekler) one after another to a **root** (kök).
-
-*ev* (house) → *ev-ler* (houses) → *ev-ler-im* (my houses) → *ev-ler-im-de* (in my houses).
-
-One long Turkish word can be a whole English sentence: *gel-e-me-di-k* = "we couldn't come".
-
-[Go deeper: Turkish overview](#/lesson/tr-01)
+:::idea Words are built like Lego
+@widget viz name=tr-lego
 :::
 
-:::idea Vowel harmony decides the suffix
-The vowels in a suffix change to match the word.
-
-- **Great harmony (front/back):** after back vowels **a ı o u** → back suffix (*okul-**lar***); after front vowels **e i ö ü** → front suffix (*ev-**ler***).
-- **Small harmony (rounding):** decides between *ı i u ü* — *kol-**u**m* (my arm), *göz-**ü**m* (my eye), *el-**i**m* (my hand).
-
-That's why the plural is sometimes *-lar*, sometimes *-ler*.
+:::idea Vowel harmony picks the suffix
+@widget viz name=tr-harmony
 :::
 
-:::idea Word order: the verb comes last
-A normal Turkish sentence is **Subject – Object – Verb**: *Ben kitabı okudum* (I the book read). The verb carries the person and the tense: *oku-yor-um* (I am reading), *oku-du-k* (we read).
-
-Sentence elements: **özne** (subject), **yüklem** (predicate/verb), **nesne** (object), **zarf tümleci** (adverbial).
+:::idea The verb comes last
+**Ben** (subject) **kitabı** (object) **okudum** (verb). Subject – Object – Verb. [Go deeper](#/lesson/tr-01)
 :::
 
 :::remember If you remember only this
-- Root + suffixes; suffixes stack in a fixed order.
-- Back vowels → back suffixes (*-lar*), front vowels → front suffixes (*-ler*).
-- The verb (yüklem) usually comes last.
+- root + suffixes · back vowels → *-lar*, front → *-ler* · verb last
 :::
 
 ## Quick check

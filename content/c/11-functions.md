@@ -8,6 +8,9 @@ minutes: 25
 
 Putting all your code inside `main` quickly becomes messy. A **function** (*fonksiyon*) is a reusable named block of code that does one specific job.
 
+
+@widget viz name=c-function
+
 ## Prototype, definition and call
 
 1. **Prototype (declaration)** at the top tells the compiler the function's name, return type and parameter types.

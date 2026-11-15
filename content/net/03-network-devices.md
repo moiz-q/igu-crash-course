@@ -8,6 +8,9 @@ minutes: 18
 
 Different network devices operate at different levels of intelligence. Understanding what each box reads—signals, MAC addresses, or IP addresses—tells you where to place it in a network.
 
+
+@widget viz name=net-lan
+
 ## Core network devices
 
 | Device | Main job | Address used | Layer |

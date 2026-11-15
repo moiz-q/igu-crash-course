@@ -43,10 +43,14 @@ All teaching content is in `content/` (each course's quick version is `content/<
 
 Test pages (open through a local server, e.g. `python -m http.server`):
 
+- `tools/viz-gallery.html` — every diagram on one page (with a light/dark toggle) for checking how they look.
+
 - `tools/minic-test.html` — 57 tests for the C interpreter.
 - `tools/generator-tests.html` — about 21,000 checks of the subnetting and maths generators against independent calculations, plus the spreadsheet formula engine.
 
 ## Design choices and notes
+
+- **Diagrams:** about 40 hand-built SVG diagrams live in `assets/js/viz.js` and are placed in content with `@widget viz name=<diagram>`. They follow light/dark mode and each course's colour, carry full alt text, and can be tapped to enlarge on phones.
 
 - **C runner:** a purpose-built interpreter (`assets/js/minic.js`) instead of a WebAssembly compiler. It covers the C used in the course (stdio, operators, control flow, functions, recursion, arrays, pointers, strings, structs, simple file I/O), gives beginner-friendly error messages, and drives the step-by-step memory visualizer. For anything it doesn't support, it shows a link to a free online C compiler. Code was validated with this interpreter, not with gcc (gcc was not available on the build machine).
 - **SQL:** the playground is SQLite. Wherever SQL Server (T-SQL) differs — `TOP` vs `LIMIT`, `IDENTITY`, `GETDATE()`, `BEGIN TRAN` — lessons show a T-SQL note. DCL (GRANT/REVOKE/DENY) is taught with read-only examples because SQLite has no users.

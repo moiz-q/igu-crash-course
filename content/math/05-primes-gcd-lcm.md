@@ -8,6 +8,9 @@ minutes: 18
 
 Prime numbers are the building blocks of all integers—and **GCD** and **LCM** show up in fraction arithmetic, scheduling problems, and cryptography.
 
+
+@widget viz name=math-gcd
+
 ## Prime numbers and factorization
 
 A **prime number** is an integer $> 1$ with only two positive divisors: $1$ and itself (`2, 3, 5, 7, 11, 13, 17, 19...`).

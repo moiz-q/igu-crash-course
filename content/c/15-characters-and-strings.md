@@ -8,6 +8,9 @@ minutes: 25
 
 C does not have a built-in `string` type like Python or Java. Instead, a **string** in C is an **array of `char` ending with the null character `'\0'`** (ASCII code `0`).
 
+
+@widget viz name=c-strings
+
 ## `char`, ASCII and the `'\0'` terminator
 
 Every `char` is stored as a small integer ASCII code: `'A'` = `65`, `'a'` = `97`, `'0'` = `48`.

@@ -8,6 +8,9 @@ minutes: 18
 
 **Microsoft Excel** (and **Google Sheets**) organizes data into grids of **columns** (`A, B, C...`) and **rows** (`1, 2, 3...`). Each box is a **cell** named by its column + row (e.g., `B3`).
 
+
+@widget viz name=off-ref
+
 ## Workbooks, sheets, and ranges
 
 - **Workbook**: the entire `.xlsx` file.

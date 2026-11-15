@@ -8,6 +8,9 @@ minutes: 16
 
 When a network stops working, engineers test from bottom to top using built-in command-line tools.
 
+
+@widget viz name=net-ping
+
 ## The 6 commands you will use most
 
 | Command (Windows / Linux-macOS) | What it shows or tests |

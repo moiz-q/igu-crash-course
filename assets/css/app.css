@@ -307,3 +307,38 @@ pre.out { margin: .3rem 0; white-space: pre-wrap; overflow-wrap: anywhere; min-h
 .callout-remember .callout-h { color: var(--ok); }
 .callout-idea p.deeper { font-size: .9rem; margin-bottom: 0; }
 .hero > .grow { flex: 1; min-width: 230px; }
+
+/* diagram library (viz.js) */
+.viz { padding: .8rem .6rem; }
+.viz svg { overflow: visible; }
+.viz text { font: 15px var(--font); fill: var(--text); }
+.viz text.s { font-size: 13px; } .viz text.xs { font-size: 11.5px; } .viz text.b { font-weight: 700; } .viz text.big { font-size: 21px; font-weight: 700; }
+.viz text.mono { font-family: var(--mono); font-size: 14px; } .viz text.mono.s { font-size: 12.5px; } .viz text.mono.xs { font-size: 11px; }
+.viz text.m { fill: var(--muted); } .viz text.acc { fill: var(--accent); } .viz text.ok { fill: var(--ok); } .viz text.bad { fill: var(--bad); } .viz text.warn { fill: var(--warn); }
+.viz .n { fill: var(--surface); stroke: var(--border-strong); stroke-width: 1.4; }
+.viz .fa { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.6; }
+.viz .fs { fill: var(--accent); stroke: var(--accent); }
+.viz .fok { fill: var(--ok-bg); stroke: var(--ok); stroke-width: 1.6; }
+.viz .fbad { fill: var(--bad-bg); stroke: var(--bad); stroke-width: 1.6; }
+.viz .fw { fill: var(--warn-bg); stroke: var(--warn); stroke-width: 1.6; }
+.viz .f2 { fill: var(--surface-2); stroke: var(--border-strong); stroke-width: 1.2; }
+.viz .code { fill: var(--code-bg); stroke: var(--border); }
+.viz .vc { fill: var(--accent); fill-opacity: .1; stroke: var(--accent); stroke-width: 2; }
+.viz .acc-stroke { stroke: var(--accent); stroke-width: 2.5; }
+.viz .e { fill: none; stroke: var(--text); stroke-width: 1.6; }
+.viz .e.thin { stroke-width: 1; opacity: .7; } .viz .e.thick { stroke-width: 3; }
+.viz .e.acc { stroke: var(--accent); } .viz .e.ok { stroke: var(--ok); } .viz .e.bad { stroke: var(--bad); }
+.viz .dash { stroke-dasharray: 5 4; }
+.viz .arrow-acc { fill: var(--accent); } .viz .arrow-ok { fill: var(--ok); } .viz .arrow-bad { fill: var(--bad); }
+.ess .callout-idea .viz { margin: .6rem 0; box-shadow: none; }
+@media print { .viz text { fill: #000 !important; } }
+.viz text.mono, code, pre, .CodeMirror { font-variant-ligatures: none; }
+.viz-hint { display: none; font-size: .78rem; color: var(--muted); text-align: right; margin-top: .2rem; }
+@media (max-width: 560px) {
+  .callout-idea { padding: .75rem .55rem; }
+  .ess .callout-idea .viz { padding: .35rem .1rem; border: 0; background: transparent; }
+  .viz { cursor: zoom-in; }
+  .viz-hint { display: block; }
+  .viz.zoom { cursor: zoom-out; }
+  .viz.zoom svg { min-width: 520px; }
+}

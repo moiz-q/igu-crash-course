@@ -8,6 +8,9 @@ minutes: 20
 
 While the OSI model has 7 layers for teaching and troubleshooting, the real internet runs on the **4-layer TCP/IP model**.
 
+
+@widget viz name=net-tcpudp
+
 ## TCP/IP vs. OSI
 
 | TCP/IP Layer | Equivalent OSI Layers | Key protocols |
